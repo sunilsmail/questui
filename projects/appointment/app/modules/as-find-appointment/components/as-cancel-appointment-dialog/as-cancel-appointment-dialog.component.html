@@ -1,0 +1,71 @@
+<div class="cancel-appt" (keydown)="closeCancelDialog($event)">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" (click)="closeDialog()" role="button" name="closebutton"
+      aria-label="close" tabindex="0"></button>
+  </div>
+  <mat-dialog-content class="ds-col--12">
+    <div *ngIf="loading" class="overlay" fxLayout="row" fxLayoutAlign="center center">
+      <as-spinner></as-spinner>
+    </div>
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" class="ds-green__700"
+        aria-label="Are you sure you would like  to cancel this appointment?" i18n>
+        Are you sure you would like to cancel this appointment?</h2>
+
+      <!-- <ng-container> -->
+      <div class="ds-grid--12">
+        <div class="ds-col--12 ds-flex">
+          <div class="ds-col--1"><span class="ds-icon--address ds-green__700 ds-font--24" role="img"
+              aria-label="address" tabindex="-1"></span></div>
+          <div class="ds-col--11 ds-body--small ds-font--14 ds-gray__900"
+            aria-labelledby="locationName addOne addTwo zipcode" role="text" id="panel-text-address">
+            <div class="ds-font--14 --700" role="text" [attr.aria-label]="[data?.name]" id="locationName"
+              aria-hidden="true">
+              {{data?.name}}</div>
+            <div role="text" [attr.aria-label]="[data?.address1]" aria-hidden="true" id="addOne">{{data?.address1}}
+            </div>
+            <div role="text" [attr.aria-label]="[data?.address2]" aria-hidden="true" id="addTwo">{{data?.address2}}
+            </div>
+            <div role="text" [attr.aria-label]="[data?.city,data?.state,data?.zip]" id="zipcode" aria-hidden="true">
+              {{data?.city}} {{data?.state}} {{data?.zip}}</div>
+          </div>
+        </div>
+        <div class="ds-col--12 ds-flex icon-alignment">
+          <div class="ds-col--1"><span class="ds-icon--calendar ds-green__700 ds-font--24" tabindex="-1" role="img"
+              aria-label="calendar add"></span></div>
+          <div class="ds-col--11" id="panel-text-date">
+            <div class="ds-body--small ds-font--14 --700 ds-gray__900" role="text"
+              [attr.aria-label]="[data?.appointmentDate]">
+              {{data?.appointmentDate | date:'MMMM dd, y'}}</div>
+          </div>
+        </div>
+        <div class="ds-col--12 ds-flex icon-alignment">
+          <div class="ds-col--1"><span class="ds-icon--clock ds-green__700 ds-font--24" tabindex="-1" role="img"
+              aria-label="clock"></span></div>
+          <div class="ds-col--11" id="panel-text-time">
+            <div class="ds-body--small ds-font--14 --700 ds-gray__900" role="text"
+              [attr.aria-label]="[data?.appointmentTime | twelveHourTime]">
+              {{data?.appointmentTime | twelveHourTime}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- </ng-container> -->
+
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+      <div class="ds-col--6 ds-flex --end-center margin-top-16">
+        <button class="ds-button --primary --warning --medium" role="button" (click)="onCancelAppointment()">
+          <label>{{content.as_cancelAppointment.cancel_button_label}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center margin-top-16">
+        <button class="ds-link ds-green__700" aria-label="Never mind" (click)="closeDialog()" tabindex="0" role="button"
+          ii8n>Never mind</button>
+      </div>
+
+    </div>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,89 @@
+<div class="covid-19-electronic-dialog" *ngIf="!symtomsDialog  && !paperSymptomsOrder">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="covid-dialog-closebutton_1" (click)="closeDialog()"
+      aria-label="close" role="button" name="closebutton1" tabindex="0" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="COVID-19 Test"><span
+          class="ds-icon--alert ds-yellow__700 margin-right-8"></span>COVID-19 Test</h2>
+      <span class="ds-body--base" i18n>{{content.as_electronic_dialog.message}}</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="openCovidSymptomsDialog('paper')">
+          <label>{{content.as_electronic_dialog.button_text_2}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="openCovidSymptomsDialog('electronic')">
+          <label>{{content.as_electronic_dialog.button_text_1}}</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>
+
+
+<div class="covid-19-electronic-dialog symptomdialog" *ngIf="symtomsDialog">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--16 ds-black" id="covid-dialog-closebutton_2" (click)="closeDialog()"
+      aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="COVID-19 Test"><span
+          class="ds-icon--alert ds-yellow__700 margin-right-8"></span>COVID-19 Test</h2>
+      <span class="ds-body--base padding-bottom-16" i18n>{{content.as_electronic_symptom_dialog.message}}</span>
+      <span class="ds-body--base" i18n [innerHTML]="content.as_electronic_symptom_dialog.message_1"></span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary symptoms-buttons" (click)="gotoSchedular('serveSymptoms')">
+          <label>{{content.as_electronic_symptom_dialog.button_text_1}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary symptoms-buttons" (click)="gotoSchedular('noSymptoms')">
+          <label>{{content.as_electronic_symptom_dialog.button_text_2}}</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>
+
+
+<div class="covid-19-electronic-dialog paper-sysmptom" *ngIf="paperSymptomsOrder">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--16 ds-black" id="covid-dialog-closebutton_3" (click)="closeDialog()"
+      aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="COVID-19 Test"><span
+          class="ds-icon--alert ds-yellow__700 margin-right-8"></span>COVID-19 Test</h2>
+      <span class="ds-body--base padding-bottom-16" i18n>{{content.as_paper_symptom_dialog.message}}</span>
+      <span class="ds-body--base" i18n>Or purchase an at-home kit at <a class="ds-green__700 ds-font--16 --500"
+          href="http://www.QuestDirectTest.com/">QuestDirectTest.com</a>.</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-40">
+      <div class="ds-col--12 ds-flex --end-center">
+        <button class="ds-button --secondary" (click)="closeDialog()">
+          <label>Close</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

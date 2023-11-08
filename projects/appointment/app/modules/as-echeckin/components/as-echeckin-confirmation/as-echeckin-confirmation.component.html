@@ -1,0 +1,32 @@
+<main class="ds-body as-echeckin-confirmation">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 no-pad">
+      <div class="ds-content-block--52 ds-flex --center-center --column">
+
+        <div class="padding-bottom-20">
+          <span class="ds-icon--check ds-green__700 ds-font--32 ds-green__050--bg" aria-label=""></span>
+        </div>
+        <h2 role="heading" aria-level="1" class="ds-col--6 ds-green__700 ds-flex --center-center margin-12 onFocus no-pad"
+        [attr.aria-label]="[content.as_echeckin_confirmation.title]" tabindex="0" i18n>{{content.as_echeckin_confirmation.title}}</h2>
+
+        <div class="ds-content-block--32 ds-col--6 ds-font--16 ds-flex --center-center no-pad" [attr.aria-label]="[content.as_echeckin_confirmation.message]"
+          role="complementary" tabindex="0" i18n>
+          {{content.as_echeckin_confirmation.message}}</div>
+
+
+        <div class="data">
+          <p tabindex="0" class="data_display1" [attr.aria-label]="[content.as_echeckin_confirmation.content1]" role="complementary" i18n>{{content.as_echeckin_confirmation.content1}}</p>
+          <div tabindex="0" class="data_display2" [attr.aria-label]="[content.as_echeckin_confirmation.content_Message]" role="complementary" i18n>We will save your information, including <br>insurance so you can skip these steps for<br> future visits.</div>
+        </div>
+
+      </div>
+      <div class="button_Continue">
+        <button class="ds-button --primary" tabindex="0"
+          (click)="onCreateAccount()" class="ds-button --primary"
+          aria-label="Continue">
+          <label i18n>Create Account</label>
+        </button>
+      </div>
+    </div>
+  </div>
+</main>

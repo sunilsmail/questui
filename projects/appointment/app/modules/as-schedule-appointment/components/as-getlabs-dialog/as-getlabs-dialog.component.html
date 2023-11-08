@@ -1,0 +1,32 @@
+  <div class="as-get-labs-dialog">
+    <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+      <button class="ds-icon--close ds-font--24 ds-green__900" id="bfa-closeButton" (click)="closeDialog()" aria-label="close" role="button" tabindex="0"
+        (keydown.Enter)="closeDialog()" i18n></button>
+    </div>
+
+    <mat-dialog-content class="ds-col--12 no-pad">
+      <div class="ds-modal__content ds-col--12 ds-flex --column --center-start no-pad">
+        <h2 *ngIf='partnerName === "Getlabs"' id="mat-dialog-title" aria-level="1" tabindex="0" [attr.aria-label]="[content.as_getlabs_dialog.title]" i18n>
+          <!-- <span class="ds-icon--alert ds-yellow__700 margin-right-8"></span> -->
+          {{content.as_getlabs_dialog.title}}</h2>
+        <span *ngIf='partnerName === "Getlabs"' class="ds-body--base" tabindex="0">{{content.as_getlabs_dialog.message}}</span>
+        <h2 *ngIf='partnerName === "ExamOne"' id="mat-dialog-title" aria-level="1" tabindex="0" [attr.aria-label]="[content.as_examone_dialog.title]" i18n>
+          <!-- <span class="ds-icon--alert ds-yellow__700 margin-right-8"></span> -->
+          {{content.as_examone_dialog.title}}</h2>
+        <span *ngIf='partnerName === "ExamOne"' class="ds-body--base" tabindex="0">{{content.as_examone_dialog.message}}</span>
+      </div> 
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="ds-col--12">
+      <div class="ds-modal__actions ds-col--12 ds-flex --wrap padding-top-24">
+        <div class="ds-col--12 ds-flex --end-center margin-bottom-16 no-pad">
+          <button class="ds-button --primary --medium" (click)="goToOtherWebsite()">
+            <label>Continue</label>
+          </button>
+        </div>
+        <div class="ds-col--12 ds-flex --start-center margin-bottom-16">
+          <button class="ds-link ds-green__700" (click)="closeDialog()">Cancel</button>
+        </div>
+      </div>
+    </mat-dialog-actions>
+  </div>

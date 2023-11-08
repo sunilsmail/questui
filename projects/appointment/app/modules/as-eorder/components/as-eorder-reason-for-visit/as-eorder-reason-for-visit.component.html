@@ -1,0 +1,53 @@
+<main class="ds-body as-reason">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12">
+      <div class="ds-flex --row  ds-form__col--2">
+
+        <div class="ds-col--9">
+          <div>
+
+            <div *ngIf="isReasons; else isTests" #isReasons>
+              <button class="ds-icon--arrow-back ds-font--24 ds-green__700" id="back-button-reason-for-visit" aria-label="back" title="back" (click)="goToPrevious()" tabindex="0"></button>
+              <div class="onFocus">
+                <h1 class="ds-font__20--bold title" i18n [attr.aria-label]="[content.as_reason_for_visit.title]">{{content.as_reason_for_visit.title}}</h1>
+              </div>
+            </div>
+
+            <ng-template #isTests>
+              <div>
+                <button class="ds-icon--arrow-back ds-font--24 ds-green__700" id="back-button-reason-for-visit" aria-label="back" (click)="goToPrevious()" tabindex="0" title="back" name="backbutton"></button>
+                <ng-container *ngIf="multiSelect;else notMultiselect">
+                  <h1 class="ds-font__20--bold title" [attr.aria-label]="[content.as_reason_for_visit.title_3]" i18n>{{content.as_reason_for_visit.title_3}}</h1>
+                </ng-container>
+
+                <ng-template #notMultiselect>
+                  <h1 class="ds-font__20--bold title" [attr.aria-label]="[content.as_reason_for_visit.title_2]" i18n>{{content.as_reason_for_visit.title_2}}</h1>
+                </ng-template>
+              </div>
+            </ng-template>
+            <div *ngIf="loading" class="as-location-finder-details__overlay" fxLayout="row"
+              fxLayoutAlign="center center">
+              <as-spinner></as-spinner>
+            </div>
+            <as-loading-container [asLoadingData]="items$" asSpinnerSize="medium" asNoDataMessage="No data found."
+              i18n-asNoDataMessage asLoadErrorMessage="No data found." [loadingMore]="loading$">
+              <ng-template let-reasons>
+                <as-reason-test-list [listItems]="reasons" [selectedReason]="selectedMainReason"
+                  [multiSelect]="multiSelect" (itemSelected)="onItemSelected($event)" [selectedTests]="selectedTests">
+                </as-reason-test-list>
+              </ng-template>
+            </as-loading-container>
+          </div>
+        </div>
+
+        <div class="ds-col--3">
+          <as-eorder-navigation-sidebar [step]="2"></as-eorder-navigation-sidebar>
+          <as-eorder-footer [isVisiablePreviousURL]="false" [previous]="previousUrl" [enableContinue]="selectedTests?.length>0"
+          (continue)="continueClicked()"></as-eorder-footer>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</main>

@@ -1,0 +1,225 @@
+<div [ngClass]="{'as-psc-details': !findLocationFlow,'as-find-location-psc-details':findLocationFlow}"
+  class="ds-flex --column ds-col--12">
+
+  <div *ngIf="findLocationFlow; else appointmentFlow" class="no-padding">
+    <div class="ds-card ds-grid--12 ds-font--14 no-padding" *ngIf="showMapIcon"
+      routerLink="/find-location/as-location-finder-details"
+      attr.aria-labelledby="pinIconData{{index}} milesDist{{index}} pscName{{uniqueId}} addressOne{{uniqueId}} addressTwo{{uniqueId}} zipCode{{uniqueId}} hours{{uniqueId}} appointmentOnly{{uniqueId}} hoursOnly{{uniqueId}}"
+      (click)="onSelectedLocation()" tabindex="0" (keydown)="onSelectedLocationKey($event)" role="link">
+      <div class="ds-col--11 ds-flex--column no-padding">
+        <div class="distance margin-bottom-12" i18n-aria-label role="text">
+          <!-- <span class="ds-icon--pin--16" [attr.aria-label]="pinIconAria" role="img"></span> -->
+          <span class="ds-flex --start-center">
+            <span class="ds-icon--address ds-green__700 ds-font--24" id="pinIconData{{index}}" aria-hidden="true"
+              [attr.aria-label]="pinIconAria" attr.aria-labelledby="pinIconData{{index}} milesDist{{index}}" role="img">
+              <span class="ds-body--small ds-gray__900" id="milesDist{{index}}" aria-hidden="true"
+                i18n>{{_psc.distance}} miles away</span></span>
+          </span>
+          <div class="ds-font--14 --500 ds-flex --start-center as-find-site-code" id="sitecode"
+            *ngIf="((showFindlocationSiteCode$ | async) && _psc.siteCode && !(isAuthUser$ | async))">
+            <span [attr.aria-label]="siteCodeAria" role="text"
+              class="ds-icon--address ds-green__700 ds-font--24"></span>
+            <span class="ds-font--14 ds-gray__900 padding-4" i18n>Site code {{_psc.siteCode}}</span>
+          </div>
+        </div>
+        <div class="ds-col--12 no-padding margin-bottom-12" role="text">
+          <div class="ds-font--16--bold ds-green__700 margin-bottom-4" id="pscName{{uniqueId}}" aria-hidden="true">
+            {{_psc.name}}</div>
+          <div class="ds-body--small ds-gray__900 ds-col--12 padding-bottom-16">
+            <div id="addressOne{{uniqueId}}" aria-hidden="true">{{_psc.address1}}</div>
+            <div id="addressTwo{{uniqueId}}" aria-hidden="true" *ngIf="_psc.address2">{{_psc.address2}}</div>
+            <div id="zipCode{{uniqueId}}" aria-hidden="true">{{_psc.city}}, {{_psc.state}} {{_psc.zip}}</div>
+          </div>
+          <div class="ds-font--14 ds-body--small" id="hours{{uniqueId}}" aria-hidden="true"
+            *ngIf="_psc.siteHoursStatus && siteHoursStatusMsg==='Closed'">
+            <div *ngIf="!appointmentsOnly">
+              <span class="ds-font--14--bold"
+                [ngClass]="{'ds-red__500' : siteHoursStatusMsg==='Closed'}">{{siteHoursStatusMsg}}</span><span>
+                {{siteHoursStatusDuration ? ' - '+siteHoursStatusDuration:''}}</span>
+            </div>
+          </div>
+          <div *ngIf="appointmentsOnly" id="appointmentOnly{{uniqueId}}" aria-hidden="true">
+            <div class="ds-font--14 ds-body--small" *ngIf="_psc.siteHoursStatus && siteHoursStatusMsg==='Closed'">
+              <span class="ds-font--14--bold"
+                [ngClass]="{'ds-red__500' :siteHoursStatusMsg==='Closed' }">{{siteHoursStatusMsg}}</span><span>
+                {{siteHoursStatusDuration ? ' - '+siteHoursStatusDuration:''}}</span><span>-
+                {{appointmentsOnly}}</span>
+            </div>
+          </div>
+          <div *ngIf="siteHoursStatusDuration !== ' Appointments only'" id="hoursOnly{{uniqueId}}" aria-hidden="true">
+            <div class="ds-font--14 ds-body--small" *ngIf="_psc.siteHoursStatus && siteHoursStatusMsg==='Open now' ">
+              <span class="ds-font--14--bold"
+                [ngClass]="{'ds-utility__success__500' :siteHoursStatusMsg==='Open now' }">{{siteHoursStatusMsg}}</span>
+              <span *ngIf="!_psc?.dynamicApptSchedule && _psc?.siteType?.toLowerCase() !== 'psa'">
+                {{ content.as_psc_details.wait_time_title2 }} {{_psc.waitTime ? _psc.waitTime:'0' }} minutes
+              </span>
+            </div>
+          </div>
+          <div *ngIf="siteHoursStatusDuration && siteHoursStatusDuration.trim() === 'Appointments only'">
+            <div class="ds-font--14 ds-body--small" *ngIf="_psc.siteHoursStatus && siteHoursStatusMsg==='Open now'">
+              <span class="ds-font--14--bold"
+                [ngClass]="{'ds-utility__success__500' :siteHoursStatusMsg==='Open now' }">{{siteHoursStatusMsg}}</span><span>
+                -
+                Appointments only</span>
+            </div>
+          </div>
+          <div *ngIf="siteHoursStatusMsg !=='Closed' && siteHoursStatusMsg !== 'Open now'">
+            <div class="ds-font--14 ds-body--small" *ngIf="_psc.siteHoursStatus">
+              <span class="ds-red ds-font--14--bold">{{_psc.siteHoursStatus}}</span>
+              <span *ngIf="!_psc?.dynamicApptSchedule && _psc?.siteType?.toLowerCase() !== 'psa'"> -
+                {{ content.as_psc_details.wait_time_title2 }} {{_psc.waitTime ? _psc.waitTime:'0' }} minutes
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="ds-col--1 no-padding ds-flex --end-center"><span
+          class="ds-icon--caret-right ds-font--24 ds-green__700"></span>
+      </div>
+    </div>
+  </div>
+  <ng-template #appointmentFlow>
+    <div class="siteInfo" *ngIf="showMapIcon">
+      <div class="distance-appt-flow" role="region" i18n-aria-label>
+        <!-- <span class="ds-icon--pin--16" [attr.aria-label]="pinIconAria" role="img"></span> -->
+        <span class="ds-icon--address ds-font--24 ds-green__700" id="pinIcon{{index}}" [attr.aria-label]="pinIconAria"
+          attr.aria-labelledby="pinIcon{{index}} milesDistance{{index}}" role="img">
+          <span class="ds-font--14 ds-gray__900" id="milesDistance{{index}}" i18n>{{_psc.distance}} miles </span></span>
+        <div class="ds-font--14 --500 ds-flex --start-center as-site-code" id="sitecode"
+          *ngIf="(showSiteCode$ | async) && _psc.siteCode">
+          <span [attr.aria-label]="siteCodeAria" class="ds-icon--address ds-font--24 ds-green__700"></span>
+          <span class="ds-font--14 ds-gray__900 padding-4" i18n>Site code {{_psc.siteCode}}</span>
+        </div>
+        <span aria-hidden="true">&nbsp; • &nbsp;</span>
+        <a href="javascript:void(0);" (click)="openViewLocationDetailsDialog()"
+          class="ds-link ds-font--14 contrastactive">View location details</a>
+        <div *ngIf="loading" class="loading__overlay" fxLayout="row" fxLayoutAlign="center center">
+          <as-spinner></as-spinner>
+        </div>
+      </div>
+      <div class="ds-card ds-flex --row">
+        <ng-container *ngIf="_psc.scheduleAppt;else psc">
+          <div class="ds-col--12" role="region">
+            <div class="ds-font--16--bold ds-green__700 margin-bottom-12" role="heading" aria-level="2">{{_psc.name}}
+            </div>
+            <div class="ds-text--small ds-col--6">
+              <div>{{_psc.address1}}</div>
+              <div *ngIf="_psc.address2">{{_psc.address2}}</div>
+              <div>{{_psc.city}}, {{_psc.state}} {{_psc.zip}}</div>
+            </div>
+            <div class="ds-col--12 ds-flex --row as-psc-phone no-padding">
+              <div class="ds-flex --start-center">
+                <ng-container *ngIf="_psc.phone && _psc.phone.length > 9">
+                  <span id="phoneIcon{{index}}" aria-label="phone" role="img"
+                    class="ds-icon--phone ds-green__700 ds-font--24" title="phone"
+                    attr.aria-labelledby="phoneIcon{{index}} phone{{index}}">
+                    <label class="ds-text--small padding-8" id="phone{{index}}" title="phone">{{_psc.phone |
+                      phoneFax}}</label></span>
+                </ng-container>
+                <ng-container *ngIf="_psc.fax && _psc.fax.length > 9">
+                  <span aria-label="fax" id="faxIcon{{index}}" role="img"
+                    class="ds-icon--fax ds-green__700 ds-font--24 padding-8" title="fax"
+                    attr.aria-labelledby="faxIcon{{index}} fax{{index}}">
+                    <label class="ds-text--small padding-8" title="fax" id="fax{{index}}">{{_psc.fax |
+                      phoneFax}}</label></span>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-col--4" *ngIf="_psc.customMessage">
+            <span class="ds-font--14 ds-gray__900" aria-hidden="true" i18n><span
+                class="as-psc-details__dot">&bull;</span>
+              {{_psc.customMessage}}</span>
+          </div>
+        </ng-container>
+        <ng-template #psc>
+          <div class="ds-col--12" role="region">
+            <div class="ds-font--16--bold ds-green__700 margin-bottom-12" role="heading" aria-level="2">{{_psc.name}}
+            </div>
+            <div class="ds-text--small ds-col--6">
+              <div>{{_psc.address1}}</div>
+              <div *ngIf="_psc.address2">{{_psc.address2}}</div>
+              <div>{{_psc.city}}, {{_psc.state}} {{_psc.zip}}</div>
+            </div>
+            <div class="ds-col--12 ds-flex --row as-psc-phone">
+              <div class="ds-flex --start-center">
+                <ng-container *ngIf="_psc.phone">
+                  <span id="phoneIcon{{index}}" aria-label="phone" role="img"
+                    class="ds-icon--phone ds-green__700 ds-font--24" title="phone"
+                    attr.aria-labelledby="phoneIcon{{index}} phone{{index}}">
+                    <label class="ds-text--small padding-8" title="phone"
+                      id="phone{{index}}">{{_psc.phone}}</label></span>
+                </ng-container>
+                <ng-container *ngIf="_psc.fax">
+                  <span aria-label="fax" id="faxIcon{{index}}" role="img"
+                    class="ds-icon--fax ds-green__700 ds-font--24 padding-8" title="fax"
+                    attr.aria-labelledby="faxIcon{{index}} fax{{index}}">
+                    <label class="ds-text--small padding-8" title="fax" id="fax{{index}}">{{_psc.fax}}</label></span>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="showCloserMessage">
+    <ng-container *ngIf="isFindLocationFlow;else otherFlow">
+      <psc-closure [data]="findLocationDetials"></psc-closure>
+    </ng-container>
+    <ng-template #otherFlow>
+      <psc-closure [data]="_psc"></psc-closure>
+    </ng-template>
+  </ng-container>
+
+  <!-- container for morning and afternoon timeslots -->
+
+  <ng-container *ngIf="findLocationFlow || _psc.scheduleAppt">
+    <div *ngIf="!findLocationFlow && _psc.appointmentsOnly && !_psc.scheduleAppt && _psc.state === 'AZ'; else timeSlot">
+      <p tabindex="0" i18n>This location requires an appointment. Clicking the link below will open in a new window.</p>
+       <p tabindex="0" role="button" class="schedule-button" (click)="goToOtherWebsite()"
+        attr.aria-label="Schedule on Sonora website" i18n-aria-label>
+        Schedule on Sonora website
+        <mat-icon class="schedule-button__button-icon">open_in_new</mat-icon>
+      </p>
+    </div>
+    <ng-template #timeSlot>
+      <as-loading-container [asLoadingData]="pscFullDaySlotsSubject$" asSpinnerSize="small" *ngIf="!findLocationFlow"
+        morning="{{morning}}" asNoDataMessage="No morning timeslots available for this date" i18n-asNoDataMessage
+        asLoadErrorMessage="No morning timeslots available for this date" i18n-asLoadErrorMessage
+        [loadingMore]="loading$">
+        <ng-template let-pscTimes #pscTimes>
+          <as-psc-time-slot-new [pscName]=_psc.name [timeSlots]=pscTimes (selectedTime)="selectedTime($event)"
+            (enableContinue)="enableContinueButton($event)" [existingAppointmentTime]="existingApptTime"
+            [active]=_active>
+          </as-psc-time-slot-new>
+        </ng-template>
+      </as-loading-container>
+    </ng-template>
+  </ng-container>
+
+
+  <ng-container *ngIf="!_psc.scheduleAppt">
+    <div *ngIf="!findLocationFlow && _psc.appointmentsOnly && _psc.state === 'AZ'; else unAvailable">
+      <p tabindex="0" i18n>This location requires an appointment. Clicking the link below will open in a new window.</p>
+      <p tabindex="0" role="button" class="schedule-button" (click)="goToOtherWebsite()"
+        attr.aria-label="Schedule on Sonora website" i18n-aria-label>
+        Schedule on Sonora website
+        <mat-icon class="schedule-button__button-icon">open_in_new</mat-icon>
+      </p>
+    </div>
+    <ng-template #unAvailable>
+      <div class="ds-col--12 ds-flex --row margin-bottom-0">
+        <span class="ds-icon--warning ds-font--24 ds-yellow__700" id="icon{{uniqueId}}" aria-label="alert"
+          attr.aria-labelledby="icon{{uniqueId}} text{{uniqueId}}" role="img">
+          <span class="ds-col--11 ds-gray__900 ds-body--small margin-left-8" id="text{{uniqueId}}" i18n>Online
+            scheduling unavailable for this location at this
+            time.
+          </span></span>
+      </div>
+    </ng-template>
+  </ng-container>
+</div>

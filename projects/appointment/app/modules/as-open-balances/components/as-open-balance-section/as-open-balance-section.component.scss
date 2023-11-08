@@ -1,0 +1,137 @@
+@import '../../../../../styles.scss';
+
+.open-balance {
+
+  padding: 32px !important;
+
+  @include when-less-than(ds-1024) {
+    padding: 24px !important;
+  }
+
+  .estimated-cost {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: $ds-green__700;
+  }
+
+  .confCode {
+    margin-top: 32px;
+    padding: 24px 0 0px 0;
+
+    h3 {
+      margin: 0 0 24px 0;
+    }
+  }
+
+  hr {
+    margin: 0px;
+  }
+
+  .title-text {
+    margin: 0px 0px 16px 0px;
+  }
+
+  .title-text2 {
+    margin: 32px 0 8px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .title-price {
+    margin: 0px 0px 32px 0px;
+    font-size: 52px;
+
+    @include when-less-than(ds-1024) {
+      font-size: 32px;
+    }
+  }
+
+  .center-text {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    padding: 16px 0 32px 0;
+
+    @include when-less-than(ds-1024) {
+      padding: 16px 0 24px 0;
+    }
+  }
+
+  .flex-items {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .button-container {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $ds-gray__200;
+    padding: 8px 0 8px 0;
+
+    .ds-icon--info {
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  .title {
+    color: $ds-red__700;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+  }
+
+  .title+div {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+  }
+
+  .actions {
+    @include when-less-than(ds-768) {
+      flex-direction: column-reverse;
+      gap: 24px;
+    }
+  }
+
+  .actions>[class*=ds-col] {
+    @include when-less-than(ds-768) {
+      width: 100% !important;
+    }
+
+    width: 48% !important;
+
+    >button {
+      min-width: 100%
+    }
+  }
+
+  .alret-box {
+    margin-bottom: 32px;
+
+    @include when-less-than(ds-1024) {
+      margin-bottom: 24px;
+    }
+  }
+}

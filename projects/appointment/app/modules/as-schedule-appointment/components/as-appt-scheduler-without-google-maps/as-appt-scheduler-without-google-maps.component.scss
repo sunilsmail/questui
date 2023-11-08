@@ -1,0 +1,346 @@
+@import '../../../../../styles.scss';
+
+
+.ds-body{
+  //part of DE20869
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    height: auto !important;
+  }
+  .errorMessage{
+    border-radius: 4px;
+    background-color: #f3e0e0;
+    padding: 16px;
+    font-size: 12px;
+    color: #424245;
+    margin-bottom: 20px;
+    span {
+      padding-left: 12px;
+      &:first-child{
+        padding-left: 0;
+      }
+    }
+  }
+  &.as-scheduler{
+    padding-top: 114px;
+
+    .ds-body--content{
+      width: 100%;
+
+      .ds-col--12{
+
+        .ds-flex.--row{
+
+          padding: 0 110px;
+
+          .ds-col--9{
+
+            > div{
+
+              &:first-of-type{
+                position: sticky;
+                height: 320px;
+                top: -170px;
+                background: $ds-gray__050;
+              }
+            }
+          }
+
+          .ds-col--3{
+            margin-top: 52px;
+            margin-left: 48px;
+            position: sticky;
+            top: 144px;
+            min-height: 680px;
+            height: 100%;
+          }
+        }
+
+        .title {
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 111.7%;
+          letter-spacing: -0.0075em;
+          color: #034C1F;
+          margin-bottom: 32px;
+          margin-top: 34px;
+
+          @include when-less-than(ds-1024) {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 120%;
+          }
+        }
+      }
+
+      as-loading-container{
+        outline: none;
+        display: block;
+        // padding-top: 32px;
+        margin: 150px 0;
+        &.margin-top-100{
+          margin-top: 100px;
+        }
+        .pscDetails {
+          &:focus {
+            outline: 2px solid $ds-green__500;
+            outline-offset: 3px;
+          }
+           li {
+            &:focus {
+              outline: 2px solid $ds-green__500;
+              outline-offset: 3px;
+            }
+           }
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024){
+      padding-top: 100px;
+
+      .ds-body--content{
+        width: 100%;
+
+        .ds-col--12{
+          .ds-flex.--row{
+            padding:0px;
+
+            .ds-col--9{
+              width: 100%;
+
+              > div{
+
+                &:first-of-type{
+                  position: inherit;
+                  top: 0;
+
+                  as-calendar{
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                  }
+                }
+              }
+
+              .ds-grid{
+
+                  as-reason-test-list{
+
+                    .ds-grid--12{
+
+                      .ds-col--7{
+
+                        .ds-option__primary{
+                          margin: 0 auto;
+                        }
+                      }
+                    }
+                  }
+
+              }
+            }
+
+            .ds-col--3{
+              display: block !important;
+              width: 0;
+              padding: 0;
+              margin: 0;
+
+              > div{
+                display: none;
+              }
+            }
+
+            .ds-col--9{
+              width: 100%;
+            }
+
+            .ds-divider--vertical, .ds-col--4{
+              display: none;
+            }
+          }
+
+          as-loading-container{
+            outline: none;
+            width: 100%;
+            margin: 140px 0 120px 0;
+            &.margin-top-100 {
+              margin-top: 130px !important;
+            }
+          }
+
+          /*.ds-pagination--footer{
+
+            &.ds-col--10{
+              width: 100%;
+            }
+          }*/
+        }
+      }
+    }
+    @include when-less-than(ds-768){
+
+
+      .ds-body--content{
+        width: 100%;
+
+        > .ds-col--12{
+          padding: 0;
+
+          > .ds-flex.--row{
+
+            > .ds-col--9{
+              width: 100%;
+            }
+
+            .ds-col--9{
+              width: 100%;
+            }
+
+            .ds-divider--vertical, .ds-col--4{
+              display: none;
+            }
+          }
+
+          as-loading-container{
+            outline: none;
+            width: 100%;
+            margin: 120px 0 120px 0;
+            &.margin-top-100 {
+              margin-top: 130px !important;
+            }
+          }
+        }
+
+        .title {
+          font-size: 24px;
+        }
+
+        as-footer{
+          background: $ds-gray__100;
+          width: 100%;
+          position: fixed;
+          bottom: 60px;
+        }
+      }
+    }
+
+    @include when-less-than(ds-640){
+
+      .ds-body--content{
+
+        as-footer{
+          bottom: 78px;
+        }
+      }
+    }
+  }
+}
+.as-scheduler__overlay {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#as_scheduler{
+  z-index: 1;
+}
+
+.as_scheduler_height{
+  height: 240px !important;
+}
+
+.get-labs.distance-appt-flow {
+  margin-top: 100px;
+  @include when-less-than(ds-640){
+    overflow: auto;
+    margin-top: 125px;
+    min-height: 400px;
+  }
+  .span-h4 {
+    line-height:20px;
+    margin: 0 0 12px 0;
+  }
+  .footer-buttons{
+    margin-top:24px;
+    width: 100%;
+    gap:24px;
+
+    button {
+      max-width: 100%;
+      width: 100%;
+      @include when-less-than(ds-640){
+        max-width: none;
+      }
+    }
+    @include when-less-than(ds-640){
+      gap:14px;
+      overflow: auto;
+      // min-height: 120px;
+      >div {
+        width: 100%;
+      }
+    }
+  }
+  .new-window-launch {
+    height: 48px;
+    padding: 14px;
+    img{
+      margin-left: 15px;
+    }
+  }
+  .home-pin{
+    margin-right: 20px;
+  }
+  .legal-disclaimer__content{
+    font-size: 18px;
+    color:#2D3648;
+    margin-top: 0px;
+    margin-bottom: 0px !important;
+    font-weight: 700;
+  }
+  .get-labs-text{
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+  & + as-loading-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+// .ds-button.--secondary {
+//   width: 100%;
+// }
+
+.margin-top{
+  margin-top: 154px;
+  margin-bottom: 32px;
+  @include when-less-than(ds-640){
+    margin-top: 24px;
+  }
+}
+
+#back-button-appt-scheduler{
+  min-width: auto;
+  max-width: 20px;
+  border-radius: 0;
+}
+
+.p-flex{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0px;
+  margin-bottom: 12px;
+}

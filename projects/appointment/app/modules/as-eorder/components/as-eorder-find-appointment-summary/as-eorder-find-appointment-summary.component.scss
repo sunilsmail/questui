@@ -1,0 +1,344 @@
+@import '../../../../../styles.scss';
+
+.ds-body {
+  &.as-eorder-find-apt-summary {
+
+    .ds-body--content {
+      width: 100%;
+
+      > .ds-col--12 {
+
+        > .ds-col--6 {
+          color: #034C1F;
+          margin-top: 172px;
+        }
+
+        .ds-form__col--2--map {
+          flex-flow: row;
+
+          & [class*= "panel1"]{
+
+            & [class*= "panel-content"]{
+              padding: 32px;
+            }
+
+            .ds-col--12 {
+
+              .margin-bottom-24 {
+
+                .ds-col--11 {
+                  width: 100%;
+
+                  .ds-col--2 {
+                    display: block;
+                    text-align: right;
+                    padding-bottom: 0;
+
+                    .ds-link {
+                      display: block;
+                      color: $ds-black;
+                      text-decoration: none;
+                    }
+                  }
+                }
+
+                &:last-of-type {
+                  padding-top: 0px;
+                }
+              }
+            }
+          }
+
+          & [class*= "panel2"]{
+            position: sticky;
+            top: 100px;
+
+            & [class*= "panel-content"]{
+              padding: 32px;
+            }
+
+            > .ds-col--12 {
+
+              &:first-of-type {
+
+                > [class*='ds-col'] {
+                  [class*='ds-icon'] {
+                    margin-right: 16px;
+                    cursor: pointer;
+                  }
+
+                  &:first-of-type {
+                    position: relative;
+
+                    [class*='ds-col'] {
+                      position: absolute;
+                      padding-right: 0;
+                      top: 0;
+
+                      .addeventatc {
+                        background: none;
+                        box-shadow: 0 0 0 0.5px rgba(50, 50, 93, 0), 0 2px 5px 0 rgba(50, 50, 93, 0),
+                          0 1px 1.5px 0 rgba(0, 0, 0, 0), 0 1px 2px 0 rgba(0, 0, 0, 0), 0 0 0 0 transparent !important;
+                        border: none;
+                        width: 80%;
+                        border-radius: 0;
+                      }
+                    }
+                  }
+                }
+              }
+
+              img {
+                width: 100%;
+              }
+
+              &:last-of-type {
+                [class*='--route'] {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024) {
+      padding-top: 84px;
+
+      .ds-body--content {
+        width: 100%;
+
+        .ds-col--12 {
+          width: 100%;
+
+          > .ds-col--6{
+            width: 100%;
+            padding-right: 0;
+            color: #034C1F;
+            margin-top: 64px;
+          }
+
+          .ds-form__col--2--map {
+            flex-flow: column;
+
+            & [class*= "panel1"]{
+              width: 100%;
+
+              & [class*= "panel-content"]{
+                padding: 24px;
+              }
+          }
+
+          & [class*= "panel2"]{
+            margin-left: 0px;
+            margin-top: 24px;
+            margin-bottom: 77px;
+            position: relative;
+            top: auto;
+            height: auto;
+            width: 100%;
+
+            & [class*= "panel-content"]{
+              padding: 24px;
+            }
+
+            > .ds-col--12{
+
+                &:first-of-type{
+
+                    [class*="ds-col"]{
+
+                        [class*="ds-icon"]{
+                            margin-right: 16px;
+                        }
+                    }
+                }
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+          }
+        }
+      }
+    }
+
+    @include when-less-than(ds-768) {
+      .ds-body--content {
+        width: 100%;
+
+        .ds-col--12 {
+          padding-right: 0;
+
+          .ds-form__col--2--map {
+
+            .ds-col--4 {
+              width: 100% !important;
+              padding-right: 0;
+            }
+
+            & [class*= "panel1"] {
+              display: block!important;
+              width: 100%;
+
+              & [class*= "panel-content"]{
+                padding: 24px;
+              }
+
+            }
+
+            & [class*= "panel2"] {
+              display: block!important;
+              width: 100%;
+              margin-bottom: 28px;
+
+              & [class*= "panel-content"]{
+                padding: 24px;
+              }
+
+
+                > .ds-col--12{
+                    padding-right: 0;
+
+                    &:first-of-type{
+
+                        > [class*="ds-col"]{
+                            flex-flow: row;
+                            padding-right: 0;
+                            width: 100%;
+                            // &:nth-of-type(1){
+                            //     display: none;
+                            // }
+                            // &:nth-of-type(2){
+                            //     display: none;
+                            // }
+                            // &:nth-of-type(3){
+                            //     .option{
+                            //         color: #ed4316;
+                            //     }
+                            //     .ds-icon--calendar-cancel:before {
+                            //         content: "";
+                            //     }
+                            //     // padding-left: 72px;
+                            //     // position: absolute;
+                            //     // top: 140px;
+                            // }
+
+                        }
+                    }
+
+                    img{
+                        width: 100%;
+                    }
+
+                    &:last-of-type{
+
+                        [class*="--route"]{
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+          }
+        }
+      }
+
+      as-footer {
+        background: $ds-gray__100;
+        width: 100%;
+        position: fixed;
+        bottom: 60px;
+      }
+    }
+  }
+  .addeventatc {
+    z-index: 999;
+  }
+  .option {
+    cursor: pointer;
+  }
+}
+as-confirmation-print {
+  /* hide the printing component from @media screen */
+  display: none;
+}
+
+@media print {
+  /* invert the display (show/hide) properties of the main */
+  /* aplication component and the printing component       */
+
+  as-confirmation-print {
+    display: block;
+  }
+
+  .as-find-apt-summary {
+    display: none;
+  }
+}
+
+.ds-icon--route:focus {
+  outline: 2px solid $ds-green__500 !important;
+  outline-offset: 3px;
+}
+
+.as-summary-details__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+
+.print-details:focus{
+  outline: 2px solid $ds-green__500 !important;
+  outline-offset: 0px ;
+}
+
+.h2 {
+  color: #034C1F;
+  line-height: 114.29%
+}
+
+.panel1{
+  border: 1px solid #D1D1D1;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+}
+
+.panel2{
+  border: 1px solid #D1D1D1;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  height: 288px;
+  margin-left: 24px
+}
+
+#print {
+  padding-left: 5px;
+}
+
+.panel-text {
+  padding-left: 5px;
+}
+
+.content {
+  padding-left: 5px;
+}
+
+.panel {
+  flex-direction: row;
+
+  @include when-less-than(ds-768) {
+    flex-direction: column;
+  }
+}
+
+.padding-right-10 {
+  padding-right: 10px;
+}

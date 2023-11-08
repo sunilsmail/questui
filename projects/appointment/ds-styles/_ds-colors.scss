@@ -1,0 +1,186 @@
+/* color variables */
+$ds-black: #000000;
+$ds-black__overlay: rgba(35, 35, 37, .3);
+
+$ds-blue: #2769DD;
+$ds-blue__900: #0B2146;
+$ds-blue__700: #153F89;
+$ds-blue__500: #2769DD;
+$ds-blue__300: #76A0E9;
+$ds-blue__100: #C6D7F6;
+
+$ds-blue--dark__500: #00587C;
+$ds-blue--dark__300: #669BB0;
+$ds-blue--dark__050: #B2CCD7;
+
+$ds-blue--light__500: #5E8AB4;
+$ds-blue--light__300: #9EB9D2;
+$ds-blue--light__050: #CEDBE8;
+
+$ds-blue__example: #00dcc7;
+
+$ds-gray__900: #151515;
+$ds-gray__800: #272727;
+$ds-gray__700: #4a4a4a;
+$ds-gray__600: #646464;
+$ds-gray__500: #808080;
+$ds-gray__400: #9a9a9a;
+$ds-gray__300: #d1d1d1;
+$ds-gray__200: #e6e6e6;
+$ds-gray__100: #f5f5f5;
+$ds-gray__050: #fafafa;
+
+$ds-green: #034c1f;
+$ds-green__950: #071D0F;
+$ds-green__900: #023616;
+$ds-green__700: #034c1f;
+$ds-green__500: #00854B;
+$ds-green__400: #50B63F;
+$ds-green__300: #34F870;
+$ds-green__100: #83D077;
+$ds-green__050: #E8F8EE;
+$ds-utility__success__500: #35792A;
+
+$ds-green--bright__500: #c6d52f;
+$ds-green__syntax: #32cd32;
+
+$ds-green--lime__500: #c4d809;
+$ds-green--lime__050: #32cd32;
+
+$ds-gold__600: #D39000;
+$ds-gold__500: #FFAA00;
+$ds-gold__300: #FEDA90;
+$ds-gold__050: #FFEEDF;
+
+$ds-orange__900: #331204;
+$ds-orange__700: #92340B;
+$ds-orange__500: #ED5616;
+$ds-orange__300: #F98654;
+$ds-orange__100: #FAD2C0;
+
+$ds-pink: #ed098d;
+$ds-pink__500: #ed098d;
+$ds-pink__300: rgba(237, 9, 141, .3);
+$ds-pink__050: #f4bbdc;
+
+$ds-purple__500: #80276C;
+$ds-purple__300: #D8BED2;
+$ds-purple__050: #e5cfff;
+
+$ds-red: #E00028;
+$ds-red__900: #2E0008;
+$ds-red__700: #610011;
+$ds-red__500: #E00028;
+$ds-red__300: #FF3D49;
+$ds-red__100: #FFF0F1;
+
+$ds-yellow__900: #755000;
+$ds-yellow__700: #C78800;
+$ds-yellow__500: #FFC341;
+$ds-yellow__300: #FFDD94;
+$ds-yellow__100: #FFF7E8;
+
+$ds-white: #ffffff;
+$ds-white__overlay: rgba(250, 250, 250, 0.7);
+
+/* color map */
+$ds-colors: (
+    black: $ds-black,
+    black__overlay: $ds-black__overlay,
+
+    blue: $ds-blue,
+    blue__900: $ds-blue__900,
+    blue__700: $ds-blue__700,
+    blue__500: $ds-blue__500,
+    blue__300: $ds-blue__300,
+    blue__100: $ds-blue__100,
+
+    blue--dark__500: $ds-blue--dark__500,
+    blue--dark__300: $ds-blue--dark__300,
+    blue--dark__050: $ds-blue--dark__050,
+
+    blue--light__500: $ds-blue--light__500,
+    blue--light__300: $ds-blue--light__300,
+    blue--light__050: $ds-blue--light__050,
+
+    blue__example: $ds-blue__example,
+
+    gray__900: $ds-gray__900,
+    gray__800: $ds-gray__800,
+    gray__700: $ds-gray__700,
+    gray__600: $ds-gray__600,
+    gray__500: $ds-gray__500,
+    gray__400: $ds-gray__400,
+    gray__300: $ds-gray__300,
+    gray__200: $ds-gray__200,
+    gray__100: $ds-gray__100,
+    gray__050: $ds-gray__050,
+
+    green: $ds-green,
+    green__950: $ds-green__950,
+    green__900: $ds-green__900,
+    green__700: $ds-green__700,
+    green__500: $ds-green__500,
+    green__400: $ds-green__400,
+    green__300: $ds-green__300,
+    green__100: $ds-green__100,
+    green__050: $ds-green__050,
+    utility__success__500: $ds-utility__success__500,
+
+    green--bright__500: $ds-green--bright__500,
+    green__syntax: $ds-green__syntax,
+
+    green--lime__500: $ds-green--lime__500,
+    green--lime__050: $ds-green--lime__050,
+
+    gold__600: $ds-gold__600,
+    gold__500: $ds-gold__500,
+    gold__300: $ds-gold__300,
+    gold__050: $ds-gold__050,
+
+    orange__900: $ds-orange__900,
+    orange__700: $ds-orange__700,
+    orange__500: $ds-orange__500,
+    orange__300: $ds-orange__300,
+    orange__100: $ds-orange__100,
+
+    pink: $ds-pink,
+    pink__500: $ds-pink__500,
+    pink__300: $ds-pink__300,
+    pink__050: $ds-pink__050,
+
+    purple__500: $ds-purple__500,
+    purple__300: $ds-purple__300,
+    purple__050: $ds-purple__050,
+
+    red: $ds-red,
+    red__900: $ds-red__900,
+    red__700: $ds-red__700,
+    red__500: $ds-red__500,
+    red__300: $ds-red__300,
+    red__100: $ds-red__100,
+
+    yellow__900: $ds-yellow__900,
+    yellow__700: $ds-yellow__700,
+    yellow__500: $ds-yellow__500,
+    yellow__300: $ds-yellow__300,
+    yellow__100: $ds-yellow__100,
+
+    white: $ds-white,
+    white__overlay: $ds-white__overlay
+);
+
+/* color build */
+@each $colorName, $colorVariable in $ds-colors {
+    #{'.ds-' + $colorName} {
+        color: #{$colorVariable};
+
+        &--bg {
+            background: #{$colorVariable};
+        }
+    }
+}
+
+.ds-green__gradient {
+    background-image: linear-gradient(45deg, $ds-green__700, $ds-green__500);
+}

@@ -1,0 +1,92 @@
+<main class="ds-body as-find-location">
+  <div class="ds-grid--12 ds-body--content">
+    <div class=" ds-col--4 margin-top-40 margin-bottom-24 padding-right-8">
+      <button class="ds-icon--arrow-back ds-font--24 ds-green__700" id="back-button-location-finder"
+        (click)="goToPrevious()" aria-label="back" title="back" i18n *ngIf="!(disableBackArow$ | async)"></button>
+      <div class="onFocus">
+        <h2 role="heading" aria-level="1" class="ds-green__700 margin-bottom-0"
+          aria-label="Let’s find a location that offers the testing you need" i18n>
+          Let’s find a location that offers the testing you need.</h2>
+      </div>
+    </div>
+    <div class="ds-col--12">
+      <div class="ds-flex --row">
+        <div class="ds-col--4">
+          <div class="ds-col--12 margin-bottom-40">
+
+            <div class="ds-card ds--gray__200 padding-32 ">
+              <ng-container *ngIf="googlemapsOptimizationF4191; else oldPscSearch">
+                <as-psc-search-without-googlemaps [inputValue]="selectedZipcode"
+                  (locationChanged)="onLocationChange($event)"></as-psc-search-without-googlemaps>
+              </ng-container>
+              <ng-template #oldPscSearch>
+                <as-psc-search [inputValue]="selectedZipcode" (locationChanged)="onLocationChange($event)">
+                </as-psc-search>
+              </ng-template>
+              <button class="ds-card ds-card-reason ds-grid--12" (click)="navigateToReason()"
+                routerLink="/find-location/as-location-finder-reason"
+                [ngClass]="{'disabled-reason' : (disableReason$ | async)}">
+                <div class="ds-col--11 ds-flex --column" *ngIf="!isSelectedReason">
+                  <span class="ds-body--large ds-gray__900 ds-font--16 --700  margin-bottom-4"
+                    aria-label="What testing do you need?" id="questionTesting" aria-labelledby="questionTesting descTesting" i18n>What testing do you
+                    need?
+                  <span class="ds-body--extra-small ds-gray__900"
+                    aria-label="This helps us get you to the right location" id="descTesting">This helps us
+                    get you to the right location.</span></span>
+                </div>
+                <div class="ds-col--11 ds-flex --column" *ngIf="isSelectedReason">
+                  <span class="ds-body--large ds-gray__900  ds-font--16 --700 margin-bottom-4 " i18n
+                    [innerHtml]="selectedTest"></span>
+                  <span class="ds-body--extra-small ds-gray__900" aria-label="Testing needed" 
+                    i18n>Testing needed</span>
+                </div>
+                <div class="ds-col--1 ds-flex --end-center" style="margin: auto;"><span
+                    class="ds-icon--caret-right ds-font--24 ds-green__700" *ngIf="!(disableReason$ | async)"></span>
+                </div>
+              </button>
+
+              <div class="ds-col--12">
+
+                <as-loading-container [asLoadingData]="pscs$" asSpinnerSize="medium"
+                  asNoDataMessage="{{content?.as_find_a_location?.noslots}}" i18n-asNoDataMessage
+                  asLoadErrorMessage="{{content?.as_find_a_location?.noslots}}" i18n-asLoadErrorMessage [loadingMore]="loading$"
+                  *ngIf="hasChangedLocation">
+
+                  <ng-template let-pscs #pscs>
+                    <ul aria-label="quest labs locations near you">
+                      <li *ngFor="let psc of pscs; let index = index; trackBy: trackByFn"
+                        [attr.aria-label]="'location ' + (index+1)">
+                        <as-psc-details-new [selectedDate]="selectedDate" [existingAppt]="existingAppt" [psc]="psc"
+                          (enableContinue)="enableContinueButton($event)" (selectedLocation)="selectedLocation($event)"
+                          (newAppt)="newAppt($event,index)" [active]="{active:selectedIndex === index,index:index}"
+                          [showCloserMessage]="false">
+                        </as-psc-details-new>
+                        <hr class="ds-gray__200--bg margin-top-4 margin-bottom-4">
+                      </li>
+                    </ul>
+                    <div id="as_show_more" (click)="showmore()" (keydown.enter)="showmore()" *ngIf="enableShowMore" fxLayout="column"
+                      fxLayoutAlign="center center"><a tabindex="0" class="ds-link ds-font--16"
+                        aria-label="Show more locations" role="button" i18n>Show more locations</a>
+                    </div>
+                    <div *ngIf="locationsLoading" class="as-find-location__overlay" fxLayout="row"
+                      fxLayoutAlign="center center">
+                      <as-spinner></as-spinner>
+                    </div>
+                    <span  role="alert" aria-live="assertive"
+                      class="visually-hidden">{{moreLocations}}</span>
+                  </ng-template>
+                </as-loading-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngIf="userLocation$">
+          <div class="ds-col--8 ds-card no-padding map-section margin-bottom-40">
+            <as-google-map class="as-review-details__map" [center$]='userLocation$' [addresses$]='addresses$'>
+            </as-google-map>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</main>

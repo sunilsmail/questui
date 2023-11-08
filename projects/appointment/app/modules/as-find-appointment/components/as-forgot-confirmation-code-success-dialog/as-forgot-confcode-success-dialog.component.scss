@@ -1,0 +1,32 @@
+@import '../../../../../styles.scss';
+
+.forgot-confcode-success {
+  h2 {
+    display: flex;
+    align-items: center;
+    @include when-less-than(ds-768){
+      align-items: flex-start !important;
+    }
+  }
+  max-width: 696px;
+  @include when-less-than(ds-768){
+    max-width: 348px;
+    > mat-dialog-actions > .ds-modal__actions > [class*=ds-col]{
+      width: 100%;
+      justify-content: center;
+      > .--secondary{
+        width: 100%;
+        justify-content: center;
+        @include when-less-than(ds-480){
+          height: 100%;
+        }
+      }
+    }
+  }
+  @include when-less-than(ds-768){
+    max-width: 100%;
+ }
+ .--primary {
+   min-width: 192px;
+ }
+}

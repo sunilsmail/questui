@@ -1,0 +1,212 @@
+@import '../../../../../appointment/styles.scss';
+
+.as-psc-details{
+  border: 1px solid #D1D1D1;
+  background: $ds-white;
+  border-radius: 12px;
+  padding: 32px 32px 32px 32px;
+  margin-bottom: 32px;
+
+  @include when-less-than(ds-768) {
+      padding: 24px;
+    }
+  &:focus {
+    outline: 2px solid $ds-green__500;
+    outline-offset: 3px;
+  }
+  > div{
+
+    &:first-of-type{
+      margin-bottom: 5px;
+      [class*="ds-icon"]{
+        margin-right: 4px;
+        display: flex;
+      }
+
+      .ds-card{
+        width: 100%;
+        max-width: inherit;
+        background: transparent;
+        box-shadow: none;
+        cursor: pointer;
+        border: none;
+        flex-direction: row !important;
+      }
+    }
+
+    &:nth-of-type(2){
+      color: $ds-gray__900;
+    }
+    .ds-gray__900{
+      margin-top:5px
+    }
+  }
+}
+
+.as-psc-details {
+
+  &__location {
+
+    width: 328px;
+    line-height: 1.43;
+    letter-spacing: normal;
+    margin-bottom: 6px;
+
+    &__name {
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  &__dot{
+    font-weight: bold;
+    color: red;
+  }
+}
+.distance:focus{
+  font-size: 16px;
+  outline: 2px solid $ds-green__500;
+  outline-offset: 3px;
+}
+.schedule-button{
+  width:230px;
+  height:32px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(35, 35, 37, 0.2);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+  &__button-icon {
+    width: 12px;
+    height: 12px;
+    font-size: 16px;
+    fill:#424245;
+    left: 6px;
+    position: relative;
+    top: -2px;
+  }
+}
+
+.as-psc-phone{
+  margin-top: 10px;
+}
+
+.distance-appt-flow{
+  margin-bottom: 12px;
+  place-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.as-site-code{
+  margin-left: 10px;
+}
+
+.cus-padding{
+  padding: 4px !important;
+}
+
+.as-find-site-code{
+  margin-left: 10px;
+  display: inline;
+}
+
+button{
+  color: $ds-black !important;
+  // @include when-less-than(ds-640){
+  //   color: #000 !important;
+  // }
+  // @include when-less-than(ds-1024){
+  //   color: #000 !important;
+  // }
+}
+
+
+.loading__overlay {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// Find Location flow
+
+.as-find-location-psc-details{
+  outline: none !important;
+  padding-right: 0;
+  padding-left: 1px;
+  &:focus {
+    outline: 2px solid $ds-green__500;
+    outline-offset: 3px;
+  }
+  > div{
+
+    &:first-of-type{
+      margin-top: 24px !important;
+      // margin-bottom: 24px;
+      [class*="ds-icon"]{
+        margin-right: 4px;
+        display: flex;
+      }
+
+      .ds-card{
+        width: 100%;
+        max-width: inherit;
+        background: transparent;
+        box-shadow: none;
+        cursor: pointer;
+        border: none !important;
+        &:focus {
+          outline: 2px solid $ds-green__500;
+          outline-offset: 3px;
+        }
+      }
+    }
+
+    &:nth-of-type(2){
+      color: $ds-gray__900;
+      margin-bottom: 10px;
+    }
+    .ds-gray__900{
+      margin-top:5px
+    }
+  }
+
+  &__location {
+
+    width: 328px;
+    line-height: 1.43;
+    letter-spacing: normal;
+    margin-bottom: 6px;
+
+    &__name {
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  &__dot{
+    font-weight: bold;
+    color: red;
+  }
+}
+
+.ds-card{
+  flex-direction: row !important;
+}
+.padding-8{
+  padding:3px 8px !important;
+}

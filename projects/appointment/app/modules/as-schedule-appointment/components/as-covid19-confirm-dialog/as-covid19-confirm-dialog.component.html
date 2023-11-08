@@ -1,0 +1,18 @@
+<div class="peace-of-mind">
+  <button class="ds-icon--arrow-back ds-font--24 ds-green__700" (click)="closeDialog()" aria-label="close" tabindex="0" i18n></button>
+  <button class="ds-icon--close ds-font--16 ds-black" id="covid-closebutton"  (click)="closeDialog()" aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+    <div class="ds-col--1"><mat-icon class="ds-modal__warning-icon">warning</mat-icon></div>
+    <div class="ds-col--12">
+      <div class="ds-font-14 dialog-msg1">
+        <p i18n class="message_1"><span><b>Please note: </b></span>{{content.as_covid19_confirm_dialog.message}} <br/><br/> {{content.as_covid19_confirm_dialog.message_1}}</p>
+      </div>
+
+      <footer class="ds-flex ds-pagination--footer">
+          <div class="ds-col--6 ds-flex --start-center no-pad">
+            <button class="ds-button --secondary" (click)="continue()">
+              <label>{{content.as_covid19_confirm_dialog.button_text}}</label>
+            </button>
+          </div>
+      </footer>
+    </div>
+</div>

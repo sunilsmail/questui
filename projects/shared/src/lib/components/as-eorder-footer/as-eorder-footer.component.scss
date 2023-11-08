@@ -1,0 +1,79 @@
+@import '../../../../../appointment/styles.scss';
+
+.ds-grid--12{
+  display: block;
+
+  > div{
+    text-align: center;
+    padding: 0;
+
+    button{
+      width: 100%;
+      margin-bottom: 24px;
+      display: inherit;
+    }
+
+    a{
+      cursor: pointer;
+      max-width: 328px;
+    }
+  }
+
+  @include when-less-than(ds-1024){
+    position: fixed;
+    right: 0;
+    bottom: 44px;
+    left: 0;
+    margin-top: 0;
+
+    > div{
+      width: 100%;
+
+      button{
+        margin: 0 auto 36px auto;
+        box-shadow: 1px 2px 8px 0 rgba($ds-black, 0.2);
+
+        &.ds-button.--primary--disabled{
+          display: none;
+        }
+      }
+
+      a{
+        display: none;
+      }
+    }
+  }
+}
+
+.hide_payment{
+  // display: none !important;
+  visibility: hidden !important;
+}
+
+.show_payment{
+  visibility: visible !important;
+}
+
+
+.button_showSummary{
+  padding-left: 0px;
+  // padding-right: 0px;
+}
+
+#btn-next{
+  @include when-less-than(ds-1024){
+    display: inline-flex;
+  }
+  @include when-less-than(ds-768){
+    display: block;
+    padding-left: 20px;
+  }
+
+}
+
+.ds-button.--primary {
+  @include when-less-than(ds-1024) {
+    min-width: 120px;
+    max-width: 93%;
+  }
+}

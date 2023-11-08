@@ -1,0 +1,365 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+    &.as-location-details{
+        padding-top: 64px;
+
+        .ds-body--content{
+            padding: 0 24px;
+            .ds-graph--popular-times {
+                min-width: 100% !important;
+            }
+
+            .ds-col--12{
+                padding: 0;
+
+                .ds-flex.--row{
+
+                    > div{
+
+                        &.ds-col--4{
+                            position: sticky;
+                            padding: 0 24px 0 0;
+                            background: $ds-white;
+                            .as-psc-details{
+                                color: $ds-gray__900;
+                                line-height: 1.5;
+
+                                > div{
+
+                                    &:first-of-type{
+
+                                        [class*="ds-icon"]{
+                                            margin-right: 8px;
+                                        }
+                                    }
+
+                                    &:nth-of-type(3){
+
+                                        [class*="ds-button"]{
+                                            width: 100%;
+                                        }
+                                    }
+
+                                    &:nth-of-type(4){
+
+                                        .ds-col--4{
+
+                                            .ds-tab{
+
+                                                    Label{
+                                                        cursor: pointer;
+                                                    }
+
+
+                                                &.ds-tab--selected{
+                                                    cursor: default;
+                                                    pointer-events: none;
+                                                    border-bottom: 2px solid blue !important;
+
+                                                    Label{
+                                                        cursor: default;
+                                                        pointer-events: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-of-type(5), &:nth-of-type(6){
+
+                                        .ds-col--12{
+                                            flex-wrap: wrap;
+
+                                            &.ds-graph{
+                                                flex-wrap: nowrap;
+
+                                                .ds-col--12{
+                                                    flex-wrap: nowrap;
+                                                }
+                                            }
+                                        }
+
+                                        &.ds-tab--content{
+                                            display: none;
+
+                                            &.active-tab{
+                                                display: block;
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-of-type(8){
+
+                                        flex-wrap: wrap;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    .ds-col--8{
+                        margin-left: 16px;
+                        position: sticky;
+                        // height: 92.5vh;
+                        // height: calc(var(--vh, 1vh) * 100);
+                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                            position: fixed;
+                        }
+                    }
+                }
+            }
+            .as-review-details__map{
+                display: inline;
+                @include when-less-than(ds-768){
+                    display: none !important;
+                }
+            }
+
+        }
+
+        @include when-less-than(ds-1024) {
+            .ds-body--content {
+                padding: 0 24px;
+            }
+
+            .ds-col--4 {
+                width: 50%;
+            }
+
+            .ds-col--8 {
+                width: 50%;
+            }
+        }
+        @include when-less-than(ds-480) {
+            .ds-body--content {
+                padding: 0 16px;
+            }
+        }
+        @include when-less-than(ds-768){
+
+            .ds-body--content{
+
+
+                .ds-col--12{
+
+                    > .ds-flex.--row{
+
+                        &:first-of-type{
+                            flex-direction: column-reverse;
+                            &.drugTests{
+                                flex-direction: row;
+                            }
+                        }
+
+
+                        > div{
+
+                            &.ds-col--4{
+
+                                &:first-of-type{
+                                    top: 248px;
+                                    padding: 24px;
+                                    @include when-less-than(ds-1024){
+                                      padding-top: 46px;
+                                    }
+                                    width: 100%;
+                                    overflow: auto;
+                                    @include when-less-than(ds-768) {
+                                        position: inherit !important;
+                                        // padding: 12px !important;
+                                        padding-top: 0px;
+                                    }
+                                }
+                                .ds-card {
+                                    padding: 24px;
+                                }
+                            }
+
+                            &.ds-col--8{
+                                // position: fixed;
+                                background: $ds-gray__050;
+                                top: 64px;
+                                height: 300px;
+                                width: 100%;
+                                margin: 0;
+                                padding: 8px!important;
+                                @include when-less-than(ds-768) {
+                                   height: 0px;
+                                   display: none !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .as-location-finder-details__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        z-index: 3;
+    }
+    .details-section {
+        @include when-less-than(ds-900) {
+            padding: 24px !important;
+        }
+        @include when-less-than(ds-480) {
+            padding: 16px !important;
+        }
+        @include when-less-than(ds-768) {
+            margin-bottom: 48px !important;
+        }
+    }
+
+}
+
+
+.ds-graph--popular-times-two>div:nth-of-type(3) div:nth-of-type(4) {
+  width: 10% !important;
+}
+
+.ds-graph--popular-times-two>div:nth-of-type(3) div:nth-of-type(2) {
+  width: 12% !important;
+}
+.facilityLocation {
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    background-color: #ffeedf;
+    max-width:400px;
+    @include when-less-than(ds-1024){
+        max-width:375px;
+    }
+    .closingMessage {
+        padding:8px;
+        display:flex;
+        align-items: center;
+    }
+    .closingLocation {
+       // margin-left:10px;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            margin-left: 15px !important;
+        }
+    }
+}
+#warningIcon {
+    width: 20px;
+	color: #ffab00;
+}
+
+
+.custom-padding{
+  display: none;
+  @include when-less-than(ds-1024){
+    display: block;
+    button{
+      padding-bottom: 4px;
+    }
+  }
+  @include when-less-than(ds-768){
+    display: none;
+  }
+}
+.bargraph:focus{
+    outline: $ds-green__500 solid 2px !important;
+    outline-offset : 3px;
+}
+.schedule-button-icon{
+    position: relative;
+    right: -32px;
+    width: 16px;
+    height: 16px;
+    font-size: 20px;
+    top:-2px;
+}
+.visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.as-site-code{
+  margin-left: 10px;
+  display: inline;
+}
+.cursor-notallowed{
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+.divider {
+    margin-bottom: 32px;
+    height: 0px;
+    border: 1px solid #034C1F;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .mat-form-field-flex {
+    height: 53px;
+}
+.ds-graph--popular-times>div:first-of-type div {
+    background: $ds-green__500 !important
+}
+.ds-graph--popular-times>div:first-of-type {
+    border-bottom: 1px solid $ds-green__500;
+}
+
+.map-section {
+    display: block !important;
+    background: #F5F5F5 !important;
+
+    @include when-less-than(ds-768) {
+        height: 0px;
+        display: none !important;
+    }
+
+}
+.ds-tab--selected{
+    cursor: default;
+    pointer-events: none;
+    border-bottom: 2px solid $ds-green__500 !important;
+
+    Label{
+        cursor: default;
+        pointer-events: none;
+    }
+}
+.ds-tab--content {
+    display: none;
+    &.active-tab {
+        display: block;
+    }
+}
+.first{
+    font-weight: 700 !important;
+}
+.ds-card {
+    @include when-less-than(ds-900){
+        padding: 24px;
+    }
+}
+
+.onFocusLocation:focus{
+  outline: 2px solid $ds-green__500 !important;
+  outline-offset: 3px;
+}
+::ng-deep.dayText .mat-select-min-line{
+     color:#646464 !important;
+}
+
+::ng-deep.mat-select-trigger {
+    display: initial !important;
+}

@@ -1,0 +1,60 @@
+<div class="ds-calendar ds-grid--12">
+  <mat-form-field class="ds-input --month-selector">
+    <mat-select disableOptionCentering [(value)]="currentMonth" panelClass="ds-dropdown" class="--month-menu"
+      [ngClass]="{'--active' : viewMonthMenu}" (mouseleave)="closeUserMenu()" id="selectToggle">
+      <mat-option class="ds-dropdown__item" *ngFor="let dateMonth of datePickerMonthList; let i = index"
+        [ngClass]="{'--current-selection' : i === defaultIndexForDatePickerMonth }"
+        (click)="viewMonthMenu = !viewMonthMenu;datePickerMonthChange(dateMonth,true)" [value]="dateMonth.month">{{
+        dateMonth.month }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="ds-flex --row">
+    <button class="ds-col--1" [disabled]="!previousEnabled" (click)="onPrevious()" title="previous"
+      [attr.aria-label]="getPrevLabelData" tabindex="0" role="button" name="previousbuton"
+      (keydown)="onKeyPressedArrow($event,'previous')">
+      <div class="ds-icon--caret-left ds-font--24 ds-green__700"
+        [ngClass]="previousEnabled?'previous-enabled': 'previous-disabled'">
+      </div>
+    </button>
+    <div class="ds-col--1" *ngFor="let calItem of showCalMap; let i = index" id="cal_btn_{{i}}"
+      (keydown)="onKeyPressed($event,calItem)" tabindex="0"
+      [attr.aria-label]="itemChecked === i ? calItem['day'] + ' '+ calItem['date'] + ' '+ months[calItem['month']-1] +' '+ currentYear + ' selected' :calItem['day'] + ' '+ calItem['date'] + ' '+ months[calItem['month']-1] +' '+ currentYear + ' unselected'"
+      role="button" i18n-aria-label (keydown.ArrowLeft)="onkeyDownButton($event, i-1)"
+      (keydown.ArrowRight)="onkeyDownButton($event, i+1)">
+      <div [ngClass]="calItem?.disabled?'diable-dates': ''" class="calendar-button-control">
+        <input type="radio" [disabled]="calItem?.disabled" [ngClass]="calItem?.disabled?'diable-dates': ''"
+          name="ds-calendar" id="ds-option--{{i+1}}" [checked]="i === itemChecked"
+          (keyPress)="onKeyPressed($event,calItem)" (click)="onDateSelected(calItem, $event)">
+        <div class="ds-option --circle">
+          <label for="ds-option--{{i+1}}" id="cal_lbl_{{i}}"
+            [ngClass]="calItem?.disabled?'diable-dates': ''">{{calItem['date']}}
+            <span>{{calItem['day'] | slice:0:3}}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <button class="ds-col--1 nextArrow" [disabled]="!nextEnabled" (click)="onNext()" tabindex="0" title="next"
+      role="button" name="nextbutton" [attr.aria-label]="getNextLabelData" (keydown)="onKeyPressedArrow($event,'next')">
+      <div class="ds-icon--caret-right ds-font--24 ds-green__700"
+        [ngClass]="nextEnabled?'previous-enabled': 'previous-disabled'"></div>
+    </button>
+  </div>
+</div>
+<div class="ds-card__tabs ds-grid--12 ds-flex --center-center" *ngIf="!(enableNewUI$ | async)">
+  <div class="ds-col--12 ds-flex --center-center">
+    <div class="ds-col--6">
+      <button class="ds-flex --center-center" [ngClass]="tabValue?'ds-tab--selected': 'ds-tab'"
+        (keydown)="onKeyPressedTab($event,'morning')" (click)="onMorning()" tabindex="0" role="tab" aria-label="morning"
+        [attr.aria-selected]="tabValue">
+        <label class="as-calendar__tab-morning" i18n>Morning</label>
+      </button>
+    </div>
+    <div class="ds-col--6">
+      <button class="ds-flex --center-center" [ngClass]="!tabValue?'ds-tab--selected': 'ds-tab'"
+        (keydown)="onKeyPressedTab($event,'afternoon')" (click)="onAfternoon()" tabindex="0" role="tab"
+        aria-label="afternoon" [attr.aria-selected]="!tabValue">
+        <label class="as-calendar__tab-afternoon" i18n>Afternoon</label>
+      </button>
+    </div>
+  </div>
+</div>

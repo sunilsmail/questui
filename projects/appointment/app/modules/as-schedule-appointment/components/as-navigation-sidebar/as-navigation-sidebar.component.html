@@ -1,0 +1,209 @@
+
+  <div class="ds-grid--12 as-nav-sidebar">
+    <div class="ds-col--12 no-pad">
+      <div class="ds-flex --row  ds-form__col--2">
+
+        <div>
+
+        </div>
+
+        <div class="ds-col--12 no-pad">
+
+          <div class="ds-col--12 ds-font--18--bold ds-flex --row no-pad" id="title">
+            <div class="ds-col--12 ds-font--18--bold no-pad" role="heading" aria-level="2" i18n [attr.aria-label]="content.as_appointment_details.title">
+              {{content.as_appointment_details.title}}</div>
+            <!--<div class="ds-col--2 ds-flex --end-center"><a class="ds-link ds-font--12--bold" href="" i18n>Edit</a></div>-->
+          </div>
+          <hr class="green">
+          <div class="ds-col--12 ds-progress-stepper --vertical no-pad">
+            <div class="ds-step" [ngClass]="{'completed': reasonData&&step!==1,'current':step===1}">
+              <!-- <ng-container *ngIf="reasonData&&step!==1; else step1Template">
+                <span class="ds-icon--check" aria-label="check"></span>
+              </ng-container>
+              <ng-template #step1Template>
+                <span class="ds-flex --start-center">
+                  <span class="--dash"></span>
+                  <span class="--dot">1</span>
+                  <span class="--dash"></span>
+                </span>
+              </ng-template> -->
+              <span class="ds-flex --start-center">
+                <span class="--dash"></span>
+                <span class="--dot">1</span>
+                <span class="--dash"></span>
+              </span>
+              <label>
+                <div class="ds-col--12 no-pad ds-flex">
+                  <div class="ds-col--10 no-pad" i18n >
+                    <span class="ds-font--16 --400" [ngClass]="{'ds-font--16 --700': step===1}" >Reason for visiting</span>
+                    <span  (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert" [attr.aria-label]="getReasonForVisit" class="visually-hidden">{{getReasonForVisit}}</span>
+                    <!-- {{isTestData}}- reason - {{reasonData|json}}<br>
+                    {{isTestData}}- test - {{testsData|json}} -->
+                    <!-- single reason - {{getReasonDataToDisplay}} -->
+                      <div class="ds-flex --start-center margin-bottom-20">
+                        <span  *ngIf="getToDisplay"  role="img" alt="tube icon" class="ds-icon--test-tube-label ds-green ds-font--24 hand-pointer margin-right-8" (click)="navigate('/schedule-appointment/as-reason-for-visit')" aria-label="tube icon"></span>
+                        <span *ngIf="getToDisplay" class="ds-font--14 --700 hand-pointer"
+                        (click)="navigate('/schedule-appointment/as-reason-for-visit')"
+                        (keydown.enter)="navigate('/schedule-appointment/as-reason-for-visit')"
+                        [innerHTML]="getToDisplay" i18n [attr.aria-label]="getToDisplay"
+                        [ngClass]="{'reason-disabled' : disableReason}"
+                        tabindex="0" role="link">
+                        </span>
+                      </div>
+                      <!-- <span  *ngIf="getToDisplay" class="ds-icon--test-tube-label ds-green ds-font--24" aria-label=""></span>
+                      <span *ngIf="getToDisplay" class="ds-font--14--400 hand-pointer"
+                      (click)="navigate('/schedule-appointment/as-reason-for-visit')"
+                      [innerHTML]="getToDisplay" i18n aria-label="getToDisplay"
+                      [ngClass]="{'reason-disabled' : disableReason}"
+                      tabindex="0">
+                      </span> -->
+                    <!-- single - {{getTestDataToDisplay}}
+                    <div *ngIf="getTestDataToDisplay" class="ds-font--14--400 hand-pointer"
+                      (click)="navigate('/schedule-appointment/as-reason-for-visit')"
+                      [innerHTML]="testsData[0]?.facilityTestTypeValue" i18n aria-label="reasonData?.facilityTestTypeValue"
+                      tabindex="0">
+                    </div>
+                    multi - {{getMultiTestDataToDisplay}}
+                    <div *ngIf="getMultiTestDataToDisplay" class="ds-font--14--400 hand-pointer"
+                      (click)="navigate('/schedule-appointment/as-reason-for-visit')" i18n
+                      aria-label="reasonData?.facilityTestTypeValue" tabindex="0">
+                      Multiple Drug Tests
+                    </div> -->
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <div class="ds-step" [ngClass]="{'completed': appointmentData&&step!==2,'current':step===2}">
+              <span class="ds-flex --start-center">
+                <span class="--dash"></span>
+                <span class="--dot">2</span>
+                <span class="--dash"></span>
+              </span>
+              <!-- <ng-container *ngIf="appointmentData&&step!==2; else step2Template">
+                <span class="ds-icon--check" aria-label="check"></span>
+              </ng-container>
+              <ng-template #step2Template>
+                <span class="ds-flex --start-center">
+                  <span class="--dash"></span>
+                  <span class="--dot">2</span>
+                  <span class="--dash"></span>
+                </span>
+              </ng-template> -->
+              <label>
+                <div class="ds-col--12" i18n>
+                  <span class="ds-font--16 --400" [ngClass]="{'ds-font--16 --700': step===2}"> Location, date, time</span>
+                  <span (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert"  [attr.aria-label]="getLocationAiraLable" class="visually-hidden">{{getLocationAiraLable}}</span>
+                  <div class="ds-col--12 ds-flex hand-pointer" *ngIf="appointmentData && !blnShowError && !lnNotSupportedShowError"
+                  (click)="navigate('/schedule-appointment/as-appt-scheduler')" (keydown.enter)="navigate('/schedule-appointment/as-appt-scheduler')">
+                    <div class="ds-col--1 margin-right-12"><span role="img" alt="address icon" class="ds-icon--address ds-green ds-font--24" aria-label="address icon"></span></div>
+                    <div class="ds-col--11 ds-font--14 --400" role="link" tabindex="0" aria-labelledby="name addressOne addressTwo zip">
+                      <div class="ds-font--14 --700" aria-hidden="true" id="name" role="text" [attr.aria-label]="appointmentData?.name" role="text">{{appointmentData?.name}}</div>
+                      <div aria-hidden="true" id="addressOne" role="text" [attr.aria-label]="appointmentData?.address1" role="text">{{appointmentData?.address1}}</div>
+                      <div aria-hidden="true" id="addressTwo" role="text" *ngIf="appointmentData?.address2" [attr.aria-label]="[appointmentData?.address2]"
+                      [attr.aria-label]="appointmentData?.address1" role="text">
+                        {{appointmentData?.address2}}</div>
+                      <div aria-hidden="true" id="zip" role="text">{{appointmentData?.city}}, {{appointmentData?.state}} {{appointmentData?.zip}}</div>
+                    </div>
+                  </div>
+                  <div class="ds-col--12 ds-flex hand-pointer --start-center" *ngIf="appointmentData && !blnShowError && !lnNotSupportedShowError"
+                    (click)="navigate('/schedule-appointment/as-appt-scheduler')">
+                    <div class="ds-col--1 margin-right-12"><span role="img" alt="calendar icon" class="ds-icon--calendar-blank ds-green ds-font--24" aria-label="calendar icon"></span></div>
+                    <div class="ds-col--11 ds-font--14 --700">
+                      <div [attr.aria-label]="formatedDate" role="text" >{{formatedDate | date:'longDate'}}</div>
+                    </div>
+                  </div>
+                  <div class="ds-col--12 ds-flex hand-pointer --start-center" *ngIf="appointmentData && !blnShowError && !lnNotSupportedShowError"
+                    (click)="navigate('/schedule-appointment/as-appt-scheduler')">
+                    <div class="ds-col--1 margin-right-12"><span role="img" alt="clock icon"  class="ds-icon--clock ds-green ds-font--24" aria-label="clock icon"></span></div>
+                    <div class="ds-col--11 ds-font--14 --700">
+                      <div [attr.aria-label]="appointmentData?.appointmentTime"  role="complementary">
+                        {{appointmentData?.appointmentTime | twelveHourTime}}</div>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <div class="ds-step" [ngClass]="{'completed': personalData&&step!==3,'current':step===3}">
+              <span class="ds-flex --start-center">
+                <span class="--dash"></span>
+                <span class="--dot">3</span>
+                <span class="--dash"></span>
+              </span>
+              <!-- <ng-container *ngIf="personalData&&step!==3; else step3Template">
+                <span class="ds-icon--check" aria-label="check"></span>
+              </ng-container>
+              <ng-template #step3Template>
+                <span class="ds-flex --start-center">
+                  <span class="--dash"></span>
+                  <span class="--dot">3</span>
+                  <span class="--dash"></span>
+                </span>
+              </ng-template> -->
+              <label>
+                <div class="ds-font--16 --400 ds-col--11 no-pad ds-flex" [ngClass]="{'ds-font--16 --700': step===3}">
+                  <div class="ds-col--10 no-pad" i18n>
+                    <span>Who’s visiting</span>
+                    <span (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert"  [attr.aria-label]="getWhoisVisitingAiraLable" class="visually-hidden">{{getWhoisVisitingAiraLable}}</span>
+                    <div class="ds-flex --start-center margin-bottom-20">
+                      <span role="img" alt="user icon"  class="ds-icon--user ds-green ds-font--24 margin-right-12 hand-pointer" (click)="navigate('/schedule-appointment/as-personal-information')" *ngIf="personalData" aria-label="user icon"></span>
+                      <span class="ds-font--14 --700 hand-pointer" *ngIf="personalData" tabindex="0"
+                        (click)="navigate('/schedule-appointment/as-personal-information')"
+                        (keydown.enter)="navigate('/schedule-appointment/as-personal-information')"
+                        [attr.aria-label]="personalData?.firstName + personalData?.lastName"  role="link">
+                        {{personalData?.firstName}} {{personalData?.lastName}}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <div class="ds-step" [ngClass]="{'completed': insuranceData&&step!==4,'current':step===4}" *ngIf="!(skipInsurance$ | async)">
+              <span class="ds-flex --start-center">
+                <span class="--dash"></span>
+                <span class="--dot">4</span>
+                <span class="--dash"></span>
+              </span>
+              <!-- <ng-container *ngIf="insuranceData&&step!==4; else step4Template">
+                <span class="ds-icon--check" aria-label="check"></span>
+              </ng-container>
+              <ng-template #step4Template>
+                <span class="ds-flex --start-center">
+                  <span class="--dash"></span>
+                  <span class="--dot">4</span>
+                  <span class="--dash"></span>
+                </span>
+              </ng-template> -->
+              <label>
+                <div class="ds-font--16 --400 ds-col--12 no-pad ds-flex" [ngClass]="{'ds-font--16 --700': step===4}">
+                  <div class="ds-col--10 no-pad" i18n >
+                    <span>Insurance information</span>
+                    <span (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert" [attr.aria-label]="getInsuranceInfoAiraLable" class="visually-hidden">{{getInsuranceInfoAiraLable}}</span>
+                    <div class="ds-flex --start-center">
+                      <span role="img" alt="identification icon"  class="ds-icon--identification-card ds-green ds-font--24 margin-right-12 hand-pointer" (click)="navigate('/schedule-appointment/as-insurance-information')" *ngIf="insuranceData" aria-label="identification icon"></span>
+                      <span class="ds-font--14 --700 hand-pointer" *ngIf="insuranceData"
+                        (click)="navigate('/schedule-appointment/as-insurance-information')" (keydown.enter)="navigate('/schedule-appointment/as-insurance-information')" tabindex="0"
+                        [attr.aria-label]="insuranceData?.data.provider.insuranceCompanyName"  role="link">
+                        {{insuranceData?.data.provider.insuranceCompanyName}}
+                      </span>
+                    </div>
+                    <div class="ds-flex --start-center">
+                      <span role="img" alt="identification icon"  class="ds-icon--identification-card ds-green ds-font--24 margin-right-12 hand-pointer" (click)="navigate('/schedule-appointment/as-secondary-insurance')" *ngIf="secondaryInsuranceData" aria-label="identification icon"></span>
+                      <span class="ds-font--14 --700 hand-pointer" *ngIf="secondaryInsuranceData"
+                        (click)="navigate('/schedule-appointment/as-secondary-insurance')" (keydown.enter)="navigate('/schedule-appointment/as-secondary-insurance')" tabindex="0"
+                        [attr.aria-label]="secondaryInsuranceData?.provider.insuranceCompanyName"  role="link">
+                        {{secondaryInsuranceData?.provider.insuranceCompanyName}}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

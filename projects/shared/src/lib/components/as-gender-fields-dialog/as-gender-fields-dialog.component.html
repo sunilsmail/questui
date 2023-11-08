@@ -1,0 +1,132 @@
+<main class="clinical-trails-need-more-info" *ngIf="(contnent$ | async) as confContent">
+  <!-- <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="need-more-info-close-button" (click)="closeDialog()"
+      aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+  </div> -->
+
+  <mat-dialog-content class="ds-col--12 no-pad">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start no-pad">
+      <h2 id="mat-dialog-title" aria-level="1" [attr.aria-label]="[confContent.title]">
+        {{confContent.title}}</h2>
+      <span class="ds-body--base" i18n [innerHTML]="sanitise(confContent?.content)"></span>
+    </div>
+    <form [formGroup]="genderFieldsForm" id="genderFieldsForm" aria-labelledby="genderFieldsForm" id="skip-to-main"
+      autocomplete="off">
+      <div class="ds-grid--12 ds-col--12 ds-flex --row margin-top-16 no-pad" id="skip-to-main2" tabindex="-1">
+        <div class="ds-col--6 no-pad" *ngIf="getRace">
+          <div class="ds-input no-margin" id="race"
+            [ngClass]="{'--error': !genderFieldsForm.get('race').valid && genderFieldsForm.get('race').touched && genderFieldsForm.get('race')?.errors}">
+            <mat-form-field class="ds-input margin-bottom-0">
+              <mat-label class="ds-input__label ds-text-extra-small ds-green__700" i18n>
+                {{content.as_input_labels.race}}
+                <span *ngIf="getRaceValidation" style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+              </mat-label>
+              <mat-select disableOptionCentering formControlName="race" panelClass="ds-dropdown" aria-required="true">
+                <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''" class="ds-dropdown__item"
+                  *ngFor="let option of  getRace" [value]="option.key">{{ option.value }}</mat-option>
+              </mat-select>
+              <div class="ds-input__error"
+                *ngIf="!genderFieldsForm.get('race').valid && genderFieldsForm.get('race').touched">
+                {{genderFieldsForm.get('race').errors |
+                validationError :
+                content.as_input_labels.race}}</div>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="ds-col--6 no-pad" *ngIf="getEthnicity">
+          <div class="ds-input no-margin" id="ethnicity"
+            [ngClass]="{' --error': !genderFieldsForm.get('ethnicity').valid && genderFieldsForm.get('ethnicity').touched && genderFieldsForm.get('race')?.errors}">
+            <mat-form-field class="ds-input margin-bottom-0 margin-right-0">
+              <mat-label class="ds-input__label ds-text-extra-small ds-green__700" i18n>
+                {{content.as_input_labels.ethnicity}}
+                <span *ngIf="getEthnicityValidation" style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+              </mat-label>
+              <mat-select disableOptionCentering formControlName="ethnicity" panelClass="ds-dropdown"
+                aria-required="true">
+                <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''" class="ds-dropdown__item"
+                  *ngFor="let option of getEthnicity" [value]="option.key">{{ option.value }}</mat-option>
+              </mat-select>
+              <div class="ds-input__error"
+                *ngIf="!genderFieldsForm.get('ethnicity').valid && genderFieldsForm.get('ethnicity').touched">
+                {{genderFieldsForm.get('ethnicity').errors | validationError :
+                content.as_input_labels.ethnicity}}</div>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-grid--12 ds-col--12 ds-flex --row margin-top-16 no-pad" id="skip-to-main3" tabindex="-1">
+        <div class="ds-col--6 no-pad" *ngIf="getGenderPreference">
+          <div class="ds-input no-margin" id="genderPreference"
+            [ngClass]="{' --error': !genderFieldsForm.get('genderPreference').valid && genderFieldsForm.get('genderPreference').touched && genderFieldsForm.get('genderPreference')?.errors}">
+            <mat-form-field class="ds-input margin-bottom-0" floatLabel="always">
+              <mat-label class="ds-input__label ds-text-extra-small ds-green__700" i18n>
+                {{content.as_input_labels.genderPref}}
+                <span *ngIf="getGenderPreferenceValidation"
+                  style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                <span (click)="openTooltip($event)" class="ds-icon--info ds-green__700 ds-font--16 tooltip"
+                  matTooltip="Gender identity refers to the person’s internal sense of being." aria-label="tool tip"
+                  role="img">
+                </span>
+              </mat-label>
+              <mat-select disableOptionCentering formControlName="genderPreference" panelClass="ds-dropdown"
+                aria-required="true">
+                <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''" class="ds-dropdown__item"
+                  *ngFor="let option of getGenderPreference" [value]="option.key">{{ option.value }}
+                </mat-option>
+              </mat-select>
+              <div class="ds-input__error"
+                *ngIf="!genderFieldsForm.get('genderPreference').valid && genderFieldsForm.get('genderPreference').touched">
+                {{genderFieldsForm.get('genderPreference').errors |
+                validationError :
+                content.as_input_labels.genderPref}}</div>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="ds-col--6 no-pad" *ngIf="getSexualOrientation">
+          <div class="ds-input no-margin" id="sexualOrientation"
+            [ngClass]="{' --error': !genderFieldsForm.get('sexualOrientation').valid && genderFieldsForm.get('sexualOrientation').touched && genderFieldsForm.get('sexualOrientation')?.errors}">
+            <mat-form-field class="ds-input margin-bottom-0 margin-right-0">
+              <mat-label class="ds-input__label ds-text-extra-small ds-green__700" i18n>
+                {{content.as_input_labels.sexualOri}}
+                <span *ngIf="getSexualOrientationValidation"
+                  style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+              </mat-label>
+              <mat-select disableOptionCentering formControlName="sexualOrientation" panelClass="ds-dropdown"
+                aria-required="true">
+                <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''" class="ds-dropdown__item"
+                  *ngFor="let option of getSexualOrientation" [value]="option.key">{{ option.value }}
+                </mat-option>
+              </mat-select>
+              <div class="ds-input__error"
+                *ngIf="!genderFieldsForm.get('sexualOrientation').valid && genderFieldsForm.get('sexualOrientation').touched">
+                {{genderFieldsForm.get('sexualOrientation').errors |
+                validationError :
+                content.as_input_labels.sexualOri}}</div>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12 no-pad">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24 margin-bottom-24 no-pad">
+      <div class="ds-col--6 ds-flex --start-center no-pad">
+        <button class="ds-button --primary --medium" (click)="continue()" [disabled]="!genderFieldsForm.valid"
+          [ngClass]="{'--primary--disabled': !genderFieldsForm.valid, '--primary': genderFieldsForm.valid}">
+          {{content.as_gender_fields_dialog.button_title}}
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --center-center margin-top-16 no-pad">
+        <button class="ds-font--16 ds-link ds-green__700" (click)="closeDialog()">
+          {{content.as_gender_fields_dialog.link_title}}
+        </button>
+      </div>
+    </div>
+
+  </mat-dialog-actions>
+
+</main>

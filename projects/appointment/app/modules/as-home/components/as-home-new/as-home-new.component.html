@@ -1,0 +1,139 @@
+<main class="ds-body as-home-new">
+  <div class="ds-grid--12 ds-body--content"
+    [ngClass]="{'margin-top': isEmailVerified, 'rest-img-margin': (!covidInfoBannerFlag && !isEmailVerified) }">
+    <ng-container *ngIf="covidInfoBannerFlag">
+      <div class="ds-message --warning --dismissible ds-flex --center-center" role="alert" id="infobanner"
+        *ngIf="(covidAlertContent$ | async) as content">
+        <div class="ds-col--1">
+          <span class="ds-icon--alert" aria-label="alert" role="img"></span>
+        </div>
+        <!-- <div class="ds-col--11 COVID-19-Safety-Meas">
+          <label aria-label="info" [innerHtml]="content.as_home_new.home_safety_line1"></label>
+          <label aria-label="info"> {{content.as_home_new.home_safety_line2}}</label>
+        </div> -->
+        <div class="ds-col--10">
+          <label [innerHtml]="content | keepHtml"></label>
+        </div>
+        <div class="ds-col--1">
+          <button class="ds-icon--close" id="errorIcon" aria-label="close COVID-19 Safety Measures alert"
+            (click)="remove()"></button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isEmailVeified$ | async">
+      <div class="ds-message --error margin-top-12" aria-label="button text">
+        <div class="ds-col--1 mobile-view">
+          <span class="ds-icon--error" aria-label="alert"></span>
+        </div>
+        <div class="ds-col--10 custom-width">
+          <label i18n>Confirm your email address to access all of Quest's features</label>
+          <a class="ds-green__600 float-right" (click)="navigateToResendEmailLegacy()" i18n>Resend confirmation</a>
+        </div>
+      </div>
+    </ng-container>
+
+    <div class="ds-col--12 no-pad">
+      <div class="ds-flex --row">
+        <!--Column 1-->
+        <div class="ds-col--8 no-pad" id="main-content"
+          [ngClass]="{'margin-top': (isEmailVeified$ | async) && !covidInfoBannerFlag}">
+          <!-- <button class="ds-button__secondary" (click)="covidTest()">Covidtest</button> -->
+          <h1 class="ds-green__700" [attr.aria-label]="content.as_home_new.home_title"
+            [ngClass]="{'margin-top': (isEmailVeified$ | async)}">{{content.as_home_new.home_title}}</h1>
+          <p class="ds-font--18" role="complementary" [attr.aria-label]="content.as_home_new.home_desc">
+            {{content.as_home_new.home_desc}}</p>
+          <div class="ds-col--12 ds-flex --row no-pad">
+            <ng-container *ngIf="enableOpenEordersF221$ | async; else withoutF221">
+              <button class="ds-button --primary contrastactive" id="skip-to-main" (click)="next()"
+                aria-label="Schedule appointment">
+                <label>{{content.button_schedule}}</label>
+              </button>
+            </ng-container>
+            <ng-template #withoutF221>
+              <button class="ds-button --primary contrastactive" id="skip-to-main" (click)="filterTests(false)"
+                routerLink="/schedule-appointment" aria-label="Press enter to schedule your appointment">
+                <label>{{content.button_schedule}}</label>
+              </button>
+            </ng-template>
+          </div>
+          <div class="ds-col--12 covid no-pad">
+            <div class=" --row text-line">
+              <a href="javascript:void(0);" id="view" (click)="findAppointment('view')"
+                class="ds-link ds-font--16 view ">{{content.as_home_new.find_view}}</a>,
+              <a href="javascript:void(0);" id="change" (click)="findAppointment('change')"
+                class="ds-link ds-font--16 change ">{{content.as_home_new.find_change}}</a> or
+              <a href="javascript:void(0);" id="cancel" (click)="findAppointment('cancel')"
+                class="ds-link ds-font--16 cancel">{{content.as_home_new.find_cancel}}</a>
+              <a class="ds-font--16 description" [innerHTML]="content.as_home_new.welcome_already | keepHtml"></a>
+              <a [href]="futureAppointmentsLink$ | async" *ngIf="(isAuthenticated$ | async)" target="_blank" fxHide
+                fxShow.gt-md class="ds-link ds-font--16--bold ds-link--secondary contrastactive"
+                [attr.aria-label]="[content.as_home.welcome_upcoming_appointments] + ' opens in a new tab or window'"
+                i18n>{{content.as_home.welcome_upcoming_appointments}}</a>
+            </div>
+            <div class="ds-flex --row text-line" fxHide fxShow.lt-lg>
+              <a [href]="futureAppointmentsLink$ | async" *ngIf="(isAuthenticated$ | async)" target="_blank"
+                class="ds-link ds-font--16--bold ds-link--secondary contrastactive"
+                [attr.aria-label]="[content.as_home.welcome_upcoming_appointments]"
+                i18n>{{content.as_home.welcome_upcoming_appointments}}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-col--4 ds-flex --row --end-start" [ngClass]="{'margin-top': isEmailVerified }"
+          [ngClass]="{'margin-top': (isEmailVeified$ | async) && !covidInfoBannerFlag}">
+          <img class="as-home-page__image" alt="Landing Page Image" [src]="content.as_home_new.welcome_image"
+            id="home_img" />
+        </div>
+        <!---->
+      </div>
+      <!--End Content-->
+    </div>
+    <!--covid section start-->
+    <div class="ds-grid--10 ds-flex --row --start-start" *ngIf="homepageCovidSection$ | async">
+      <div class="ds-col--12 covid-container">
+        <div class="ds-card bg-color">
+          <h2 class="ds-col--12 covid-title no-pad">{{content.as_home_new.covid_header}}</h2>
+          <div class="ds-col--12 ds-flex --row covid-content no-pad">
+            <div class="ds-font-16 --400 ds-col--12">{{content?.as_home_new?.covid_para1}} <a class="ds-link"
+                [href]="outOfPocketLink$ | async">{{content?.as_home_new?.covid_para1_link}}</a></div>
+          </div>
+          <div class="ds-col--12 ds-flex --row covid-content no-pad">
+            <div class="ds-font-16 --400 ds-col--12 covid-link">{{content?.as_home_new?.covid_para2}} <a class="ds-link"
+                (click)="covidTest()" href="javascript:void(0);">{{content?.as_home_new?.covid_para2_link}}</a></div>
+          </div>
+          <div class="ds-col--12 ds-flex --row covid-content no-pad">
+            <ng-container *ngIf="featureFlag1421$ | async ; else withoutFeatureF1421">
+              <div class="ds-font-16 --400 ds-col--12 covid-link no-pad">{{content?.as_home_new?.covid_para3_new}} <a
+                  class="ds-link custom-link"
+                  [href]="covidSectionLink1421$ | async">{{content?.as_home_new?.covid_para3_link_new}}</a></div>
+            </ng-container>
+            <ng-template #withoutFeatureF1421>
+              <div class="ds-font-16 --400 ds-col--12 covid-link no-pad">{{content?.as_home_new?.covid_para3}} <a
+                  class="ds-link custom-link"
+                  [href]="covidSectionLink$ | async">{{content?.as_home_new?.covid_para3_link}}</a></div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--covid section end-->
+    <div class="ds-col--7 no-pad">
+      <hr *ngIf="!(isAuthenticated$ | async) ">
+      <div class="ds-flex --row">
+        <!-- <div class="ds-col--9 no-pad"> -->
+        <div class="ds-col--12 margin-bottom-44" *ngIf="!(isAuthenticated$ | async) ">
+          <div class="ds-font--16 create-mq-account-msg-txt" role="complementary"
+            [innerHTML]="content.as_home.welcome_create_mq_account_msg | keepHtml" i18n></div>
+          <div class="ds-font--16 create-mq-account-link"><a [href]="createAccountLink$ | async" target="_blank"
+              class="ds-link ds-font--16--bold contrastactive" i18n>{{content.as_home.welcome_create_mq_account}}</a>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</main>
+<as-closure-message></as-closure-message>
+<span [ngClass]="{'showchatbot':toggleChatbot, 'hidechatbot':!toggleChatbot}">
+  <as-chat-bot></as-chat-bot>
+</span>

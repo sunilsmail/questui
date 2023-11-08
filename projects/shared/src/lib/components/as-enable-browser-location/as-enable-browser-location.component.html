@@ -1,0 +1,10 @@
+<button id="as_FindLocations_btn" (click)="getUserLocation()" class="as-enable-browser-location"
+  fxLayoutAlign="start center">
+  <mat-icon color="primary">gps_fixed</mat-icon>
+  <div class="as-enable-browser-location__text" i18n>
+    Enable Browser Location to see Quest locations near you
+  </div>
+  <mat-progress-bar *ngIf="loading" class="as-enable-browser-location__loading" mode="indeterminate"></mat-progress-bar>
+</button>
+<div class="as-enable-browser-location__error" *ngIf="showError" i18n>We were unable to find your current location.
+</div>

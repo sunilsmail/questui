@@ -1,0 +1,59 @@
+<div class="forgot-confirmation-code" (keydown)="closeForgotDialog($event)">
+<div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+  <!-- <button class="ds-icon--arrow-back--24 ds-green__700" (click)="closeForgotConfCode()" tabindex="0"></button> -->
+  <button class="ds-icon--close ds-font--24 ds-green__900" aria-label="close" (click)="closeForgotConfCode()" id="closeButton" tabindex="0"></button>
+</div>
+<mat-dialog-content class="ds-col--12">
+  <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+    <h2 aria-level="1" class="ds-font--20 --500" id="mat-dialog-title">{{content.as_forgot_confirmationcode_dialog.title}}</h2>
+    <div class="ds-col--12 --content-scroll">
+    <ng-container>
+      <span class="ds-col--14 ds-gray__900 margin-bottom-24"
+        innerHTML={{content.as_forgot_confirmationcode_dialog.sub_title}}>
+      </span>
+      <p class="ds-col--14 ds-gray__900 margin-bottom-8 margin-top-8"
+        innerHTML={{content.as_forgot_confirmationcode_dialog.message}}>
+      </p>
+    </ng-container>
+    <form [formGroup]="forgotConfirmationCodeForm">
+      <div class="ds-col--12 ds-input --required" [ngClass]="{'--error': !forgotConfirmationCodeForm.get('email').valid && forgotConfirmationCodeForm.get('email').touched}">
+        <div class="ds-input__label" i18n>Email</div>
+        <input type="text" formControlName="email"  tabindex="0" aria-label="Email" placeholder="" aria-required="true">
+        <div class="ds-font--12"
+          *ngIf="!forgotConfirmationCodeForm.get('email').valid && forgotConfirmationCodeForm.get('email').touched">
+          <div class="ds-input__error"  role="alert">{{forgotConfirmationCodeForm.get('email').errors | validationError}}</div>
+        </div>
+      </div>
+      <div class="ds-col--12 ds-input --required"  [ngClass]="{'--error': !forgotConfirmationCodeForm.get('phoneNumber').valid && forgotConfirmationCodeForm.get('phoneNumber').touched}">
+        <div class="ds-input__label" i18n>Phone number</div>
+        <input type="text" formControlName="phoneNumber" tabindex="0" id="phoneNumber" aria-describedby="textForHelp" aria-label="Phone Number"
+          placeholder="" (keyup)="onKeyup($event,phoneElement)" #phoneElement aria-required="true">
+          <div class="ds-font--14 ds-gray__600 margin-top-3" id="textForHelp">555-555-5555</div>
+        <div class="ds-font--12">
+          <div
+            *ngIf="!forgotConfirmationCodeForm.get('phoneNumber').valid && forgotConfirmationCodeForm.get('phoneNumber').touched"
+            class="ds-input__error" role="alert">
+            {{forgotConfirmationCodeForm.get('phoneNumber').errors | validationError}}
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="ds-col--12">
+  <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+    <div class="ds-col--6 ds-flex --center-center margin-bottom-16">
+      <button class="ds-button --primary --medium" (click)="forgotConfirmationCode()" role="button"
+        [disabled]="!isButtonEnabled" [ngClass]="{'--primary':isButtonEnabled,'--primary--disabled':!isButtonEnabled}">
+        <label i18n>{{content.as_forgot_confirmationcode_dialog.button_label}}</label>
+      </button>
+    </div>
+    <div class="ds-col--6 ds-flex --center-center">
+      <button class="ds-link ds-green__700" aria-label="Never mind" (click)="onNeverMind()" tabindex="0" role="button"
+        ii8n>Never mind</button>
+    </div>
+  </div>
+</mat-dialog-actions>
+</div>

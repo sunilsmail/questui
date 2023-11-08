@@ -1,0 +1,65 @@
+<main class="ds-body as-location-finder-reason">
+    <div class="ds-grid--12 ds-body--content">
+      <div class="ds-col--12 pad-24">
+        <div class="ds-flex --row  ds-form__col--2">
+          <div class="ds-col--8" id="skip-to-main" tabindex="-1">
+              <div>
+
+                <div *ngIf="isReasons; else isTests" #isReasons>
+                  <div class="margin-top-16">
+                      <span role="button" class="ds-icon--arrow-back ds-font--24 ds-green__700 onFocus" (click)="goToPrevious()" (keydown.enter)="goToPrevious()" tabindex="0" aria-label="back" title="back"></span>
+                  </div>
+                  <div  class="onFocus">
+                    <h1 class="ds-font__20--bold ds-green__700" [attr.aria-label]="[content.as_location_finder_reason.title]" i18n>{{content.as_location_finder_reason.title}}</h1>
+                  </div>
+                </div>
+
+                <ng-template #isTests>
+                  <div class="margin-bottom-24 margin-top-16">
+                    <span role="button" class="ds-icon--arrow-back ds-font--24 ds-green__700 onFocus" (click)="goToPrevious()" (keydown.enter)="goToPrevious()" tabindex="0" aria-label="back" title="back"></span>
+                    <ng-container *ngIf="multiSelect;else notMultiselect">
+                      <h2 class="ds-font__20--bold ds-green__700 onFocus" [attr.aria-label]="[content.as_reason_for_visit.title_3]" i18n>{{content.as_reason_for_visit.title_3}}</h2>
+                    </ng-container>
+                    <ng-template #notMultiselect>
+                      <h2 *ngIf="!urlHasPurchaseTest" class="ds-font__20--bold ds-green__700 onFocus" tabindex="0" [attr.aria-label]="[content.as_reason_for_visit.title_2]" i18n>{{content.as_reason_for_visit.title_2}}</h2>
+                      <span *ngIf="!urlHasPurchaseTest" class="ds-body--large onFocus" tabindex="0" [attr.aria-label]="[content.as_reason_for_visit.sub_title]" i18n>{{content.as_reason_for_visit.sub_title}}</span>
+                      <h2 *ngIf="urlHasPurchaseTest" class="ds-font__20--bold ds-green__700 onFocus" tabindex="0" [attr.aria-label]="[content.as_reason_for_visit.title_4]" i18n>{{content.as_reason_for_visit.title_4}}</h2>
+                    </ng-template>
+                  </div>
+                </ng-template>
+                <div *ngIf="loading" class="as-location-finder-details__overlay" fxLayout="row"
+                  fxLayoutAlign="center center">
+                  <as-spinner></as-spinner>
+                </div>
+                <as-loading-container [asLoadingData]="items$" asSpinnerSize="medium" asNoDataMessage="No data found."
+                  i18n-asNoDataMessage asLoadErrorMessage="No data found." i18n-asLoadErrorMessage [loadingMore]="loading$"
+                  >
+                  <ng-template let-reasons>
+                    <as-reason-test-list [listItems]="reasons" [selectedReason]="selectedReason" [multiSelect]="multiSelect"
+                      (itemSelected)="onItemSelected($event)" [selectedTests]="selectedTests" [invalidLocationIndex]="invalidLocationIndex"
+                      [invalidLocationChildIndex]="invalidLocationChildIndex">
+                    </as-reason-test-list>
+                    <br>
+                    <br>
+                    <footer class="aligment">
+                      <button class="ds-button --primary" (click)="onConfirmTestingClicked(reasons)" role="button" *ngIf="isConfirmTesting && invalidLocationIndex === -1 && invalidLocationChildIndex === -1" >
+                        <label i18n>Confirm testing</label>
+                      </button>
+                    </footer>
+                  </ng-template>
+                </as-loading-container>
+                <!--<a class="as-reason-page__reason-for-visit" href="" tabindex="1" i18n>My reason for visit isn’t listed.</a>-->
+
+              </div>
+
+            </div>
+
+            <div class="ds-col--4">
+
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>

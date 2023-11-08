@@ -1,0 +1,192 @@
+<main class="ds-body as-eorder-price">
+  <!-- with f89 changes start-->
+  <ng-container *ngIf="(easypayEnhancement$ | async); else WithoutEasypayEnhancement">
+    <div class="ds-grid--12 ds-body--content">
+      <div *ngIf="SpinnerLoading || (loading$ | async)" class="as-eorder-price-estimate__overlay_no_bg" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+      <div *ngIf="(sdkLoading$ | async)" class="as-eorder-price-estimate__overlay" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+      <div class="ds-col--12">
+        <div class="ds-flex --row ds-form__col--2">
+          <div class="ds-col--12" id="skip-to-main" tabindex="-1">
+            <div>
+              <div>
+                <div>
+                  <ng-container *ngIf="(easypayEnhancementF411$ | async); else withoutF411">
+                  <h1 *ngIf="estimatedPrice !== null" class="ds-green__700"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.titlef441]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.titlef441}}</h1>
+                  </ng-container>
+                  <ng-template #withoutF411>
+                    <h1 *ngIf="estimatedPrice !== null" class="ds-green__700"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.title]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.title}}</h1>
+                  </ng-template>
+                  <h1 *ngIf="estimatedPrice === null" class="ds-green__700"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.title1f89]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.title1f89}}</h1>
+                </div>
+                <div class="estimated-price">
+                  <div>
+                    <div *ngIf="estimatedPrice !== null" class="ds-green__700 price" tabindex="0">{{estimatedPrice |
+                      currency}}</div>
+                    <div *ngIf="estimatedPrice === null" class="as-eorder-price__While-we-do-not-have ds-gray__900"
+                      [attr.aria-label]="[content.as_eorder_price_estimate.priceNotAvailablef89]" role="complementary" i18n tabindex="0">
+                      {{content.as_eorder_price_estimate.priceNotAvailablef89}}
+                    </div>
+                    <a class="ds-link as-eorder-price__anchorTag ds-green__700" *ngIf="estimatedPrice !== null"
+                      tabindex="0" (click)="openDialog()">{{content.as_eorder_price_estimate.link}}</a>
+                  </div>
+                </div>
+                <div class="Legal-disclaimer__content ds-gray__900" id="disclaimer_text1" *ngIf="estimatedPrice !== null && (easypayEnhancementF411$ | async)">
+                  <p i18n>{{content.as_eorder_price_estimate.content5}}</p>
+                </div>
+                <ng-container *ngIf="estimatedPrice && (enableEasypay$| async)">
+                  <br>
+                </ng-container>
+
+                <div class="ds-col--12 ds-billing" *ngIf="estimatedPrice && (enableEasypay$| async)"
+                  [ngClass]="{'--single-method' : multiPaymentMethod == false, 'hide_Easypay': (sdkLoading$ | async)}">
+                  <div class="ds-col--12">
+                    <!-- SDK changes start -->
+                    <div class="ds-flex" style="height: 100%;">
+                      <div id="payment-card" class="ds-col--12 ds-flex --row no-pad"></div>
+                    </div>
+                    <div *ngIf="!enableContinue" id="btn-next" tabindex="0" ></div>
+                    <div  class="ds-message --subdued --success" *ngIf="toggleCreditCardMessage" aria-label="success">
+                      <div class="ds-col--1">
+                        <span class="ds-icon--check" aria-label="alert"></span>
+                      </div>
+                      <div class="ds-col--10" tabindex="0" [attr.aria-label]="[content.as_eorder_price_estimate.creditCardMessage]" >
+                        <label>{{content.as_eorder_price_estimate.creditCardMessage}}</label>
+                      </div>
+                    </div>
+                    <div class="ds-message --subdued --informative" *ngIf="toggleSkippaymentMessage" aria-label="informative">
+                      <div class="ds-col--1">
+                          <span class="ds-icon--info--filled" aria-label="alert"></span>
+                      </div>
+                      <div class="ds-col--12" tabindex="0"  [attr.aria-label]="[content.as_eorder_price_estimate.skippaymentMessage]" >
+                          <label aria-label="info" >{{content.as_eorder_price_estimate.skippaymentMessage}}</label>
+                      </div>
+                    </div>
+                    <div class="ds-message --subdued --error"  *ngIf="toggleErrorMessage" aria-label="error">
+                      <div class="ds-col--1">
+                          <span class="ds-icon--error" aria-label="alert"></span>
+                      </div>
+                      <div class="ds-col--10" tabindex="0"  [attr.aria-label]="[content.as_eorder_price_estimate.skippaymentMessage]">
+                          <label>{{content.as_eorder_price_estimate.paymentErrorMessage}}</label>
+                      </div>
+                    </div>
+                    <!-- SDK changes end -->
+                  </div>
+                </div>
+              </div>
+              <div class="as-eorder-price__content ds-gray__900" id="disclaimer_text" *ngIf="estimatedPrice !== null">
+                <ng-container *ngIf="(easypayEnhancementF411$ | async);else witoutF411content">
+                  <p i18n innerHTML="{{content.as_eorder_price_estimate.content6}}"></p>
+                </ng-container>
+                <ng-template #witoutF411content>
+                  <p i18n innerHTML="{{content.as_eorder_price_estimate.content1}}"></p>
+                </ng-template>
+                <p i18n>{{content.as_eorder_price_estimate.content2}}</p>
+                <p i18n>{{content.as_eorder_price_estimate.content3}}</p>
+                <p i18n>{{content.as_eorder_price_estimate.content4}}</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="ds-col--4">
+            <as-eorder-footer (continue)='onContinue()' [isVisiablePreviousURL]="false" [finalStep]="true"
+                          [previous]="previousUrl"  [enableContinue]="enableContinue"
+               [enableEasypay]="enableEasypayButton"></as-eorder-footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <!-- with f89 changes end-->
+
+  <!-- without f89 changes start-->
+  <ng-template #WithoutEasypayEnhancement>
+    <div class="ds-grid--12 ds-body--content"  >
+      <div *ngIf="SpinnerLoading || (loading$ | async)" class="as-eorder-price-estimate__overlay_no_bg" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+      <div *ngIf="(sdkLoading$ | async)" class="as-eorder-price-estimate__overlay" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+     <div class="ds-col--12 pad-24">
+       <div class="ds-flex --row ds-form__col--2">
+         <div class="ds-col--12" id="skip-to-main" tabindex="-1">
+           <div>
+             <div>
+               <div >
+                  <ng-container *ngIf="(easypayEnhancementF411$ | async); else withoutF411title">
+                    <h1 *ngIf="estimatedPrice !== null" class="ds-black"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.titlef441]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.titlef441}}</h1>
+                  </ng-container>
+                  <ng-template #withoutF411title>
+                    <h1 *ngIf="estimatedPrice !== null" class="ds-black" [attr.aria-label]="[content.as_eorder_price_estimate.title]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.title}}</h1>
+                  </ng-template>
+                   <h1 *ngIf="estimatedPrice === null" class="ds-black" [attr.aria-label]="[content.as_eorder_price_estimate.title1]" i18n tabindex="0">
+                     {{content.as_eorder_price_estimate.title1}}</h1>
+               </div>
+               <div class="estimated-price">
+                 <div>
+                   <div *ngIf="estimatedPrice !== null" class="ds-black price"  tabindex="0">{{estimatedPrice | currency}}</div>
+                   <div *ngIf="estimatedPrice === null" class="as-eorder-price__While-we-do-not-have ds-gray__900"
+                   [attr.aria-label]="[content.as_eorder_price_estimate.priceNotAvailable]" role="complementary" i18n  tabindex="0">
+                     {{content.as_eorder_price_estimate.priceNotAvailable}}
+                   </div>
+                   <a class="ds-link as-eorder-price__anchorTag ds-gray__900" tabindex="0"
+                     (click)="openDialog()">{{content.as_eorder_price_estimate.link}}</a>
+                 </div>
+               </div>
+               <div class="Legal-disclaimer__content ds-gray__900" id="disclaimer_text2" *ngIf="estimatedPrice !== null &&(easypayEnhancementF411$ | async)">
+                <p i18n>{{content.as_eorder_price_estimate.content5}}</p>
+               </div>
+               <ng-container *ngIf="estimatedPrice && (enableEasypay$| async)">
+                <br>
+              </ng-container>
+               <div class="ds-col--12 ds-billing" *ngIf="estimatedPrice && (enableEasypay$| async)" [ngClass]="{'--single-method' : multiPaymentMethod == false, 'hide_Easypay': (sdkLoading$ | async)}" >
+                 <div class="ds-col--12 ds-billing--selector ds-flex --column">
+                <!-- SDK changes start -->
+                <div class="ds-flex --wrap --content" style="height: 100%;">
+                  <div id="payment-card" class="ds-col--12 ds-flex --row"></div>
+                </div>
+                <div id="btn-next" tabindex="0" ></div>
+                 <!-- SDK changes end -->
+                 </div>
+               </div>
+             </div>
+             <div class="as-eorder-price__content ds-gray__900">
+              <ng-container *ngIf="estimatedPrice !== null && (easypayEnhancementF411$ | async);else witoutF411content1">
+                <p i18n innerHTML="{{content.as_eorder_price_estimate.content6}}"></p>
+              </ng-container>
+              <ng-template #witoutF411content1>
+                <p i18n innerHTML="{{content.as_eorder_price_estimate.content1}}"></p>
+              </ng-template>
+               <p i18n>{{content.as_eorder_price_estimate.content2}}</p>
+               <p i18n>{{content.as_eorder_price_estimate.content3}}</p>
+               <p i18n>{{content.as_eorder_price_estimate.content4}}</p>
+             </div>
+           </div>
+         </div>
+         <div class="ds-col--4">
+           <as-eorder-footer (continue)='onContinue()' [isVisiablePreviousURL]="false" [finalStep]="true"
+             [previous]="previousUrl" [enableContinue]="enableContinue"></as-eorder-footer>
+         </div>
+       </div>
+     </div>
+   </div>
+  </ng-template>
+<!-- without f89 changes end-->
+</main>

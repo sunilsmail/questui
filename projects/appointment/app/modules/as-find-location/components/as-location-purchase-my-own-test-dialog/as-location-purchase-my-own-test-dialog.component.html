@@ -1,0 +1,35 @@
+  <div class="purchase-my-own-dialog">
+    <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+      <button id="location-purchase-test-close-button" (click)="closeDialog()" class="ds-icon--close ds-font--24 ds-green__900" aria-label="close"></button>
+    </div>
+
+    <mat-dialog-content class="ds-col--12">
+      <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+        <h2 id="mat-dialog-title" aria-level="1" [attr.aria-label]="[content?.as_purchase_my_own_test_dialog?.title]">
+          <span class="ds-icon--alert ds-yellow__700 margin-right-12"></span>{{content?.as_purchase_my_own_test_dialog?.title}}</h2>
+        <div class="ds-col--12 --content-scroll" tabindex="0" id="keyboard" (focusin)="keyboardIn($event)" (focusout)="keyboardOut($event)">
+          <!-- <div class="ds-body--base padding-bottom-16" i18n>{{content?.as_purchase_my_own_test_dialog?.title}}</div> -->
+            <span class="ds-body--base padding-bottom-16" i18n [innerHtml]="content.as_purchase_my_own_test_dialog.message_1"></span>
+            <div class="padding-top-16">
+              <span class="ds-body--small" i18n><b>{{content?.as_purchase_my_own_test_dialog?.message_2}}</b>
+                {{content?.as_purchase_my_own_test_dialog?.message_3}}</span>
+            </div>
+        </div>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="ds-col--12">
+      <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+        <div class="ds-col--6 ds-flex --end-center">
+          <button class="ds-button --secondary" (click)="showOwnDialog()">
+            <label>Yes</label>
+          </button>
+        </div>
+        <div class="ds-col--6 ds-flex --end-center">
+          <button class="ds-button --secondary" (click)="onNoClick()">
+            <label>No, view offerings</label>
+          </button>
+        </div>
+      </div>
+    </mat-dialog-actions>
+  </div>

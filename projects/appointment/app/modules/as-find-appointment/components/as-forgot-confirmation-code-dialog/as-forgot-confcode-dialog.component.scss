@@ -1,0 +1,31 @@
+@import '../../../../../styles.scss';
+// @import '../../../../../ds-styles/ds-fonts';
+
+
+.forgot-confirmation-code {
+    form {
+        width: 100%;
+    }
+
+    .ds-modal__content {
+        height: 430px;
+    }
+
+    mat-dialog-actions>.ds-modal__actions>[class*=ds-col] {
+        width: 100% !important;
+        justify-content: center;
+
+        >button {
+            width: 100% !important;
+            min-width: 100% !important;
+            justify-content: center;
+
+            @include when-less-than(ds-480) {
+                height: 100%;
+            }
+        }
+    }
+    button.ds-link {
+        font-size: 16px;
+      }
+}

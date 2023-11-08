@@ -1,0 +1,97 @@
+@import '../../../../../appointment/styles.scss';
+
+.as-psc-details{
+  outline: none;
+  padding-right: 0;
+  padding-left: 1px;
+  &:focus {
+    outline: $ds-green__500 solid 2px !important;
+    outline-offset: 3px;
+  }
+  > div{
+
+    &:first-of-type{
+      margin-top: 24px;
+      margin-bottom: 12px;
+
+      [class*="ds-icon"]{
+        margin-right: 4px;
+      }
+
+      .ds-card{
+        cursor: pointer;
+      }
+    }
+
+    &:nth-of-type(2){
+      color: $ds-gray__900;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.as-psc-details {
+
+  &__location {
+
+    width: 328px;
+    line-height: 1.43;
+    letter-spacing: normal;
+    margin-bottom: 6px;
+
+    &__name {
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  &__dot{
+    font-weight: bold;
+    color: red;
+  }
+}
+.distance:focus{
+  font-size: 16px;
+  outline: $ds-green__500 solid 2px !important;
+  outline-offset: 3px;
+}
+.schedule-button{
+  width:230px;
+  height:32px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(35, 35, 37, 0.2);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+  &__button-icon {
+    width: 12px;
+    height: 12px;
+    font-size: 16px;
+    fill:#424245;
+    left: 6px;
+    position: relative;
+    top: -2px;
+  }
+}
+.as-psc-phone{
+  margin-top: 10px;
+}
+
+.distance-appt-flow{
+  place-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.as-site-code{
+  margin-left: 10px;
+}
+
+.as-find-site-code{
+  margin-left: 10px;
+  display: inline;
+}

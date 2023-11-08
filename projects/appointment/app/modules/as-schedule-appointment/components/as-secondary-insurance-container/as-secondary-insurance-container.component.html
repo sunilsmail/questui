@@ -1,0 +1,7 @@
+<ng-container *ngIf="(mandatoryAddressF1687$| async); else oldVersion">
+  <as-secondary-information-new></as-secondary-information-new>
+</ng-container>
+
+<ng-template #oldVersion>
+  <as-secondary-information></as-secondary-information>
+</ng-template>

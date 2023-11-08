@@ -1,0 +1,9 @@
+@import '../../../../../appointment/styles.scss';
+
+.onFocus:focus {
+  border: 2px solid $ds-green__500;
+}
+
+.i-card {
+  gap: 10px;
+}

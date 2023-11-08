@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="22px" viewBox="0 0 14 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ds-icon--mobile</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ds-icon--mobile" fill="#424245" fill-rule="nonzero">
+            <g id="icons8-iphone">
+                <path d="M11.5,0 L2.5,0 C1.12,0 0,1.12 0,2.5 L0,19.5 C0,20.88 1.12,22 2.5,22 L11.5,22 C12.88,22 14,20.88 14,19.5 L14,2.5 C14,1.12 12.88,0 11.5,0 Z M7,20.125 C6.378,20.125 5.875,19.622 5.875,19 C5.875,18.378 6.378,17.875 7,17.875 C7.622,17.875 8.125,18.378 8.125,19 C8.125,19.622 7.622,20.125 7,20.125 Z M12,17 L2,17 L2,3 L12,3 L12,17 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

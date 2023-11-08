@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>A4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="A4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-back-arrow">
+            <rect id="bounding-box" x="0" y="0" width="24" height="24"></rect>
+            <path d="M5.23,11.1 L19.13,11.1 C19.5825095,11.1481691 19.9257928,11.5299339 19.9257928,11.985 C19.9257928,12.4400661 19.5825095,12.8218309 19.13,12.87 L5.23,12.87 C4.77749045,12.8218309 4.43420722,12.4400661 4.43420722,11.985 C4.43420722,11.5299339 4.77749045,11.1481691 5.23,11.1 Z" id="Path" fill="#232325" fill-rule="nonzero"></path>
+            <path d="M12.18,4 C12.4096834,4.00274146 12.6289625,4.09620466 12.79,4.26 C13.1318393,4.60655422 13.1318393,5.16344578 12.79,5.51 L6.45,12 L12.8,18.51 C13.1365444,18.8587094 13.1365444,19.4112906 12.8,19.76 C12.6395999,19.9281229 12.417365,20.0232505 12.185,20.0232505 C11.952635,20.0232505 11.7304001,19.9281229 11.57,19.76 L4,12 L11.56,4.26 C11.7247249,4.09560601 11.9472888,4.0022728 12.18,4 Z" id="Path" fill="#232325" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

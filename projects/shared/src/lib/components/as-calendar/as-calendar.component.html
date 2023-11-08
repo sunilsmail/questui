@@ -1,0 +1,45 @@
+<div class="ds-calendar ds-grid--12">
+  <label class="visually-hidden" tabindex="0">Choose a date to schedule an appointment</label>
+  <div class="ds-font--16--bold currentmonthfocus" tabindex="0">{{currentMonth}} {{currentYear}}
+  </div>
+  <div class="ds-content-block ds-flex --row">
+    <button class="ds-col--1" [disabled]="!previousEnabled" title="previousbutton" (click)="onPrevious()" [attr.aria-label]="getPrevLabelData" tabindex="0" role="button"  name="previousbuton" (keydown)="onKeyPressedArrow($event,'previous')">
+      <!-- aria-label="choose previous set of dates" -->
+      <div class="ds-icon--arrow-left ds-font--16" [ngClass]="previousEnabled?'previous-enabled': 'previous-disabled'"></div>
+    </button>
+    <div class="ds-col--1" *ngFor="let calItem of showCalMap; let i = index" (keydown)="onKeyPressed($event,calItem)" aria-label="choose date to schedule appointment"
+      i18n-aria-label>
+      <div class="ds-option__circle"  [ngClass]="calItem?.disabled?'diable-dates': ''">
+        <input type="radio" [disabled]="calItem?.disabled"  [ngClass]="calItem?.disabled?'diable-dates': ''"  name="ds-calendar" id="ds-option--{{i+1}}" [checked]="i === itemChecked" (keyPress)="onKeyPressed($event,calItem)" (click)="onDateSelected(calItem, $event)">
+        <!-- <label for="ds-option--{{i+1}}">{{calItem['date']}}</label> -->
+        <!-- <label for="ds-option--{{i+1}}" *ngIf="!calItem?.disabled">{{calItem['date']}}</label> -->
+        <label for="ds-option--{{i+1}}" [ngClass]="calItem?.disabled?'diable-dates': ''" [attr.aria-label]="calItem['date']">{{calItem['date']}}</label>
+      </div>
+      <div><button (keyup.enter)="onKeyPressed($event,calItem)" [disabled]="calItem?.disabled" (click)="onDateSelected(calItem)" role="button" [attr.aria-label]="itemChecked === i ? calItem['day'] + ' '+ calItem['date'] + ' '+ currentMonth +' '+ currentYear + ' selected' :calItem['day'] + ' '+ calItem['date'] + ' '+ currentMonth +' '+ currentYear" [name]="calItem['day']" [ngClass]="calItem?.disabled?'diable-dates': ''" >{{calItem['day'] | slice:0:3}}</button></div>
+    </div>
+    <button class="ds-col--1 nextArrow" title="nextbutton" [disabled]="!nextEnabled" (click)="onNext()" tabindex="0" role="button" name="nextbutton"  [attr.aria-label]="getNextLabelData" (keydown)="onKeyPressedArrow($event,'next')">
+      <!-- aria-label="choose next set of dates" -->
+      <div class="ds-icon--arrow-right ds-font--16"  [ngClass]="nextEnabled?'previous-enabled': 'previous-disabled'"></div>
+    </button>
+  </div>
+</div>
+<div class="ds-content-block__tabs ds-grid--12 ds-flex --center-center" *ngIf="!(enableNewUI$ | async)">
+  <div class="ds-col--12 ds-flex --center-center">
+    <div class="ds-col--6">
+      <button class="ds-flex --center-center" [ngClass]="tabValue?'ds-tab--selected': 'ds-tab'" (keydown)="onKeyPressedTab($event,'morning')" (click)="onMorning()"
+        tabindex="0" role="tab" aria-label="morning" [attr.aria-selected]="tabValue">
+        <label class="as-calendar__tab-morning" i18n >Morning</label>
+      </button>
+    </div>
+    <div class="ds-col--6">
+      <button class="ds-flex --center-center" [ngClass]="!tabValue?'ds-tab--selected': 'ds-tab'" (keydown)="onKeyPressedTab($event,'afternoon')" (click)="onAfternoon()"
+        tabindex="0" role="tab" aria-label="afternoon" [attr.aria-selected]="!tabValue">
+        <label class="as-calendar__tab-afternoon" i18n >Afternoon</label>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+

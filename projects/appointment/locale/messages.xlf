@@ -1,0 +1,2883 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="e329f67417e3574eda9988c92b15c0e29df1dd1b" datatype="html">
+        <source>close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-session-timout-popup/as-session-timout-popup.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-session-timout-popup/as-session-timout-popup.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-never-mind-dialog/as-never-mind-dialog.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-important-visit-info-dialog/as-important-visit-info-dialog.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="03fb03aee1d57b920c01625c85d2d5a9c7ec6d4a" datatype="html">
+        <source>Schedule Appointment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7bf84399fc239b6ff5e204883f41fce14860786f" datatype="html">
+        <source>Find Location</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b6dbf2d92858e82bcf6ae5dbc8dfb4b29d82ad0" datatype="html">
+        <source>FAQ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="02e9e69ddcbf93de9fd38bc4d0f312142658610d" datatype="html">
+        <source>Contact Us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ba4f24bf9bf3dc4db3d6bc1b8b63339295f0b806" datatype="html">
+        <source>Sign In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="961d97d48a92b165038791ff5c25eed2988d7624" datatype="html">
+        <source>Schedule Appointment<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a811591234736f51cca8dc1014669d5cfda990c9" datatype="html">
+        <source>Find Location<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2615cbb2054f916a6205ee5dcafac3fa6b33ac0b" datatype="html">
+        <source>FAQ<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f32434bf70ee972ad94d3f187a54d19a8882ff72" datatype="html">
+        <source>Contact Us<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar-auth/as-toolbar-auth.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3cb9bfb8cd7a61d04a5605fbce438638ba147cbe" datatype="html">
+        <source>Sign In<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-toolbar/as-toolbar.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="25c140f5ff9dadf1cbb059a870b327f6b826f7a1" datatype="html">
+        <source>This test is not supported at your selected location</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-reason-test-list/as-reason-test-list.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-reason-test-list/as-reason-test-list.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f8bfb873ca74601e7d605a83daa2ce74b74a5185" datatype="html">
+        <source> show available locations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-reason-test-list/as-reason-test-list.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-reason-test-list/as-reason-test-list.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6d7c76e83c62358e3057a6465fb5b70f7f30e1d7" datatype="html">
+        <source>Search zip code, city or address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-search/as-psc-search.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d4dc196f3f5c4360ad98306d4f491792af0c595d" datatype="html">
+        <source>use my location</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-search/as-psc-search.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a95552d5f47196e21d4e1b33b6cc19f77c34dbcf" datatype="html">
+        <source>
+    Enable Browser Location to see Quest locations near you
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-enable-browser-location/as-enable-browser-location.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="31061624e45ef9c2edc05e7354c591c70185048a" datatype="html">
+        <source>We were unable to find your current location.
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-enable-browser-location/as-enable-browser-location.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1f3ca2bce80bfd04c3b87fa4c898178cf3791906" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{_psc.distance}}"/> miles</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ab5049074a243ca6c30ef52eb9b9c0db00170812" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>•<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+            <x id="INTERPOLATION" equiv-text="{{_psc.customMessage}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="619314eb2ab23c7090a34aa7e7cd76018d0ded9f" datatype="html">
+        <source>This location requires an appointment. Clicking the link below will open in a new window.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b1a8c602d3efd1df566bc5d67243c7073d709472" datatype="html">
+        <source>No morning timeslots available for this date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c5026b594c2d2a2e448d30587a3c51b525e5078" datatype="html">
+        <source>No afternoon timeslots available for this date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-details/as-psc-details.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ea972899addb59bdbd916a97347b11b05f683b70" datatype="html">
+        <source>choose date to schedule appointment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-calendar/as-calendar.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="afb34834bae522392db037ad8c077bdb88f528c8" datatype="html">
+        <source>Morning</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-calendar/as-calendar.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="53e79b0fa59f7bed642eae9e4cb3a202ac9bc1fa" datatype="html">
+        <source>Afternoon</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-calendar/as-calendar.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bc0c404cc52a75a5168ffba373404287b04a6321" datatype="html">
+        <source>available appointment times</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-psc-time-slot/as-psc-time-slot.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f45bb3d1e61f0bad3658c1b9db2eb8c720b5e6a9" datatype="html">
+        <source>Cookies Notice</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cc82fa89983785cb60daa0a7516c611fc02b5cd1" datatype="html">
+        <source>Copyright</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1936afb41bdcc701aa98739fbdeb20b6a68cec42" datatype="html">
+        <source> Privacy Shield</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="04d6575cbce42282d4391f95308ab965e093b3ea" datatype="html">
+        <source> Privacy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a21f4ebaa7bf1b1ddb0206b8e8c43fa928d09f4" datatype="html">
+        <source> Terms </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dbd8b7a3ca6ea8854082ec8e096af7a33c817b3a" datatype="html">
+        <source>  Language Assistance / Non-Discrimination Notice</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dbf90b85d8792944378b79baea07f0cd39a2d683" datatype="html">
+        <source> Asistencia de Idiomas / Aviso de no Discriminación</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a3e1e682aa2cee96d9d0bd1604eaba676957251d" datatype="html">
+        <source> 語言協助 / 不歧視通知</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a7c4963290c4c20f3e40860977f7ef8442cf4e3b" datatype="html">
+        <source> DO NOT SELL MY PERSONAL INFORMATION </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-app-footer/as-app-footer.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="98d4589360a9c06e6b6e1cc9c72122db2f8e24b8" datatype="html">
+        <source>Add to calendar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-add-to-calendar/as-add-to-calendar.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-add-to-calendar/as-add-to-calendar.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e2cee89b3773283b2452f0e0feace39a8a3c2d07" datatype="html">
+        <source>Employer Health and Wellness</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-bfa-redirection-dialog/as-bfa-redirection-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-bfa-redirect-dialog/as-bfa-redirect-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7cfbbb5f9acd1084b89de45167f248b7e652a8fc" datatype="html">
+        <source><x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/><x id="INTERPOLATION" equiv-text="{{content.as_bfa_redirect.content}}"/><x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-bfa-redirection-dialog/as-bfa-redirection-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-bfa-redirect-dialog/as-bfa-redirect-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="43e99b0cb878c6b7971e36572e0caa024a25ac07" datatype="html">
+        <source>Note: <x id="INTERPOLATION" equiv-text="{{content.as_active_infection_dialog.message_3}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-covid-active-infection-order-dialog/as-covid-active-infection-order-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-active-infection-order-dialog/as-active-infection-order-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="969e338e17adaaad065e3af69d18855d6fc0ce48" datatype="html">
+        <source>Please contact your doctor to ask them to send an electronic lab order to Quest Diagnostics and then return to
+        <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>www.MyQuestCovidTest.com<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>  to schedule your appointment. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-covid-active-infection-order-dialog/as-covid-active-infection-order-dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-active-infection-order-dialog/as-active-infection-order-dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0b1893c7531dc85c5a7af4f07fd31b50be1dc3b0" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_active_infection_dialog.message_1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-covid-active-infection-dialog/as-covid-active-infection-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-active-infection-dialog/as-active-infection-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5f893d5e1dd35b949992d3be121085d2dd0cb4e0" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_active_infection_dialog.message_2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-covid-active-infection-dialog/as-covid-active-infection-dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-active-infection-dialog/as-active-infection-dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8c5f86bf0f24ed7d5d1ef211f6f953a7cbd5b261" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_covid_antibody_dialog.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-covid-antibody-dialog/as-covid-antibody-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-antibody-dialog/as-antibody-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-antibody-dialog/as-location-antibody-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4a84109f3a2548d16fbaec63d6570c8c146cf7cc" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_covid_antibody_dialog.message_1}}"/> <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> <x id="INTERPOLATION_1" equiv-text="{{content.as_covid_antibody_dialog.message_2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../shared/src/lib/components/as-covid-antibody-dialog/as-covid-antibody-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-antibody-dialog/as-antibody-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-antibody-dialog/as-location-antibody-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f8656964f156f02653a777046ffad6fc3265a92a" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_confirmation.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-confirmation/as-echeckin-confirmation.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="15fbdccc0f4dbb693c9cf2c389eb583a700c4691" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_confirmation.message}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-confirmation/as-echeckin-confirmation.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c7e6786d33d33556293c4328c8b4c89b904e9ba" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_confirmation.content1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-confirmation/as-echeckin-confirmation.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a1edda5c85d97a22816731b68c97f4de43bdad5e" datatype="html">
+        <source>We will save your information, including <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>insurance so you can skip these steps for<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/> future visits.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-confirmation/as-echeckin-confirmation.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e19fcf996343543e13789f17b550ab0c08124b5c" datatype="html">
+        <source>Create Account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-confirmation/as-echeckin-confirmation.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="525d81df1d78f5bf7d70c5cb43b661063d872a26" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_echeckin_insurance_information.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c5e6750257e045030311e7e0872032d82159bbd3" datatype="html">
+        <source>Insurance Provider</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b1fe66085337be5a0406caf56ca743af47e2f030" datatype="html">
+        <source>Member ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f8efddc722dfd3cd4c80e924ad753353a33464cd" datatype="html">
+        <source>Group ID (optional)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f0197a1ccf30fdd4290e14910716c4b69cbb7201" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_eorder_insurance_information.primary_insurance_holder}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b36363f85bd9d8f33b3e0b01ae6788ec879deb1b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{personalInfo.firstName}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e5ff7a2c46ceb74c186333d0b000d5a8f4c1f8be" datatype="html">
+        <source>Someone else</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c83b838d845690bcb897f775f53b5316535306dc" datatype="html">
+        <source>First Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">226</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="166b2cc65003221ff5f3ec05d5baca41e6821396" datatype="html">
+        <source>Last Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">237</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8314d3a36da2092565b9b0a429b5335542e6c8dd" datatype="html">
+        <source>Date of Birth</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">172</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">250</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="256496314c3fb7fd88a41c838c37a380a28c7415" datatype="html">
+        <source>Sex</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">262</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="097b5dfee5665aa0f7daba8b696acecde6445474" datatype="html">
+        <source>Male</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">188</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">266</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="18f3bafdc69b800737e303bc1cb0753bd9dd3f32" datatype="html">
+        <source>Female</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">193</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">271</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="db654f91d847f34e71ffb99268ff3a1807913421" datatype="html">
+        <source>Phone Number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">202</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">157</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">280</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-verify-phone-dialog/as-verify-phone-dialog.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-dialog/as-forgot-confcode-dialog.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="23e35ac014c20537442e08a4e920e6ac0fdb9ffa" datatype="html">
+        <source>Relationship to You</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">165</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">214</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">293</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21dd1d5f3fcd4d7c96e4b7b187d6d2198fbe0e1e" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_echeckin_insurance_information.primary_insurance_holder_address}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="729754dd19eb9ce0670b0aeb5a6ae60574c2c563" datatype="html">
+        <source>Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">234</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">315</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">314</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">397</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">199</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d6c37cc15ad1d8156ec4bb23f8c75f09db504d97" datatype="html">
+        <source>Apt/Suite</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">204</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">251</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">334</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">331</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">417</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">217</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c7012b5a926b32d9e45fefdcc8a1a3cb6f023d0" datatype="html">
+        <source>City</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">214</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">265</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">348</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">345</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">431</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">230</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="873b72903b1858a9cd6c8967521030b4d7d1435b" datatype="html">
+        <source>State</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">224</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">273</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">193</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">354</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">240</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f5ba4ffd613669a7e26d40ef759ffa52682cdd2d" datatype="html">
+        <source>Zip Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">239</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">288</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">373</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">208</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">370</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">458</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">257</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html">
+        <source>Continue</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-insurance-information/as-echeckin-insurance-information.component.html</context>
+          <context context-type="linenumber">254</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d4421aaa709268a927ef91e28569287c1f8759c8" datatype="html">
+        <source>
+              <x id="INTERPOLATION" equiv-text="{{content.as_link_expiry.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-order-expiry/as-echeckin-order-expiry.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cb378e5e7132d3e8387dc7347c1cb5e293bd8925" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{content.as_link_expiry.content1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-order-expiry/as-echeckin-order-expiry.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cf3d981e16bba23184c24af63af49f4a8d86f9e6" datatype="html">
+        <source>
+              <x id="INTERPOLATION" equiv-text="{{content.as_echeckin_personal_information.title}}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c586f7b95857bda826a3a1abe412131f5afa0f91" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_echeckin_personal_information.title_1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e7f9477d6d3e9452d81d9c24f2d015aa03359f7e" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_personal_information.gender_male}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eca0011d12f74c2eab5ff4076b640e5ef50fcabe" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_personal_information.gender_female}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1e85de04933934eb876cbbaf31113f1a974315d5" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_personal_information.insurance_title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd65c337176662c58d86cadfab1eb96da51c2549" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_personal_information.insurance_radio_1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4fc15d0e8a03a6489911debe853779cb660bd096" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_echeckin_personal_information.insurance_radio_2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-personal-information/as-echeckin-personal-information.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="17108a380fcc0fd5d0397f1b85308576a3e5e6e3" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{content.as_token_not_found.content1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-echeckin/components/as-echeckin-token-not-found/as-echeckin-token-not-found.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="17d046be856b1daf2891967ef0149f28f0cc44a9" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_find_a_location.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-appt-scheduler/as-eorder-appt-scheduler.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-appt-scheduler/as-appt-scheduler.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-find-lcn-appt-scheduler/as-find-lcn-appt-scheduler.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6a29ef24212bcbe067bae273c3a635bbcb4297a8" datatype="html">
+        <source>Your location, date and time are no longer available. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Please choose a new location, date and
+                time<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-appt-scheduler/as-eorder-appt-scheduler.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-appt-scheduler/as-appt-scheduler.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c307067823865e44b19e91a73c24c9909be614fe" datatype="html">
+        <source>Your selected location does not support <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>. Please select a new location.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-appt-scheduler/as-eorder-appt-scheduler.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-appt-scheduler/as-appt-scheduler.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dda5a8178bd4067f2d5e5c69ff7d3ef3e227d3d8" datatype="html">
+        <source>Show more locations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-appt-scheduler/as-eorder-appt-scheduler.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-appt-scheduler/as-appt-scheduler.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder/as-location-finder.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff744b12b0fdf57ecd9c1af7ead234b6a9745dac" datatype="html">
+        <source>No timeslots available for this date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-appt-scheduler/as-eorder-appt-scheduler.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-appt-scheduler/as-eorder-appt-scheduler.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-appt-scheduler/as-appt-scheduler.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-appt-scheduler/as-appt-scheduler.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-find-lcn-appt-scheduler/as-find-lcn-appt-scheduler.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-find-lcn-appt-scheduler/as-find-lcn-appt-scheduler.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a49185dc75ae64dde0cf91b5ef8fdf2d4c4890eb" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_confirmation.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-confirmation/as-confirmation.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6e665b93183e5a3bafe14ec73d0d9241b49f2062" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{message}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-confirmation/as-confirmation.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3b4d1318d09999ac4086fe92ad841f221e165c06" datatype="html">
+        <source>
+            <x id="INTERPOLATION" equiv-text="{{content.as_confirmation.confirmation_code}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-confirmation/as-confirmation.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a1696a3e46ef05da5afe67a3d9e47e6e8de8eed5" datatype="html">
+        <source>Estimated Cost</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="735db527400051eb7ceb92ae5ece40a34a627aa4" datatype="html">
+        <source>Unable to provide estimate at this time but an estimate will be provided at your visit.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fb510153c49a04c6898f0835e80b5fb080b125a7" datatype="html">
+        <source>Location, date, and
+          time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-confirmation/as-confirmation.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eefd4801b224936196a555cc6a5b91e0b6aa6a97" datatype="html">
+        <source>
+              <x id="INTERPOLATION" equiv-text="{{appointmentData.name}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="844a4305df756ae24d4d61638089ee544d32bd65" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{appointmentData.address1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c686da92794d5a42412951ac2244e36b0bc59bc8" datatype="html">
+        <source>
+              <x id="INTERPOLATION" equiv-text="{{appointmentData.address2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56eefb10d2d48a172922796e5fbd3423efbc41de" datatype="html">
+        <source>
+              <x id="INTERPOLATION" equiv-text="{{appointmentData.city}}"/>, <x id="INTERPOLATION_1" equiv-text="{{appointmentData.state}}"/> <x id="INTERPOLATION_2" equiv-text="{{appointmentData.zip}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="788ffb656873b4b47534ba48e89e61b262f2988a" datatype="html">
+        <source>Print Details </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-confirmation/as-eorder-confirmation.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-confirmation/as-confirmation.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6e1abf706ab133193afbd3c6b9810a7581d775ee" datatype="html">
+        <source>Hey
+              <x id="INTERPOLATION" equiv-text="{{appointmentDetails?.firstName}}"/> , we’ve found the details for your appointment on
+              <x id="INTERPOLATION_1" equiv-text="{{appointmentDetails?.appointmentDate | date: &apos;EEEE,  MMMM d&apos;}}"/>.
+           </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4616994c3536efd27ed3b58ce056e4dfe2f96143" datatype="html">
+        <source>Confirmation code
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8d62da38c69df5c5e833d5280122e93734475b6" datatype="html">
+        <source>Who’s visiting
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c397362f5a953d7b1db58041ed851be8cc1ad86" datatype="html">
+        <source>
+                              <x id="INTERPOLATION" equiv-text="{{personalData.demographics?.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{personalData.demographics?.lastName}}"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11cfea530bf122cdf875715242a5b27b7fc70b67" datatype="html">
+        <source>Location, date, and time
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="71d4dbe72af139f2a22a66100c1d5dba12c1da2b" datatype="html">
+        <source>Insurance information
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="248d7896bdcec86e0f4c54b3ba156783e725e41d" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{insuranceData?.insurance.insuranceName}}"/>
+                 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4088104c39e07c60d4c6dd92c31c993d7eae9c24" datatype="html">
+        <source>
+                 You have not provided insurance for your appointment.
+                 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8ba8925993afc7335c85bb22f505200ac7aa5ec0" datatype="html">
+        <source>
+              Unable to provide estimate at this time but an estimate will be provided at your visit.*
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="42ca7ffa1a7e801e7c7ff41de796d114f90c068d" datatype="html">
+        <source>Directions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">177</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">235</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dcde038e60c0371e463c744e0eccdbcf4f61e6b7" datatype="html">
+        <source>Diagonally across from Lowe&apos;s Home Improvement Center
+           and next to the Deerfield Township Center.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cb790c77f211cbde1ddd4f6e97f93d1f1c48c419" datatype="html">
+        <source>Fasting Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">195</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cab0968bedcffb9d9857dd267428acdf938ef2c7" datatype="html">
+        <source>If your test requires it, don&apos;t forget to fast for
+              8-12 hours before your appointment. If you&apos;re not sure, contact your doctor&apos;s office.
+           </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-find-appointment-summary/as-eorder-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">188</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="afb62422514641049bf44c07d37ca33989f043f0" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_eorder_insurance_information.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="198c27ff6291bb3283d8f8b558e5f65de193e3f8" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_eorder_insurance_information.title_description}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e5c731624b3ee89f7a69b4d7ac14e23cc22f3836" datatype="html">
+        <source>Provide later</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="07a461f0d65489aa27e8a821d8a4b8032a97cb9c" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{demographicObj?.firstName | titlecase}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="49b7a1ee5df51f164b0a6ce6fad1df0c75f442a4" datatype="html">
+        <source>
+                Do you have Lab Card<x id="START_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;sup&gt;"/>TM<x id="CLOSE_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;/sup&gt;"/> as a part of your health insurance benefit plan?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3d3ae7deebc5949b0c1c78b9847886a94321d9fd" datatype="html">
+        <source>No</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eafa430b33a624be1617a77cf8a2af24061b670d" datatype="html">
+        <source>The location you selected does not support Lab Card<x id="START_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;sup&gt;"/>TM<x id="CLOSE_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;/sup&gt;"/>.
+                  <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Show available
+                    locations<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="767729f17a77c6dba2ff1f6ba618c1c3e3b236df" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_eorder_insurance_information.primary_insurance_holder_address}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">228</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2af795277430580230b647e878752129b1642b15" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_insurance_information.primary_insurance_sameas}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-insurance-information/as-eorder-insurance-information.component.html</context>
+          <context context-type="linenumber">301</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7cfa25bba5cf351a7e4cc67a62f9297c9d21960" datatype="html">
+        <source>
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-order-expiry/as-eorder-order-expiry.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="acd03c810631c50e8f2db1b23254ffe374eb670d" datatype="html">
+        <source>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-order-expiry/as-eorder-order-expiry.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f5e1bb8163b4ba4befc3fdae4be9ba9ebe5d75bc" datatype="html">
+        <source>
+                <x id="INTERPOLATION" equiv-text="{{dialogData?.line2}}"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-order-expiry/as-eorder-order-expiry.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d560955b5b67d19567326175a2eda487866cfeb4" datatype="html">
+        <source>
+                <x id="INTERPOLATION" equiv-text="{{dialogData?.line3}}"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-order-expiry/as-eorder-order-expiry.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ace374e74ae2f54a102156fac24a5b83c9bfaa8b" datatype="html">
+        <source>Sign Up Today</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-order-expiry/as-eorder-order-expiry.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ff0a9c2e9b8e1f92191dab7d85e3296f95b02970" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_eorder_personal_information.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f81b36bf52b1041239a4b02ff208f51c5772b772" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_eorder_personal_information.title_1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-dialog/as-forgot-confcode-dialog.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="02b553441c9b4640ee46868be38d659c1bf9b162" datatype="html">
+        <source>Is this a mobile phone?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">166</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a097a27a19dca53747e58da43e35dd6b4876f16b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_personal_information.mobile_yes}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="86364a643476f020a96ee857104a6135a63ca882" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_personal_information.mobile_no}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">174</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8a576a1564bd1e18638fc63f5f2efa8bb5b37c19" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_personal_information.contact_preferences_title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e327d954655f90a1261b975fb58933c991cd2bc9" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_personal_information.contact_preferences_email}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">195</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3f1d822692dec73dce1aac9153aaadcb5b36023a" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_personal_information.contact_preferences_text}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-personal-information/as-eorder-personal-information.component.html</context>
+          <context context-type="linenumber">201</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="86067c71eab4bd4068e7deac721c054c96437606" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate_dialog.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-price-estimate-dialog/as-price-estimate-dialog.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d1371947c145488a810cab2e66e50738bc47d88a" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate_dialog.link}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-price-estimate-dialog/as-price-estimate-dialog.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c1ce152dba8c0fada53adcc665961de050f2591" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-price-estimate/as-eorder-price-estimate.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3abc3674a97526bf098d5a321adf9f0732b7dec9" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate.title1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-price-estimate/as-eorder-price-estimate.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="38f515337f04851d4d5d43b48720b46e9553d2c5" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate.priceNotAvailable}}"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-price-estimate/as-eorder-price-estimate.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d469b1309564f5c0021e67b1eb0e010383ab784f" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate.content2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-price-estimate/as-eorder-price-estimate.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93d51b4b0cd9ed9e40fa9ba0a6fa427c0376b11c" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate.content3}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-price-estimate/as-eorder-price-estimate.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="054fd596311d0966412da7aa2ac4caa7e309d152" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_eorder_price_estimate.content4}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-price-estimate/as-eorder-price-estimate.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f6dcd030d8739bb7b168016789406c52e7a038b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_reason_for_visit.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-reason-for-visit/as-eorder-reason-for-visit.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-reason-for-visit/as-reason-for-visit.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8b7071e49e377d8824300ac9a7b7c83bdb63f16" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_reason_for_visit.title_3}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-reason-for-visit/as-eorder-reason-for-visit.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-reason-for-visit/as-reason-for-visit.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-reason/as-location-finder-reason.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a483cec27377de2a2ecd0baef1d5ffdd7a735bff" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_reason_for_visit.title_2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-reason-for-visit/as-eorder-reason-for-visit.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-reason-for-visit/as-reason-for-visit.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-reason/as-location-finder-reason.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f24b03b1746913f3f36d9dfff09142e93eb4ab31" datatype="html">
+        <source>No data found.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-reason-for-visit/as-eorder-reason-for-visit.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-reason-for-visit/as-reason-for-visit.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-reason/as-location-finder-reason.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-reason/as-location-finder-reason.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c964b11a81d5461386e2179d14228a40cdfba2b2" datatype="html">
+        <source>
+            <x id="INTERPOLATION" equiv-text="{{content.as_review_appointment_details.title_desktop}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a4df4e07c9f9f1926a7d02bded63e0b154ff6144" datatype="html">
+        <source>Reason for visiting
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="841e7e5d404f529d4fe510e92972b6ef97b98b94" datatype="html">
+        <source>
+                  Multiple Drug Tests
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5757c957f00df164a074d35f9e86ff0ab88a3ef6" datatype="html">
+        <source>Location,
+                    date, and time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="063396b1cd4c439c7298e04349f7430d817f87d6" datatype="html">
+        <source>
+                      <x id="INTERPOLATION" equiv-text="{{appointmentData?.name}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0d55b2471bb525166f9ff9e580c30e3d4632390c" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{appointmentData?.address1}}"/>
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5678073ac3a9a923f1bb2d051b7b65ebd2e1a2ef" datatype="html">
+        <source>
+                      <x id="INTERPOLATION" equiv-text="{{appointmentData?.address2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a11201f1e324ae4605c891741c6e484f9eb84073" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{appointmentData?.city}}"/>, <x id="INTERPOLATION_1" equiv-text="{{appointmentData?.state}}"/> <x id="INTERPOLATION_2" equiv-text="{{appointmentData?.zip}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f72d2f2238c4fdfb7847fb010fdea526fb2e2da" datatype="html">
+        <source>Who’s visiting</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="61a73436fbcf602c3e293f03c4fcabfaeced53fd" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{personalData?.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{personalData?.lastName}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f2587e2458208e0258a1fee91967b37ffbdcb669" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{personalData?.emailAddress}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d46fab08d48d2c5b3a6ea43ea2595a578ee5ab23" datatype="html">
+        <source>Insurance
+                    information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2003a900da3ef5831b1ad77dd0abe89e1f09178f" datatype="html">
+        <source>
+                  Our system can&apos;t find your provider; we&apos;re updating it regularly. Bring your insurance card and we&apos;ll
+                  get coverage figured out for you.
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2e9afee84774955a2d7678df7542d3bf681ecb68" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{insuranceData?.insuranceData.provider.insuranceCompanyName}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bf5fd30584cc439e447bc1603b72c575cc8135a4" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{insuranceData?.insuranceData.memberId}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e56734be3345c5757eb783548fbc5946bfc5c266" datatype="html">
+        <source>
+                  No insurance provided
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">147</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5b4b30e7837ac12235d5e7b8e2ed5fb73118a2ab" datatype="html">
+        <source>The time you selected is no longer available. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>Please<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/> make changes to your location, date or
+                    time<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-review-details/as-eorder-review-details.component.html</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0f91b707c3b9ecd785389f55a8d5c424fd44f8b6" datatype="html">
+        <source>Hello <x id="INTERPOLATION" equiv-text="{{firstName | titlecase}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d1bad52bbee884d30b34b5cd764750590d021168" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_verify_identity_dialog.error_retry}}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7d2bc4f9e3aa0929a1614fb48b17186a83aa9d4f" datatype="html">
+        <source>The information you entered doesn’t match the lab order we received. Your access has been locked, wait <x id="INTERPOLATION" equiv-text="{{lockedMinutes}}"/> minutes before attempting access again. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f99ba6d4abbb1e674c0241cbf9388f980ad7341f" datatype="html">
+        <source><x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/><x id="INTERPOLATION" equiv-text="{{content.as_verify_identity_dialog.link_nevermind}}"/><x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="36ca4dd36438f55c902b51a0efe011b18c0874b0" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_verify_identity_dialog.button_label}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-verify-identity-dialog/as-verify-identity-dialog.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="42925b19c1e9b6e42ec5c8b59d78b9a174b3662c" datatype="html">
+        <source>Your Information
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-navigation-sidebar/as-eorder-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6bdb69cdd3b4eeffaacaad29f5fed64433545f78" datatype="html">
+        <source>Reason For Visit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-navigation-sidebar/as-eorder-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1e15b63da3517125435346812d7b4dba0af70428" datatype="html">
+        <source>Location,
+              date, and time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-navigation-sidebar/as-eorder-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1395edf6d68b6b9544262fe8775836897adf803c" datatype="html">
+        <source>Insurance
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-navigation-sidebar/as-eorder-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f143bb7ff8728d1fb5cde6c2fc5cb52b96f63484" datatype="html">
+        <source>Cost Estimate
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-eorder/components/as-eorder-navigation-sidebar/as-eorder-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f375f38216fdb0ebea1328550c2ce90ce36cf374" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_purchase_my_own_test_dialog.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-purchase-my-own-test-dialog/as-purchase-my-own-test-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-purchase-my-own-test-dialog/as-location-purchase-my-own-test-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3fcee7ad44a086f2ca9bebf4c0b1e3579d7e504e" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="INTERPOLATION" equiv-text="{{content.as_purchase_my_own_test_dialog.message_2}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> <x id="INTERPOLATION_1" equiv-text="{{content.as_purchase_my_own_test_dialog.message_3}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-purchase-my-own-test-dialog/as-purchase-my-own-test-dialog.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-purchase-my-own-test-dialog/as-location-purchase-my-own-test-dialog.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ad86e72a64771ed04c36ac7e8f58ed4832af3c6b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_reason_for_visit.title_4}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-reason-for-visit/as-reason-for-visit.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-reason/as-location-finder-reason.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="613828ec2ec1042823ff5b404233a82be3954082" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_peace_of_mind_test_dialog.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-peace-of-mind-test-dialog/as-peace-of-mind-test-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-peace-of-mind-test-dialog/as-location-peace-of-mind-test-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="de7c6c16194b8405c3bafd26fd422085c0242c91" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_peace_of_mind_test_dialog.message_1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-peace-of-mind-test-dialog/as-peace-of-mind-test-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-peace-of-mind-test-dialog/as-location-peace-of-mind-test-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a16e39e98c9b808aa51c02771e1cda22b227813e" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_peace_of_mind_test_dialog.message_2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-peace-of-mind-test-dialog/as-peace-of-mind-test-dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-peace-of-mind-test-dialog/as-location-peace-of-mind-test-dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e8c485e4eebfb1bcb0511cbfd23aa4031b5a816a" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_insurance_information.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34f1e51d430b34eeee54c68198b25af6294b163e" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_insurance_information.title_description}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bfbc9cb81af081172734b2d48c7183066f3b42d6" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_insurance_information.primary_insurance_holder}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a1fa4316543b321937b26d7dbc8934da9214c63e" datatype="html">
+        <source>
+                  Do you have Lab Card<x id="START_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;sup&gt;"/>TM<x id="CLOSE_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;/sup&gt;"/> as a part of your health insurance benefit plan?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="94fc024882470587b54190c552855ad2ab6732dc" datatype="html">
+        <source>The location you selected does not support Lab Card<x id="START_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;sup&gt;"/>TM<x id="CLOSE_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;/sup&gt;"/>.
+                    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Show available
+                      locations<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="998ead6626fd6c3c0bcb74995b3257581cbd25b3" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_insurance_information.personal_address}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f89a75858fcade7b2102a728ba917b09f7ba4a88" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_insurance_information.primary_insurance_holder_address}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">307</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8e8c8b7ee5ba9ab558a75c4ab98bbab677797575" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_insurance_information.primary_insurance_sameas}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-insurance-information/as-insurance-information.component.html</context>
+          <context context-type="linenumber">383</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b240bbb985437daf8f32ed9a3d2ccf27288f3419" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_personal_information.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4825bfa3f0498fd7b12a10a1ecbdf3cc9c69f456" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_personal_information.title_1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="344db26063f271c2a6f7ffe2eece01f23d6cb5b5" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.mobile_yes}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6ac36459a2c44d5b11707b4811b65f1fed55ce49" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.mobile_no}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0301a1f8fa75c06fd896e1b2d6e99fb873944c51" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.contact_preferences_title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8aea3fd2ce3620389baddd8d3b1715c33232d9dc" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.contact_preferences_email}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d11746968614c6c825fbf4a91474ecae7c26b93d" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.contact_preferences_text}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e6b9b6d5d3bc35f4cfe65204674f14aa6625fed3" datatype="html">
+        <source>I agree to the Quest Diagnostics <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>terms of services<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">270</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0f6182ae3accbae3e00129888c40861b3672e3cb" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_personal_information.insurance_title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">279</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34dbe8b02205410e52df31a9d9f2a1c571c6532e" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.insurance_radio_1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">288</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c98573718d924e30ed8e23282cc9d7f6c651ae0c" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.insurance_radio_2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">293</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="64a23cd411962d54b0e1c0076804fccbb58f69f7" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_personal_information.insurance_radio_3}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-personal-information/as-personal-information.component.html</context>
+          <context context-type="linenumber">298</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93258ded2d121d44863d6fd3301e919793517c95" datatype="html">
+        <source>confirm</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-never-mind-dialog/as-never-mind-dialog.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="24aea20d3fb40090e6927218ee906175f80391fb" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{personalData?.email}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ca59eea9166eec7a41481e12b06d92de189773d4" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{insuranceData?.data.provider.insuranceCompanyName}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ae0f94468ec3bfc5837ff038eef1eb7cbee4320" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{insuranceData?.data.memberId}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="609bace2cc5da39ab3e52de793b84467fc18f93a" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{neverMindText}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-review-details/as-review-details.component.html</context>
+          <context context-type="linenumber">175</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="da6c7d586facd86706ded75a8167d09b0f685a75" datatype="html">
+        <source>Modify/Cancel Appointment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-confirmation/as-confirmation.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b955dd3069ee62e41bbfe50f212cb5436dab38c" datatype="html">
+        <source>
+              <x id="INTERPOLATION" equiv-text="{{content.as_appointment_details.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5f3d7011d70243fea040f08bcda7c373e2941f1e" datatype="html">
+        <source> Reason for visiting
+                  <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{getReasonForVisit}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ceda3b4bcbe894b0bc864154a159cc6339817afd" datatype="html">
+        <source>
+                Multiple Drug Tests
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a79942402d01aea928fad83709305355821c3cf2" datatype="html">
+        <source>Location,
+                date, and time
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{getLocationAiraLable}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a41f0f6dd8f8337cc02c6e95312c8c7f686c199e" datatype="html">
+        <source>Who’s visiting
+                  <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{getWhoisVisitingAiraLable}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed86467f7c5fa102fbe7a6a37ee6088b2532c3c1" datatype="html">
+        <source>Insurance
+                  information
+                  <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{getInsuranceInfoAiraLable}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-navigation-sidebar/as-navigation-sidebar.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c33564fab93e8e9b848713ac3db995060319e649" datatype="html">
+        <source>Did not find a time that works for you? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/>See additional locations and times<x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-schedule-appointment/components/as-find-lcn-appt-scheduler/as-find-lcn-appt-scheduler.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ce026e8d781d171687ca6c68a0b86ee96a95fe99" datatype="html">
+        <source>Appointment cancelled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-cancel-appointment-success-dialog/as-cancel-appointment-success-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-cancel-appointment-success-dialog/as-cancel-appointment-success-dialog.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-cancel-appointment-success-dialog/as-cancel-appointment-success-dialog.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5ebf7ba02730ae84f98bed1f04d8ae090a5aa346" datatype="html">
+        <source>Reschedule</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-cancel-appointment-success-dialog/as-cancel-appointment-success-dialog.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10ef9e79eb22a6b524f167292cd88e97847acdf3" datatype="html">
+        <source>Are you sure you would like  to cancel this appointment? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-cancel-appointment-dialog/as-cancel-appointment-dialog.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="742dfa1d494c960d3e3a1b0c51751d9fc8de090c" datatype="html">
+        <source>Nevermind</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-cancel-appointment-dialog/as-cancel-appointment-dialog.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-dialog/as-forgot-confcode-dialog.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1293a8a96fc423d263462e1247f423d906d29a45" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_cancelAppointment.cancel_button_label}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-cancel-appointment-dialog/as-cancel-appointment-dialog.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11f85f2936b6cbcdc5a0847e8dba8c526f7e8990" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_verify_phonenumber_dialog.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-verify-phone-dialog/as-verify-phone-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0ba6c94219abbcfe785475aee436b22363a72aa2" datatype="html">
+        <source><x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/>Nevermind<x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-verify-phone-dialog/as-verify-phone-dialog.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-verify-phone-dialog/as-verify-phone-dialog.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="487be5e26d018bfdd3244186ecf4fa8fca58a315" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_verify_phonenumber_dialog.button_label}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-verify-phone-dialog/as-verify-phone-dialog.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="31bab05f118478370f5652f9358a458731fb856a" datatype="html">
+        <source>Hey
+          <x id="INTERPOLATION" equiv-text="{{appointmentDetails?.firstName}}"/>, we’ve found the details for your appointment on
+          <x id="INTERPOLATION_1" equiv-text="{{appointmentDetails?.appointmentDate | date: &apos;EEEE,  MMMM d&apos;}}"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8d259cca23079f18c0c681aad568705a2904cdf7" datatype="html">
+        <source>Confirmation code
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a0314750a5b1a14805905c7a4e5302933f7c117" datatype="html">
+        <source>Who’s visiting
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a7f86bf295b0329a3dd82c6348c2bf403de06a0e" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{personalData?.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{personalData?.lastName}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="abd4700ee6b7be6fb89f59c48baaef7a33283aca" datatype="html">
+        <source>Location, date, and time
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="299dc43ec35fa6e7d48b5b05d62ace71a7ae6cc0" datatype="html">
+        <source>Insurance information
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b23fba4d7bdd0bab5efe3826ebc71e7347ba906a" datatype="html">
+        <source>
+                    Our system can&apos;t find your provider; we&apos;re updating it regularly. Bring your insurance card and we&apos;ll
+                    get coverage figured out for you.
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="42d95669d8c657804cd875c7d39c35ce8540df2a" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{insuranceData?.data.provider.insuranceCompanyName}}"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c867ad42520bc3aad1be9cf2e083e5904d2f4c3f" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{insuranceData?.data.memberId}}"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d533f5aad68b47eae5f02c85635bcb8b61dc75cf" datatype="html">
+        <source>
+                    You have not provided insurance for your appointment
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f366e27f30b95cbab58d52a8e83c9ad3f857554" datatype="html">
+        <source>Insurance information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c90a29e73e532fba907c62afd51c2a09b8948f07" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{appointmentDetails.insuranceDetails.insCompanyName}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">158</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4e82d46f826126d464d503d31a32f24462d5246d" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{appointmentDetails.insuranceDetails.insMemberId}}"/>
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a07d3ebf057d08daea6825b2f26a34af93c09f16" datatype="html">
+        <source>
+                  You have not provided insurance for your appointment
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">166</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="af639feb59f4f809a51789a2d98708a146284960" datatype="html">
+        <source>If your test requires it, don&apos;t forget to fast for
+                8-12 hours before your appointment. If you&apos;re not sure, contact your doctor&apos;s office.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">196</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bbf451689a9b5d0e7fd2c93d2107699a52a74361" datatype="html">
+        <source>Diagonally across from Lowe&apos;s Home Improvement Center
+              and next to the Deerfield Township Center.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-summary/as-find-appointment-summary.component.html</context>
+          <context context-type="linenumber">239</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="de59c6ff34490eb7dfdaa5a485af15359f045691" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_forgot_confirmationcode_success_dialog.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-success-dialog/as-forgot-confcode-success-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fbc4060cf7a8ce8fce5171cbe213f4b3c2ae5829" datatype="html">
+        <source> Your appointment details are successfully resent</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-success-dialog/as-forgot-confcode-success-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e571f3291b6df7bdcf89fd149d1618f93b67be04" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_forgot_confirmationcode_success_dialog.button_label}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-success-dialog/as-forgot-confcode-success-dialog.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aed755edc3464c504196f16e6e6591306c0fc033" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_forgot_confirmationcode_dialog.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-dialog/as-forgot-confcode-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2844f961f1fb62e7a256d3ac5e85df7990acc347" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_forgot_confirmationcode_dialog.button_label}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-forgot-confirmation-code-dialog/as-forgot-confcode-dialog.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="722b3e73eb446c142c89cccd7624b7539a29fbe8" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_findAppointment.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-dialog/as-find-appointment-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11f9530e18f3648d05a759b453a06e261187622d" datatype="html">
+        <source>Confirmation Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-dialog/as-find-appointment-dialog.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="79d4e2f37a027be570bf5e7a1c406986eb23f4a3" datatype="html">
+        <source>
+          Forgot confirmation code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-dialog/as-find-appointment-dialog.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-dialog/as-find-appointment-dialog.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e35527b7543688488e57c45ad75d0c7e2dd1e4e5" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_findAppointment.button_label}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-dialog/as-find-appointment-dialog.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-appointment/components/as-find-appointment-dialog/as-find-appointment-dialog.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="573414b20b1292ec600140dd4965c370f3e62ff4" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.text_miles}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fed4000b472ced277555afeb27d47de61856e14b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{locationDetails.name}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="374a476bfe75643782a7340c6ef1e00408515939" datatype="html">
+        <source>
+                    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{siteHoursStatusMsg}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/>
+                      <x id="INTERPOLATION_1" equiv-text="{{siteHoursStatusDuration ? &apos; - &apos;+siteHoursStatusDuration:&apos;&apos;}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/>-
+                      <x id="INTERPOLATION_2" equiv-text="{{appointmentsOnly}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b5a39d6317bb4edb6490c10f815df8f2c52da889" datatype="html">
+        <source>
+                    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{siteHoursStatusMsg}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/>
+                      - Live wait time is <x id="INTERPOLATION_1" equiv-text="{{locationDetails.waitTime ? locationDetails.waitTime:&apos;0&apos; }}"/> minutes<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e4b5630cfced5db9bd8df3680d9e449982e02eb4" datatype="html">
+        <source>
+                    <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{siteHoursStatusMsg}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/>
+                      - Appointments only<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="52a5ddcb8ba75fb3052f21276e268a902b2c1413" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION" equiv-text="{{locationDetails.siteHoursStatus}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span" equiv-text="&lt;span&gt;"/> - Live wait time is
+                      <x id="INTERPOLATION_1" equiv-text="{{locationDetails.waitTime ? locationDetails.waitTime:&apos;0&apos; }}"/> minutes<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8fd8c053928b3f2fb63128d59b83b6198b2ec437" datatype="html">
+        <source>
+                      <x id="INTERPOLATION" equiv-text="{{siteInfo[0]}}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                      <x id="INTERPOLATION_1" equiv-text="{{siteInfo[1]}}"/>
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a586782a06ae39e733fec811dcd74931c1b3d9e4" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{locationDetails.address1}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ebfff130df231f8157bfbae59ad9413c8f6ba45d" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{locationDetails.address2}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f1dd63eff7c767757746dbe64c122ebc8880cbb7" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{locationDetails.city}}"/>, <x id="INTERPOLATION_1" equiv-text="{{locationDetails.state}}"/> <x id="INTERPOLATION_2" equiv-text="{{locationDetails.zip}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="51ba471e902e064401063a4f21c549394fce66f1" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{locationDetails.landmark}}"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="007f377d4f2de4400ff7a671c90f3c0d31599e04" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.schedule_appt_btn_label}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ade9289b166b91f471cd89fab2525aa06df5f323" datatype="html">
+        <source>Schedule on Sonora website</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="637e6f6b8b79b6a45df7b252e0733f7ebdb78364" datatype="html">
+        <source>Online Scheduling Unavailable</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d4c888553c305c01952b4968292add65a8e6ab1e" datatype="html">
+        <source>
+                  <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Notes<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56dcc660bb2c4f9552a668263affe4a53c4ab8cf" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{locationDetails.customMessage}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d889da28ab71e1260c199066ed454aa629a2b451" datatype="html">
+        <source>
+                  <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.psc_hrs}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7ce6ce992bc04af91c612ea7827997aa8503482" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.title_hrs}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7b658beb8d347823b016e1058178de2765da5f18" datatype="html">
+        <source>
+                    <x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.text_times}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">175</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="02d4dba60755a995a81fcc10e5e62ae74b206e46" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.text_phone}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">228</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="990fce50ac788ab2cbbfe48940a40bc38faaf6cc" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.text_fax}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">235</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="356d672d0c7fb9ca6232e70a98df4061731445d3" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.text_parking}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">242</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="138734e7880f4699ad33bf244142fcdb35200cec" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{locationDetails.parking}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">243</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="16459da537288aff6e2d594c1705afe862967274" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.title_services_not_offered}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">250</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f050a527960eef95b4c308049f3bb5d4a6358b21" datatype="html">
+        <source>
+                  <x id="INTERPOLATION" equiv-text="{{content.as_location_finder_details.title_services_offered}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-details/as-location-finder-details.component.html</context>
+          <context context-type="linenumber">258</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8513700d5ab4e8deb35fbd10f440b8b0ad1bfb1f" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_location_finder_reason.title}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-reason/as-location-finder-reason.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="020f99bec4b1c1a7032f42a5de328c19a12a07a8" datatype="html">
+        <source>Confirm testing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder-reason/as-location-finder-reason.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="91ff5ff9b17f4c4f07d2ececf12719faa0727004" datatype="html">
+        <source>
+                  Let’s find a location that offers the testing you need.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder/as-location-finder.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="46c2ec1bb86555811ad53f04798c947876e159fa" datatype="html">
+        <source>What testing do you
+                  need?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder/as-location-finder.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2096bc2e557321a132b45d506d1f1133875829fd" datatype="html">
+        <source>This helps us
+                  get you to the right location.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder/as-location-finder.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="98b297de96393b9cd41fa2ffb57e65374c642c79" datatype="html">
+        <source>Testing needed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder/as-location-finder.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d5b85cdffe9eb40e586effbd5b402e8ea7a50a5b" datatype="html">
+        <source>No Quest locations nearby</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder/as-location-finder.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-find-location/components/as-location-finder/as-location-finder.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0deeb4a9a619d559b003e61ce80dc5ce65000618" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_important_visit_info_dialog.title}}"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-important-visit-info-dialog/as-important-visit-info-dialog.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8d6da65f6c8069c3678fa7f3a4bf2e78cb3d7678" datatype="html">
+        <source>
+            <x id="INTERPOLATION" equiv-text="{{content.as_important_visit_info_dialog.message_1}}"/>
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-important-visit-info-dialog/as-important-visit-info-dialog.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="44ae2000ecb8e549e6a969fe4b9516a62191a15c" datatype="html">
+        <source>
+            <x id="INTERPOLATION" equiv-text="{{content.as_important_visit_info_dialog.message_2}}"/>
+          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-important-visit-info-dialog/as-important-visit-info-dialog.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="30a46c6ccacae385ca93cfb7502eabeb07d89cf9" datatype="html">
+        <source>
+        <x id="INTERPOLATION" equiv-text="{{content.as_important_visit_info_dialog.link}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-important-visit-info-dialog/as-important-visit-info-dialog.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a984e9f44c01a27db647c4f7d0fd5c23ee1e2bd5" datatype="html">
+        <source>Confirm your email address to access all of Quest&apos;s features</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-home/as-home.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0d6d4fdcff37407650257e2dd02b2e683cb4d2f7" datatype="html">
+        <source>Resend confirmation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-home/as-home.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="774a245833005f2baab7f9cd9105a6ec21c2cc96" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_home.welcome_upcoming_appointments}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-home/as-home.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f428b6d71b79d2958854f19d9f776df5b7a4089" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{content.as_home.welcome_create_mq_account}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/modules/as-home/components/as-home/as-home.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

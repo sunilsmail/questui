@@ -1,0 +1,113 @@
+<main class="ds-body as-confirmation">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 no-pad" id="skip-to-main" tabindex="-1">
+      <div class="ds-content-block--52 ds-grid ds-flex --center-center ds-flex--column">
+
+        <div class="padding-bottom-20">
+          <span class="ds-icon--check ds-green__700 ds-font--32 ds-green__050--bg" aria-label=""></span>
+        </div>
+
+
+        <h2 class="ds-col--6 ds-green__700 ds-flex --center-center onFocus margin-12"
+          [attr.aria-label]="[content.as_confirmation.title]" aria-level="1" tabindex="0" i18n role="heading">{{content.as_confirmation.title}}</h2>
+
+        <div class="ds-content-block--32  ds-col--6 ds-font--16 ds-flex --center-center onFocus"
+          [attr.aria-label]="[message]" tabindex="0" i18n role="complementary">
+          {{message}}</div>
+
+        <div class="ds-content-block--32  ds-col--6 padding-20 ds-green__050--bg confCode mint-bg">
+          <div class="ds-col--12 ds-font--18--bold pad-12 ds-flex --center-center onFocus" i18n
+            [attr.aria-label]="[content.as_confirmation.confirmation_code]" role="text" tabindex="0">
+            {{content.as_confirmation.confirmation_code}}</div>
+          <h3 class="ds-col--12 ds-green__700 ds-flex --center-center onFocus margin-8" role="heading" aria-level="2" *ngIf="confirmationCode"
+            [attr.aria-label]="[confirmationCode]" tabindex="0">{{confirmationCode}}</h3>
+        </div>
+        <div class="ds-col--6 ds-card --gray__200 margin-bottom-32 padding-32">
+          <h3 class="ds-green__700 no-margin" aria-label="Estimated Cost" aria-level="2" tabindex="0" role="heading" i18n>Estimated Cost</h3>
+          <hr class="green">
+        <div class="ds-flex --row" *ngIf="estimatedCost === null">
+          <div tabindex="0" class="ds-font--14--bold onFocus" i18n>Unable to provide estimate at this time but an estimate will be provided at your visit.</div>
+        </div>
+        <div class="ds-flex --row pad-bottom" *ngIf="estimatedCost !== null" [ngClass]="{'padding-cc' : (isCCNotLoaded$ | async) && (easypayEnhancement$ | async)}">
+           <div class="ds-col--1 onFocus pad-bottom">
+            <mat-icon class="dollor-icon">monetization_on</mat-icon>
+          </div>
+          <div class="ds-col--11 ds-font--14 pad-bottom">
+            <div class="ds-font--14--bold onFocus" [attr.aria-label]="[estimatedCost]" role="complementary" tabindex="0">
+              {{estimatedCost | currency}}
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-flex --row" *ngIf="(easypayEnhancementF411$ | async) && (skippaymentSelection$ | async)"  id="skippayment_message">
+          <div class="ds-col--1">
+          </div>
+          <div class="ds-col--11 ds-font--14 container-width">
+            <div class="ds-font--14 onFocus" tabindex="0"  [attr.aria-label]="[content.as_confirmation.cc_not_available_message]" role="complementary" i18n>
+              {{content.as_confirmation.cc_not_available_message}}
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-flex --row" *ngIf="(easypayEnhancement$ | async) && (isCCNotLoaded$ | async) && (estimatedCost !== null)" id="cc_not_available_message">
+          <div class="ds-col--1">
+          </div>
+          <div class="ds-col--11 ds-font--14 container-width">
+           <div tabindex="0" class="ds-font--14 onFocus" [attr.aria-label]="[content.as_confirmation.cc_not_available_message]" i18n role="complementary">{{content.as_confirmation.cc_not_available_message}}</div>
+         </div>
+      </div>
+      </div>
+      <div class="ds-col--6 ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-14">
+
+      <div class="" aria-label="Location, date, and time" tabindex="0" i18n  role="text">
+        <h3 class="ds-green__700 no-margin" role="heading" aria-label="location date and time" tabindex="0">Location, date, and time</h3>
+        <hr class="green">
+      </div>
+
+        <div class="ds-flex --row" role="region">
+          <div class="ds-col--1"><span class="ds-icon--address ds-font--24 ds-green__700"></span></div>
+          <div class="ds-col--11 ds-font--14">
+            <div class="ds-font--14--bold onFocus" role="text" [attr.aria-label]="[appointmentData.name]" tabindex="0" i18n>
+              {{appointmentData.name}}</div>
+            <div class="onFocus" [attr.aria-label]="[appointmentData.address1]" tabindex="0" role="text" i18n>{{appointmentData.address1}}</div>
+            <div class="onFocus" *ngIf="appointmentData.address2" [attr.aria-label]="[appointmentData.address2]" role="text" tabindex="0" i18n>
+              {{appointmentData.address2}}</div>
+            <div class="onFocus" [attr.aria-label]="[appointmentData.city,appointmentData.state,appointmentData.zip]" tabindex="0" role="text" i18n>
+              {{appointmentData.city}}, {{appointmentData.state}} {{appointmentData.zip}}</div>
+          </div>
+          <div class="ds-col--1 no-pad onFocus"><span tabindex="0" role="button" aria-label="Go to direction"
+              class="ds-icon--route ds-font--24 onFocus ds-green__700" (click)="openDirection()"></span></div>
+        </div>
+        <div class="ds-flex --row">
+          <div class="ds-col--1"><span class="ds-icon--calendar ds-font--24 ds-green__700"></span></div>
+          <div class="ds-col--11 ds-flex --start-center">
+            <div class="onFocus ds-font--14--bold" role="text" [attr.aria-label]="[formatedDate | date:'longDate']" tabindex="0">{{formatedDate | date:'longDate'}}
+            </div>
+          </div>
+        </div>
+        <div class="ds-flex --row">
+          <div class="ds-col--1 onFocus"><span class="ds-icon--clock ds-font--24 ds-green__700"></span></div>
+          <div class="ds-col--11 ds-flex --start-center">
+            <div class="onFocus ds-font--14--bold" [attr.aria-label]="[appointmentData.appointmentTime | twelveHourTime]" role="text" tabindex="0">
+              {{appointmentData.appointmentTime | twelveHourTime}}</div>
+          </div>
+        </div>
+      </div>
+        <div class="ds-col--6 ds-flex --center-center no-pad action-button" style="margin-bottom:100px;">
+          <div class="ds-col--6 ds-flex --start-center no-pad">
+            <button class="ds-button --secondary print-button-width" (click)="printConfirmation()">
+              <label i18n aria-label="Print Details">Print Details </label>
+            </button>
+          </div>
+          <div class="ds-col--6 ds-flex --center-center no-pad pad-bottom-60" *ngIf="calendarData">
+            <as-add-to-calendar [inputEvent]="calendarData" [buttonType]="'green'"></as-add-to-calendar>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+<as-confirmation-print [inputEvent]="printData"></as-confirmation-print>

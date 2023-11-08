@@ -1,0 +1,92 @@
+[
+    {
+    "facilityServiceId": "1",
+      "facilityTestTypeValue": "Routine Lab(most common)",
+      "testDesc":"Select this option if your tests are not one of the prior options.",
+      "facServiceId": "PHLEBOTOMY",
+      "timeTradeTestingId": "routine",
+      "precedence": "1",
+      "h20TestingId": "1",
+      "serviceRequestor": null,
+      "address1": "",
+      "address2": "",
+      "city": "",
+      "createAccount": "",
+      "dateOfBirth": "new Date",
+      "email": "johnny287@gmail.com",
+      "firstName": "johnathan",
+      "lastName": "Williams",
+      "gender": "male",
+      "insuranceInfo": "insurance-no",
+      "isMobile": "yes",
+      "password": "",
+      "phone": "2222222222",
+      "preferences": {
+        "preference_email": true,
+        "preference_mobile": false
+      },
+      "state": "",
+      "termsOfService": false,
+      "zipCode": "",
+      "appointmentdata": {
+        "address1": "160 W 26Th St",
+        "address2": null,
+        "appointmentDate": "2019-10-24",
+        "appointmentTime": "12:45",
+        "city": "New York",
+        "name": "Quest Diagnostics - NYC-26th St PSC",
+        "phone": "6466468031",
+        "siteCode": "T2O",
+        "state": "NY",
+        "zip": "10001-6975"
+      },
+      "insurancedata": {
+        "sameas": true,
+        "provider": "Americorp",
+        "memberId": "1047012070",
+        "groupId": "",
+        "relationship": "",
+        "isPrimaryInsuranceHolder": true,
+        "firstName": "ajay",
+        "lastName": "anireddy",
+        "dateOfBirth": "11/22/1986",
+        "gender": "male",
+        "phone": "908-332-1767",
+        "address1": "",
+        "address2": "",
+        "city": "",
+        "state": "",
+        "zipCode": "",
+        "differentPersonalAddress": {
+          "address1": "",
+          "address2": "",
+          "city": "",
+          "state": "",
+          "zipCode": ""
+        }
+    },
+    "personaldata":{
+    "address1": "",
+      "address2": "",
+      "city": "",
+      "createAccount": "",
+      "dateOfBirth": "new Date",
+      "email": "johnny287@gmail.com",
+      "firstName": "johnathan",
+      "lastName": "Williams",
+      "gender": "male",
+      "insuranceInfo": "insurance-no",
+      "isMobile": "yes",
+      "password": "",
+      "phone": "2222222222",
+      "preferences": {
+        "preference_email": true,
+        "preference_mobile": false
+      },
+      "state": "",
+      "termsOfService": false,
+      "zipCode": ""
+    }
+}]
+
+

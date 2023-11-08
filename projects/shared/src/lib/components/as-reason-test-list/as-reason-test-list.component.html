@@ -1,0 +1,57 @@
+<div class="ds-grid--12 as-reasons" aria-label="List of reasons for visit" role="complementary">
+  <div class="ds-col--6 padding-right-16 padding-bottom-16" (click)="onItemSelected(item,$event)"
+    (keydown)="onItemSelected(item,$event)" *ngFor="let item of listItems; let i = index" load >
+    <div *ngIf="!multiSelect; else multiSelectEnabled">
+      <button class="ds-option --primary ds-flex --column clearFocus ds-font--16 --400"
+        [ngClass]="{'option-background': (selectedReason ? selectedReason.facilityServiceId !== item.facilityServiceId: true) || !foundInTest(item), '--selected': (selectedReason ? selectedReason.facilityServiceId === item.facilityServiceId : false) || foundInTest(item), 'height':item.expanded ,'custom-padding' : i == invalidLocationIndex}"
+        id="item-{{i+1}}" [attr.aria-label]="((selectedReason ? selectedReason.facilityServiceId === item.facilityServiceId : false) || foundInTest(item))? (item.btnText) + ' selected' :(item.btnText)+' not selected'">
+        <label id="item-label-{{i+1}}"
+          [ngClass]="{'Glucose-Tolerance': (selectedReason ? selectedReason.facilityServiceId !== item.facilityServiceId: true) || !foundInTest(item), 'Glucose-Tolerance__item-selected': (selectedReason ? selectedReason.facilityServiceId === item.facilityServiceId : false) || foundInTest(item), 'error-icon' : i == invalidLocationIndex}"
+          [innerHtml]="item.facilityTestTypeValue"></label>
+        <span role="img" class="ds-icon--info ds-font--16 ds-gray__900 focus-element" tabindex="0"
+          [ngClass]="{'custom-height': i == invalidLocationIndex}" aria-label="info" *ngIf="!item.expanded"
+          id='reason_{{i+1}}' (click)="onInfoClicked($event,item)" (focus)="onInfoClicked($event,item)"></span>
+
+        <span role="button" class="ds-icon--close ds-font--16 ds-gray__900 focus-element" *ngIf="item.expanded"
+          (click)="onCloseClicked($event,item)" tabindex="0" (keydown.Tab)="onCloseClicked($event,item)"
+          (keydown)="onInfoClickedCtrl($event,item)" (keydown)="onInfoClickedEsc($event,item)"
+          (keydown.arrowdown)="onInfoClickedEsc($event,item)" aria-label="close" id="testCloseCheck" attr.aria-labelledby="test-desc-{{i+1}} testCloseCheck">
+          <div *ngIf="item.expanded" id="test-desc-{{i+1}}" role="text" [innerHtml]="item.testDesc"
+            class="ds-tooltip --white"
+            [ngClass]="{'ds-option--information': !foundInTest(item), 'ds-option--information--active': foundInTest(item)}"
+            data-i18n="item.testDesc"
+            [attr.aria-label]="item.testDesc">
+          </div>
+        </span>
+        {{showLocationNotAvailableDialog(i == invalidLocationIndex, $event)}}
+      </button>
+    </div>
+
+    <ng-template #multiSelectEnabled>
+      <button class="ds-option --primary ds-flex --start-start ds-flex--column clearFocus ds-font--16 --400"
+        [ngClass]="{'option-background': !foundInTest(item), '--selected': foundInTest(item), 'height':item.expanded, 'custom-padding' : i == invalidLocationChildIndex}"
+        id="item-{{i+1}}" tabindex="0" [attr.aria-label]="[item.facilityTestTypeValue]" (focus)="onButtonFocus()" (keydown)="onItemSelected(item,$event)"
+        (keydown.Tab)="onInfoClicked($event,item)" [attr.aria-label]="foundInTest(item)? (item.btnText) + ' selected' :(item.btnText)+' not selected'">
+
+        <label id="item-label-{{i+1}}"
+          [ngClass]="{'Glucose-Tolerance': !foundInTest(item), 'Glucose-Tolerance__item-selected': foundInTest(item), 'error-icon' : i == invalidLocationChildIndex}"
+          [innerHtml]="item.facilityTestTypeValue" data-i18n="item.facilityTestTypeValue"></label>
+        <span role="img" aria-label="info" class="ds-icon--info ds-font--16 ds-gray__900" tabindex="0"
+          [ngClass]="{'custom-height': i == invalidLocationChildIndex}" *ngIf="!item.expanded" id='reason_{{i+1}}'
+          (click)="onInfoClicked($event,item)" (focus)="onInfoClicked($event,item)"></span>
+
+          <span role="button" class="ds-icon--close ds-font--16 ds-gray__900 focus-element" *ngIf="item.expanded"
+          (click)="onCloseClicked($event,item)" tabindex="0" (keydown.Tab)="onCloseClicked($event,item)"
+          (keydown)="onInfoClickedCtrl($event,item)" (keydown)="onInfoClickedEsc($event,item)"
+          (keydown.arrowdown)="onInfoClickedEsc($event,item)" aria-label="close" id="testClose" attr.aria-labelledby="test-desc-{{i+1}} testClose">
+          <div *ngIf="item.expanded" id="test-desc-{{i+1}}" role="text"  [innerHtml]="item.testDesc"
+            class="ds-tooltip --white"
+            [ngClass]="{'ds-option--information': !foundInTest(item), 'ds-option--information--active': foundInTest(item)}"
+            data-i18n="item.testDesc">
+          </div>
+        </span>
+        {{showLocationNotAvailableDialog(i == invalidLocationChildIndex, $event)}}
+      </button>
+    </ng-template>
+  </div>
+</div>

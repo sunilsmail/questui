@@ -1,0 +1,58 @@
+.chat-btn {
+  z-index: 1001;
+  // bottom:60px !important;
+}
+
+.bot-container {
+  z-index: 1001;
+}
+
+.tooltip-left:focus {
+  outline: none !important;
+}
+
+.chat-icon:focus {
+  outline: solid 3px white;
+}
+
+
+.drag-chatbot{
+  width: 75px;
+  height: 70px;
+  position: fixed;
+  z-index: 4;
+  background-color: transparent;
+}
+// to fix tooltip hide issue
+.tooltip .tooltiptext{
+  visibility: visible !important;
+  @media only screen and (max-device-width: 640px) {
+    visibility: hidden !important;
+  }
+  width: 132px !important;
+}
+// :host::ng-deep {
+//   .tooltip .tooltiptext{
+//     width: 132px !important;
+//   }
+// }
+// #chatBtn{
+//   position: initial !important;
+// }
+
+@media print
+{
+    #chatBtn, #genChatbot
+    {
+        display: none !important;
+    }
+}
+
+#chat_tooltip_text{
+  visibility: hidden;
+}
+.tooltip-left {
+  top: -5px;
+  bottom: auto;
+  right: 100%;
+}

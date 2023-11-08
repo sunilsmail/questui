@@ -1,0 +1,392 @@
+@import '../../../../../styles.scss';
+
+ /* .ds-body{
+
+  &.as-print{
+
+    .ds-body--content{
+      width: 100%;
+      min-height: 100%;
+
+      .ds-col--12{
+
+        .ds-flex.--row{
+
+          .ds-col--8{
+
+            > div{
+
+              &:first-of-type{
+
+                place-content: start;
+                justify-content: start;
+                position: sticky;
+                top: -90px;
+                background: $ds-gray__100;
+                margin-bottom: 150px;
+              }
+            }
+
+            .ds-grid--12{
+
+                [class*="ds-icon--info"]{
+                  display: flex;
+                  align-items: center;
+                  line-height: 1;
+                  margin-left: 12px;
+                }
+
+                .ds-col--12{
+
+                  .ds-input{
+
+                    .ds-input__checkbox{
+
+                      margin-right: 28px;
+                    }                    
+
+                  }
+
+                  h5{
+                    font-size: 14px!important;
+                  }
+                }
+
+
+            }
+          }
+
+          > .ds-col--4{
+            margin-left: 16px;
+            position: sticky;
+            top: 144px;
+            height: 500px;
+
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                position: fixed;
+            }            
+          }
+        }
+        &.margin0{
+          margin: 0;
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024){
+      padding-top: 84px;
+
+      .ds-body--content{
+        width: 100%;
+
+        .ds-col--12{
+
+          .ds-flex.--row{
+
+            .ds-col--8{
+              width: 100%;
+
+              > .ds-grid--12{
+
+                &:first-of-type{
+                  margin-bottom: 124px;
+
+                  .ds-col--6, .ds-col--7, .ds-col--10{
+                    width: 100%;
+                  }
+
+                  .ds-col--2{
+                    width: 16%;
+                  }
+                }               
+
+                .ds-col--9{
+                  width: 100%;
+                }
+              }
+            }
+
+            .ds-col--4{
+              display: block !important;
+              width: 0;
+              padding: 0;
+              margin: 0;
+
+              > div{
+                display: none;
+              }
+            }             
+          }
+        }
+      }
+    }
+
+    @include when-less-than(ds-768){
+
+      .ds-body--content{
+        width: 100%;
+
+        > .ds-col--12{
+          padding: 0;
+          
+          > .ds-flex.--row{
+
+            > .ds-col--8{
+              width: 100%;
+              margin-bottom: 90px;
+              padding: 0;
+
+              [class*="ds-col"]{
+                width: 100%;
+                padding-right: 0;
+              }
+
+              form{
+                
+                [class*="ds-col"]{
+                  
+                  .ds-input{
+                    width: 100%;
+                    padding-right: 0;
+                  }
+                }
+
+                [class*="ds-col--3"]{
+                  width: 50%;
+                  padding-right: 16px;
+                }
+              }
+            }
+          }
+
+          .ds-pagination--footer{
+            width: 100%;
+
+            &.ds-col--8{
+              width: 100%;
+
+              .ds-col--12{
+                padding: 0;
+
+                .ds-col--6{
+                  width: 100%;
+                  padding: 0;
+
+                  button{
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        } 
+
+        as-footer{
+          background: $ds-gray__100;
+          width: 100%;
+          position: fixed;
+          bottom: 60px;
+        }       
+      }
+    }
+
+    @include when-less-than(ds-640){
+
+      .ds-body--content{
+        
+        as-footer{
+          bottom: 78px;
+        }           
+      }      
+    }    
+  }
+} */
+.patient-name-label{
+  font-size: 10px;
+}
+
+.patient-name-value{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.patient-location{
+  margin-top: 20px;
+  &__label{
+    font-size: 10px;
+
+  }
+  &__name{
+    font-size: 12px;
+    font-weight: bold;
+
+  }
+  &__address1{
+    font-size: 12px;
+
+  }
+  &__city_state_zip{
+    font-size: 12px;
+
+  }
+
+}
+
+.patient-reason{
+  margin-top: 20px;
+  padding-left: 50px;
+  justify-content: center;
+  &__label{
+    font-size: 10px;
+  }
+  &__reason{
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.patient-datetime{
+  margin-top: 20px;
+  &__label{
+    font-size: 10px;
+
+  }
+  &__date{
+    font-size: 12px;
+    font-weight: bold;
+
+  }
+  &__time{
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.patient-insurance{
+  margin-top: 20px;
+  padding-left: 50px;
+  &__label{
+    font-size: 10px;
+  }
+  &__corpname{
+    font-size: 12px;
+    font-weight: bold;
+
+  }
+  &__id{
+    font-size: 12px;
+  }
+  &__holder{
+    font-size: 12px;
+  }
+}
+
+.line{
+  letter-spacing: 8px;
+}
+.what-else-heading{
+  margin-top: 20px;
+  font-size: 21px;
+  font-weight: normal;
+  letter-spacing: -0.53px;
+  color: black;
+}
+.location-details{
+  margin-top: 20px;
+
+  &__heading{
+    font-weight: bold;
+  }
+  &__image {
+    width: 218px;
+    height: 119px;
+  }
+  &__direction-label{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  &__direction-text{
+    font-size: 12px;
+  }
+  &__help-label{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  &__help-text{
+    font-size: 12px;
+  }
+}
+
+.fasting-details{
+  margin-top: 20px;
+  margin-left: 28px;
+
+  &__heading{
+    font-weight: bold;
+  }
+  &__text {
+    /* width: 218px;
+    height: 119px; */
+    font-size: 12px;
+  }
+} 
+
+.additional-details{
+  margin-top: 20px;
+
+  &__heading{
+    font-weight: bold;
+  }
+  &__text {
+    /* width: 218px;
+    height: 119px; */
+    font-size: 12px;
+  }
+}
+
+.confirmation-print-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;;
+  background-color: $ds-gray__300;
+  padding: 8px 0;
+//  display: flex;
+//  place-content: center;
+  justify-content: center;
+//  z-index: 2;
+  font-size: 9px;
+  height: 34px;
+}
+
+.qrcode{
+  justify-content: center;
+
+  &__image{
+    height: 150px;
+    width: 150px;
+  }
+
+
+  &__confirmation{
+    font-weight: bold;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+  }
+
+  &__text{
+    font-size: 14px;
+    width: 150px;
+  }
+
+}
+.ds-header {
+  height: 64px !important;
+  padding: 20px 20px 20px 0px !important;
+
+}
+
+.ds-body--content {
+  line-height: 1 !important;
+  padding-top: 20px;
+}

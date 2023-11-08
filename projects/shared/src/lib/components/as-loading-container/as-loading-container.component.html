@@ -1,0 +1,21 @@
+<as-spinner *ngIf="loadingMore | async; else containerState;" [size]="asSpinnerSize"></as-spinner>
+<ng-template #containerState>
+  <ng-container [ngSwitch]="currentState">
+    <ng-container *ngSwitchCase="'loading'">
+      <as-spinner [size]="asSpinnerSize"></as-spinner>
+    </ng-container>
+    <div *ngSwitchCase="'error'" class="as-loading-container">
+      {{asLoadErrorMessage}}
+    </div>
+    <ng-container *ngSwitchCase="'empty'" class="as-loading-container">
+      <div class="as-loading-container__no-data-message" id="testingData" *ngIf="!morning; else resultTemplate">
+        {{asNoDataMessage}}</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'loaded'">
+      <ng-container *ngTemplateOutlet="resultTemplate"></ng-container>
+    </ng-container>
+  </ng-container>
+  <ng-template #resultTemplate>
+    <ng-container *ngTemplateOutlet="templateRef; context: { $implicit: data }"></ng-container>
+  </ng-template>
+</ng-template>

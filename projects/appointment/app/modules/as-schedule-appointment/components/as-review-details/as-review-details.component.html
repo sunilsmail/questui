@@ -1,0 +1,212 @@
+<main class="ds-body as-review">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 pad-24">
+      <div class="ds-col--12">
+        <div>
+          <!-- *ngIf="this.personalData?.insuranceInfo === 'insurance-provide'; else toPersonalInfo " -->
+          <span class="ds-icon--arrow-back ds-font--24 ds-green__700 onFocus" tabindex="0" (click)="goToPrevious()"
+          (keydown.enter)="goToPrevious()" tabindex="0" aria-label="back" title="back" role="button"></span>
+        </div>
+        <!--     <ng-template #toPersonalInfo>
+          <button class="ds-icon--arrow-back--24 ds-green__700" routerLink="/schedule-appointment/as-personal-information"
+            tabindex="0" aria-label="Go to previous page"></button>
+        </ng-template> -->
+        <div>
+          <h2 class="ds-green__700 margin-bottom-24 onFocus" role="heading" aria-level="1" [attr.aria-label]="[content.as_review_appointment_details.title_desktop]" i18n>
+            {{content.as_review_appointment_details.title_desktop}}</h2>
+        </div>
+      </div>
+
+
+      <div class="ds-grid--12 ds-form__col--2--map" id="skip-to-main" tabindex="-1">
+        <div class="ds-col--5 --center-center no-pad">
+
+          <div class="ds-col--12 ds-card --gray__200 padding-32 padding-bottom-0" fxLayout="column">
+            <div class="ds-flex margin-bottom-20">
+              <div class="ds-col--11 no-margin">
+                <div class="ds-font--12 ds-col--12 no-pad ds-flex">
+                  <div class="ds-col--11 no-pad onFocus ds-font--16 --700 margin-bottom-8" role="heading" aria-level="2" aria-label="Reason for visiting" i18n>Reason for visiting
+                  </div>
+                  <div class="ds-col--1 no-pad">
+                      <a (click)="navigate('/schedule-appointment/as-reason-for-visit')" (keydown.enter)="navigate('/schedule-appointment/as-reason-for-visit')"
+                      class="ds-link ds-flex  ds-font--16 --500" role="link" tabindex="0" aria-label="Edit Reason for visiting" *ngIf="!disableReason">
+                       Edit
+                    </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <div class="ds-col--1 pad-r-15"><span class="ds-icon--test-tube-label ds-green ds-font--24"></span></div>
+                  <div class="ds-col--11 ds-font--14">
+                    <div class="ds-font--14 onFocus" *ngIf="!isTestData"
+                      [attr.aria-label]="[reasonData.facilityTestTypeValue]"
+                      innerHTML={{reasonData.facilityTestTypeValue}}>
+                    </div>
+
+                    <div class="ds-font--14 onFocus" *ngIf="isTestData && testsData.length===1"
+                      [attr.aria-label]="[testsData[0].facilityTestTypeValue]"
+                      innerHTML={{testsData[0].facilityTestTypeValue}}>
+                    </div>
+                    <div class="ds-font--14 onFocus" *ngIf="isTestData && testsData.length>1" aria-label="Multiple Drug Tests"
+                      i18n>
+                      Multiple Drug Tests
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ds-flex margin-bottom-20">
+              <!-- <div class="ds-col--1 ds-font--12">2.</div> -->
+              <div class="ds-col--11 no-margin">
+                <div class="ds-font--12 ds-col--12 no-pad ds-flex">
+                  <div class="ds-col--11 ds-font--12 onFocus ds-font--16 --700 margin-bottom-8 no-pad" role="heading" aria-level="2" aria-label="Location, date, and time" i18n>Location,
+                    date, and time</div>
+                  <div class="ds-col--1 no-pad">
+                    <a (click)="navigate('/schedule-appointment/as-appt-scheduler')" (keydown.enter)="navigate('/schedule-appointment/as-appt-scheduler')"
+                      class="ds-link ds-flex  ds-font--16 --500" role="link" tabindex="0" aria-label="Edit Location Date and time">
+                       Edit
+                  </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <div class="ds-col--1 pad-r-15"><span class="ds-icon--address ds-font--24 ds-green__700"></span></div>
+                  <div class="ds-col--9 ds-font--14" role="text" aria-labelledby="name addressOne addressTwo zip">
+                    <div class="ds-font--14" [attr.aria-label]="[appointmentData?.name]" i18n aria-hidden="true" id="name" role="text">
+                      {{appointmentData?.name}}</div>
+                    <div [attr.aria-label]="[appointmentData?.address1]" i18n aria-hidden="true" id="addressOne" role="text">{{appointmentData?.address1}}
+                    </div>
+                    <div *ngIf="appointmentData?.address2" [attr.aria-label]="[appointmentData?.address2]" i18n aria-hidden="true" id="addressTwo" role="text">
+                      {{appointmentData?.address2}}</div>
+                    <div [attr.aria-label]="[appointmentData?.city,appointmentData?.state,appointmentData?.zip]"
+                      class="onFocus" i18n  aria-hidden="true" id="zip" role="text">{{appointmentData?.city}}, {{appointmentData?.state}} {{appointmentData?.zip}}</div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <div class="ds-col--1 pad-r-15"><span class="ds-icon--calendar ds-font--24 ds-green"></span></div>
+                  <div class="ds-col--11">
+                    <div class="onFocus">
+                      {{formatedDate | date:'longDate'}}</div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <div class="ds-col--1 pad-r-15"><span class="ds-icon--clock ds-font--24 ds-green"></span></div>
+                  <div class="ds-col--11">
+                    <div class="onFocus">
+                      {{appointmentData?.appointmentTime | twelveHourTime}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-20 ds-flex">
+              <!-- <div class="ds-col--1 ds-font--12">3.</div> -->
+              <div class="ds-col--11 no-pad">
+                <div class="ds-col--12 no-pad ds-flex">
+                  <div class="ds-col--11 no-pad onFocus ds-font--16 --700 margin-bottom-8" role="heading" aria-level="2" aria-label="Who's visiting" i18n>Who’s visiting</div>
+                  <div class="ds-col--1 no-pad">
+                    <a class="ds-link ds-flex ds-font--16 --500" role="link" tabindex="0" aria-label="Edit who's visiting"
+                      (click)="navigate('/schedule-appointment/as-personal-information')" (keydown.enter)="navigate('/schedule-appointment/as-personal-information')">
+                       Edit
+                  </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <div class="ds-col--1 pad-r-15"><span class="ds-icon--person ds-green__700 ds-font--24" ></span></div>
+                  <div class="ds-col--9 ds-font--14">
+                    <div class="ds-font--14 onFocus" [attr.aria-label]="[personalData?.firstName,personalData?.lastName]"
+                      i18n>{{personalData?.firstName}} {{personalData?.lastName}}</div>
+                    <div class="ds-font--14  onFocus" [attr.aria-label]="[personalData?.email]" i18n>{{personalData?.email}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-20 ds-flex" *ngIf="!(skipInsurance$|async)">
+              <!-- <div class="ds-col--1 ds-font--12">4.</div> -->
+              <div class="ds-col--11 no-pad">
+                <div class="ds-font--12 ds-col--12 no-pad ds-flex">
+                  <div class="ds-col--11 no-pad onFocus ds-font--16 --700 margin-bottom-8" role="heading" aria-level="2" aria-label="Insurance information" i18n>Insurance
+                    information</div>
+                  <div class="ds-col--1 no-pad">
+                    <a (click)="navigate('/schedule-appointment/as-insurance-information')" (keydown.enter)="navigate('/schedule-appointment/as-insurance-information')"
+                      class="ds-link ds-flex ds-font--16 --500" role="link" tabindex="0" aria-label="Edit Insurance information">
+                       Edit
+                  </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <div class="ds-col--1 pad-r-15" *ngIf="!insuranceData?.bringCarderror"><span class="ds-icon--identification-card ds-green__700 ds-font--24" ></span></div>
+                  <div class="ds-col--1 pad-r-15" *ngIf="insuranceData?.bringCarderror"><span class="ds-icon--alert ds-gold__500 ds-font--24" ></span></div>
+                  <div class="ds-col--9 ds-font--14">
+                    <div class="ds-font--14 onFocus" *ngIf="insuranceData?.bringCarderror"
+                     [attr.aria-label]="[content.as_review_appointment_details.ins_not_found_f88]" i18n>
+                      <span class="ds-font--14--bold">{{content.as_review_appointment_details.ins_not_found_f88}}</span>
+                    </div>
+                    <div class="ds-font--14 onFocus" *ngIf="insuranceData?.data && !insuranceData?.bringCarderror"
+                     [attr.aria-label]="[insuranceData?.data.provider.insuranceCompanyName]" i18n>
+                      {{insuranceData?.data.provider.insuranceCompanyName}}
+                    </div>
+                    <div class="ds-font--14 onFocus" *ngIf="insuranceData?.data && !insuranceData?.bringCarderror"
+                     [attr.aria-label]="[insuranceData?.data.memberId]" i18n>
+                      {{insuranceData?.data.memberId}}
+                    </div>
+                    <div *ngIf="!insuranceData?.data" class="ds-font--14--bold onFocus" aria-label="No insurance provided"
+                      i18n>
+                      No insurance provided
+                    </div>
+
+                  </div>
+                </div>
+                <ng-container *ngIf="secondaryInsData?.provider">
+                  <div class="ds-col--12 ds-flex">
+                    <!-- <div class="ds-col--1 pad-r-15" *ngIf="!secondaryInsData?.bringCarderror"><span class="ds-icon--identification-card ds-green__700 ds-font--24" ></span></div>
+                    <div class="ds-col--1 pad-r-15" *ngIf="secondaryInsData?.bringCarderror"><span class="ds-icon--alert ds-gold__500 ds-font--24" aria-label="alert"></span></div> -->
+                    <div class="ds-col--9 ds-font--14">
+                      <as-sec-ins-display [screenName]="'review'" [insuranceData]="secondaryInsData"></as-sec-ins-display>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+
+            <div class="errorMessage ds-flex --row" *ngIf="blnShowError">
+              <img [src]="imageSrc" class="ds-icon__error--24" />
+              <!-- <span class="ds-icon-error-24"></mat-icon> -->
+              <div class="errorMessage__text onFocus"><span i18n>The time you selected is no longer available. <br>Please<a
+                    tabindex="0" class="errorLink" (click)="showLocations()"> make changes to your location, date or
+                    time</a></span></div>
+            </div>
+          </div>
+          <div class="ds-col--12 margin-top-24 ds-flex --row no-pad footer-button">
+            <div class="ds-col--3 ds-flex --start-center nevermind-desktop">
+              <a [ngClass]="{'ds-link':isButtonEnabled,'start_over':!isButtonEnabled}" id="never-mind-link-desktop"
+                (click)="clearData()" (keydown)="clearDataKey($event)" aria-label="Cancel" role="button"  tabindex="0" i18n>Cancel</a>
+            </div>
+            <div *ngIf="SpinnerLoading" class="as-review-details__overlay" fxLayout="row" fxLayoutAlign="center center">
+              <as-spinner></as-spinner>
+            </div>
+            <div class="ds-col--11 ds-flex --end-center no-pad schedule-button">
+              <button class="ds-button" [disabled]="!isButtonEnabled"
+                [ngClass]="{'--primary':isButtonEnabled,'--primary--disabled':!isButtonEnabled}"
+                (click)="scheduleAppointment()">
+                <label i18n>Schedule appointment</label>
+              </button>
+            </div>
+            <div class="ds-col--3 ds-flex --start-center nevermind">
+              <a [ngClass]="{'ds-link':isButtonEnabled,'start_over':!isButtonEnabled}" id="never-mind-link"
+                (click)="clearData()" aria-label="Cancel" role="button"  tabindex="0" i18n>Cancel</a>
+            </div>
+          </div>
+        </div>
+        <div class="ds-col--7 no-pad onFocus margin-left-24" tabindex="0">
+          <as-google-map *ngIf="addresses$" class="as-review-details__map" [center$]='center$'
+            [addresses$]='addresses$'></as-google-map>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</main>

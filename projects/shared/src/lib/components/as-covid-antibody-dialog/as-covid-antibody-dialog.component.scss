@@ -1,0 +1,64 @@
+@import '../../../../../appointment/styles.scss';
+
+.ds-modal{
+  position: relative;
+
+  .ds-modal__content{
+    padding: 24px;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      max-width: 488px;
+    }
+    .ds-col--12{
+
+      &:nth-of-type(2){
+        padding: 0;
+      }
+    }
+  }
+  &__warning-icon{
+    color: #F56A00;
+    border-radius: 50px;
+    background: #ffeedf;
+    border: 2px solid #F56A00;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 12px;
+    height: 50px;
+    width: 50px;
+    border: 1 px;
+}
+}
+.peace-of-mind{
+  @include when-less-than(ds-640){
+    .ds-pagination--footer {
+      flex-direction: column;
+    }
+  }
+}
+.ds-button.--secondary{
+  width: 192px;
+  height: 44px;
+  border-radius: 4px;
+  border: solid 2px #35792a;
+  @include when-less-than(ds-1024){
+
+    margin: 0 10px 20px 0;
+
+}
+}
+.Weve-updated-our-se {
+    font-size: 20px;
+}
+.Are-you-older-than-6{
+  font-size: 18px;
+}
+.mat-dialog-container{
+  padding:20px;
+}
+.dialog-msg1{
+  font-size:15px ;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+

@@ -1,0 +1,16 @@
+<mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+        <h2 class="ds-font--20 --500" aria-label="Header 1">{{data.title}}</h2>
+        <span class="ds-font-14">{{data.message}}</span>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+        <div class="ds-col--6 ds-flex --end-center">
+            <button (click)="nevigateToAccount()" class="ds-button --primary --medium" aria-label="verify identity">
+                <label>{{data.buttonTitle}}</label>
+            </button>
+        </div>
+    </div>
+</mat-dialog-actions>

@@ -1,0 +1,86 @@
+<div class="ds-col--12 ds-card ds-white--bg open-balance"
+  *ngIf="(openBalanceApiResponse$ | async) as formData">
+  <div class="--row">
+    <h3 role="heading" aria-level="1" class="ds-green__700 title-text"
+      [attr.aria-label]="[content.as_open_balance_section.title]">
+      {{content.as_open_balance_section.title}}
+    </h3>
+    <hr>
+  </div>
+  <div class="ds-flex --row center-text">
+    <p role="heading" aria-level="2" class="ds-flex --center-center title-text2 onFocus"
+      [attr.aria-label]="[content.as_open_balance_section.title2]" tabindex="0">
+      {{content.as_open_balance_section.title2}}
+    </p>
+  </div>
+  <div class="ds-flex --row center-text" *ngIf="formData.titleBalance">
+    <h2 role="heading" aria-level="3" [attr.aria-label]="[formData.titleBalance]" class="ds-green__700 title-price">
+      {{formData.titleBalance | currency}}</h2>
+  </div>
+  <div class="ds-message --error alert-box">
+    <div class="ds-col--12">
+      <div role="text" class="title" [attr.aria-label]="[title]">{{title}}</div>
+      <div role="text" [attr.aria-label]="[description]">{{description}}</div>
+    </div>
+  </div>
+  <div class="container --row" *ngIf="formData.minimumPayment">
+    <div class="ds-col--8 flex-items">
+      <div class="ds-input__radio" role="radiogroup">
+        <input type="radio" id="minimum-payment" role="radio" aria-checked="false" name="openBalancePaymentType"
+          [formControl]="openBalancePaymentType" value="minimum-payment"
+          [attr.aria-label]="[content?.as_open_balance_section?.minimum_payment]"
+          (change)="handleChange($event.target.value)">
+        <label for="minimum-payment">{{content.as_open_balance_section.minimum_payment}}</label>
+      </div>
+      <span matTooltipClass="--white" [matTooltip]="[content.as_open_balance_section.tooltip_minimum_balance]">
+        <span class="ds-icon--info ds-black ds-font--24" aria-label="Minimum payment" role="img"></span>
+      </span>
+    </div>
+    <label>{{formData.minimumPayment | currency}}</label>
+  </div>
+  <div class="container --row" *ngIf="formData.pastDueBalance">
+    <div class="ds-col--8 flex-items">
+      <div class="ds-input__radio" role="radiogroup">
+        <input type="radio" id="past-due-balance" role="radio"
+          [attr.aria-label]="[content?.as_open_balance_section?.past_due_balance]" aria-checked="false"
+          name="openBalancePaymentType" [formControl]="openBalancePaymentType" value="past-due-balance"
+          (change)="handleChange($event.target.value)">
+        <label for="past-due-balance">{{content.as_open_balance_section.past_due_balance}}</label>
+      </div>
+      <span matTooltipClass="--white" [matTooltip]="[content?.as_open_balance_section?.tooltip_past_due]">
+        <span class="ds-icon--info ds-black ds-font--24" aria-label="Past due balance" role="img"></span>
+      </span>
+    </div>
+    <label>{{formData.pastDueBalance | currency}}</label>
+  </div>
+  <div class="container --row" *ngIf="formData.totalBalance">
+    <div class="ds-col--8 flex-items">
+      <div class="ds-input__radio" role="radiogroup">
+        <input type="radio" id="total-balance" role="radio"
+          [attr.aria-label]="[content?.as_open_balance_section?.total_balance]" aria-checked="false"
+          name="openBalancePaymentType" [formControl]="openBalancePaymentType" value="total-balance"
+          (change)="handleChange($event.target.value)">
+        <label for="total-balance">{{content.as_open_balance_section.total_balance}}</label>
+      </div>
+      <span matTooltipClass="--white" [matTooltip]="[content?.as_open_balance_section?.tooltip_total_balance]">
+        <span class="ds-icon--info ds-black ds-font--24" aria-label="Past due balance" role="img"></span>
+      </span>
+    </div>
+    <label>{{formData.totalBalance | currency}}</label>
+  </div>
+  <div class="link">
+    <a class="ds-link">{{content.as_open_balance_section.anchor_billing_summary}}</a>&nbsp;{{content.as_open_balance_section.invoice_text}}
+  </div>
+  <div class="actions ds-flex --row button-container">
+    <div class="ds-col-6">
+      <button class="ds-button --secondary"  (click)="payAtAppointment()">
+        {{content.as_open_balance_section.btn_pay_at_title}}
+      </button>
+    </div>
+    <div class="ds-col-6">
+      <button class="ds-button" [disabled]="!openBalancePaymentType.value"  [ngClass]="{'--primary':openBalancePaymentType.value,'--primary--disabled':!openBalancePaymentType.value}" >
+        {{content.as_open_balance_section.btn_pay_now_title}}
+      </button>
+    </div>
+  </div>
+</div>

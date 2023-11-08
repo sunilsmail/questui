@@ -1,0 +1,239 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+  h1
+  {
+    font-family: Grotesque Bold,sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 111.7%;
+    letter-spacing: -.0075em;
+    margin: 26px 0px;
+    @include when-less-than(ds-768){
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: normal;
+      margin: 20px 0px;
+    }
+  }
+
+  &.as-location-finder-reason{
+    padding-top: 144px;
+    padding-left: 120px;
+    padding-right: 90px;
+    .ds-body--content{
+      width: 100%;
+
+      .ds-col--12{
+
+        .ds-flex.--row{
+
+          .ds-col--8{
+
+            > div{
+
+              &:first-of-type{
+                place-content: start;
+                justify-content: flex-start;
+                position: sticky;
+                top: -90px;
+                margin-bottom: 90px;
+              }
+            }
+
+            .ds-grid--12{
+
+              form{
+
+                [class*="icon--info"]{
+                  line-height: 1;
+                  margin-left: 4px;
+                }
+              }
+            }
+          }
+
+          > .ds-col--4{
+            margin-left: 16px;
+            position: sticky;
+            top: 100px;
+            height: 500px;
+          }
+        }
+      }
+
+      as-loading-container{
+        outline: none;
+        width: 100%;
+      }
+
+
+      as-footer{
+        background: $ds-gray__100;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        max-width: 1120px;
+      }
+    }
+
+    @include when-less-than(ds-1024){
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      .ds-body--content{
+        width: 100%;
+
+        .ds-col--12{
+
+          .ds-flex.--row{
+
+            .ds-col--8{
+              width: 100%;
+
+              > .ds-grid--12{
+
+                &:first-of-type{
+                  margin-bottom: 120px;
+
+                  as-reason-test-list{
+
+                    .ds-grid--12{
+
+                      .ds-col--6{
+
+                        .ds-option__primary{
+                          margin: 0 auto;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .ds-col--4{
+              display: none;
+            }
+            .ds-col--9{
+              width: 100%;
+            }
+          }
+
+          .ds-pagination--footer{
+
+            &.ds-col--10{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    @include when-less-than(ds-768){
+      padding-top: 64px;
+
+      .ds-body--content{
+        width: 100%;
+
+        .ds-col--12{
+
+          .ds-flex.--row{
+
+            .ds-col--8{
+              width: 100%;
+            }
+
+            .ds-col--9{
+              width: 100%;
+            }
+
+            .ds-divider--vertical, .ds-col--4{
+              display: none;
+            }
+          }
+
+          .ds-pagination--footer{
+
+            &.ds-col--10{
+              width: 100%;
+
+              .ds-col--14{
+                padding: 0;
+
+                .ds-col--7{
+                  width: 100%;
+                  padding: 0;
+
+                  button{
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .ds-button.--primary {
+      width: 328px;
+      height: 48px;
+      object-fit: contain;
+      position:sticky;
+    }
+    @include when-less-than(ds-768){
+      button{
+        margin: 12px 0;
+        width: 100%;
+      }
+      .ds-button.--primary {
+        width: 100%;
+        max-width: none;
+        position:sticky;
+      }
+    }
+    @include when-less-than(ds-1024){
+      button{
+        margin: 12px 0;
+        width: 100%;
+      }
+      .ds-button.--primary {
+       // width: 100%;
+        max-width: none;
+        //margin:auto;
+        position:sticky;
+      }
+    }
+  }
+}
+
+
+.as-location-finder-details__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+
+.ds-black::before {
+  @include when-less-than(ds-1024){
+    float: left;
+  }
+}
+
+footer{
+  background: #f7f7f9 !important;
+}
+.onFocus:focus {
+  outline: 2px solid $ds-green__500;
+  outline-offset: 3px;
+}
+
+.aligment{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}

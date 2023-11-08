@@ -1,0 +1,39 @@
+@import '../../../../../styles.scss';
+
+.price-estimate-dialog {
+    // max-width: 384px;
+    &__info {
+        display: inline-block;
+        margin: 20px 16px;
+        width: 36px;
+        height: 36px;
+        // border: solid 2px #2769dd;
+        border-radius: 50%;
+        &__icon {
+            margin: 0;
+            width: 33px;
+            height: 33px;
+            color:#2769dd;
+        }
+    }
+    &__content {
+        padding: 0 16px;
+        &__sub-title {
+            margin-bottom: 24px;
+        }
+    }
+
+    // .ds-icon--close--24 {
+    //     float: right;
+    // }
+
+    @include when-less-than(ds-768){
+        &__actions{
+            place-content: center;
+            button {
+                width: auto;
+            }
+        }
+    }
+
+}

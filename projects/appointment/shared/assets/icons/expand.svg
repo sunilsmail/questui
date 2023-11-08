@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="22px" viewBox="0 0 28 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>expand</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="expand">
+            <rect id="Rectangle-9" stroke="#4A4A4A" stroke-width="2" x="11" y="1" width="16" height="15" rx="2"></rect>
+            <polygon id="Shape" fill="#4A4A4A" transform="translate(19.156854, 8.156854) rotate(-45.000000) translate(-19.156854, -8.156854) " points="16.5618795 7.53900312 20.0218458 4.07903679 19.1568542 3.21404521 14.2140452 8.15685425 19.1568542 13.0996633 20.0218458 12.2346717 16.5618795 8.77470538 24.0996633 8.77470538 24.0996633 7.53900312"></polygon>
+            <path d="M16,18 L18,18 C18.3333333,20.6666667 17.5,22 15.5,22 C13.5,22 9.16666667,22 2.5,22 C0.833333333,22 0,21.1666667 0,19.5 C0,17.8333333 0,13.6666667 0,7 C0.374368542,5.66666667 1.20770188,5 2.5,5 C3.79229812,5 6.12563146,4.9794824 9.5,4.93844719 L9.5,7 L2,7 L2,20 L16,20 L16,18 Z" id="Path-2" fill="#4A4A4A"></path>
+        </g>
+    </g>
+</svg>

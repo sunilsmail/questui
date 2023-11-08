@@ -1,0 +1,26 @@
+<div class="ds-body as-pay-at-appointment">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 no-pad">
+      <div class="ds-content-block--52 ds-flex --center-center --column">
+
+        <div class="margin-bottom-16">
+          <span class="ds-icon--check ds-green__700 ds-font--32 ds-green__050--bg" aria-label=""></span>
+        </div>
+        <h2 role="heading" aria-level="1" class="ds-col--6 ds-green__700 ds-flex --center-center margin-12 onFocus no-pad"
+        [attr.aria-label]="[content.as_pay_at_appointment.title]" tabindex="0" i18n>{{content.as_pay_at_appointment.title}}</h2>
+
+        <div class="ds-content-block--32 ds-col--6 ds-font--16 ds-flex --center-center onFocus no-pad" [attr.aria-label]="[content.as_pay_at_appointment.message]"
+          role="complementary" tabindex="0" i18n>
+          {{content.as_pay_at_appointment.message}}</div>
+
+      </div>
+      <div class="button_Continue">
+        <button class="ds-button --primary" tabindex="0"
+           class="ds-button --primary"
+          aria-label="Return to Home" (click)="returnToHome()">
+          <label i18n>Return to Home</label>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

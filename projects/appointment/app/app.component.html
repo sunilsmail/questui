@@ -1,0 +1,13 @@
+<!-- <as-toolbar *ngIf="headerVisible" class="as__toolbar"></as-toolbar> -->
+<ng-container *ngIf="isAuthenticated$ | async; else unAuth">
+  <as-toolbar-auth *ngIf="headerVisible" class="as__toolbar"></as-toolbar-auth>
+</ng-container>
+<ng-template #unAuth>
+  <as-toolbar *ngIf="headerVisible" class="as__toolbar"></as-toolbar>
+</ng-template>
+<div *ngIf="loading" class="overlay" fxLayout="row" fxLayoutAlign="center center">
+  <as-spinner></as-spinner>
+</div>
+<router-outlet></router-outlet>
+
+<as-app-footer></as-app-footer>

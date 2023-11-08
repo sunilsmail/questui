@@ -1,0 +1,230 @@
+<div class="ds-body as-location-details">
+  <div *ngIf="loading" class="as-location-finder-details__overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content no-padding" *ngIf="locationDetails">
+    <div class="ds-col--12">
+      <div class="ds-flex --row">
+        <div class="ds-col--12" id="skip-to-main-location-details" tabindex="-1">
+          <div class="ds-col--12">
+            <!--PSC details-->
+            <div class="as-psc-details ds-flex --column ds-col--12">
+              <div class="ds-col--12">
+                <span class="ds-icon--address ds-font--24 ds-green__700"></span>
+                <span class="ds-font--16 --400"
+                  i18n>{{distance}}{{content.as_location_finder_details.text_miles}}</span>
+                <div class="ds-font--16 --400 ds-flex --start-center as-site-code" id="sitecode"
+                  *ngIf="((showSiteCode$ | async) && locationDetails.siteCode)">
+                  <span [attr.aria-label]="siteCodeAria" class="ds-icon--location ds-font--16"></span>
+                  <span class="ds-font--16 ds-gray__900 pad--4" i18n>Site Code {{locationDetails.siteCode}}</span>
+                </div>
+              </div>
+              <div class="ds-col--12" role="text"
+                aria-labelledby="name status statusOne statusTwo statusThree statusFour addressOne addressTwo zip landmark">
+                <div class="ds-font--16 --700 ds-green__700 ds-flex" aria-hidden="true" id="name" i18n>
+                  {{locationDetails.name}}
+                  <div class="ds-icon--route ds-font--24 ds-green__700" (click)="openDirection()" role="link"
+                    matTooltip="Directions" aria-label="opens Directions in google maps"
+                    (keydown.enter)="openDirection()" tabindex="0"></div>
+                </div>
+                <div class="ds-font--16 --400" *ngIf="locationDetails.siteHoursStatus && siteHoursStatusMsg==='Closed'">
+                  <div *ngIf="!appointmentsOnly" aria-hidden="true" id="status">
+                    <span [ngClass]="{'ds-red__500' : siteHoursStatusMsg==='Closed'}">{{siteHoursStatusMsg}}</span>
+                    <span>
+                      {{siteHoursStatusDuration ? ' - '+siteHoursStatusDuration:''}}</span>
+                  </div>
+                </div>
+                <div *ngIf="appointmentsOnly">
+                  <div class="ds-font--16 -400" aria-hidden="true" id="statusOne"
+                    *ngIf="locationDetails.siteHoursStatus && siteHoursStatusMsg==='Closed'" i18n>
+                    <span [ngClass]="{'ds-red__500' :siteHoursStatusMsg==='Closed' }">{{siteHoursStatusMsg}}</span>
+                    <span>
+                      {{siteHoursStatusDuration ? ' - '+siteHoursStatusDuration:''}}</span>
+                    <span>-
+                      {{appointmentsOnly}}</span>
+                  </div>
+                </div>
+                <div *ngIf="siteHoursStatusDuration !== ' Appointments only'">
+                  <div class="ds-font--16 -400" aria-hidden="true" id="statusTwo"
+                    *ngIf="locationDetails.siteHoursStatus && siteHoursStatusMsg==='Open now' " i18n>
+                    <span [ngClass]="{'ds-green' :siteHoursStatusMsg==='Open now' }">{{siteHoursStatusMsg}}</span>
+                    <span
+                      *ngIf="!locationDetails?.dynamicApptSchedule && locationDetails?.siteType?.toLowerCase() !== 'psa'"
+                      [attr.aria-label]="[content.as_psc_details.wait_time_title2]" role="text">
+                      - {{ content.as_psc_details.wait_time_title2 }}
+                      {{ locationDetails.waitTime ? locationDetails.waitTime : '0' }} minutes</span>
+                  </div>
+                </div>
+                <div id="statusThree" aria-hidden="true"
+                  *ngIf="siteHoursStatusDuration && siteHoursStatusDuration.trim() === 'Appointments only'">
+                  <div class="ds-font--16 -400"
+                    *ngIf="locationDetails.siteHoursStatus && siteHoursStatusMsg==='Open now'" i18n>
+                    <span [ngClass]="{'ds-green' :siteHoursStatusMsg==='Open now' }">{{siteHoursStatusMsg}}</span>
+                    <span>
+                      - Appointments only</span>
+                  </div>
+                </div>
+                <div *ngIf="siteHoursStatusMsg !=='Closed' && siteHoursStatusMsg !== 'Open now'">
+                  <div class="ds-font--16 -400" id="statusFour" aria-hidden="true"
+                    *ngIf="locationDetails.siteHoursStatus" i18n>
+                    <span class="ds-red__500">{{locationDetails.siteHoursStatus}}</span>
+                    <span
+                      *ngIf="!locationDetails?.dynamicApptSchedule && locationDetails?.siteType?.toLowerCase() !== 'psa'"
+                      [attr.aria-label]="[content.as_psc_details.wait_time_title2]">
+                      - {{ content.as_psc_details.wait_time_title2 }}
+                      {{ locationDetails.waitTime ? locationDetails.waitTime : '0' }} minutes</span>
+                  </div>
+                </div>
+                <div class="facilityLocation" *ngIf="locationDetails.siteInfo">
+                  <p class="closingMessage">
+                    <i class="material-icons" id="warningIcon">warning</i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="closingLocation" i18n>
+                      {{siteInfo[0]}}
+                      <br>
+                      {{siteInfo[1]}}
+                    </span>
+                  </p>
+                </div>
+                <!-- <div class="margin-bottom-40">IMAGE GOES HERE</div> -->
+                <div class="ds-flex margin-bottom-10">
+                  <div class="ds-col--10">
+                    <div id="addressOne" aria-hidden="true" role="text" i18n>{{locationDetails.address1}}</div>
+                    <div id="addressTwo" aria-hidden="true" role="text" *ngIf="locationDetails.address2" i18n>
+                      {{locationDetails.address2}}</div>
+                    <div id="zip" role="text" aria-hidden="true" i18n>{{locationDetails.city}},
+                      {{locationDetails.state}} {{locationDetails.zip}}
+                    </div>
+                  </div>
+                </div>
+                <div class="margin-bottom-32" role="text" aria-hidden="true" id="landmark"
+                  *ngIf="locationDetails?.landmark" i18n>
+                  {{locationDetails.landmark}}.</div>
+                <p *ngIf="pscLocation?.appointmentsOnly && locationDetails?.state === 'AZ'" i18n>This location
+                  requires an appointment. Clicking the link below will open in a new window.</p>
+              </div>
+              <div *ngIf="locationDetails.scheduleAppt;else nonQuest">
+                <!-- <div class="ds-col--12 ds-flex --center-center margin-bottom-48">
+										<button class="ds-button --primary" (click)="navigateToScheduleApt()"
+                    aria-label="schedule appointment">
+											<label i18n>{{content.as_location_finder_details.schedule_appt_btn_label}}</label>
+										</button>
+									</div> -->
+              </div>
+              <ng-template #nonQuest>
+                <div *ngIf="locationDetails?.state === 'AZ'; else timeSlot"
+                  class="ds-col--12 ds-flex --center-center margin-bottom-48">
+                  <button class="ds-button --primary" (click)="goToOtherWebsite()"
+                    aria-label="Schedule on Sonora website">
+                    <label i18n>Schedule on Sonora website</label>
+                    <mat-icon class="schedule-button-icon">open_in_new</mat-icon>
+                  </button>
+                </div>
+                <ng-template #timeSlot>
+                  <div class="ds-col--12 ds-flex --center-center margin-bottom-48">
+                    <button class="ds-button --primary--disabled" [disabled]="true"
+                      aria-label="Online Scheduling Unavailable">
+                      <label i18n>Online Scheduling Unavailable</label>
+                    </button>
+                  </div>
+                </ng-template>
+              </ng-template>
+              <div class="ds-content-block__tabs ds-grid--12" role="tablist"  aria-label="Details and Services">
+                <div class="ds-col--2 detail">
+                  <button class="ds-tab" [ngClass]="{'ds-tab--selected' : !DetailsActive}"
+                    (click)="DetailsActive = !DetailsActive; toggleView(ServicesActive = false);" role="tab"
+                    aria-controls="details-tab"  id="details" tabindex="0"
+                    [attr.aria-selected]="!DetailsActive ? 'true':'false'">
+                    <label>{{content.as_location_finder_details.title_details}}</label>
+                  </button>
+                </div>
+                <div class="ds-col--2">
+                  <button class="ds-tab" [ngClass]="{'ds-tab--selected' : ServicesActive}"
+                    (click)="ServicesActive = !ServicesActive; toggleView(DetailsActive = true);" role="tab"
+                    aria-controls="services-tab"  id="services" tabindex="0"
+                    [attr.aria-selected]="ServicesActive ? 'true':'false'">
+                    <label>{{content.as_location_finder_details.title_services}}</label>
+                  </button>
+                </div>
+              </div>
+              <div class="ds-col--12 ds-tab--content" id="details_tab_content"
+                [ngClass]="{'active-tab' : !DetailsActive}" role="tabpanel"  id="details-tab"
+                 aria-labelledby="details">
+                <div class="ds-col--12 margin-bottom-20" *ngIf="locationDetails.siteType === 'PSA'" i18n>
+                  <b>Notes</b>
+                </div>
+                <div class="margin-bottom-32" *ngIf="locationDetails.siteType === 'PSA'" i18n>
+                  {{locationDetails.customMessage}}</div>
+                <div class="ds-font--16 --700 ds-col--12 margin-bottom-20" role="heading" aria-level="3" i18n>
+                  <b>{{content.as_location_finder_details.psc_hrs}}</b>
+                </div>
+                <div class="ds-col--12 ds-flex --row" *ngFor="let psc of PSC_Hours ; let first = first">
+                  <span class="desktop-view">
+                    <div class="ds-font--16 ds-col--3" [ngClass]="{first :first}">{{psc.day}}</div>
+                    <div class="ds-font--16 ds-col--9" [ngClass]="{first :first}">{{psc.hours}}</div>
+                  </span>
+                  <span class="mobile-view">
+                    <div class="ds-font--16 ds-col--4" [ngClass]="{first :first}">{{psc.day}}</div>
+                    <div class="ds-font--16 ds-col--8" [ngClass]="{first :first}">{{psc.hours}}</div>
+                  </span>
+
+                </div>
+                <div class="ds-col--12 ds-flex --row  margin-bottom-20" *ngIf="isselectedReason">
+                  <div class="ds-col--4 ds-font--14--bold" i18n>
+                    {{content.as_location_finder_details.title_hrs}}</div>
+                  <div class="ds-col--4">
+                    <div class="ds-select">
+                      <select name="testlist">
+                        <option *ngIf='isGlucosehours'>{{content.as_location_finder_details.title_isGlucosehours}}
+                        </option>
+                        <option *ngIf='isTuberculosis'>{{content.as_location_finder_details.title_Tuberculosis}}
+                        </option>
+                        <option *ngIf='isDrughours'>{{content.as_location_finder_details.title_Employee_drug}} </option>
+                        <!-- <option>Flu Test (Influenza A & B Screen)</option> -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex --row" *ngIf="isGlucosehours">
+                  <div class="ds-col--12 ds-flex --row" *ngFor="let glucose of GLUCOSE_Hours ; let first = first"
+                    [ngClass]="{first :first}">
+                    <div class="ds-col--3">{{glucose.day}}</div>
+                    <div class="ds-col--9">{{glucose.hours}}</div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex --row" *ngIf="isTuberculosis">
+                  <div class="ds-col--12">{{content.as_location_finder_details.text_regularHrs}}</div>
+                </div>
+                <div class="ds-col--12 ds-flex --row" *ngIf="isDrughours">
+                  <div class="ds-col--12 ds-flex --row drugTests" *ngFor="let drug of DRUG_Hours ; let first = first"
+                    [ngClass]="{first :first}">
+                    <div class="ds-col--3">{{drug.day}}</div>
+                    <div class="ds-col--9">{{drug.hours}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ds-col--12 ds-tab--content" id="services_tab_content"
+                [ngClass]="{'active-tab' : ServicesActive}" role="tabpanel"  id="services-tab"
+                 aria-labelledby="services">
+                <ng-container *ngIf="false">
+                  <div class="ds-font--16 --700 ds-col--12 margin-bottom-20 ds-font--14--bold" i18n
+                    *ngIf="locationDetails.servicesNotOffered !== undefined">
+                    {{content.as_location_finder_details.title_services_not_offered}}</div>
+                  <div class="ds-col--12 ds-flex --row no-pad"
+                    *ngFor="let servicesNotOffered of locationDetails.servicesNotOffered">
+                    <div class="ds-col--12 no-pad servicesList" [innerHTML]="servicesNotOffered"></div>
+                  </div>
+                </ng-container>
+                <div class="ds-font--16 --700 ds-col--12 margin-bottom-20 ds-font--14--bold" role="heading"
+                  aria-level="3" i18n *ngIf="locationDetails.services !== undefined">
+                  {{content.as_location_finder_details.title_services_offered}}</div>
+                <div class="ds-col--12 ds-flex --row" *ngFor="let services of locationDetails.services">
+                  <div class="ds-col--12 servicesList" [innerHTML]="services"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

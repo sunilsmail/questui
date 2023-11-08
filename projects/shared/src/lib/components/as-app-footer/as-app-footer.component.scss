@@ -1,0 +1,33 @@
+@import '../../../../../appointment/styles.scss';
+
+.as-app-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $ds-gray__300;
+  background-image: none;
+  padding: 1px 0;
+  display: flex;
+  place-content: center;
+  justify-content: center;
+  z-index: 2;
+  font-size: 10px;
+  font-weight: 400;
+
+  a, a:hover, a:active, a:visited{
+    color: $ds-black;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  @include when-less-than(ds-1024){
+    line-height: 12px;
+    flex-direction: column;
+    padding: 8px;
+  }
+}
+@media print {
+  :host {
+    display: none;
+  }
+}

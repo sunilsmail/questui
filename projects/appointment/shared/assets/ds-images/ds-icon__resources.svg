@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ds-nav-downloads</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ds-nav-downloads" fill="#C5C5C6" fill-rule="nonzero">
+            <path d="M4.125,0 C3.59178497,0.000285080173 3.09879497,0.283587071 2.8300782,0.7441407 L0.2050782,5.2441407 C0.070995696,5.47348997 0.00022440227,5.73433262 0,6 L0,24 C0,25.6395945 1.3604058,27 3,27 L24,27 C25.6395945,27 27,25.6395945 27,24 L27,6 C26.9997755,5.73433259 26.9290041,5.47348994 26.7949215,5.2441407 L24.1699215,0.7441407 C23.9012048,0.283587164 23.4082149,0.000285186782 22.875,0 L4.125,0 Z M4.9863282,3 L22.0136715,3 L23.7626955,6 L3.23730465,6 L4.9863282,3 Z M12,10.5 L15,10.5 L15,16.5 L19.5,16.5 L13.5,22.5 L7.5,16.5 L12,16.5 L12,10.5 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

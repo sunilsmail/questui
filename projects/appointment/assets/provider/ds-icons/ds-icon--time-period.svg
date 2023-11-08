@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>ds-icon--time-period</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ds-icon--time-period" fill="#424245" fill-rule="nonzero">
+            <g id="Group" transform="translate(50.000000, 50.000000) scale(-1, 1) rotate(-180.000000) translate(-50.000000, -50.000000) translate(0.000000, -0.000000)">
+                <path d="M21.6,98.4 C20.5,97.4 20,95 20,90.9 L20,85 L11.2,85 C5.7,85 2,84.6 1.2,83.8 C0.3,82.9 0,72.4 0,42.9 C0,8.1 0.2,2.9 1.6,1.6 C3,0.2 8.7,0 50,0 C91.3,0 97,0.2 98.4,1.6 C99.8,2.9 100,8.1 100,42.9 C100,72.4 99.7,82.9 98.8,83.8 C98,84.6 94.3,85 88.8,85 L80,85 L80,90.9 C80,97.1 78.5,100 75.2,100 C71.7,100 70.5,98.1 70,91.8 L69.5,85.5 L49.8,85.2 L30,85 L30,90.9 C30,97.2 28.5,100 25,100 C24,100 22.4,99.3 21.6,98.4 Z M89.8,36.3 L90,10 L50,10 L10,10 L10,35.8 C10,50 10.3,62 10.7,62.3 C11.1,62.7 28.9,62.9 50.4,62.8 L89.5,62.5 L89.8,36.3 Z" id="Shape"></path>
+                <polygon id="Path" points="32.5 42 25.5 35 32.8 27.7 40 20.5 40 25.3 40 30 50 30 60 30 60 25.3 60 20.5 67.2 27.8 74.5 35 67.2 42.2 60 49.5 60 44.7 60 40 50.1 40 40.1 40 39.8 44.5 39.5 49.1"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<div class="ds-grid--12">
+    <div class="ds-col--8">
+        <button *ngIf="!enableEasypay" class="ds-button" [disabled]="!enableContinue" tabindex="0" (click)="goToNext()" [ngClass]="{'--primary':enableContinue,'--primary--disabled':!enableContinue,'highlight__continue': highLightContinue, 'button_showSummary': !enableEasypay}"  [attr.aria-label]="getAriaLabel">
+              <label>{{continue_btn_text}}</label>
+          </button>
+
+        <div  id="btn-next" *ngIf="finalStep" tabindex="0" [attr.aria-label]="getAriaLabel" [ngClass]="{'hide_payment':!enableEasypay, 'show_payment':enableEasypay }">
+         </div>
+    </div>
+
+    <div class="ds-col--8" *ngIf="isVisiablePreviousURL" >
+        <a  tabindex="0" class="ds-gray__900 ds-flex --center-center" (click)="goToPreviousPage()" aria-label="Previous">Previous</a>
+      </div>
+</div>

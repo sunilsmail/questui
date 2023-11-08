@@ -1,0 +1,106 @@
+<main class="ds-body as-scheduler">
+  <div *ngIf="loading" class="as-scheduler__overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12">
+      <div class="ds-flex --row  ds-form__col--2">
+        <div class="ds-col--9 no-pad">
+          <div id="as_scheduler" [ngClass]="{'as_scheduler_height': (enableNewUI$ | async)}">
+            <button class="ds-button --icon" id="back-button-appt-scheduler" aria-label="back" (click)="goToPrevious()"
+              tabindex="0" title="back">
+              <span class="ds-icon--arrow-back ds-font--24 ds-green__700"></span>
+            </button>
+            <div>
+              <h1 class="ds-font__20--bold title" i18n>{{content.as_find_a_location.title}}</h1>
+            </div>
+            <!--needs to add condition for error-->
+            <div class="errorMessage" *ngIf="blnShowError && !showLnNotSupportedError">
+              <img [src]="imageSrc" class="ds-icon__error--24" />
+              <!-- <span class="ds-icon-error-24"></mat-icon> -->
+              <span i18n>Your location, date and time are no longer available. <a class="labCardLink"
+                  (click)="showLocations()">Please choose a new location, date and
+                  time</a></span>
+            </div>
+            <div class="errorMessage" *ngIf="showLnNotSupportedError">
+              <img [src]="imageSrc" class="ds-icon__error--24" />
+              <span i18n>Your selected location does not support <span innerHTML={{facilityTestTypeValue}}></span>.
+                Please select a new location.</span>
+            </div>
+            <as-psc-search-without-googlemaps inputValue={{selectedZipcode}} (userProvidedZip)="onZipProvide($event)"
+              (locationChanged)="onLocationChange($event)"></as-psc-search-without-googlemaps>
+            <as-datepicker-calendar [existingAppt]="existingAppt" *ngIf="hasChangedLocation"
+              (dateChanged)="onDateChanged($event)"></as-datepicker-calendar>
+          </div>
+          <ng-container *ngIf="(asHomeService$ | async) && displayLab">
+            <ul class="get-labs distance-appt-flow" aria-label="quest labs locations near you" tabindex="0">
+              <li>
+                <div class="ds-card padding-32 margin-top" [attr.aria-label]="distanceAria" i18n-aria-label>
+                  <p class="ds-font--14 p-flex" i18n>
+                    <span class="ds-icon--house-line ds-green__700 ds-font--24" aria-label="house-line" alt="house-line"
+                      role="img"></span>
+                    <span>0.0 miles</span>
+                  </p>
+                  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start">
+                    <div fxFlex.gt-sm="100%" class="ds-font--14 ds-flex--column --start-start">
+                      <span class="ds-green__700 ds-font--16--bold span-h4">{{cardContent[0] || '' }}</span>
+                      <p class="get-labs-text">{{cardContent[1] || ''}}</p>
+                      <p class="legal-disclaimer__content">{{cardContent[2] || ''}}</p>
+                      <div class="footer-buttons" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start">
+                        <div *ngIf="pscDetailsService.partnerName !== 'ExamOne'" fxFlex.lt-sm="100%" fxFlex="50%"
+                          class="learn-more">
+                          <button class="ds-button --secondary" (click)="learnMore()">Learn more</button>
+                        </div>
+                        <div class="check-availability" *ngIf="pscDetailsService.partnerName !== 'ExamOne'"
+                          fxFlex.lt-sm="100%" fxFlex="50%">
+                          <button class="ds-button --primary" (click)="goToOtherWebsitePopup()">
+                            <label>Check availability</label>
+                          </button>
+                        </div>
+                        <div *ngIf="pscDetailsService.partnerName === 'ExamOne'" fxFlex.lt-sm="100%" fxFlex="30%"
+                          class="learn-more">
+                          <button class="ds-button --primary" (click)="bookNow()">Book now</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </ng-container>
+          <as-loading-container [ngClass]="blnShowError && !displayLab?'margin-top-200': ''" [asLoadingData]="pscs$"
+            asSpinnerSize="medium" asNoDataMessage="{{content?.as_find_a_location?.noslots}}" i18n-asNoDataMessage
+            asLoadErrorMessage="{{content?.as_find_a_location?.noslots}}" i18n-asLoadErrorMessage
+            [loadingMore]="loading$" *ngIf="hasChangedLocation">
+            <ng-template let-pscs #pscs>
+              <ul class="pscDetails" aria-label="quest labs locations near you">
+                <li *ngFor="let psc of pscs; let index = index; trackBy: trackByFn"
+                  [attr.aria-label]="'location ' + (index+1)">
+                  <as-psc-details-new [filterSlots]="filterSlots" [selectedDate]="selectedDate"
+                    [existingAppt]="existingAppt" [psc]="psc" [isAppScheduleFlow]="true"
+                    (enableContinue)="enableContinueButton($event)" (newAppt)="newAppt($event,index)"
+                    [active]="{active:true,index:index}" [showCloserMessage]="true">
+                  </as-psc-details-new>
+                </li>
+              </ul>
+              <div (click)="showmore()" *ngIf="enableShowMore" fxLayout="column" fxLayoutAlign="center center"><button
+                  class="ds-button --secondary" role="button" i18n>Show more locations</button>
+              </div>
+              <div *ngIf="locationsLoading" class="as-scheduler__overlay" fxLayout="row" fxLayoutAlign="center center">
+                <as-spinner></as-spinner>
+              </div>
+            </ng-template>
+          </as-loading-container>
+          <as-enable-browser-location *ngIf="!searchEnabled" [useDefaultOnError]="false"
+            [ngClass]="{ 'aria-hide-and-keep-place': hasChangedLocation }" (locationChanged)="onLocationChange($event)">
+          </as-enable-browser-location>
+        </div>
+        <div class="ds-col--3" [ngClass]="{'continue-margin-bottom': isReview}">
+          <as-navigation-sidebar [step]="2"></as-navigation-sidebar>
+          <as-footer [previous]="previousUrl" [reqParams]="reqParams" [enableContinue]="enableContinue && !blnShowError"
+            (continue)='onContinue()'></as-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

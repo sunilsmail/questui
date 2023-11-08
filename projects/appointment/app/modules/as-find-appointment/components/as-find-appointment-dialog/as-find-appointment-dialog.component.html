@@ -1,0 +1,48 @@
+<div class="view-appt-conf" (keydown)="closeAppointmentDialog($event)">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="verify-identity-close"
+      (click)="closefindAppointmentDialog()"  aria-label="close" tabindex="0"
+      name="view-appt-conf-close"></button>
+  </div>
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <ng-container [ngSwitch]="data.actionName">
+        <h2 id="mat-dialog-title" aria-level="1" i18n *ngSwitchCase="'view'">{{content.as_findAppointment.title_view}}</h2>
+        <h2 id="mat-dialog-title" aria-level="1" i18n *ngSwitchCase="'change'">{{content.as_findAppointment.title_change}}</h2>
+        <h2 id="mat-dialog-title" aria-level="1" i18n *ngSwitchCase="'cancel'">{{content.as_findAppointment.title_cancel}}</h2>
+      </ng-container>
+      <ng-container>
+        <span class="ds-body--base ds-gray__900 margin-bottom-16 margin-top-16" innerHTML={{content.as_findAppointment.message_alert}}>
+        </span>
+      </ng-container>
+      <form [formGroup]="findAppointment">
+        <div class="ds-col--12 ds-input --required" [ngClass]="{'--error': !findAppointment.get('confirmationCode').valid && findAppointment.get('confirmationCode').touched}">
+          <label for="confirmationCode" class="ds-input__label" i18n tabindex="-1">Confirmation code</label>
+          <input type="text" formControlName="confirmationCode"  aria-label="confirmationCode" aria-describedby="hint-text" required id="confirmationCode"
+            #textbox1 (keyup)="onKeyup()" (paste)="onPaste($event)">
+            <div id="hint-text" class="ds-gray__600 input__hint ds-body--small">Confirmation codes are at least 6 characters</div>
+          <div class="ds-input__error"
+            *ngIf="findAppointment.get('confirmationCode').errors && (findAppointment.get('confirmationCode').touched )">
+            <div *ngIf="findAppointment.get('confirmationCode').errors" class="ds-input__error" role="alert">
+              {{findAppointment.get('confirmationCode').errors | validationError : content.as_confirmation.confirmation_code}}</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+      <div class="ds-col--12 ds-flex --center-center margin-bottom-16">
+        <button class="ds-button --primary --medium" [disabled]="!enableContinue" (click)="onContinue($event.target.value)"
+          role="button" [ngClass]="{'--primary':enableContinue,'--primary--disabled':!enableContinue}">
+          <label>{{content.as_findAppointment.button_label}}</label>
+        </button>
+      </div>
+      <div class="ds-col--12 ds-flex --center-center">
+        <button class="ds-link ds-green__700" aria-label="Forgot confirmation code" (click)="openForgotConfDailog()" tabindex="0"
+          role="button" ii8n>Forgot confirmation code</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

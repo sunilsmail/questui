@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="16px" viewBox="0 0 21 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ds-iocn--email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ds-iocn--email" fill="#424245" fill-rule="nonzero">
+            <path d="M2.24092592,0 C1.21692592,0 0.381363415,0.772625 0.264363415,1.765625 L10.2409259,8 L20.2174879,1.765625 C20.1004889,0.772625 19.2649259,0 18.2409259,0 L2.24092592,0 Z M5.68434189e-14,3.7519531 C5.69740937e-14,9.30118573 5.69740937e-14,12.7292604 5.68434189e-14,14.036177 C5.68434189e-14,16 2,16 2,16 L10.171875,16 C15.390625,16 18,16 18,16 C18,16 20,16 20,14.0349979 C20,12.9551879 20,10.3341469 20,6.171875 L20,3.7519531 L10,10 L5.68434189e-14,3.7519531 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

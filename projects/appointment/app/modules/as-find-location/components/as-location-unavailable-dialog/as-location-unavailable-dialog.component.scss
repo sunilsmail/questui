@@ -1,0 +1,31 @@
+@import '../../../../../styles.scss';
+
+.location-unavailable-dialog{
+  max-width: 696px;
+  h2 {
+    display: flex;
+    align-items: center;
+    @include when-less-than(ds-768){
+      align-items: flex-start !important;
+    }
+  }
+  @include when-less-than(ds-768){
+    max-width: 348px;
+    > mat-dialog-actions > .ds-modal__actions > [class*=ds-col]{
+      width: 100%;
+      justify-content: center;
+      > .--primary{
+        width: 100%;
+        justify-content: center;
+        min-width: 100%;
+        @include when-less-than(ds-480){
+          height: 100%;
+        }
+      }
+    }
+  }
+  @include when-less-than(ds-480){
+    max-width: 100%;
+ }
+
+}

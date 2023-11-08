@@ -1,0 +1,8 @@
+apiVersion: v1
+description: A Helm chart for Appointment-ui
+name: appointment-ui
+version: 23-04-0
+git:
+  repo: "git@git01.ops.medplus.com:myquest/appointment-ui.git"
+  project: appointment-ui
+

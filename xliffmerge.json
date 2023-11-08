@@ -1,0 +1,9 @@
+{
+  "xliffmergeOptions": {
+    "srcDir": "projects/appointment/locale",
+    "genDir": "projects/appointment/locale",
+    "defaultLanguage": "en",
+    "i18nFile": "messages.xlf",
+    "useSourceAsTarget": true
+  }
+}

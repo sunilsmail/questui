@@ -1,0 +1,156 @@
+<div class="ds-modal find-appointment">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__700" aria-label="close"
+      (click)="closeDialog(dialogOptions.closeDialog)"></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12" >
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start" id="dialogcontent">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="Location details" class="header margin-bottom-0">
+        {{content.as_ct_hipaa_signin_dialog.title}}</h2>
+       <mat-progress-bar title="progressbar" mode="determinate" [value]="scrollValue"></mat-progress-bar>
+      <div class="ds-col--12 --content-scroll">
+        <div class="ds-message --warning --dismissible margin-top-28" role="alert" id="infobanner" *ngIf="!data?.isReview">
+          <div class="ds-col--1">
+            <span class="ds-icon--info ds-black ds-font--24" aria-label="info" role="img"></span>
+          </div>
+          <div class="ds-col--11">
+            <label class="ds-font--18 --700"
+              aria-label="info">{{content.as_ct_hipaa_signin_dialog.banner_title}}</label><br>
+            <label aria-label="info">{{content.as_ct_hipaa_signin_dialog.banner_message}}</label>
+          </div>
+        </div>
+        <div class="ds-font--18 --500 sub-title" [ngClass]="{'margin-top-36' : data?.isReview}">{{content.as_ct_hipaa_signin_dialog.sub_title}}
+        </div>
+        <div>
+          <p class="no-margin">
+            Quest Diagnostics has set up a database of potential research study participants who have agreed to receive
+            communications from us about research studies (“Research Database”). A research study is a scientific
+            project carefully designed to answer certain questions in an organized and reliable way. Research studies
+            can be as simple as a survey or as complex as testing new healthcare treatments to see if they are safe and
+            effective for human use. Quest Diagnostics includes information in the Research Database only from
+            individuals who have given us their permission to do so. By agreeing to this Authorization, you give your
+            permission to Quest Diagnostics Incorporated and its wholly owned subsidiaries (“Quest Diagnostics”) to
+            collect, use and disclose your protected health information (“PHI”) for purposes related to the Research
+            Database as described in this form.</p>
+          <p>This Authorization applies to the following PHI: your first and last name, contact information, prior
+            and/or
+            future laboratory testing results and information indicating or suggesting you may have a medical
+            condition(s). This PHI may include demographic information, diagnosis codes associated with laboratory test
+            orders, and/or geographic information. If your PHI includes information about genetic, alcohol and/or drug
+            abuse treatment, HIV or diseases that can be transmitted from one person to another, this Authorization may
+            apply to that information as well. You authorize Quest Diagnostics to:</p>
+          <ul>
+            <li>Include your PHI in the Research Database;</li>
+            <li>Use your PHI to assess whether you might be eligible to participate in research studies;</li>
+            <li>Use your PHI to inform you about research study opportunities;</li>
+            <li>Use your PHI to invite you to participate in clinical research pre-qualification surveys; and</li>
+            <li>If you elect to participate in a pre-qualification survey Quest Diagnostics will rely on this
+              Authorization
+              to disclose relevant PHI to the clinical research site affiliated with the applicable clinical research
+              study.</li>
+          </ul>
+          <p>Your name, date of birth, email, address and phone number(s) will be used to verify your identity and
+            associated PHI for inclusion in the Research Database and to notify you of potential research opportunities.
+            Your gender, race and ethnicity are not required; if you choose to provide this information, we may use it
+            to notify you of any opportunities to participate in clinical trials for conditions that may be more
+            prevalent in individuals of a particular gender, race or ethnicity or in which certain races, ethnicities or
+            genders are underrepresented.</p>
+          <p>We may contact you via mail, email or on your home or mobile phone using the information provided. We will
+            only use the email address you provide to send you unencrypted emails about clinical trials as described in
+            the Authorization. Unencrypted emails are not a secure method of communication because they may be accessed
+            or intercepted by third parties. These emails may contain information about clinical trials based upon your
+            laboratory test results. That means if you provide a work email address or a shared email address, your
+            employer or any individual with whom you share an email account may be able to access the email.</p>
+          <p>Please notify us of any changes to your contact information, so that we may continue to deliver required
+            notices, disclosures and records and so that we do not provide such information to an incorrect location or
+            recipient.</p>
+          <p>The fact that Quest Diagnostics informs you about a research study does not necessarily mean that you have
+            a particular diagnosis or medical condition.</p>
+          <p class="text-wrap">This Authorization becomes effective upon your signature and shall not expire until Quest Diagnostics ends
+            the Research Database, or until you revoke this Authorization. You may revoke this Authorization at any
+            time, except to the extent that action has been taken in reliance on it, by notifying Quest Diagnostics in
+            writing at <b>ClinicalTrialsHIPAA@QuestDiagnostics.com</b>.</p>
+          <p>It is entirely your choice whether to agree to this Authorization. Quest Diagnostics may not condition
+            treatment, payment, enrollment in a health plan, or eligibility for benefits on whether you agree to this
+            Authorization. PHI released under the terms of this Authorization may be re-disclosed and may no longer be
+            protected by federal or state confidentiality laws.</p>
+          <p>In connection with obtaining this Authorization and the collection, use and/or disclosure of your PHI as
+            described above, Quest Diagnostics will receive payments from sponsors or other third parties involved in
+            research studies.</p>
+          <p class="ds-font--16 --700">HIPAA Authorization, Signature, and Consent for Electronic Signature and Communications
+          </p>
+          <p>I have read and understand this Authorization and authorize the collection, use and disclosure of PHI as
+            set forth above.</p>
+          <p>I agree to sign this Authorization electronically by typing my name below, and I agree to receive other
+            notices, disclosures, communications and records related to my HIPAA Research Database Authorization
+            electronically.</p>
+          <form [formGroup]="consentForm" id="consent" aria-labelledby="consent" autocomplete="off">
+            <!-- <div class="ds-grid--12" > -->
+              <div class="ds-grid--12 ds-col--12 ds-flex --row no-pad" id="skip-to-main2" tabindex="-1">
+                <div class="ds-col--4 no-pad">
+                  <div class="ds-input" [ngClass]="{'--disabled' : data?.firstName}">
+                    <div class="ds-input__label" i18n>{{content.as_input_labels.firstName}}</div>
+                    <span *ngIf="(!data?.firstName)" style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                    <input type="text" formControlName="firstName" placeholder="" aria-label="First Name" id="firstName2"
+                     autocomplete="off" aria-required="true" [ngClass]="{'--error': !consentForm.get('firstName').valid && consentForm.get('firstName').touched}" />
+                      <div class="ds-input__error" *ngIf="!consentForm.get('firstName').valid && consentForm.get('firstName').touched">{{consentForm.get('firstName').errors | validationError :
+                        content.as_input_labels.firstName}}</div>
+                  </div>
+                </div>
+                <div class="ds-col--4 no-pad">
+                  <div class="ds-input" [ngClass]="{'--disabled' : data?.lastName}">
+                    <div class="ds-input__label" i18n>{{content.as_input_labels.lastName}}</div>
+                    <span *ngIf="(!data?.lastName)" style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                    <input type="text" formControlName="lastName" placeholder="" aria-label="Last Name" id="lastName2"
+                      autocomplete="off" aria-required="true" [ngClass]="{'--error': !consentForm.get('lastName').valid && consentForm.get('lastName').touched}" />
+                    <div class="ds-input__error" *ngIf="!consentForm.get('lastName').valid && consentForm.get('lastName').touched">{{consentForm.get('lastName').errors | validationError :
+                        content.as_input_labels.lastName}}</div>
+                  </div>
+                </div>
+                <div class="ds-col--4 no-pad">
+                  <div class="ds-input --disabled no-margin">
+                    <div class="ds-input__label" i18n>{{content.as_input_labels.date}}</div>
+                    <input type="text" formControlName="date" aria-label="Date" id="date"
+                      autocomplete="bday" required />
+                  </div>
+                </div>
+              </div>
+            <!-- </div> -->
+          </form>
+          <p class="text-wrap">I understand I have the right to withdraw this agreement to use an electronic signature and receive communications
+            electronically, and understand if I do, it will also revoke my HIPAA Research Database Authorization and terminate my
+            participation in the Research Database. I may withdraw this agreement by contacting
+            <b>ClinicalTrialsHIPAA@QuestDiagnostics.com</b> for no fee.</p>
+          <p class="text-wrap">I may download, print a copy, or request a written copy of this agreement to conduct communications electronically
+            for my records by contacting <b>ClinicalTrialsHIPAA@QuestDiagnostics.com</b> for no fee.</p>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12 no-pad">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap no-pad" *ngIf="!data?.isReview">
+      <div class="ds-col--6 ds-flex --end-center no-pad cancel">
+        <button class="ds-button --secondary --medium" aria-label="verify identity"
+          (click)="closeDialog(dialogOptions.closeDialog)">
+          {{content.as_ct_hipaa_signin_dialog.button_1}}
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --end-center no-pad">
+        <button class="ds-button --primary --medium" [ngClass]="{'--disabled' : !disbaleSignupButton}"
+        aria-label="signin"  (click)="closeDialog(dialogOptions.yes)">
+          {{content.as_ct_hipaa_signin_dialog.button_2}}
+        </button>
+      </div>
+    </div>
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap no-pad" *ngIf="data?.isReview">
+      <div class="ds-col--6 ds-flex --end-center no-pad">
+        <button class="ds-button --secondary --medium" aria-label="verify identity"
+          (click)="closeDialog(dialogOptions.closeDialog)">
+          {{content.as_ct_hipaa_signin_dialog.button_3}}
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

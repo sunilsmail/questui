@@ -1,0 +1,220 @@
+// @import '../../../../../styles.scss';
+
+// .ds-modal{
+//   position: relative;
+
+//   .ds-modal__content{
+//     padding: 24px;
+//     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+//       max-width: 488px;
+//     }
+//     .ds-col--12{
+
+//       &:nth-of-type(2){
+//         padding: 0;
+//       }
+//     }
+//   }
+//   &__warning-icon{
+//     color: #F56A00;
+//     border-radius: 50px;
+//     background: #ffeedf;
+//     border: 2px solid #F56A00;
+//     display: flex;
+//     align-items: center;
+//     margin: auto;
+//     padding: 12px;
+//     height: 50px;
+//     width: 50px;
+//     border: 1 px;
+// }
+// }
+// .peace-of-mind{
+//   @include when-less-than(ds-640){
+//     .ds-pagination--footer {
+//       flex-direction: column;
+//     }
+//   }
+// }
+// .ds-button__secondary{
+//   width: 192px;
+//   height: 44px;
+//   border-radius: 4px;
+//   border: solid 2px #35792a;
+//   @include when-less-than(ds-1024){
+
+//     margin: 0 10px 20px 0;
+
+// }
+// }
+// .Weve-updated-our-se {
+//     font-size: 20px;
+// }
+// .Are-you-older-than-6{
+//   font-size: 18px;
+// }
+// .mat-dialog-container{
+//   padding:20px;
+// }
+// .dialog-msg1{
+//   font-size:15px ;
+//   line-height: 1.6;
+//   letter-spacing: normal;
+// }
+
+
+@import '../../../../../styles.scss';
+
+.peace-of-mind {
+
+  &__anchorTag {
+   text-decoration: underline;
+   cursor: pointer;
+ }
+
+ position: relative;
+ max-width: 350px;
+ padding: 20px;
+
+   > [class*="ds-icon"]{
+
+       &:first-of-type{
+       display: none;
+       }
+
+       &:nth-of-type(2){
+       display: flex;
+       float: right;
+       }
+   }
+
+   .ds-input {
+
+       > div{
+
+           &:nth-of-type(2) {
+               min-height: 32px;
+           }
+
+           &:nth-of-type(3) {
+               display: none;
+           }
+       }
+
+       input{
+           margin-bottom: 4px;
+       }
+   }
+
+   @include when-less-than(ds-768){
+       background: $ds-gray__100;
+       position: absolute;
+       top: 0;
+       right: 0;
+       bottom: 0;
+       left: 0;
+       max-width: 100%!important;
+       padding: 16px 24px;
+
+       > [class*="ds-icon"]{
+
+           &:first-of-type{
+           display: flex;
+           }
+
+           &:nth-of-type(2){
+           display: none;
+           }
+       }
+
+       [class*="ds-col"]{
+           width: 100%;
+
+           .ds-input{
+           padding-right: 0;
+           margin-right: 0;
+           }
+       }
+
+       > .ds-grid--12{
+           flex-direction: column-reverse;
+
+           > [class*="ds-col"]{
+               padding-right: 0;
+
+               &:first-of-type{
+                   margin: 16px 0;
+                   justify-content: center;
+                   place-content: center;
+               }
+               &:last-of-type{
+                   justify-content: center;
+                   place-content: center;
+               }
+           }
+       }
+   }
+}
+
+ @media screen and (max-width: 767px) {
+   .peace-of-mind[_ngcontent-c9] > .ds-grid--12[_ngcontent-c9] {
+     flex-direction: column;
+   }
+ }
+
+.ds-black:focus{
+ outline: 2px solid $ds-green__500;
+ outline-offset: 0px ;
+}
+.confirmation-txt {
+   color: #737376 !important;
+}
+
+.ds-button.--secondary{
+  width: 300px;
+  height: 44px;
+  border-radius: 4px;
+  border: solid 2px #35792a;
+  margin-bottom: 10px;
+  @include when-less-than(ds-1024){
+    margin-bottom: 10px;
+  }
+}
+.ds-button.symptoms-buttons {
+  height: 80px;
+}
+.dialog-msg1{
+  font-size:15px ;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #424245;
+}
+.message_1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+.ds-modal{
+  &__warning-icon{
+    color: #F56A00;
+    border-radius: 50px;
+    background: #ffeedf;
+    border: 2px solid #F56A00;
+    // display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 12px;
+    height: 50px;
+    width: 50px;
+    border: 1 px;
+  }
+}
+.ds-col--1 {
+  padding-top: 30px;
+}
+.covidTest {
+  color: blue;
+  // font-weight: bold;
+}

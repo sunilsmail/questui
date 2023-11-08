@@ -1,0 +1,294 @@
+<main class="ds-body as-personal">
+  <div *ngIf="loading" class="overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12">
+      <div class="ds-flex --row ds-form__col--2">
+        <div class="ds-col--9" id="skip-to-main" tabindex="-1">
+          <div role="form" [attr.aria-labelledby]="content.as_eorder_personal_information.title">
+            <div>
+              <!-- <button class="ds-icon--arrow-back--24 ds-green__700" (click)="goToPrevious()"
+                tabindex="0" aria-label="Go to previous page"></button> -->
+              <div>
+                <h2 class="ds-green__700 margin-bottom-32 title" role="heading" aria-level="1"
+                  [attr.id]="content.as_eorder_personal_information.title"
+                  [attr.aria-label]="[content.as_eorder_personal_information.title]" i18n>
+                  {{content.as_eorder_personal_information.title}}</h2>
+              </div>
+            </div>
+            <form [formGroup]="personalInfoForm">
+              <div class="ds-grid--12 ds-col--12 ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-0">
+                <div class="ds-grid--12">
+                  <!-- personalInfoForm block start -->
+                  <div class="ds-col--12 ">
+                    <h3 class="ds-green__700 no-margin" role="heading" aria-level="2"
+                      [attr.aria-label]="[content.as_eorder_personal_information.title_new]" i18n>
+                      {{content.as_eorder_personal_information.title_new}}</h3>
+                    <hr>
+                  </div>
+                  <div class="ds-col--6 no-pad">
+                    <div class="ds-input --required margin-bottom-0"
+                      [ngClass]="{'--error': !personalInfoForm.get('firstName').valid && personalInfoForm.get('firstName').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.firstName}}</div>
+                      <input type="text" formControlName="firstName" placeholder="" aria-label="First Name"
+                        id="eOrderPIfirstName" autocomplete="given-name" />
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('firstName').errors |
+                        validationError: content.as_input_labels.firstName}}</div>
+                    </div>
+                  </div>
+                  <div class="ds-col--6 no-pad">
+                    <div class="ds-input --required last-name margin-bottom-0"
+                      [ngClass]="{'--error': !personalInfoForm.get('lastName').valid && personalInfoForm.get('lastName').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.lastName}}</div>
+                      <input type="text" formControlName="lastName" placeholder="" aria-label="Last Name"
+                        id="eOrderPIlastName" autocomplete="family-name" />
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('lastName').errors |
+                        validationError: content.as_input_labels.lastName}}</div>
+                    </div>
+                  </div>
+                  <div *ngIf="(contentFromApi$ | async) as message"
+                    class="ds-col--12 ds-flex no-pad gender-identity-text">
+                    <p class="ds-font--14 no-margin" *ngIf="getSelectedState$ | async">{{message}}</p>
+                  </div>
+                  <div class="ds-col--12 ds-flex --row row-column no-pad margin-top-24">
+                    <div class="ds-col--3">
+                      <div class="ds-input --required"
+                        [ngClass]="{'--error': (!personalInfoForm.get('dob').valid && (personalInfoForm.get('dob').touched || personalInfoForm.get('dob').dirty))}">
+                        <div class="ds-input__label" i18n>{{content.as_input_labels.dob}}</div>
+                        <input type="text" formControlName="dob" (keyup)="onkeypressdate($event,dateElement)"
+                          (focusout)="focusOut($event)" #dateElement id="dateOfBirth" (keypress)="onKeyPress($event)"
+                          aria-label="Date Of Birth" required />
+                        <div class="ds-font--14 ds-gray__600 margin-top-4">MM/DD/YYYY</div>
+                        <div class="ds-input__error" role="alert"
+                          *ngIf="personalInfoForm.get('dob').errors && (personalInfoForm.get('dob').touched || personalInfoForm.get('dob').dirty)">
+                          {{personalInfoForm.get('dob').errors | validationError : content.as_input_labels.dob}}</div>
+                      </div>
+                    </div>
+                    <div class="ds-col--3 margin-right-24 margin-left-24">
+                      <div class="ds-input no-margin" role="radiogroup">
+                        <div class="ds-input__label" i18n>{{content.as_input_labels.gender}}
+                          <span style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                          <span style="display:flex;" *ngIf="GIandSOEnabled"
+                            matTooltip="Sex refers to the person’s biology as determined by chromosomes and physical characteristics present at birth. It is needed to ensure the correct normal range of values (the reference range) is used when results are given.">
+                            <span class="ds-icon--info ds-green__700 ds-font--16 margin-left-4 tooltip"
+                              aria-label="tool tip" role="img">
+                            </span>
+                          </span>
+                        </div>
+                        <div class="ds-flex --row">
+                          <div class="ds-input__radio">
+                            <input type="radio" id="sex--male" value="Male" formControlName="gender">
+                            <label for="sex--male" i18n>Male</label>
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" id="sex--female" value="Female" formControlName="gender">
+                            <label for="sex--female" i18n>Female</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ds-col--5" *ngIf="(getGenderPreference$ | async)">
+                      <mat-form-field class="ds-input margin-right-12" floatLabel="always">
+                        <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                          {{content.as_input_labels.genderPref}}
+                          <span *ngIf="(genderPreferenceValidation$ | async)"
+                            style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                          <span *ngIf="GIandSOEnabled" (click)="openTooltip($event)"
+                            matTooltip="Gender identity refers to the person’s internal sense of being.">
+                            <span class="ds-icon--info ds-green__700 ds-font--16 tooltip" aria-label="tool tip"
+                              role="img">
+                            </span>
+                          </span>
+                        </mat-label>
+                        <mat-select disableOptionCentering formControlName="genderPreference" panelClass="ds-dropdown">
+                          <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                            class="ds-dropdown__item" *ngFor="let option of getGenderPreference$ | async"
+                            [value]="option.key">
+                            {{ option.value }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="ds-col--12 ds-flex --row row-column">
+                    <div class="ds-col--4" *ngIf="(getRace$ | async)">
+                      <div class="ds-input margin-right-24" id="race">
+                        <mat-form-field class="ds-input">
+                          <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                            {{content.as_input_labels.race}}
+                            <span *ngIf="(getRaceValidation$ | async)"
+                              style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                          </mat-label>
+                          <mat-select disableOptionCentering formControlName="race" panelClass="ds-dropdown">
+                            <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                              class="ds-dropdown__item" *ngFor="let option of  getRace$ | async" [value]="option.key">
+                              {{ option.value }}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="ds-col--4" *ngIf="(getEthnicity$ | async)">
+                      <div class="ds-input margin-right-24" id="ethnicity">
+                        <mat-form-field class="ds-input">
+                          <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                            {{content.as_input_labels.ethnicity}}
+                            <span *ngIf="(getEthnicityValidation$ | async)"
+                              style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                          </mat-label>
+                          <mat-select disableOptionCentering formControlName="ethnicity" panelClass="ds-dropdown">
+                            <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                              class="ds-dropdown__item" *ngFor="let option of getEthnicity$ | async"
+                              [value]="option.key">
+                              {{ option.value }}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="ds-col--4" *ngIf="(getSexualOrientation$ | async)">
+                      <mat-form-field class="ds-input">
+                        <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                          {{content.as_input_labels.sexualOri}}
+                          <span *ngIf="(sexualOrientationValidation$ | async)"
+                            style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                        </mat-label>
+                        <mat-select disableOptionCentering formControlName="sexualOrientation" panelClass="ds-dropdown">
+                          <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                            class="ds-dropdown__item" *ngFor="let option of getSexualOrientation$ | async"
+                            [value]="option.key">
+                            {{ option.value }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- personalInfoForm block end -->
+              <!-- Address block start -->
+              <div class="ds-grid--12 ds-col--12 ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-0">
+                <div class="ds-col--12 ">
+                  <div class="ds-col--12 ">
+                    <h3 class="ds-green__700 no-margin" id="eOrderPI_as_personal_information_CreateAccountAddressText"
+                      tabindex="0"
+                      [attr.aria-label]="[content.as_eorder_personal_information.create_account_address_text]">
+                      {{content.as_eorder_personal_information.create_account_address_text}}</h3>
+                    <hr>
+                  </div>
+                  <div class="ds-col--12">
+                    <ng-container *ngIf="f4191; else googleAddress">
+                      <as-address-without-google-maps (formReady)="addChildForm('addressInfo', $event)"></as-address-without-google-maps>
+                    </ng-container>
+                    <ng-template #googleAddress>
+                      <as-eorder-address (formReady)="addChildForm('addressInfo', $event)"></as-eorder-address>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+              <!-- Address block end -->
+              <!-- contact information block start -->
+              <div class="ds-grid--12 ds-col--12 ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-0">
+                <div class="ds-col--12 ">
+                  <h3 class="ds-green__700 no-margin"
+                    [attr.aria-label]="[content.as_eorder_personal_information.contact_title]">
+                    {{content.as_eorder_personal_information.contact_title}}</h3>
+                  <hr>
+                </div>
+                <div class="ds-grid--12 ">
+                  <div class="ds-col--6">
+                    <div class="ds-input --required"
+                      [ngClass]="{'--error': !personalInfoForm.get('emailAddress').valid && personalInfoForm.get('emailAddress').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.email}}</div>
+                      <input type="text" placeholder="" formControlName="emailAddress" id="eOrderPI_email"
+                        aria-label="emailAddress" autocomplete="email" />
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('emailAddress').errors |
+                        validationError: content.as_input_labels.email}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ds-col--3">
+                    <div class="ds-input --required"
+                      [ngClass]="{'--error': !personalInfoForm.get('phone').valid && personalInfoForm.get('phone').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.phone}}</div>
+                      <input type="tel" formControlName="phone" required (keyup)="onkeypressphone($event,phoneElement)"
+                        #phoneElement id="eOrderPI_phone" aria-label="Phone Number" autocomplete="tel" />
+                      <div class="ds-font--14 ds-gray__600 margin-top-3">555-555-5555</div>
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('phone').errors |
+                        validationError: content.as_input_labels.phone}}</div>
+                    </div>
+                  </div>
+                  <div class="ds-col--3 ">
+                    <div class="ds-input --required no-pad" role="radiogroup">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.isMobileTxt}}</div>
+                      <div class="ds-flex --row">
+                        <div class="ds-input__radio --required">
+                          <input type="radio" id="mobile--yes" value="Mobile" formControlName="phoneType">
+                          <label for="mobile--yes" i18n>{{content.as_eorder_personal_information.mobile_yes}}</label>
+                        </div>
+                        <div class="ds-input__radio --required">
+                          <input type="radio" id="mobile--no" value="Landline" formControlName="phoneType">
+                          <label for="mobile--no" i18n>{{content.as_eorder_personal_information.mobile_no}}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- contact information block end -->
+                <!-- contact reference block start -->
+                <div class="ds-col--12 padding-bottom-16">
+                  <div class="ds-input --required"
+                    [ngClass]="{'--error': !personalInfoForm.get('preferences').valid && (personalInfoForm.get('preferences').touched || personalInfoForm.get('preferences').dirty)}">
+                    <div class="ds-col--12 padding-bottom-12">
+                      <label class="ds-font--18 --700 ds-gray__900"
+                        id="eOrder_as_personal_information_ContactPreferencesTitle"
+                        [attr.aria-label]="[content.as_eorder_personal_information.contact_preferences_title]"
+                        i18n>{{content.as_eorder_personal_information.contact_preferences_title}}</label>
+                    </div>
+                    <div class="ds-col--12 padding-bottom-16">
+                      <label class="ds-input__label no-margin"
+                        id="eOrder_as_personal_information_ContactPreferencesSubTitle"
+                        [attr.aria-label]="[content.as_eorder_personal_information.contact_preferences_sub_title]"
+                        i18n>{{content.as_eorder_personal_information.contact_preferences_sub_title}}</label>
+                    </div>
+                    <div class="ds-flex --row margin-bottom-16" formGroupName="preferences">
+                      <div class="ds-col--12 ds-flex --row">
+                        <label class="ds-input__checkbox ds-flex --row">
+                          <input type="checkbox" value="email" formControlName="preference_email"
+                            id="eOrderPI_preference_email" autocomplete="email">
+                          <span></span>
+                          <label i18n>{{content.as_eorder_personal_information.contact_preferences_email}}</label>
+                        </label>
+                        <label class="ds-input__checkbox ds-flex --row"
+                          [ngClass]="{'--disabled': disableMobilePreference}">
+                          <input type="checkbox" value="mobile" formControlName="preference_mobile"
+                            id="eOrderPI_preference_mobile">
+                          <span></span>
+                          <label i18n>{{content.as_eorder_personal_information.contact_preferences_text}}</label>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <ng-container *ngIf="(SMSConsentLanguage$ | async) as contentText">
+                    <div class="ds-col--12 ds-font--12 ds-gray__900" role="text" [attr.aria-label]="contentText"
+                      *ngIf="personalInfoForm.get('phoneType').value !== 'Landline'" innerHTML="{{contentText}}"
+                      id="contact_preferences_description"></div>
+                    <div class="ds-col--12 ds-font--12 ds-gray__900" role="text" [attr.aria-label]="contentText"
+                      *ngIf="personalInfoForm.get('phoneType').value === 'Landline'" innerHTML="{{contentText}}"
+                      id="contact_preferences_description"></div>
+                  </ng-container>
+                </div>
+                <!-- contact reference block end -->
+              </div>
+              <!-- </div> -->
+            </form>
+          </div>
+        </div>
+        <div class="ds-col--3 hide-nav">
+          <as-eorder-navigation-sidebar [step]="1"></as-eorder-navigation-sidebar>
+          <as-eorder-footer [isVisiablePreviousURL]="false" [previous]="previousUrl"
+            [enableContinue]="personalInfoForm.valid" (continue)="continueClicked()"></as-eorder-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,166 @@
+@import '../../../../../appointment/styles.scss';
+
+.as-open-eorder{
+
+  .ds-col--6{
+
+    .ds-option__primary{
+      position: relative;
+      min-height: 48px;
+      height: 100%;
+      outline: none;
+      margin-bottom: 8px;
+      display: table!important; /*ie11 fix*/
+      // padding: 20px 15px;
+      label.error-icon:after{
+        // background: url('shared/assets/ds-images/ds-icon-error-24.svg') no-repeat;
+        background: url('../../../../../appointment/shared/assets/ds-images/ds-icon-error-24.svg') no-repeat;
+            content: "";
+            width: 30px;
+            height: 30px;
+            top: 14px;
+            /* left: 6px; */
+            position: absolute;
+            display: inline-block;
+            margin-left: 8px;
+      }
+      label{
+        // display: block;
+        display: table-cell;/*ie11 fix*/
+        vertical-align: middle;
+        width: 100%;
+        text-align: left;
+      }
+
+      .ds-option--information, .ds-option--information--active{
+        background: $ds-gray__100;
+        position: absolute;
+        top: 0px;
+        left: -300px !important;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          left: -10px !important;
+        }
+        min-height: 48px;
+        padding: 8px 36px 8px 8px;
+        box-shadow: 1px 2px 6px 0 rgba(35, 35, 37, 0.2);
+        z-index: 2;
+        outline: none;
+        font-family: 'Akkurat', sans-serif;
+        font-size: 14px;
+        border-radius: 4px;
+        color: $ds-black;
+        width: 300px;
+      }
+      @include when-less-than(ds-768) {
+        .ds-option--information , .ds-option--information--active{
+          background: #f7f7f9;
+          position: absolute;
+          /* bottom: 0px !important; */
+          left: -264px !important;
+          min-height: 48px;
+          padding: 8px 8px 8px 8px;
+          box-shadow: 1px 2px 6px 0 rgba(35, 35, 37, 0.2);
+          z-index: 2;
+          outline: none;
+          font-family: 'Akkurat', sans-serif;
+          font-size: 14px;
+          border-radius: 4px;
+          color: #232325;
+          width: 250px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .option-background {
+
+    &__item-selected {
+      border: 1px solid $ds-green;
+      color: $ds-green;
+      box-shadow: none;
+    }
+  }
+
+
+  @include when-less-than(ds-768){
+
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    .ds-col--6{
+        width: 100%;
+        padding-right: 0;
+        .ds-option__primary{
+          width: 100%;
+          // max-width: 700px;
+        }
+    }
+
+    .option-background {
+
+      &__item-selected {
+        color: $ds-green;
+        box-shadow: none;
+      }
+    }
+  }
+}
+.ds-option__primary:focus {
+  outline: $ds-green__500 solid 2px !important;
+  outline-offset: 3px;
+}
+
+.ds-option__primary{
+  max-width: 100%;
+}
+
+.focus-element{
+  outline: $ds-green__500 solid 2px !important;
+  outline-offset: 3px;
+}
+
+.ds-card{
+    flex-direction: column;
+    background: #fff;
+    border-radius: 4px;
+    margin-right: 0px !important;
+    box-shadow: 0 2px 8px 0 rgba(66, 66, 69, 0.14);
+    overflow: hidden;
+    line-height: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    margin-bottom: 16px;
+    border: 1px solid $ds-gray__500 ;
+}
+
+.ds-card:focus {
+  outline: $ds-green__500 solid 2px !important;
+  outline-offset: 3px;
+}
+
+.selected-item{
+  border: 1px solid #00854B;
+  color: #35792a;
+  box-shadow: none;
+  background: $ds-green__050 !important;
+}
+
+
+.ds-card [class*="--content"] span{
+  color: $ds-gray__900;
+}
+
+.custom-height{
+  width: 100%;
+  padding: 52px 16px;
+}
+
+.custom-pad{
+  padding-top: 20px;
+}
+
+.ds-card [class*="--content"] {
+  padding: 24px 16px;
+}

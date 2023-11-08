@@ -1,0 +1,29 @@
+<div class="cancel-appt-success" id="new_modal" (keydown)="closeCancelDialog($event)">
+    <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+      <button class="ds-icon--close ds-font--24 ds-green__900" (click)="onClose()" aria-label="close" role="button" tabindex="0"
+        (keydown.Enter)="onClose()" i18n></button>
+    </div>
+
+    <mat-dialog-content class="ds-col--12">
+      <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+        <h2 aria-level="1" id="mat-dialog-title" aria-label="Appointment cancelled" i18n>
+          <span class="ds-icon--check-circle ds-utility__success__500 margin-right-8"></span>
+          {{content.as_cancelAppointment_success.cancel_appointment_header}}</h2>
+        <span class="ds-body--base">{{content.as_cancelAppointment_success.modal_content}}</span>
+      </div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="ds-col--12">
+      <div class="ds-modal__actions ds-col--12 ds-flex --wrap padding-top-24">
+        <div class="ds-col--7 ds-flex --end-center">
+          <button class="ds-button --primary --medium" (click)="onRescheduleAppointment()">
+            <label>{{content.as_cancelAppointment_success.schedule_appointment_button_label}}</label>
+          </button>
+        </div>
+        <!-- <div class="ds-col--5 ds-flex --start-center margin-bottom-16">
+          <button class="ds-link" (click)="onClose()">{{content.as_cancelAppointment_success.modal_close_label}}</button>
+        </div> -->
+      </div>
+    </mat-dialog-actions>
+  </div>
+

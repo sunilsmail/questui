@@ -1,0 +1,39 @@
+@import '../../../../../styles.scss';
+// @import '../../../../../ds-styles/ds-fonts';
+.verify-eorder-phone {
+  form {
+    width: 100%;
+  }
+  max-width: 696px;
+  
+  @include when-less-than(ds-768) {
+    max-width: 348px;
+  }
+  mat-dialog-actions>.ds-modal__actions>[class*=ds-col] {
+    width: 100% !important;
+    justify-content: center;
+
+    >button {
+      width: 100% !important;
+      min-width: 100% !important;
+      justify-content: center;
+
+      @include when-less-than(ds-480) {
+        height: 100%;
+      }
+    }
+  }
+  button.ds-link {
+    font-size: 16px;
+  }
+  .ds-body--base {
+    line-height: 24px !important;
+  }
+}
+
+.ds-input {
+	input {
+		border: 1px solid $ds-gray__500;
+	}
+}
+

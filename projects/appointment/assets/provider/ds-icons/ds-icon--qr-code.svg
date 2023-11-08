@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ds-icon--qr-code</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M2,0 C0.895,0 0,0.895 0,2 L0,6 C0,7.105 0.895,8 2,8 L6,8 C7.105,8 8,7.105 8,6 L8,2 C8,0.895 7.105,0 6,0 L2,0 Z M16,0 C14.895,0 14,0.895 14,2 L14,6 C14,7.105 14.895,8 16,8 L20,8 C21.105,8 22,7.105 22,6 L22,2 C22,0.895 21.105,0 20,0 L16,0 Z M2,2 L6,2 L6,6 L2,6 L2,2 Z M10,2 L10,4 L12,4 L12,2 L10,2 Z M16,2 L20,2 L20,6 L16,6 L16,2 Z M3,3 L3,5 L5,5 L5,3 L3,3 Z M17,3 L17,5 L19,5 L19,3 L17,3 Z M10,6 L10,8 L12,8 L12,6 L10,6 Z M2,10 L2,12 L4,12 L4,10 L2,10 Z M6,10 L6,12 L8,12 L8,10 L6,10 Z M10,10 L10,12 L12,12 L12,10 L10,10 Z M12,12 L12,14 L14,14 L14,12 L12,12 Z M14,12 L16,12 L16,10 L14,10 L14,12 Z M16,12 L16,14 L18,14 L18,12 L16,12 Z M18,12 L20,12 L20,10 L18,10 L18,12 Z M20,12 L20,14 L22,14 L22,12 L20,12 Z M20,14 L18,14 L18,16 L20,16 L20,14 Z M20,16 L20,18 L22,18 L22,16 L20,16 Z M20,18 L18,18 L18,20 L20,20 L20,18 Z M18,20 L16,20 L16,22 L18,22 L18,20 Z M16,20 L16,18 L14,18 L14,20 L16,20 Z M14,20 L12,20 L12,22 L14,22 L14,20 Z M12,20 L12,18 L10,18 L10,20 L12,20 Z M12,18 L14,18 L14,16 L12,16 L12,18 Z M12,16 L12,14 L10,14 L10,16 L12,16 Z M14,16 L16,16 L16,14 L14,14 L14,16 Z M16,16 L16,18 L18,18 L18,16 L16,16 Z M2,14 C0.895,14 0,14.895 0,16 L0,20 C0,21.105 0.895,22 2,22 L6,22 C7.105,22 8,21.105 8,20 L8,16 C8,14.895 7.105,14 6,14 L2,14 Z M2,16 L6,16 L6,20 L2,20 L2,16 Z M3,17 L3,19 L5,19 L5,17 L3,17 Z" id="ds-icon--qr-code" fill="#232325" fill-rule="nonzero"></path>
+    </g>
+</svg>

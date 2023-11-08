@@ -1,0 +1,165 @@
+@import '../../../../../../appointment/styles.scss';
+
+.mat-progress-bar-fill::after {
+  background-color: $ds-green;
+}
+
+.mat-progress-bar-buffer {
+  background-color: #82ac7b;
+}
+
+.mobile-view-autocomplete-options {
+  @include when-less-than(ds-768) {
+    max-height: 150px !important;
+  }
+}
+
+.focus-div:focus::before {
+  outline: 2px solid $ds-green__500;
+  outline-offset: 3px;
+}
+
+// div:hover::before {
+//   __<<ngThemingMigrationEscapedComment0>>__
+// }
+/*
+.as-psc-search{
+  @include when-wider-than(ds-1024){
+    // width:672px;
+  }
+  @include when-less-than(ds-768){
+    // width: 328px;
+  }
+&__search-field {
+    //height: 48px; pixel break if applied near the location selector
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(66, 66, 69, 0.14);
+    background-color: white;
+    input{
+        &:focus{
+            border: 1px solid #ffffff !important;  // removing the highlight when selected to add progress bar
+        }
+    }
+  }
+  &__loading {
+      .mat-progress-bar-fill::after {
+        background-color: #35792a;
+      }
+
+      .mat-progress-bar-buffer {
+        background-color: #9abc95;
+      }
+
+       // remove animation and the dots
+      .mat-progress-bar-background {
+        animation: none;
+        background-color: #eceff1;
+        fill: #eceff1;
+      }
+  }
+
+}
+  .search {
+      width: 550px !important;
+      @include when-less-than(ds-1024) {
+        width: 232px !important;
+        }
+      padding: 16px 0px 16px 40px !important;
+  }
+  .bounding-box {
+    width: 24px;
+    height: 24px;
+  }
+*/
+/* .qd-psc-search {
+    @include when-wider-than(ds-768){
+      width:672px;
+    }
+    @include when-less-than(ds-768){
+      width: 328px;
+    }
+    background: #fff;
+    position: relative;
+
+    &__container {
+      padding: 5px; //15px;
+    }
+
+    &__input {
+      // width: 100%;
+      width: 610px !important;
+      @include when-less-than(ds-768) {
+          width: 280px !important;
+        }
+      // padding: 16px 0px 16px 40px !important;
+    }
+
+    &__loading {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3px;
+      bottom: 0;
+    }
+
+    .mat-form-field-infix {
+      border: none;
+      padding: none;
+      display: flex;
+      align-content: center;
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-appearance-legacy {
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+      .mat-form-field-label {
+        top: 30px;
+
+        &-wrapper {
+          top: -17px;
+        }
+      }
+    }
+
+    .mat-form-field-label {
+      font-size: 13px;
+      margin-left: 30px;
+
+      @include when-less-than(ds-1024) {
+        font-size: 9px;
+      }
+    }
+
+    .mat-form-field.mat-focused .mat-form-field-label {
+      color: grey;
+    }
+
+    .mat-input-element {
+      // width: 90%;
+      padding-left: 5px;
+      caret-color: auto;
+    }
+
+    .mat-form-field-flex,
+    .mat-form-field-infix,
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+      height: 100%;
+    }
+    .material-icons{
+      color: #424245;
+    }
+  } */
+.ds-icon--search-variant:focus {
+  font-size: 16px;
+  outline: 2px solid $ds-green__500;
+  outline-offset: 3px;
+}
+
+.search {
+  letter-spacing: 0px !important;
+}

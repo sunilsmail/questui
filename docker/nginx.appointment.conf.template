@@ -1,0 +1,95 @@
+server {
+  listen 8080;
+
+  proxy_set_header x-forwarded-for $proxy_add_x_forwarded_for;
+  proxy_set_header x-forwarded-host $host;
+
+  error_log /dev/stdout info;
+  access_log /dev/stdout;
+ 
+  gzip on; 
+  gzip_types image/jpeg image/svg+xml text/plain application/xml application/javascript application/x-javascript text/javascript;
+
+  include /etc/nginx/snippets/general-security-headers.conf;
+
+  location / {
+    root /usr/share/nginx/html;
+    include /etc/nginx/snippets/general-security-headers.conf;
+    index index.html index.htm;
+    try_files $uri $uri/ /index.html =404;
+  }
+
+  location ~ /(web|home|index.html)$ {	
+        proxy_set_header 'Cache-Control' '';
+        proxy_set_header 'Expires' '';
+        
+    	add_header 'Cache-Control' 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
+    	add_header 'Pragma' 'no-cache';
+    	add_header 'Expires' '0';
+  
+        include /etc/nginx/snippets/general-security-headers.conf;
+        proxy_cache                     off;
+      	root /usr/share/nginx/html;
+      	try_files $uri $uri/ /index.html =404;
+  }
+
+  rewrite ^/schedule/appointment/ /find-location/ permanent;
+  
+
+  location /api {
+  	proxy_pass  ${AUTH_URL}/mq-service/api;
+  	include /etc/nginx/snippets/general-security-headers.conf;
+  }
+
+  location /google-maps {
+      proxy_pass  https://maps.googleapis.com/maps/api;
+  }
+
+  location /guest {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/guest;
+  }
+    
+  location /user {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/user;
+  }
+    
+  location /guestrecaptcha {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/guestrecaptcha;
+  }
+
+  location /login-success {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/login-success;
+  }
+
+  location /mq-service/login/cas {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/login/cas;
+  }
+
+  location /mq-service/login-request {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/login-request;
+  }
+
+  location /logout {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/logout;
+  }
+
+  location /mq-service/logout-success {
+      include /etc/nginx/snippets/general-security-headers.conf;
+      proxy_pass ${AUTH_URL}/mq-service/logout-success;
+  }
+
+  location /change-password-request {
+      proxy_pass ${AUTH_URL}/mq-service/change-password-request;
+  }
+
+  location /mq-service/change-password-success {
+      proxy_pass ${AUTH_URL}/mq-service/change-password-success;
+  }
+}

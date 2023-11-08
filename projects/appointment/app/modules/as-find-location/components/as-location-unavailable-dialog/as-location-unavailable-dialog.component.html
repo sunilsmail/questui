@@ -1,0 +1,26 @@
+<div class="location-unavailable-dialog">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button (click)="closePopUp()" id="closebutton" role="button" class="ds-icon--close ds-font--24 ds-green__900" mat-dialog-close
+      aria-label="close" tabindex="0">
+    </button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="Test not available" > <span class="ds-icon--alert ds-yellow__700 margin-right-8"></span>Test not available </h2>
+      <span class="ds-body--base">This test is not supported at your selected location.</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+
+      <div class="ds-col--12 ds-flex --end-center">
+        <button (click)="navigateToLocations()"  class="ds-button --primary --medium" mat-dialog-confirm>
+          <label>Show available locations</label>
+        </button>
+
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

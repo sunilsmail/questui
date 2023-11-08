@@ -1,0 +1,96 @@
+@import '../../../../../appointment/styles.scss';
+
+.ds-calendar{
+  background: $ds-gray__050;
+  margin-top: 32px;
+  padding-top: 16px;
+
+  div{
+    outline: none!important;
+
+    &.ds-content-block{
+      .nextArrow{
+        @include when-less-than(ds-768){
+          display: block !important;
+        }
+      }
+      > div{
+        margin-left: 3px;
+        // display: block;
+
+        // padding-right: 0;
+
+        &:first-of-type, &:last-of-type{
+          margin-right: 0;
+          margin-left: 0;
+
+          [class*="ds-icon"]{
+            margin-right: 0;
+            margin-left: 0;
+          }
+        }
+      }
+
+      div{
+
+        div{
+
+          &:first-of-type{
+            margin: auto 6px;
+          }
+        }
+      }
+    }
+  }
+  .currentmonthfocus:focus{
+    outline: $ds-green__500 solid 2px !important;
+    outline-offset: 3px;
+  }
+}
+
+.ds-content-block__tabs{
+  background: $ds-white;
+  padding-top: 32px;
+
+  div{
+    outline: none;
+  }
+
+  .ds-col--12, .ds-col--6{
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.previous-enabled{
+  opacity: 1;
+}
+.previous-disabled{
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.diable-dates{
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.ds-col--1:nth-child(n + 7) {
+  @media (min-width: 481px) and (max-width: 767px) {
+    display: block !important;
+  }
+}
+
+
+div:focus {
+  outline: $ds-green__500 2px solid !important;
+  outline-offset: 3px !important;
+}
+.visually-hidden {
+    top: 0;
+    left: -2px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+}

@@ -1,0 +1,449 @@
+<main class="ds-body as-personal">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12">
+      <div class="ds-flex --row ds-form__col--2">
+        <div *ngIf="loading" class="as-summary-details__overlay" fxLayout="row" fxLayoutAlign="center center">
+          <as-spinner></as-spinner>
+        </div>
+        <div class="ds-col--9">
+          <div>
+            <div>
+              <button class="ds-icon--arrow-back ds-font--24 ds-green__700" (click)="goToPrevious()" tabindex="0"
+                aria-label="back" title="back"></button>
+              <div>
+                <h1 class="ds-font__20--bold title" [attr.aria-label]="[content.as_personal_information.title]" i18n
+                  id="personalInfo">
+                  {{content.as_personal_information.title}}</h1>
+              </div>
+            </div>
+
+            <form [formGroup]="personalInfoForm" role="form" aria-labelledby="personalInfo">
+
+              <div class="ds-grid--12" id="skip-to-main" tabindex="-1">
+                <div
+                  class="ds-grid--12 ds-col--12 ds-flex --row ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-10">
+                  <div class="ds-col--12">
+                    <h2 class="ds-green__700 no-margin subtitle"
+                      [attr.aria-label]="[content.as_personal_information.title_new]" i18n>
+                      {{content.as_personal_information.title_new}}</h2>
+                    <hr>
+                  </div>
+                  <div class="ds-col--6 no-pad">
+                    <div class="ds-input --required margin-bottom-0"
+                      [ngClass]="{'--error': !personalInfoForm.get('firstName').valid && personalInfoForm.get('firstName').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.firstName}}</div>
+                      <input type="text" formControlName="firstName" placeholder="" aria-label="First Name"
+                        id="firstName" autocomplete="given-name" aria-required="true" />
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('firstName').errors |
+                        validationError :
+                        content.as_input_labels.firstName}}</div>
+                    </div>
+                  </div>
+
+                  <div class="ds-col--6 no-pad">
+                    <div class="ds-input --required last-name margin-bottom-0"
+                      [ngClass]="{'--error': !personalInfoForm.get('lastName').valid && personalInfoForm.get('lastName').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.lastName}}</div>
+                      <input type="text" formControlName="lastName" placeholder="" aria-label="Last Name" id="lastName"
+                        autocomplete="family-name" aria-required="true" />
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('lastName').errors |
+                        validationError :
+                        content.as_input_labels.lastName}}</div>
+                    </div>
+                  </div>
+                  <div *ngIf="(contentFromApi$ | async) as message"
+                    class="ds-col--12 ds-flex no-pad gender-identity-text">
+                    <p class="ds-font--14 no-margin" *ngIf="getSelectedState$ | async">{{message}}</p>
+                  </div>
+                  <div class="ds-col--12 ds-flex --row row-column margin-top-24">
+                    <div class="ds-col--3">
+                      <div class="ds-input --required no-margin"
+                        [ngClass]="{'--error': !personalInfoForm.get('dateOfBirth').valid && personalInfoForm.get('dateOfBirth').touched}">
+                        <div class="ds-input__label" i18n>{{content.as_input_labels.dob}}</div>
+                        <input type="text" formControlName="dateOfBirth" (keyup)="onkeyup($event,dateElement)"
+                          (focusout)="focusOut($event)" #dateElement id="dateOfBirth" (keypress)="onKeyPress($event)"
+                          aria-label="Date Of Birth" id="dateOfBirth" aria-describedby="dateOfBirth dateFormat"
+                          autocomplete="bday" required />
+                        <div class="ds-font--14 ds-gray__600 margin-top-3" id="dateFormat">MM/DD/YYYY</div>
+                        <div class="ds-input__error" role="alert">{{personalInfoForm.get('dateOfBirth').errors |
+                          validationError :
+                          content.as_input_labels.dob}}</div>
+                      </div>
+
+                    </div>
+                    <div class="ds-col--3 margin-right-24 margin-left-24">
+                      <div class="ds-input no-margin"
+                        [ngClass]="{'--error': !personalInfoForm.get('gender').valid && (personalInfoForm.get('gender').touched || personalInfoForm.get('gender').dirty)}">
+                        <div class="ds-input__label" id="gender" aria-label="gender" role="text" i18n>
+                          {{content.as_input_labels.gender}}
+                          <span style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                          <span *ngIf="GIandSOEnabled" style="display:flex;"
+                            matTooltip="Sex refers to the person’s biology as determined by chromosomes and physical characteristics present at birth. It is needed to ensure the correct normal range of values (the reference range) is used when results are given.">
+                            <span class="ds-icon--info ds-green__700 ds-font--16 margin-left-4 tooltip"
+                              aria-label="tool tip" role="img">
+                            </span>
+                          </span>
+                        </div>
+                        <fieldset>
+                          <legend>{{content.as_input_labels.gender}}</legend>
+                          <div class="ds-flex --row" role="radiogroup" name="gender">
+                            <div class="ds-input__radio">
+                              <input type="radio" role="radio" id="sex--male" name="gender" aria-label="sex male"
+                                value="Male" formControlName="gender">
+                              <label for="sex--male" i18n>Male</label>
+                            </div>
+                            <div class="ds-input__radio">
+                              <input type="radio" role="radio" id="sex--female" name="gender" aria-label="sex female"
+                                value="Female" formControlName="gender">
+                              <label for="sex--female" i18n>Female</label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="ds-col--5" *ngIf="getGenderPreference$ | async">
+                      <div class="ds-input  margin-right-0" id="genderPreference"
+                        [ngClass]="{' --error': !personalInfoForm.get('genderPreference').valid && personalInfoForm.get('genderPreference').touched && personalInfoForm.get('genderPreference')?.errors}">
+                        <mat-form-field class="ds-input margin-right-8" floatLabel="always">
+                          <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                            {{content.as_input_labels.genderPref}}
+                            <span *ngIf="(genderPreferenceValidation$ | async)"
+                              style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                            <span *ngIf="GIandSOEnabled" (click)="openTooltip($event)"
+                              matTooltip="Gender identity refers to the person’s internal sense of being.">
+                              <span class="ds-icon--info ds-green__700 ds-font--16 tooltip" aria-label="tool tip"
+                                role="img">
+                              </span>
+                            </span>
+                          </mat-label>
+                          <mat-select disableOptionCentering formControlName="genderPreference"
+                            panelClass="ds-dropdown">
+                            <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                              class="ds-dropdown__item" *ngFor="let option of getGenderPreference$ | async"
+                              [value]="option.key">
+                              {{ option.value }}
+                            </mat-option>
+                          </mat-select>
+                          <div class="ds-input__error" *ngIf="(genderPreferenceValidation$ | async)">
+                            {{personalInfoForm.get('genderPreference').errors | validationError :
+                            content.as_input_labels.genderPref}}
+                          </div>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ds-col--4" *ngIf="(getRace$ | async)">
+                    <div class="ds-input margin-right-24" id="race"
+                      [ngClass]="{'--error': !personalInfoForm.get('race').valid && personalInfoForm.get('race').touched && personalInfoForm.get('race')?.errors}">
+                      <mat-form-field class="ds-input">
+                        <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                          {{content.as_input_labels.race}}
+                          <span *ngIf="(getRaceValidation$ | async)"
+                            style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                        </mat-label>
+                        <mat-select disableOptionCentering formControlName="race" panelClass="ds-dropdown">
+                          <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                            class="ds-dropdown__item" *ngFor="let option of  getRace$ | async" [value]="option.key">
+                            {{option.value }}</mat-option>
+                        </mat-select>
+                        <div class="ds-input__error" *ngIf="(getRaceValidation$ | async)">
+                          {{personalInfoForm.get('race').errors | validationError :
+                          content.as_input_labels.race}}</div>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="ds-col--4" *ngIf="(getEthnicity$ | async)">
+                    <div class="ds-input margin-right-24" id="ethnicity"
+                      [ngClass]="{' --error': !personalInfoForm.get('ethnicity').valid && personalInfoForm.get('ethnicity').touched && personalInfoForm.get('ethnicity')?.errors}">
+                      <mat-form-field class="ds-input">
+                        <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                          {{content.as_input_labels.ethnicity}}
+                          <span *ngIf="(getEthnicityValidation$ | async)"
+                            style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                        </mat-label>
+                        <mat-select disableOptionCentering formControlName="ethnicity" panelClass="ds-dropdown">
+                          <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                            class="ds-dropdown__item" *ngFor="let option of getEthnicity$ | async" [value]="option.key">
+                            {{ option.value }}</mat-option>
+                        </mat-select>
+                        <div class="ds-input__error" *ngIf="(getEthnicityValidation$ | async)">
+                          {{personalInfoForm.get('ethnicity').errors | validationError :
+                          content.as_input_labels.ethnicity}}</div>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="ds-col--4" *ngIf="(getSexualOrientation$ | async)">
+                    <div class="ds-input margin-right-0" id="sexualOrientation"
+                      [ngClass]="{' --error': !personalInfoForm.get('sexualOrientation').valid && personalInfoForm.get('sexualOrientation').touched && personalInfoForm.get('sexualOrientation')?.errors}">
+                      <mat-form-field class="ds-input margin-right-8">
+                        <mat-label class="ds-input__label ds-text--small ds-green__700" i18n>
+                          {{content.as_input_labels.sexualOri}}
+                          <span *ngIf="(sexualOrientationValidation$ | async)"
+                            style="font-size:12px;color: #e42345;padding-left:5px;">*</span>
+                        </mat-label>
+                        <mat-select disableOptionCentering formControlName="sexualOrientation" panelClass="ds-dropdown">
+                          <mat-option [matTooltip]="option.value.length >= 22 ? option.value: ''"
+                            class="ds-dropdown__item" *ngFor="let option of getSexualOrientation$ | async"
+                            [value]="option.key">
+                            {{ option.value }}
+                          </mat-option>
+                        </mat-select>
+                        <div class="ds-input__error" *ngIf="(sexualOrientationValidation$ | async)">
+                          {{personalInfoForm.get('sexualOrientation').errors | validationError :
+                          content.as_input_labels.sexualOri}}
+                        </div>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <ng-container *ngIf="schedulerMaintenanceF1385$ | async">
+                  <div
+                    class="ds-grid--12 ds-col--12 ds-flex --row ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-0">
+                    <div class="ds-col--12 no-pad">
+                      <h3 class="ds-green__700 no-margin" aria-level="2" role="heading"
+                        [attr.aria-label]="[content.as_personal_information.contact_address_title]">
+                        {{content.as_personal_information.contact_address_title}}
+                      </h3>
+                      <hr>
+                    </div>
+                    <div class="ds-col--12">
+                      <ng-container *ngIf="googlemapsOptimizationF4191$ | async; else googleAddress">
+                        <as-address-without-google-maps
+                          (formReady)="addChildForm('patientAddressInfo', $event)"></as-address-without-google-maps>
+                      </ng-container>
+                      <ng-template #googleAddress>
+                        <as-address (formReady)="addChildForm('patientAddressInfo', $event)"></as-address>
+                      </ng-template>
+                    </div>
+                  </div>
+                </ng-container>
+                <div class="ds-grid--12 ds-col--12 ds-flex --row ds-card --gray__200 margin-bottom-32 padding-32">
+                  <div class="ds-col--12 no-pad">
+                    <h3 class="ds-green__700 no-margin" aria-level="2" role="heading"
+                      [attr.aria-label]="[content.as_personal_information.contact_title]">
+                      {{content.as_personal_information.contact_title}}</h3>
+                    <hr>
+                  </div>
+
+                  <div class="ds-col--6">
+                    <div class="ds-input --required"
+                      [ngClass]="{'--error': !personalInfoForm.get('email').valid && personalInfoForm.get('email').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.email}}</div>
+                      <input type="text" placeholder="" formControlName="email" id="email" aria-label="Email"
+                        autocomplete="email" aria-required="true" />
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('email').errors | validationError
+                        :
+                        content.as_input_labels.email}}</div>
+                    </div>
+                  </div>
+
+                  <div class="ds-col--3">
+                    <div class="ds-input --required"
+                      [ngClass]="{'--error': !personalInfoForm.get('phone').valid && personalInfoForm.get('phone').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.phone}}</div>
+                      <input type="tel" formControlName="phone" required (keyup)="onkeypressphone($event,phoneElement)"
+                        #phoneElement id="phone" aria-label="Phone Number" aria-describedby="helpText"
+                        autocomplete="tel" aria-required="true" AutoCompletePhoneFormatter />
+                      <div class="ds-font--14 ds-gray__600 margin-top-3" id="helpText">555-555-5555</div>
+                      <div class="ds-input__error" role="alert">{{personalInfoForm.get('phone').errors | validationError
+                        :
+                        content.as_input_labels.phone}}</div>
+                    </div>
+                  </div>
+
+                  <div class="ds-col--3 no-pad">
+                    <div class="ds-input --required"
+                      [ngClass]="{'--error': !personalInfoForm.get('isMobile').valid && (personalInfoForm.get('isMobile').touched || personalInfoForm.get('isMobile').dirty)}">
+                      <div class="ds-input__label" id="isMobile" role="text" aria-labelledby="isMobile" i18n>
+                        {{content.as_input_labels.isMobileTxt}}</div>
+                      <fieldset>
+                        <legend>{{content.as_input_labels.isMobileTxt}}</legend>
+                        <div class="ds-flex --row" role="radiogroup" name="mobile">
+                          <div class="ds-input__radio --required">
+                            <input type="radio" role="radio" id="mobile--yes"
+                              aria-label="'Is this a mobile phone? --yes" name="isMobile" value="Mobile"
+                              formControlName="isMobile">
+                            <label for="mobile--yes" i18n>{{content.as_personal_information.mobile_yes}}</label>
+                          </div>
+                          <div class="ds-input__radio --required">
+                            <input type="radio" role="radio" name="isMobile" id="mobile--no"
+                              aria-label="'Is this a mobile phone? --no" value="Landline" formControlName="isMobile">
+                            <label for="mobile--no" i18n>{{content.as_personal_information.mobile_no}}</label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+
+                  <div class="ds-col--12 padding-bottom-16">
+                    <div class="ds-input --required no-margin"
+                      [ngClass]="{'--error': !personalInfoForm.get('preferences').valid && (personalInfoForm.get('preferences').touched || personalInfoForm.get('preferences').dirty)}">
+                      <div class="ds-col--12 padding-bottom-12">
+                        <label class="ds-font--18 --700 ds-gray__900"
+                          id="as_personal_information_ContactPreferencesTitle"
+                          [attr.aria-label]="[content.as_personal_information.contact_preferences_title]"
+                          i18n>{{content.as_personal_information.contact_preferences_title}}</label>
+                      </div>
+                      <div class="ds-col--12 padding-bottom-16">
+                        <label class="ds-input__label no-margin" id="as_personal_information_ContactPreferencesSubTitle"
+                          [attr.aria-label]="[content.as_personal_information.contact_preferences_sub_title]"
+                          i18n>{{content.as_personal_information.contact_preferences_sub_title}}</label>
+                      </div>
+                      <div class="ds-flex --row margin-bottom-16" formGroupName="preferences">
+                        <div class="ds-col--12 ds-flex --row no-pad">
+                          <label class="ds-input__checkbox ds-flex --row" for="preference_email">
+                            <input type="checkbox" value="email" formControlName="preference_email"
+                              id="preference_email" autocomplete="email">
+                            <span></span>
+                            <label i18n>{{content.as_personal_information.contact_preferences_email}}</label>
+                          </label>
+                          <label class="ds-input__checkbox  ds-flex --row"
+                            [ngClass]="{'--disabled': disableMobilePreference}" for="preference_mobile">
+                            <input type="checkbox" value="mobile" formControlName="preference_mobile"
+                              id="preference_mobile">
+                            <span></span>
+                            <label i18n>{{content.as_personal_information.contact_preferences_text}}</label>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <ng-container *ngIf="(SMSConsentLanguage$ | async) as contentText">
+                      <div class="ds-col--12 ds-font--12 ds-gray__900" role="text" [attr.aria-label]="contentText"
+                        *ngIf="personalInfoForm.get('isMobile').value !== 'Landline'" innerHTML="{{contentText}}"
+                        id="contact_preferences_description"></div>
+                      <div class="ds-col--12 ds-font--12 ds-gray__900" role="text" [attr.aria-label]="contentText"
+                        *ngIf="personalInfoForm.get('isMobile').value === 'Landline'" innerHTML="{{contentText}}"
+                        id="contact_preferences_description"></div>
+                    </ng-container>
+                  </div>
+                  <div class="ds-col--12 no-pad">
+                    <as-clinical-trails [isAuthEdit]="fromAuthUserEdit" [form]="personalInfoForm"></as-clinical-trails>
+                  </div>
+                </div>
+                <ng-container *ngIf="!fromAuthUserEdit">
+                  <ng-container
+                    *ngIf="authUserInsurance?.primaryInsurance?.insuranceCompanyName && (insurancePrefillF3904$ | async); else oldInsuranceTemplate">
+                    <div class="ds-grid--12 ds-col--12 ds-card --gray__200 margin-bottom-32 padding-32"
+                      *ngIf="!(skipInsurance$ | async)">
+                      <div class="ds-col--12 no-pad">
+                        <h3 class="ds-green__700 no-margin" aria-level="2" role="heading" [attr.aria-label]="Insurance">
+                          Insurance</h3>
+                        <hr>
+                      </div>
+                      <div class="ds-col--12 margin ds-input --required"
+                        [ngClass]="{'--error': !personalInfoForm.get('insuranceInfo').valid && (personalInfoForm.get('insuranceInfo').touched || personalInfoForm.get('insuranceInfo').dirty)}"
+                        role="text" aria-labelledby="insurance-info-text">
+                        <ng-container *ngIf="authUserInsurance?.primaryInsurance?.insuranceCompanyName 
+                                                                        && (insurancePrefillF3904$ | async); else oldInsuranceLegend">
+                          <h3 class="ds-green__700 no-margin ds-input__label" id="insurance-info-text" i18n>
+                            {{content.as_personal_information.insurance_title_new_auth}}</h3>
+                        </ng-container>
+                        <ng-template #oldInsuranceLegend>
+                          <h3 class="ds-green__700 no-margin ds-input__label" id="insurance-info-text" i18n>
+                            {{content.as_personal_information.insurance_title_new}}</h3>
+                        </ng-template>
+                      </div>
+                      <fieldset [disabled]='dataService.isModifyCancel'>
+                        <legend>{{content.as_personal_information.insurance_title_new}}</legend>
+                        <div class="ds-col--12" role="radiogroup">
+                          <div class="ds-input__radio">
+                            <input type="radio" role="radio" id="insurance--prs" name="insuranceInfo"
+                              value="insurance-prs" formControlName="insuranceInfo" (change)="insuranceInfoChange($event.target.value)">
+                            <label for="insurance--prs" i18n>{{content.as_personal_information.insurance_title_prs}}
+                              <div class="margin-top-4">
+                                <label class="ds-body--small"><span *ngIf="authUserInsurance?.secondaryInsurance?.insuranceCompanyName" class="margin-right-4">{{content.as_personal_information.title_primary}}</span>
+                                  <span class="ds-font--14 --italic">{{authUserInsurance?.primaryInsurance?.insuranceCompanyName}}</span>,
+                                  {{authUserInsurance?.primaryInsurance?.insuranceMemberId}}</label>
+                              </div>
+                              <div *ngIf="authUserInsurance?.secondaryInsurance?.insuranceCompanyName">
+                                <label class="ds-body--small"><span class="margin-right-4">{{content.as_personal_information.title_secondary}}</span>
+                                  <span class="ds-font--14 --italic">{{authUserInsurance?.secondaryInsurance?.insuranceCompanyName}}</span>,
+                                  {{authUserInsurance?.secondaryInsurance?.insuranceMemberId}}
+                                </label>
+                              </div>
+                            </label>
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" role="radio" id="insurance--provide" name="insuranceInfo"
+                              value="insurance-provide" formControlName="insuranceInfo" (change)="insuranceInfoChange($event.target.value)">
+                            <label for="insurance--provide"
+                              i18n>{{content.as_personal_information.insurance_radio_1_auth}}</label>
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" role="radio" id="insurance--later" name="insuranceInfo"
+                              value="insurance-later" formControlName="insuranceInfo" (change)="insuranceInfoChange($event.target.value)">
+                            <label for="insurance--later"
+                              i18n>{{content.as_personal_information.insurance_radio_2_auth}}</label>
+
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" role="radio" id="insurance--no" name="insuranceInfo"
+                              value="insurance-no" formControlName="insuranceInfo" (change)="insuranceInfoChange($event.target.value)">
+                            <label for="insurance--no"
+                              i18n>{{content.as_personal_information.insurance_radio_3_auth}}</label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </ng-container>
+                  <ng-template #oldInsuranceTemplate>
+                    <div class="ds-grid--12 ds-col--12 ds-card --gray__200 margin-bottom-32 padding-32"
+                      *ngIf="!(skipInsurance$ | async)">
+                      <div class="ds-col--12 no-pad">
+                        <h3 class="ds-green__700 no-margin" aria-level="2" role="heading" [attr.aria-label]="Insurance">
+                          Insurance</h3>
+                        <hr>
+                      </div>
+                      <div class="ds-col--12 margin ds-input --required"
+                        [ngClass]="{'--error': !personalInfoForm.get('insuranceInfo').valid && (personalInfoForm.get('insuranceInfo').touched || personalInfoForm.get('insuranceInfo').dirty)}"
+                        role="text" aria-labelledby="insurance-info-text">
+                        <h3 class="ds-green__700 no-margin ds-input__label" id="insurance-info-text" i18n>
+                          {{content.as_personal_information.insurance_title_new}}</h3>
+                      </div>
+                      <fieldset [disabled]='dataService.isModifyCancel'>
+                        <legend>{{content.as_personal_information.insurance_title_new}}</legend>
+                        <div class="ds-col--12" role="radiogroup">
+                          <div class="ds-input__radio">
+                            <input type="radio" role="radio" id="insurance--provide" name="insuranceInfo"
+                              value="insurance-provide" formControlName="insuranceInfo">
+                            <label for="insurance--provide"
+                              i18n>{{content.as_personal_information.insurance_radio_1}}</label>
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" role="radio" id="insurance--later" name="insuranceInfo"
+                              value="insurance-later" formControlName="insuranceInfo">
+                            <label for="insurance--later"
+                              i18n>{{content.as_personal_information.insurance_radio_2_new}}</label>
+
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" role="radio" id="insurance--no" name="insuranceInfo"
+                              value="insurance-no" formControlName="insuranceInfo">
+                            <label for="insurance--no"
+                              i18n>{{content.as_personal_information.insurance_radio_3_new}}</label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </ng-template>
+
+
+                </ng-container>
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+        <div class="ds-col--3 hide-nav no-pad" [ngClass]="{'continue-margin-bottom': isReview}">
+          <as-navigation-sidebar [step]="3"></as-navigation-sidebar>
+          <as-footer [previous]="previousUrl" [enableContinue]="personalInfoForm.valid" (continue)="continueClicked()"
+            id="as_personal_footer"></as-footer>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</main>

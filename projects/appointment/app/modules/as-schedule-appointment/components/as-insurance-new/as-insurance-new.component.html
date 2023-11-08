@@ -1,0 +1,351 @@
+<main class="ds-body as-insurance">
+  <div *ngIf="SpinnerLoading" class="as-insurance__overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content">
+    <!-- {{form.value|json}} -->
+    <div class="ds-col--12">
+      <div class="ds-flex --row ds-form__col--2">
+        <div class="ds-col--9" id="skip-to-main" tabindex="-1">
+          <div>
+            <div>
+              <button class="ds-icon--arrow-back ds-font--24 ds-green__700" (click)="goToPrevious()" tabindex="0"
+                aria-label="back" title="back"></button>
+              <div>
+                <h1 class="ds-green__700 margin-bottom-24 onFocus" [attr.aria-label]="[content.as_insurance_information.title_f88]" i18n>
+                  {{content.as_insurance_information.title_f88}}</h1>
+              </div>
+            </div>
+            <form [formGroup]="form">
+              <div class="ds-grid--12">
+                <div class="ds-col--12 ds-font--14 margin-bottom-16 onFocus" role="complementary"
+                  [attr.aria-label]="[content.as_insurance_information.title_description]" i18n>
+                  {{content.as_insurance_information.title_description}}</div>
+                <div class="ds-col--12 margin-bottom-16 onFocus">
+                  <a class="ds-link ds-font--16 --500" id="as_insurance_skipInsurance" role="link"
+                    aria-label="Provide your Insurance Information Later" tabindex="0" (click)="resetInsurance()"  (keydown.enter)="resetInsurance()"  i18n>Provide
+                    later</a>
+                </div>
+                <div class="ds-col--12 ds-card --gray__200 padding-32">
+                  <h2 class="ds-green__700 no-margin">Primary insurance</h2>
+                  <hr class="green">
+                  <p class="ds-col--12 ds-font--12 --500 ds-green__700 content no-margin no-padding" id="as_labCardTitle"
+                    [innerHtml]="content.as_insurance_information.labcard_title"
+                     i18n role="complementary">
+                  </p>
+
+                <div class="ds-col--12">
+                  <div class="ds-input --required">
+                    <div class="ds-flex --row">
+                      <div class="ds-input__radio">
+                        <input type="radio" aria-required="true" id="labCardYes" tabindex="0" aria-label="Do you have QuestSelectTM (formerly known as Lab Card) as a part of your health insurance benefit plan? Yes"
+                          role="radio" name="labCard" formControlName="labCard" value="true"
+                          (change)="labCardChange($event.target.value)">
+                        <label for="labCardYes">Yes</label>
+                      </div>
+                      <div class="ds-input__radio">
+                        <input type="radio" id="labCardNo" tabindex="0" aria-label="Do you have QuestSelectTM (formerly known as Lab Card) as a part of your health insurance benefit plan? No"   role="radio"
+                          name="labCard" formControlName="labCard" value="false"
+                          (change)="labCardChange($event.target.value)">
+                        <label for="labCardNo" i18n>No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="errorMessageNew" *ngIf="showLabCardAlert">
+                  <img [src]="imageSrc" class="ds-icon__error--24" />
+                  <span i18n>
+                    <span [innerHtml]="content.as_insurance_information.labcard_error1"
+                      [attr.aria-label]="[content.as_insurance_information.labcard_error1]"></span>
+                    <a class="labCardLink" (click)="showLabCardLocation()"
+                      [attr.aria-label]="[content.as_insurance_information.labcard_error2]">
+                      {{content.as_insurance_information.labcard_error2}}
+                    </a>
+                  </span>
+                </div>
+
+                <p class="ds-col--12 ds-green__700 ds-font--16 --700 padding-bottom-24 no-margin" id="as_insurance_insuranceHolderTitle"
+                  [attr.aria-label]="[content.as_insurance_information.title_primary]" i18n role="heading" aria-level="3">
+                  {{content.as_insurance_information.title_primary}}</p>
+                <div class="ds-grid--12 no-pad">
+
+                  <div class="ds-col--6">
+                      <div class="ds-input --required as-insurance-info-page__medium-input margin-right-24"
+                        [ngClass]="{'--error': !form.get('provider').valid && form.get('provider').touched}">
+                        <div class="ds-input__label" i18n>Insurance Provider</div>
+                        <input type="text" formControlName="provider" aria-label="Insurance Providers"
+                          [matAutocomplete]="auto" id="as_insurance_insuranceProvider_txt" (blur)="checkError()"
+                          (focus)="clearError()" [readonly]="markFieldReadOnly" required aria-required="true" />
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"  class="ds-dropdown">
+                          <mat-option *ngFor="let provider of providerOptions; let j=index" [value]="provider"
+                            id="as_insurance_provider_{{j+1}}" class="ds-dropdown__item">
+                            {{provider['insuranceCompanyName']}}
+                          </mat-option>
+                        </mat-autocomplete>
+                        <div class="ds-input__error" role="alert">{{form.get('provider').errors | validationError : content.as_input_labels.insuranceProvider}}
+                        </div>
+                        <div class="ds-card ds-white--bg inputAlert" *ngIf="getNoMatchError && !getBringCardError">
+                          <div class="ds-font--18 margin-bottom-16">
+                            <span class="ds-icon--alert ds-yellow__700 margin-right-8"></span>
+                            <span class="ds-gray__900 ds-font--14">No matches found </span>
+                          </div>
+                          <button class="ds-link ds-green ds-font--16" (click)="noMatchesError=false">Continue</button>
+                          </div>
+                          <div class="ds-card ds-white--bg inputAlert" *ngIf="getBringCardError && !getNoMatchError">
+                          <div class="ds-font--1 margin-bottom-16">Our system can't find your
+                            provider; we're updating it regularly. Bring your insurance card and we'll get coverage
+                            figured out for you.</div>
+                          <button class="ds-link ds-green ds-font--16" (keydown)="continueClick($event)" (click)="bringCardError=false">Continue</button>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="ds-col--6">
+                      <div class="ds-input --required"
+                        [ngClass]="{'--error': !form.get('memberId').valid && form.get('memberId').touched}">
+                        <div class="ds-input__label" i18n>Member ID</div>
+                        <input type="text" formControlName="memberId" id="as_insurance_memberId_txt"
+                          aria-label="Member ID" (focus)="invalidId=false" required aria-required="true" />
+                        <div class="ds-input__error" role="alert">{{form.get('memberId').errors | validationError : content.as_input_labels.memberId}}
+                        </div>
+                        <div class="ds-card ds-white--bg inputAlert" [ngClass]="{'inputAlert' : invalidId===true}">
+                          <div class="ds-font--1 margin-bottom-16">Hmm, we could not find a match. Please double check
+                            your information and try again.</div>
+                          <button class="ds-link ds-green ds-font--16" (click)="continueError()">Continue</button>
+                        </div>
+                        <ng-container *ngIf="errorMessageType === insError.memberIdError">
+                          <as-valid-patterns [type]="insError.memberIdError" (resetError)="resetError()" [showOtherFields]="blnInsuranceHolder" [validPatterns]="validPatterns"></as-valid-patterns>
+                        </ng-container>
+                      </div>
+                  </div>
+                </div>
+                <div class="ds-col--6">
+                    <div class="ds-input margin-right-24">
+                      <div class="ds-input__label" i18n>{{content.as_insurance_information.label_groupId}}</div>
+                      <input type="text" formControlName="groupId" id="as_insurance_groupId_txt"
+                      [attr.aria-label]="[content.as_insurance_information.label_groupId]" />
+                      <div class="ds-input__error" role="alert"></div>
+                      <div class="ds-card ds-white--bg inputAlert" [ngClass]="{'inputAlert' : errorMessageType === insError.groupIdRequired}">
+                        <p class="no-margin"><span class="ds-icon--alert ds-gold__500 ds-font--14" aria-label="alert" role="img"></span></p>
+                        <div class="ds-font--1 margin-group">Group ID is required</div>
+                        <button class="ds-link" (click)="resetError()">Continue</button>
+                      </div>
+                      <ng-container *ngIf="errorMessageType === insError.groupIdError">
+                        <as-valid-patterns [type]="insError.groupIdError" (resetError)="resetError()"  [validPatterns]="validPatterns"></as-valid-patterns>
+                      </ng-container>
+                    </div>
+                </div>
+
+
+                <p class="ds-col--12 ds-green__700 ds-font--12 --500 no-margin no-padding" id="as_insurance_insuranceHolderTitle_2"
+                  [attr.aria-label]="[content.as_insurance_information.primary_insurance_holder]" i18n role="complementary">
+                  {{content.as_insurance_information.primary_insurance_holder}}</p>
+
+                <div class="ds-col--6">
+                  <div class="ds-input --required margin-right-24">
+                    <div class="ds-flex --row" role="radiogroup" required aria-required="true">
+                      <div class="ds-input__radio"  >
+                        <input type="radio" id="primary" role="radio" name="isPrimaryInsuranceHolder"
+                          formControlName="isPrimaryInsuranceHolder" value="true"
+                          (change)="handleChange($event.target.value)">
+                        <label for="primary">{{userdata?.firstName}}</label>
+                      </div>
+                      <div class="ds-input__radio" >
+                        <input type="radio" id="other" role="radio" name="isPrimaryInsuranceHolder"
+                          formControlName="isPrimaryInsuranceHolder" value="false"
+                          (change)="handleChange($event.target.value)">
+                        <label for="other" i18n>Someone else</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ng-container *ngIf="!blnInsuranceHolder">
+                  <p class="ds-col--12 ds-green__700 ds-font--12 --500 no-margin no-padding" id="as_secondaryinsurancetitle"
+                    [attr.aria-label]="'Would you like to use secondary insurance?'" i18n role="complementary">
+                    Would you like to use secondary insurance?
+                  </p>
+                  <div class="ds-col--6">
+                    <div class="ds-input --required">
+                      <div class="ds-flex --row" role="radiogroup" required aria-required="true">
+                        <div class="ds-input__radio" >
+                          <input type="radio" id="secondaryInsuranceYes" tabindex="0"
+                            aria-label="Would you like to use secondary insurance? Yes" role="radio" name="secondaryInsurance"
+                            formControlName="secondaryInsurance" value="true"
+                            (change)="secondaryInsuranceChange($event.target.value)">
+                          <label for="secondaryInsuranceYes">Yes</label>
+                        </div>
+                        <div class="ds-input__radio">
+                          <input type="radio" id="secondaryInsuranceNo" tabindex="0" aria-label="Would you like to use secondary insurance? No"
+                            role="radio" name="secondaryInsurance" formControlName="secondaryInsurance"
+                            value="false" (change)="secondaryInsuranceChange($event.target.value)">
+                          <label for="secondaryInsuranceNo" i18n>No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              <div *ngIf="blnInsuranceHolder">
+                <p *ngIf="!userdata?.isQuestUser" class="ds-col--12 ds-font--16 --700 ds-green__700 padding-bottom-24 no-margin" id="as_insurance_billingAddressTitle"
+                  [attr.aria-label]="[content.as_insurance_information.primary_insurance_holder_address_f88]"
+                  i18n role="heading" aria-level="3">
+                  {{content.as_insurance_information.primary_insurance_holder_address_f88}}</p>
+                <div class="ds-grid--12 no-pad">
+                  <div class="ds-col--6">
+                      <div class="ds-input --required first-name margin-right-24"
+                        [ngClass]="{'--error': !form.get('firstName').valid && form.get('firstName').touched}">
+                        <div class="ds-input__label" i18n>First Name</div>
+                        <input type="text" required aria-required="true" formControlName="firstName"
+                          aria-label="First Name" id="firstName" />
+                        <div class="ds-input__error" role="alert">{{form.get('firstName').errors | validationError : content.as_input_labels.firstName}}
+                        </div>
+                      </div>
+                  </div>
+                  <div class="ds-col--6">
+                      <div class="ds-input --required last-name"
+                        [ngClass]="{'--error': !form.get('lastName').valid && form.get('lastName').touched}">
+                        <div class="ds-input__label" i18n>Last Name</div>
+                        <input type="text" required aria-required="true" formControlName="lastName" id="lastName"
+                          aria-label="Last Name" />
+                        <div class="ds-input__error" role="alert">{{form.get('lastName').errors | validationError : content.as_input_labels.lastName}}
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="ds-grid--12 no-pad">
+                  <div class="ds-col--3">
+                    <div class="ds-input --required no-margin date-of-birth"
+                      [ngClass]="{'--error': !form.get('dateOfBirth').valid && form.get('dateOfBirth').touched}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.dob}}</div>
+                      <input type="text" formControlName="dateOfBirth" (keyup)="onkeyup($event,dateElement)"
+                        (focusout)="focusOut($event)" #dateElement id="dateOfBirth" (keypress)="onKeyPress($event)"
+                        aria-label="Date Of Birth" id="dateOfBirth" aria-describedby="dateOfBirth dateFormat" autocomplete="bday" required />
+                      <div class="ds-font--14 ds-gray__600 margin-top-3" id="dateFormat">MM/DD/YYYY</div>
+                      <div class="ds-input__error" role="alert">{{form.get('dateOfBirth').errors | validationError : content.as_input_labels.dob}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ds-col--3 margin-right-24 margin-left-24">
+                    <div class="ds-input --required no-margin" [ngClass]="{'--error': !form.get('gender').valid && (form.get('gender').touched || form.get('gender').dirty)}">
+                      <div class="ds-input__label" i18n>{{content.as_input_labels.gender}}</div>
+                      <div class="ds-flex --row" role="radiogroup" name="gender">
+                        <div class="ds-input__radio"  aria-required="true">
+                          <input type="radio" id="sex--male" role="radio" name="gender" value="Male" formControlName="gender">
+                          <label for="sex--male" i18n>Male</label>
+                        </div>
+                        <div class="ds-input__radio"  aria-required="true">
+                          <input type="radio" id="sex--female" name="gender" role="radio" value="Female"
+                            formControlName="gender">
+                          <label for="sex--female" i18n>Female</label>
+                        </div>
+                        <div class="errorMessageNew" *ngIf="showLabCardAlert">
+                          <img [src]="imageSrc" class="ds-icon__error--24" />
+                          <span i18n>
+                            <span [innerHtml]="content.as_insurance_information.labcard_error1"
+                              [attr.aria-label]="[content.as_insurance_information.labcard_error1]"></span>
+                            <a class="labCardLink" (click)="showLabCardLocation()"
+                              [attr.aria-label]="[content.as_insurance_information.labcard_error2]">
+                              {{content.as_insurance_information.labcard_error2}}
+                            </a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ds-col--5">
+                    <div class="ds-input --required no-margin phone-number"
+                      [ngClass]="{'--error': !form.get('phone').valid && form.get('phone').touched}">
+                      <div class="ds-input__label" i18n>Phone Number</div>
+                      <input type="tel" required aria-required="true" formControlName="phone"
+                        required (keyup)="onkeypressphone($event,phoneElement)" #phoneElement id="phone"
+                        aria-label="Phone Number" aria-describedby="textHint"/>
+                      <div class="ds-font--14 ds-gray__600 margin-top-3" id="textHint">555-555-5555</div>
+                      <div class="ds-input__error" role="alert">{{form.get('phone').errors | validationError : content.as_input_labels.phone}}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ds-grid--12 no-pad">
+                  <div class=" ds-col--6">
+                   <div class="ds-input">
+                  <div class="ds-input --required margin-right-24"
+                    [ngClass]="{'--error': !form.get('relationship').valid&&form.get('relationship').touched}">
+                    <div class="ds-input__label" i18n>Relationship to You</div>
+                    <input type="text" required aria-required="true" formControlName="relationship"
+                      [matAutocomplete]="relation" id="as_insurance_relationship" aria-label="Relationship to You" />
+                    <mat-autocomplete #relation="matAutocomplete" class="ds-dropdown">
+                      <mat-option *ngFor="let relation of relationList; let i=index" [value]="relation.value"
+                        id="as_insurance_relationship_{{i+1}}"  class="ds-dropdown__item">
+                        {{relation.label}}
+                      </mat-option>
+                    </mat-autocomplete>
+                    <div class="ds-input__error" role="alert">{{form.get('relationship').errors | validationError : content.as_input_labels.relationship}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+                </div>
+
+              </div>
+              </div>
+              <div *ngIf="blnInsuranceHolder" class="ds-card --gray__200 padding-32 margin-top-32">
+                <h3 class="ds-col--12 ds-green__700 no-margin" role="heading" aria-level="2" id="as_insurance_insuranceHolderTitle_3"
+                  [attr.aria-label]="[content.as_insurance_information.label_address]" i18n>
+                  {{content.as_insurance_information.label_address}}</h3>
+                <hr class="green">
+                <div class="ds-flex --row checkbox-custom">
+                  <label class="ds-input__checkbox label-custom">
+                    <input type="checkbox" (change)="updateValidationForDiffAddress($event.target.checked)"
+                      value="sameas" formControlName="sameas" id="sameas">
+                    <span class="ds-font--16" i18n>{{content.as_insurance_information.label_different_mine}}</span>
+                  </label>
+                </div>
+                <div class="ds-col--12">
+                  <ng-container *ngIf="googlemapsOptimizationF4191$ | async; else googleAddress">
+                    <as-address-without-google-maps [detectChange]="detectChange" (formReady)="addChildForm('addressInfo', $event)"></as-address-without-google-maps>
+                  </ng-container>
+                  <ng-template #googleAddress>
+                    <as-address (formReady)="addChildForm('addressInfo', $event)"></as-address>
+                  </ng-template>
+                </div>
+                <p class="ds-col--12 ds-font--12 --500 ds-green__700 no-margin no-padding" id="as_secondaryinsurancetitle"
+                  [attr.aria-label]="'Would you like to use secondary insurance?'" i18n role="complementary">
+                  Would you like to use secondary insurance?
+                </p>
+                <div class="ds-col--6">
+                  <div class="ds-input --required">
+                    <div class="ds-flex --row" role="radiogroup" required aria-required="true">
+                      <div class="ds-input__radio">
+                        <input type="radio" id="secondaryInsuranceYes" tabindex="0"
+                          aria-label="Would you like to use secondary insurance? Yes" role="radio" name="secondaryInsurance"
+                          formControlName="secondaryInsurance" value="true"
+                          (change)="secondaryInsuranceChange($event.target.value)">
+                        <label for="secondaryInsuranceYes">Yes</label>
+                      </div>
+                      <div class="ds-input__radio">
+                        <input type="radio" id="secondaryInsuranceNo" tabindex="0" aria-label="Would you like to use secondary insurance? No"
+                          role="radio" name="secondaryInsurance" formControlName="secondaryInsurance"
+                          value="false" (change)="secondaryInsuranceChange($event.target.value)">
+                        <label for="secondaryInsuranceNo" i18n>No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </form>
+          </div>
+        </div>
+        <div class="ds-col--3 sideNav">
+          <as-navigation-sidebar [step]="4"></as-navigation-sidebar>
+          <as-footer [previous]="previousUrl" [enableContinue]="isFormValid"
+            (continue)="continueClicked()" id="as_insurance_footer" [isSecondaryNotSelected]="isSecondaryNotSelected"
+            [finalStep]="isSecondaryNotSelected"></as-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

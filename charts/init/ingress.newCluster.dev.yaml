@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+metadata:
+  name: appointment-ui
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
+spec:
+  tls:
+    - hosts:
+        - as-dev2.mq.questdiagnostics.com
+        - as-dev2-beta.mq.questdiagnostics.com
+      secretName: mq-cert
+  rules:
+    - host: as-dev2.mq.questdiagnostics.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: appointment-ui
+                port: 
+                  number: 8080
+    - host: as-dev2-beta.mq.questdiagnostics.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: appointment-ui-beta
+                port: 
+                  number: 8080
+ 

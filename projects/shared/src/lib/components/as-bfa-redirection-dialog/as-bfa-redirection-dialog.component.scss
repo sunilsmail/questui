@@ -1,0 +1,25 @@
+@import '../../../../../appointment/styles.scss';
+
+.ds-modal{
+  position: relative;
+
+  .ds-modal__content{
+    padding: 24px;
+
+    .ds-col--12{
+
+      &:nth-of-type(2){
+        padding: 0;
+      }
+    }
+  }
+}
+span.ds-icon--close--12.tabIndex:focus{
+  outline: $ds-green__500 solid 2px !important;
+  outline-offset: 3px;
+}
+@media screen and (max-width: 639px){
+  .ds-modal.ds_modal_active .ds-modal__content .ds-pagination--footer {
+    flex-direction: column;
+  };
+}

@@ -1,0 +1,129 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+
+  &.as-echeckin-insurance{
+    padding-top: 114px;
+
+    .ds-body--content{
+      width: 100%;
+      h3{
+        font-size: 24px !important;
+        line-height: 16px;
+        margin-bottom: 28px;
+      }
+    }
+
+  }
+
+    #skip-to-main {
+      padding: 0 284px;
+    }
+
+    .as-personal__actions {
+      padding: 32px 284px 0 0;
+    }
+
+  @include when-less-than(ds-1024){
+    .ds-grid--12{
+      .ds-col--6{
+        width: 50%;
+      }
+      .ds-col--3 {
+        width: 25%;
+      }
+    }
+
+    #skip-to-main {
+      padding: 0 !important;
+    }
+
+    .as-personal__actions {
+      padding: 32px 0px !important;
+    }
+
+  }
+  @include when-less-than(ds-768){
+    &.as-echeckin-insurance{
+      padding-top: 90px;
+      h2 {
+        font-size: 32px;
+        font-weight: 700;
+      }
+        .as-personal__actions{
+          background-color: #ffffff;
+          margin-top: 24px;
+          padding: 20px 0px 50px;
+          button {
+            margin: 0 auto;
+          }
+        }
+        form{
+            [class*="ds-col"]{
+            .ds-input{
+                width: 100%;
+                padding-right: 0;
+              }
+              .ds-input__label{
+                line-height: 16px;
+              }
+            }
+
+            [class*="ds-col--3"]{
+              width:100%;
+              padding-right: 0;
+            }
+        }
+        .ds-grid--12{
+          .ds-col--6{
+            width: 100%;
+          }
+          .ds-col--3 {
+            width: 100%;
+          }
+          .ds-input {
+            margin-right: 0;
+          }
+          .ds-col--8{
+            width: 100%;
+          }
+          .ds-col--4 {
+            width: 100%;
+          }
+        }
+
+    }
+  }
+}
+
+input[type=checkbox][disabled]+span{
+  cursor: not-allowed !important;
+}
+.as-insurance__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+
+.ds-card{
+  width:100%;
+}
+.ds-grid--12{
+  .ds-col--6{
+    &:nth-child(2){
+      .ds-input {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.inputAlert {
+  padding: 10px;
+}

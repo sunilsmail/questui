@@ -1,0 +1,50 @@
+@import '../../../../../styles.scss';
+
+.purchase-my-own-dialog {
+  max-width: 696px;
+  .ds-modal__content {
+    height: 390px;
+  }
+  h2 {
+    display: flex;
+    padding-right: 30px;
+    @include when-less-than(ds-768){
+      height: 55% !important;
+    }
+    @include when-wider-than(ds-768){
+      line-height: 1.1;
+    }
+  }
+  @include when-less-than(ds-768) {
+    max-width: 348px;
+    > mat-dialog-actions >.ds-modal__actions > [class*=ds-col] {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 8px;
+
+      >.--secondary {
+        width: 100%;
+        justify-content: center;
+        min-width: 100%;
+
+        @include when-less-than(ds-480) {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include when-wider-than(ds-768) {
+    > mat-dialog-actions >.ds-modal__actions>[class*=ds-col] {
+      width: auto;
+      margin-left: 16px;
+      > .--secondary{
+        min-width: 192px;
+      }
+    }
+  }
+
+  @include when-less-than(ds-480) {
+    max-width: 100%;
+  }
+}

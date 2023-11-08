@@ -1,0 +1,61 @@
+<header class="ds-grid--12 ds-header margin-bottom-12">
+  <div class="ds-col--12">
+    <a class="skip-main skip-to-main" role="link" (keyup)="$event.keyCode == 13 ? navigate() : null" id='logoRef' (click)="navigate()" mat-button color="secondary" aria-label="Skip to main content">
+      <span>Skip to main content</span>
+    </a>
+    <div class="ds-col--3 ds-flex --start-center --logo">
+      <button class="ds-brand-wrapper --medium" (click)="reload()" aria-label="Quest Diagnostics Appointment Home Page" role="link" (keyup)="$event.keyCode == 9 ? scrollToTop() : null"></button>
+    </div>
+    <nav class="ds-col--9 ds-header--nav ds-gray__900 global-nav--active" aria-label="Primary">
+      <ul>
+          <li *ngIf="!(isEorderFlowActivated$ | async)" class="ds-header--nav--item ">
+              <a class="ds-font--16 --400 ds-link contrastactive" [class.active]="isActive('scheduleAppointment')" [attr.aria-current]="isActive('scheduleAppointment') ? 'page' : undefined" (keyup)="$event.keyCode == 13 ? onScheduleAppointment() : null" (click)="onScheduleAppointment()" role="link" tabindex="0" i18n>{{content.as_toolbar.nav_item_1}}</a>
+            </li>
+            <li *ngIf="!(isEorderFlowActivated$ | async)" class="ds-font--16 --400 ds-header--nav--item " >
+              <a class="ds-font--16 --400 ds-link contrastactive" [class.active]="isActive('findLocation')" [attr.aria-current]="isActive('findLocation') ? 'page' : undefined" (click)="reloadLocationSearch()" (keydown.enter)="reloadLocationSearch()" tabindex="0" i18n>{{content.as_toolbar.nav_item_2}}</a>
+            </li>
+            <li class="ds-font--16 --400 ds-header--nav--item " [class.active]="isActive('faq')">
+              <a class="ds-font--16 --400 ds-link contrastactive" [class.active]="isActive('faq')" [href]="FAQLink$ | async" target="_blank" aria-label="FAQ:opens in new tab" tabindex="0" i18n>{{content.as_toolbar.nav_item_3}}</a>
+            </li>
+            <li class="ds-font--16 --400 ds-header--nav--item " [class.active]="isActive('contactUs')">
+              <a class="ds-font--16 --400 ds-link contrastactive" [href]="contactUsLink$ | async" target="_blank" aria-label="Contact Us:opens in new tab" tabindex="0" i18n>{{content.as_toolbar.nav_item_4}}</a>
+            </li>
+
+            <!--**HIDE SIGN IN WHEN AUTHENTICATE**-->
+
+            <li *ngIf="!(hideSignInLink$ | async)" class="ds-font--16 --400 ds-header--nav--item " [ngClass]="{'show-as-button':showAsButton,'hide-as-button':!showAsButton}"  [class.active]="isActive('signIn')">
+              <a [ngClass]="{'show-as-button':showAsButton,'hide-as-button':!showAsButton}" class="ds-font--16 --400 ds-button --primary contrastactive" id="signIn" [href]="redirectLink$ | async" role="link" tabindex="0" i18n>{{content.as_toolbar.nav_item_5}}</a>
+            </li>
+
+            <!-- ** -->
+
+
+            <!-- <li class="ds-header--nav--item" [class.active]="isActive('createAccount')">
+                  <a class="ds-link" routerLink="/as-create-account" i18n>Create Account</a>
+                </li>
+                <li class="ds-header--nav--item" [class.active]="isActive('signIn')">
+                  <a class="ds-link" routerLink="/as-sign-in" i18n>Sign In</a>
+                </li> -->
+            <li class="ds-header--nav--item --mobile-menu">
+              <button class="ds-gray__900" id="menubtn" autofocus="true" #closeBtn aria-controls="mobilemenu"	aria-haspopup="true" [attr.aria-expanded]="ds_nav_mobile_menu_active"
+                [ngClass]="{'ds_nav_mobile_menu_active ds-icon--close ds-font--16' : ds_nav_mobile_menu_active, 'ds-icon--menu ds-font--24': !ds_nav_mobile_menu_active}" name="Navigation menu"
+                (click)="ds_nav_mobile_menu_active = !ds_nav_mobile_menu_active;" aria-label="close menu"></button>
+              <!-- <button class="ds-icon--close--16 ds-gray__900" name="close menu" #closeBtn [attr.aria-expanded]="ds_nav_mobile_menu_active"
+                [ngClass]="{'ds_nav_mobile_menu_active' : ds_nav_mobile_menu_active}"
+                (click)="ds_nav_mobile_menu_active = !ds_nav_mobile_menu_active;"></button> -->
+            </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="ds-header__nav--mobile-menu  ds-elevation--L1"  id="mobilemenu"
+  role="menu" [ngClass]="{'ds_nav_mobile_menu_active' : ds_nav_mobile_menu_active}">
+    <nav class="ds-flex --column custom-nav" role="none">
+      <button *ngIf="!(isEorderFlowActivated$ | async)" [tabindex]="!ds_nav_mobile_menu_active? -1:0" [class.active]="isActive('scheduleAppointment')" aria-label="Schedule Appointment" routerLink="/schedule-appointment" role="menuitem" (click)="!ds_nav_mobile_menu_active = !ds_nav_mobile_menu_active;" i18n>{{content.as_toolbar.nav_item_1}}<div class="ds-icon--arrow-right ds-black ds-font--16" role="img" aria-label="arrow right"></div></button>
+      <button *ngIf="!(isEorderFlowActivated$ | async)" [tabindex]="!ds_nav_mobile_menu_active? -1:0" [class.active]="isActive('findLocation')" aria-label="Find Location" role="menuitem" (click)="!ds_nav_mobile_menu_active = !ds_nav_mobile_menu_active;reloadLocationSearch()" i18n>{{content.as_toolbar.nav_item_2}}<div class="ds-icon--arrow-right ds-black ds-font--16" role="img" aria-label="arrow right"></div></button>
+      <a [tabindex]="!ds_nav_mobile_menu_active? -1:0" [class.active]="isActive('faq')" aria-label="FAQ" (click)="!ds_nav_mobile_menu_active = !ds_nav_mobile_menu_active;" [href]="FAQLink$ | async" role="menuitem" target="_blank"i18n>{{content.as_toolbar.nav_item_3}}<div class="ds-icon--arrow-right ds-black ds-font--16" role="img" aria-label="arrow right"></div></a>
+      <a [tabindex]="!ds_nav_mobile_menu_active? -1:0" [class.active]="isActive('contactUs')" aria-label="Contact Us" (click)="!ds_nav_mobile_menu_active = !ds_nav_mobile_menu_active;" [href]="contactUsLink$ | async" role="menuitem" target="_blank"i18n>{{content.as_toolbar.nav_item_4}}<div class="ds-icon--arrow-right ds-black ds-font--16" role="img" aria-label="arrow right"></div></a>
+      <a *ngIf="!(hideSignInLink$ | async)" [tabindex]="!ds_nav_mobile_menu_active? -1:0" [class.active]="isActive('signIn')" aria-label="Sign In" (click)="!ds_nav_mobile_menu_active = !ds_nav_mobile_menu_active;" [href]="redirectLink$ | async" role="menuitem" i18n>{{content.as_toolbar.nav_item_5}}<div class="ds-icon--arrow-right ds-black ds-font--16" role="img" aria-label="arrow right"></div></a>
+    </nav>
+  </div>
+</header>
+<div [id]='scriptValue'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>

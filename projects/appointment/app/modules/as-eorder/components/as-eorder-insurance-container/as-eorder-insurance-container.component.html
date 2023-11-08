@@ -1,0 +1,7 @@
+<ng-container *ngIf="(mandatoryAddressF1687$| async); else oldVersion">
+  <as-eorder-insurance-information-new></as-eorder-insurance-information-new>
+</ng-container>
+
+<ng-template #oldVersion>
+  <as-eorder-insurance-information></as-eorder-insurance-information>
+</ng-template>

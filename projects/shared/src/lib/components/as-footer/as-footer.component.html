@@ -1,0 +1,68 @@
+<!--<footer fxHide fxShow.gt-sm	 class="as-footer" fxLayout="row" fxLayoutAlign="space-between center"
+  aria-label="navigation footer" tabindex="0">
+  <div fxLayout="row">
+    <a mat-button class="as-footer__previous_btn" (click)="goToPreviousPage()">
+      <mat-icon>chevron_left</mat-icon>
+      <span fxHide fxShow.gt-xs i18n id="as_footer_back_btn" aria-label="go to previous page">Previous</span>
+      <span fxHide.gt-xs i18n>Previous</span>
+    </a>
+  </div>
+  <div fxLayout="row" class="as-footer__continue_btn_mobile_div">
+    <a mat-button [disabled]="!enableContinue" (click)="goToNext()"
+      [ngClass]="{'as-footer__continue_btn_ready':enableContinue,'as-footer__continue_btn':!enableContinue}">
+      <span fxHide fxShow.gt-xs i18n id="as_footer_Next_btn" aria-label="continue to next page">Continue</span>
+      <span fxHide.gt-xs i18n>Continue</span>
+      <mat-icon>chevron_right</mat-icon>
+    </a>
+  </div>
+</footer>
+<footer fxHide fxShow.lt-md class="as-footer" fxLayout="row" fxLayoutAlign="space-between center"
+  aria-label="navigation footer" tabindex="0" *ngIf="enableContinue">
+  <div fxLayout="row">
+    <a mat-button class="as-footer__previous_btn" (click)="goToPreviousPage()">
+      <mat-icon>chevron_left</mat-icon>
+      <span fxHide fxShow.gt-xs i18n id="as_footer_back_btn" aria-label="go to previous page">Previous</span>
+      <span fxHide.gt-xs i18n>Previous</span>
+    </a>
+  </div>
+  <div fxLayout="row" class="as-footer__continue_btn_mobile_div">
+    <a mat-button [disabled]="!enableContinue" (click)="goToNext()"
+      [ngClass]="{'as-footer__continue_btn_ready':enableContinue,'as-footer__continue_btn':!enableContinue}">
+      <span fxHide fxShow.gt-xs i18n id="as_footer_Next_btn" aria-label="continue to next page">Continue</span>
+      <span fxHide.gt-xs i18n>Continue</span>
+      <mat-icon>chevron_right</mat-icon>
+    </a>
+  </div>
+</footer>
+-->
+
+
+<!-- <div class="ds-grid--12">
+    <div class="ds-pagination--footer ds-col--8">
+      <div class="ds-col--12 ds-divider--horizontal"></div>
+      <div class="ds-col--12 ds-flex">
+        <div class="ds-col--6">
+          <button class="ds-button__tertiary" (click)="goToPreviousPage()">
+              <label>Previous</label>
+          </button>
+        </div>
+        <div class="ds-col--6 ds-flex --end-start">
+          <button  [disabled]="!enableContinue" (click)="goToNext()" [ngClass]="{'ds-button --primary':enableContinue,'ds-button --primary--disabled':!enableContinue}">
+              <label>Continue</label>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="ds-grid--12">
+    <div class="ds-col--12">
+      <button tabindex="0" (click)="goToNext()" class="ds-button --primary contrastactive" [ngClass]="{'--disabled':!enableContinue, 'highlight__continue':highLightContinue}" [attr.aria-label]="continue_btn_text" role="button" [disabled]="!enableContinue">
+        <label>{{continue_btn_text}}</label>
+      </button>
+    </div>
+
+    <div class="ds-col--12" >
+      <a tabindex="0" class="ds-link ds-flex --center-center" (click)="goToPreviousPage()" (keydown.Enter)="goToPreviousPage()" aria-label="Previous" role="button">Previous</a>
+    </div>
+  </div>

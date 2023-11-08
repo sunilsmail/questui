@@ -1,0 +1,82 @@
+<div class="verify-eorder-identity" role="main">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="verify-identity-close"
+      (click)="closeVerifyIdentityDialog()" aria-label="close" tabindex="0"
+      name="verify-identity-close"></button>
+  </div>
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h1 i18n tabindex="0" [attr.aria-label]="ariaTitle">Hello {{firstName | titlecase}}</h1>
+      <div class="ds-col--12 --content-scroll">
+        <ng-container>
+          <div class="ds-body--base ds-gray__900 margin-bottom-16" role="text" id="sub_title_new"
+            [attr.aria-label]="[content.as_verify_identity_dialog.sub_title]"
+            innerHTML={{content.as_verify_identity_dialog.sub_title}}>
+          </div>
+        </ng-container>
+        <div *ngIf="loading" class="verify-identity__overlay" fxLayout="row" fxLayoutAlign="center center">
+          <as-spinner></as-spinner>
+        </div>
+        <form [formGroup]="verifyIdentityForm" autocomplete="off" >
+          <div class="ds-grid--12 no-pad">
+            <div class="ds-col--8 no-pad">
+              <div class="ds-input --required last-name"
+                [ngClass]="{'--error': (!verifyIdentityForm.get('lastName').valid && verifyIdentityForm.get('lastName').touched || retry)}">
+                <div class="ds-input__label" i18n>{{content?.as_input_labels?.lastName}}</div>
+                <input type="text" formControlName="lastName" placeholder="" aria-label="Last Name" id="lastName" required/>
+                <span [attr.tabindex]="verifyIdentityForm.get('lastName').errors ? '0': null" role="alert"
+                  class="visually-hidden">{{verifyIdentityForm.get('lastName').errors | validationError:
+                  content?.as_input_labels?.lastName}}</span>
+                <div class="ds-input__error" role="alert"
+                *ngIf="verifyIdentityForm.get('lastName').errors && verifyIdentityForm.get('lastName').touched">{{verifyIdentityForm.get('lastName').errors | validationError:
+                  content?.as_input_labels?.lastName}}</div>
+              </div>
+            </div>
+            <div class="ds-col--4 no-pad">
+              <div class="ds-input --required"
+              [ngClass]="{'--error': (!verifyIdentityForm.get('dateOfBirth').valid && (verifyIdentityForm.get('dateOfBirth').touched || verifyIdentityForm.get('dateOfBirth').dirty) || retry)}">
+                <div class="ds-input__label" i18n>{{content.as_input_labels.dob}}</div>
+                <input type="text" formControlName="dateOfBirth" (keyup)="onkeypressdate($event,dateElement)"
+                  (focusout)="focusOut($event)" #dateElement id="dateOfBirth" (keypress)="onKeyPress($event)"
+                  aria-label="Date Of Birth" required
+                  (keydown.enter)="verifyIdentityForm.valid && verifyUser()"/>
+                <span [attr.tabindex]="verifyIdentityForm.get('dateOfBirth').errors ? '0': null" role="alert"
+                  class="visually-hidden">{{verifyIdentityForm.get('dateOfBirth').errors | validationError:
+                  content?.as_input_labels?.dob}}</span>
+                <div class="ds-font--14 ds-gray__600 margin-top-4">MM/DD/YYYY</div>
+                <div class="ds-input__error" role="alert"
+                *ngIf="verifyIdentityForm.get('dateOfBirth').errors && (verifyIdentityForm.get('dateOfBirth').touched || verifyIdentityForm.get('dateOfBirth').dirty)">{{verifyIdentityForm.get('dateOfBirth').errors | validationError :
+                  content.as_input_labels.dob}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="errorMessage" *ngIf="isError">
+            <span i18n *ngIf="retry">{{content.as_verify_identity_dialog.error_retry}} </span>
+            <span i18n *ngIf="lockedUntil">The information you entered doesn’t match the lab order we received. Your
+              access has been locked, wait {{lockedMinutes}} minutes before attempting access again. </span>
+          </div>
+          <ng-container *ngIf="(reCaptchaEnable$ | async)">
+            <as-recaptcha #recaptcha (valueChanged)="recaptchaChanged($event)"> </as-recaptcha>
+          </ng-container>
+        </form>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+      <div class="ds-col--6 ds-flex --start-center margin-bottom-16">
+        <button class="ds-button --primary --medium"
+          [attr.aria-label]="[content.as_verify_identity_dialog.button_label]" role="button"
+          [ngClass]="{'--primary':verifyIdentityForm.valid,'--primary--disabled':!verifyIdentityForm.valid || lockedUntil}"
+          [disabled]="!verifyIdentityForm.valid" (click)="verifyUser()">
+          <label i18n>{{content.as_verify_identity_dialog.button_label}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-link ds-green__700" (keydown.enter)="closeVerifyIdentityDialog()" aria-label="Never mind"
+          (click)="closeVerifyIdentityDialog()" tabindex="0" role="button"
+          ii8n>{{content.as_verify_identity_dialog.link_nevermind}}</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

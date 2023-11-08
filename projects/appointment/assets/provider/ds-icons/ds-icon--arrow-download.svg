@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>ds-icon--download</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ds-icon--download" fill="#424245" fill-rule="nonzero">
+            <g id="Group" transform="translate(40.000000, 40.000000) scale(-1, 1) rotate(-180.000000) translate(-40.000000, -40.000000) translate(0.000000, -0.000000)">
+                <polygon id="Path" points="32 62 32 44 23.8 44 15.5 44 27.8 31.8 40 19.5 52.2 31.8 64.5 44 56.2 44 48 44 48 62 48 80 40 80 32 80"></polygon>
+                <polygon id="Path" points="0 4 0 0 40 0 80 0 80 4 80 8 40 8 0 8"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

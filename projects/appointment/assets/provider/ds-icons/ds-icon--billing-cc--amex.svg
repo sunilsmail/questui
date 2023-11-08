@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="30px" viewBox="0 0 42 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icons8-amex</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons8-amex" fill-rule="nonzero">
+            <path d="M42,26 C42,28.209 40.209,30 38,30 L4,30 C1.791,30 0,28.209 0,26 L0,4 C0,1.791 1.791,0 4,0 L38,0 C40.209,0 42,1.791 42,4 L42,26 Z" id="Shape" fill="#1976D2"></path>
+            <g id="Group" transform="translate(4.000000, 11.000000)" fill="#FFFFFF">
+                <path d="M15.255,0 L13.142,4.683 L11.039,0 L8.344,0 L8.344,6.726 L5.341,0 L3.067,0 L0,6.981 L1.815,6.981 L2.486,5.423 L5.918,5.423 L6.6,6.981 L10.065,6.981 L10.065,1.796 L12.364,6.981 L13.927,6.981 L16.278,1.886 L16.278,6.981 L18,6.981 L18,0 L15.255,0 Z M3.135,3.915 L4.161,1.475 L5.227,3.915 L3.135,3.915 Z" id="Shape"></path>
+                <path d="M30.883,3.413 L34,0.018 L31.783,0.018 L29.789,2.182 L27.86,0 L21,0 L21,6.982 L27.635,6.982 L29.727,4.671 L31.767,7 L33.977,7 L30.883,3.413 Z M26.728,5.516 L22.717,5.516 L22.717,4.135 L26.555,4.135 L26.555,2.812 L22.717,2.812 L22.717,1.504 L26.951,1.516 L28.644,3.413 L26.728,5.516 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

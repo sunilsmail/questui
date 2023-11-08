@@ -1,0 +1,337 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+
+  &.as-confirmation{
+    padding-top: 144px;
+    .ds-button {
+      width: 95%;
+      max-width: none;
+    }
+    .ds-icon--check {
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 10px;
+      border: 5px solid $ds-green;
+    }
+    .mint-bg{
+      border-radius: 12px;
+    }
+    .ds-body--content{
+      width: 100%;
+      .ds-card.padding-bottom-14 {
+        padding-bottom:14px !important ;
+      }
+      .ds-col--12{
+
+        h1{
+          margin: 0;
+        }
+
+        .ds-flex--column{
+
+            .ds-col--12{
+
+                img{
+                    height: auto;
+                    width: 50%;
+                }
+            }
+
+            .ds-col--6{
+
+                > .ds-col--6{
+
+                    &:nth-of-type(2){
+                        position: relative;
+
+                        [class*="ds-col"]{
+                            position: absolute;
+                            padding-right: 0;
+                            height: 100%;
+                            max-width: 200px;
+
+                            .addeventatc{
+                                background: none;
+                                box-shadow: 0 0 0 0.5px rgba(50,50,93,.0), 0 2px 5px 0 rgba(50,50,93,.0), 0 1px 1.5px 0 rgba(0,0,0,.0), 0 1px 2px 0 rgba(0,0,0,.0), 0 0 0 0 transparent!important;
+                                border: none;
+                                width: 80%;
+                                border-radius: 0;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            [class*="ds-col"]{
+
+                [class*="ds-icon--route"]{
+                    cursor: pointer;
+                }
+            }
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024){
+
+        .ds-body--content{
+          width: 100%;
+
+          .ds-col--12{
+
+              .ds-flex--column{
+
+                  .ds-col--6{
+                      width: 100%;
+                  }
+
+                  .ds-col--6.action-button{
+                      flex-direction: column-reverse;
+                      padding: 0;
+
+                      div{
+                          padding-right: 0;
+                          width: 100%;
+
+                          .ds-button.--secondary{
+                              width: 100%;
+                          }
+                      }
+                  }
+              }
+          }
+        }
+      }
+
+      @include when-less-than(ds-768){
+        padding-top: 100px;
+
+        .ds-body--content{
+          width: 100%;
+
+          .ds-col--12{
+
+              .ds-flex--column{
+
+                .ds-col--12{
+                    img{
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+
+                  .ds-col--6{
+                      width: 100%;
+                  }
+              }
+          }
+        }
+      }
+      as-add-to-calendar{
+          max-width: none;
+          @include when-less-than(ds-1024){
+            margin-top: 30px;
+        }
+      }
+  }
+}
+as-confirmation-print {
+    /* hide the printing component from @media screen */
+    display: none;
+  }
+
+  @media print {
+    /* invert the display (show/hide) properties of the main */
+    /* aplication component and the printing component       */
+
+    as-confirmation-print {
+      display: block;
+    }
+
+    .as-confirmation {
+          display: none;
+        }
+  }
+
+  .onFocus:focus{
+    outline: 2px solid $ds-green__500 !important;
+    outline-offset: 3px;
+  }
+.dollor-icon{
+  width: 18px;
+  height: 18px;
+}
+.confCode{
+  padding-top:15px;
+}
+
+.padding-cc{
+  padding-bottom: 0px;
+}
+
+.container-width {
+  width: 100%;
+}
+
+.pad-bottom{
+  padding-bottom: 0px;
+}
+.ds-content-block--32{
+  margin: 0 0 32px;
+
+  @include when-less-than(ds-1024) {
+    margin: 0 0 24px;
+  }
+
+  @include when-less-than(ds-768) {
+    margin: 0 0 36px;
+  }
+}
+.print-button-width {
+  min-width: 163px !important;
+  @include when-less-than(ds-1024) {
+    margin-top: 30px;
+  }
+}
+
+.pad-bottom-60{
+  padding-bottom: 60px !important;
+}
+
+
+.open-balance{
+
+  padding: 32px !important;
+
+  @include when-less-than(ds-1024) {
+    padding: 24px !important;
+  }
+
+  .estimated-cost{
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      margin: 0 0 16px 0;
+      color: $ds-green__700;
+    }
+
+    .location-details{
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      margin: 32px 0 16px 0;
+      color: $ds-green__700;
+
+      @include when-less-than(ds-1024) {
+        margin: 24px 0 12px 0;
+      }
+    }
+
+    .confCode{
+      margin-top: 32px;
+      padding: 24px 0 0px 0;
+      h3{
+        margin: 0 0 24px 0;
+      }
+
+      @include when-less-than(ds-1024) {
+        margin-top: 24px;
+      }
+    }
+    hr{
+      margin: 0px;
+    }
+
+    .title-text{
+      margin: 0px 0px 16px 0px;
+
+      @include when-less-than(ds-1024) {
+        margin: 0px 0px 12px 0px;
+      }
+    }
+
+    .title-text2{
+      margin: 32px 0 8px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .title-price{
+      margin: 0px 0px 32px 0px;
+    }
+
+    .center-text{
+      align-items: center;
+      justify-content: center;
+    }
+
+    .link{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.02em;
+      padding: 16px 0 32px 0;
+    }
+
+    button{
+      flex-grow: 1;
+    }
+
+    .flex-items{
+      display: flex;
+      align-items: flex-end;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .button-container{
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid $ds-gray__200;
+      padding: 8px 0 8px 0;
+      span{
+        position: relative;
+        top: 5px;
+      }
+    }
+
+
+    .gap{
+      gap:8px
+    }
+
+    .actions{
+      @include when-less-than(ds-768){
+        flex-direction: column-reverse;
+        gap:24px;
+      }
+    }
+    .actions > [class*=ds-col]{
+      @include when-less-than(ds-768){
+        width: 100% !important;
+      }
+      width: 48% !important;
+      > button {
+        min-width: 100%
+      }
+    }
+  }
+
+  .title {
+    margin-top: 16px;
+    margin-bottom: 12px;
+
+    @include when-less-than(ds-1024) {
+      font-size: 24px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+  }

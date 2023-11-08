@@ -1,0 +1,584 @@
+{
+  "as_home": {
+    "welcome_title": "Here for COVID-19 testing?",
+    "welcome_description": "Appointments are strongly encouraged for COVID-19 Antibody testing. To discover if you may have developed an immune response to COVID-19, Quest can guide you in the right direction.",
+    "button_location": "Find a location",
+    "button_right_test": "Find the right test",
+    "welcome_already": "Already have an appointment? Do you need to <b>view</b>, <b>change</b>, or <b>cancel</b> it?",
+    "welcome_find": "Find your appointment",
+    "welcome_image": "/assets/ds-images/as-illustrations-2_Calendar.png",
+    "welcome_upcoming_appointments": "View upcoming appointments",
+    "welcome_create_mq_account": "Create a MyQuest account",
+    "welcome_create_mq_account_msg": "Confidently and securely access your upcoming appointments, lab results, and more with a free MyQuest<sup>&reg;</sup> account.",
+    "welcome_create_mq_account_msg_aria_label": "Confidently and securely access your upcoming appointments, lab results, and more with a free MyQuest® account."
+  },
+  "as_findAppointment": {
+    "title": "Find your appointment",
+    "title_view": "View your appointment",
+    "title_change": "Change your appointment",
+    "title_cancel": "Cancel your appointment",
+    "message": "Please enter your confirmation code below. Once entered, we'll need to verify your identity.",
+    "message_alert": "Please enter your confirmation code below.",
+    "button_label": "Continue"
+  },
+  "as_verify_phonenumber_dialog": {
+    "title": "Verify your identity",
+    "message": "To view and modify your appointment, we need to verify your identity.<br>Please enter your phone number below.",
+    "message_cancel": "To cancel your appointment, please enter the phone number associated with this appointment.",
+    "message_change_view": "To modify your appointment, please enter the phone number associated with this appointment.",
+    "button_label": "Verify identity"
+  },
+  "as_cancelAppointment": {
+    "success_appointment_button_label": "Reschedule",
+    "cancel_button_label": "Yes, cancel"
+  },
+  "as_reason_for_visit": {
+    "title": "To get started, please select your reason for visiting.",
+    "title_1": "Please select all the testing services you need.",
+    "title_2": "There are two types of glucose testing.",
+    "sub_title": "Please select the one you need.",
+    "title_3": "Please select all the drug and alcohol tests that apply to your visit.",
+    "title_4": "What testing do you need ?",
+    "title_5": "What testing did you purchase?",
+    "popup_message": "To schedule an appointment for your employer health and wellness screening (biometric screening), we need to redirect you to the Health & Wellness website.",
+    "footer_title": "My reason for visiting isn’t listed."
+  },
+  "as_getlabs_home": {
+    "title": "At-home collection by Getlabs may be available in your area",
+    "text": "Quest now coordinates with Getlabs to save you a trip. A certified mobile phlebotomist will come straight to your home or office to perform your lab draws for a small convenience fee.",
+    "disclaimer_text": "Getlabs is an independent company and not a subsidiary or representative of Quest Diagnostics."
+  },
+  "as_bfa_redirect": {
+    "content": "To schedule an appointment for your employer health and wellness screening (biometric screening), we need to redirect you to the Health & Wellness website."
+  },
+  "as_getlabs_dialog": {
+    "title": "You’re continuing to another website",
+    "message": "You are leaving the Quest website and being redirected to Getlabs.com."
+  },
+  "as_getlabs_learn_more_dialog": {
+    "title": "How at-home collection by Getlabs works",
+    "step1Title": "1. Book your visit directly with Getlabs",
+    "step1Text": "Pick a time for a Getlabs specialist to come to your home or office",
+    "step2Title": "2. Getlabs comes to you",
+    "step2Text": "Getlabs draws your labs and delivers directly to Quest Diagnostics",
+    "step3Title": "3. Get your results",
+    "step3Text": "Receive your results from your doctor or at MyQuest"
+  },
+  "as_examone_dialog": {
+    "title": "You’re continuing to another website",
+    "message": "You are leaving the Quest website and being redirected to ExamOne.com."
+  },
+  "as_examone_learn_more_dialog": {
+    "title": "How at-home collection by ExamOne works",
+    "step1Title": "1. Book your visit directly with ExamOne",
+    "step1Text": "Pick a time for a ExamOne specialist to come to your home or office",
+    "step2Title": "2. ExamOne comes to you",
+    "step2Text": "ExamOne draws your labs and delivers directly to Quest Diagnostics",
+    "step3Title": "3. Get your results",
+    "step3Text": "Receive your results from your doctor or at MyQuest"
+  },
+  "as_appointment_details": {
+    "title": "Appointment details"
+  },
+  "as_find_a_location": {
+    "title": "Now, let’s find a location and time that works for you.",
+    "tab_morning": "Morning",
+    "tab_afternoon": "Afternoon",
+    "link": "Show more times",
+    "link_1": "Show less times",
+    "noslots": "There are no results within 25 miles."
+  },
+  "as_location_finder_reason": {
+    "title": "To get started, please select your reason for visiting."
+  },
+  "as_personal_information": {
+    "title": "Who’s visiting?",
+    "title_1": "Personal Information",
+    "title_new": "Information about the person being tested",
+    "gender_male": "Male",
+    "gender_female": "Female",
+    "contact_title": "Contact information",
+    "mobile_yes": "Yes",
+    "mobile_no": "No",
+    "mobile_no_text": "Text notifications are not available for non-mobile phone numbers. <br>To receive texts, please enter a valid mobile number and select ‘yes’ above.",
+    "contact_preferences_title": "Appointment contact preferences",
+    "contact_preferences_email": "Email",
+    "contact_preferences_text": "Text",
+    "contact_preferences_description": "By choosing text, you agree to receive texts/calls, including by autodialed or prerecorded means, regarding this and future appointments, your account or Quest Diagnostics services at the number you provide. <p>Consent is not a condition of purchasing any goods or services. Normal charges may apply.</p>",
+    "create_account_decision_text": "Create a MyQuest account?",
+    "create_account_address_text": "What is your address?",
+    "insurance_title": "When would you like to provide your insurance information?",
+    "insurance_title_new": "Would you like to provide insurance for the person being tested?",
+    "insurance_radio_1": "I’ll save time and provide it now.",
+    "insurance_radio_2": "I’ll bring it later to my appointment.",
+    "insurance_radio_3": "I don’t have insurance.",
+    "insurance_radio_3_new": "The person being tested doesn't have insurance.",
+    "insurance_radio_2_new": "The person being tested will bring it to the appointment.",
+    "contact_address_title": "Address",
+    "contact_preferences_sub_title": "Receive notifications about appointments",
+    "gender_identity_message": "Completing the information below will improve public health reporting to support health equity. If gender identity is provided, it may also enable faster results.",
+    "insurance_title_prs": "Yes, use my insurance on file.",
+    "title_primary": "Primary:",
+    "title_secondary": "Secondary:",
+    "insurance_radio_3_auth": "No, I currently don’t have insurance.",
+    "insurance_radio_2_auth": "No, I’ll bring it to the appointment.",
+    "insurance_radio_1_auth": "No, my insurance has changed and I want to update it.",
+    "insurance_title_new_auth": "Would you like to use the insurance we have on file?"
+  },
+  "as_insurance_information": {
+    "title": "What is your insurance information?",
+    "title_f88": "What is your primary insurance information?",
+    "title_description": "Filling this out now will save you time at your appointment, getting you out the door quicker.",
+    "link_provide": "Provide later",
+    "personal_address": "What is your address?",
+    "primary_insurance_holder": "Who is the primary insurance holder?",
+    "primary_insurance_holder_address": "What is the primary insurance holder's address?",
+    "primary_insurance_holder_address_f88": "What is the primary insurance holder's information?",
+    "title_billing": "Your Billing Address",
+    "primary_insurance_sameas": "My personal address is different",
+    "title_primary": "Please provide your primary insurance information",
+    "labcard_title": "Do you have QuestSelect<sup>TM</sup> (formerly known as Lab Card) as a part of your health insurance benefit plan?",
+    "labcard_error1": "The location you selected does not support QuestSelect<sup>TM</sup> (formerly known as Lab Card).",
+    "labcard_error2": "Show available locations",
+    "label_address": "Address",
+    "label_different_mine": "Primary insurance holder’s address is different than mine",
+    "label_groupId": "Group ID"
+  },
+  "as_secondary_insurance_information": {
+    "title": "What is your secondary insurance information?",
+    "title_description": "Filling this out now will save you time at your appointment, getting you out the door quicker.",
+    "link_provide": "Provide later",
+    "personal_address": "What is your address?",
+    "primary_insurance_holder": "Who is the secondary insurance holder?",
+    "primary_insurance_holder_address": "What is the Secondary insurance holder's information?",
+    "title_billing": "Your Billing Address",
+    "primary_insurance_sameas": "My personal address is different",
+    "secondary_insurance_holder_title": "Please provide your secondary insurance information",
+    "label_different_mine": "Secondary insurance holder’s address is different than mine"
+  },
+  "as_location_finder_details": {
+    "title_services_not_offered": "Tests Not  offered",
+    "title_services_offered": "Tests  offered",
+    "text_parking": "Parking",
+    "text_fax": "Fax",
+    "text_phone": "Phone",
+    "text_times": "Popular times",
+    "text_regularHrs": "T-SPOT.TB test available Monday - Friday",
+    "title_isGlucosehours": "Glucose Tolerence",
+    "title_Tuberculosis": "T.Spot Tuberculosis",
+    "title_Employee_drug": "Employee Drug and Alcohol",
+    "title_details": "Details",
+    "title_services": "Services",
+    "text_miles": " miles away",
+    "title_hrs": "Hours for",
+    "psc_hrs": "PSC Hours",
+    "schedule_appt_btn_label": "Schedule appointment",
+    "online_schedule_unavailble": "Online scheduling unavailable"
+  },
+  "as_review_appointment_details": {
+    "title_desktop": "Review appointment details",
+    "title_mobile": "Review details",
+    "title_description": "Please take a moment to review your appointment details",
+    "ins_not_found": "Our system can't find your provider; we're updating it regularly. Bring your insurance card and we'll get coverage figured out for you.",
+    "ins_not_found_f88": "Our system can't find your primary provider; we're updating it regularly. Bring your insurance card and we'll get coverage figured out for you."
+  },
+  "as_confirmation": {
+    "title": "Appointment scheduled",
+    "email_confirmation": "Your confirmation email is on its way.",
+    "text_confirmation": "Your confirmation text is on its way.",
+    "both_confirmation": "Your confirmation email and text are on the way.",
+    "confirmation_code": "Confirmation code",
+    "confirmation_code_description": "Use this confirmation code to view, edit, or cancel your appointment.",
+    "text_arrive": "Please arrive 15 minutes early to your appointment.",
+    "button_calendar": "Add to Calendar",
+    "button_print": "Print Details",
+    "cc_not_available_message": "Please bring your estimated payment with you to your visit. We accept all 4 major credit cards (Visa, MasterCard, Discover, and American Express), debit cards, checks, and money orders.",
+    "modify_cancel_link": "Modify/Cancel Appointment",
+    "location_card_title": "Location, date, and time",
+    "location_card_button": "Print details",
+    "health_card_title": "Next time, you may not need to wait and pay for a visit with a doctor to get lab work with Quest.",
+    "health_card_content1": "Get insights about your health, on your terms. Shop <b>questhealth.com</b> and choose from 75+ lab tests for allergies, genetic health, heart health, digestive health, infectious diseases, sexual health, and more. Get the same quality tests that doctors use and trust, no doctor visit required for purchase.*",
+    "health_card_content2": "Heart Health, Food and Environmental Allergies, Digestive Health, Men’s and Women’s Health, Infectious Disease, and Sexual Health.",
+    "health_card_button": "Shop now",
+    "health_card_disclaimer": "*Any tests purchased on questhealth.com will require a separate appointment and cannot be added to an existing appointment at a Quest Diagnostics location. Tests purchased on questhealth.com are only for individuals who intend to pay directly for testing and do not want to submit a claim for reimbursement under their health insurance. Testing may be eligible for reimbursement through an FSA or HSA account: check with your health account administrator."
+  },
+  "as_confirmation_print": {
+    "qrcode_text": "Scan above code at the kiosk and take a seat. You'll be called when it's your turn.",
+    "fasting_details_text1": "It depends on the type of blood test you're having. The healthcare professional arranging your test will tell you if you need to do anything to prepare for it.",
+    "fasting_details_text2": "You can eat and drink as normal before some blood tests. But if you're having a \"fasting blood test\", you will be told not to eat or drink anything (other than water) beforehand. You may also be told not to smoke before your test.",
+    "additional_details_text1": "You can eat and drink as normal before some blood tests. But if you're having a \"fasting blood test\", you will be told not to eat or drink anything (other than water) beforehand. You may also be told not to smoke before your test."
+  },
+  "as_cancel_appointment_popup": {
+    "cancel_message": "Are you sure you would like to cancel your appointment on 02/02/2019?",
+    "button_confirm": "Confirm",
+    "link_eh_never_mind": "Eh, Never mind"
+  },
+  "as_modify_appointment": {
+    "title_description": "In order to modify your appointment, we need to very your idenity. Please enter your phone number below.",
+    "button_verify_identity": "Verify Identity",
+    "service_needed": "Service needed"
+  },
+  "button_schedule": "Schedule appointment",
+  "button_continue": "Continue",
+  "button_previous": "Previous",
+  "button_cancel": "Cancel",
+  "link_edit": "edit",
+  "link_nevermind": "Never mind",
+  "cancel_appointment": "Cancel appointment",
+  "create_account": "Create a MyQuest account?",
+  "title_reason_for_visit": "Reason for visit",
+  "title_location": "Location, date, and time",
+  "title_who_is_visiting": "Who's visiting",
+  "title_insurance_information": "Insurance information",
+  "as_forgot_confirmationcode_dialog": {
+    "title": "Forgot confirmation code?",
+    "sub_title": "Enter the email address or phone number used to create your appointment.<br> We'll email the appointment details.",
+    "message": "We cannot retrieve appointments made by phone",
+    "button_label": "Send details"
+  },
+  "as_forgot_confirmationcode_success_dialog": {
+    "title": "Your appointment details are on their way.",
+    "sub_title": "Please check your email. If you have not received an email within a few minutes, we can resend email.",
+    "button_label": "Resend"
+  },
+  "as_verify_identity_dialog": {
+    "sub_title": "In order to proceed with preregistering for your visit, we need to locate your lab order. Please enter your information below.",
+    "link_nevermind": "Never mind",
+    "link_cancel": "Cancel",
+    "button_label": "Continue",
+    "error_retry": "The information you entered does not match the lab order we received. Try again."
+  },
+  "as_eorder_personal_information": {
+    "title": "Let’s review the information your doctor provided.",
+    "title_1": "Personal Information",
+    "title_new": "Information about the person being tested",
+    "gender_male": "Male",
+    "gender_female": "Female",
+    "contact_title": "Contact information",
+    "mobile_yes": "Yes",
+    "mobile_no": "No",
+    "mobile_no_text": "Text notifications are not available for non-mobile phone numbers. <br>To receive texts, please enter a valid mobile number and select ‘yes’ above.",
+    "contact_preferences_title": "Appointment contact preferences",
+    "contact_preferences_email": "Email",
+    "contact_preferences_text": "Text",
+    "contact_preferences_description": "By choosing text, you agree to receive texts/calls, including by autodialed or prerecorded means, regarding this and future appointments, your account or Quest Diagnostics services at the number you provide. <p>Consent is not a condition of purchasing any goods or services. Normal charges may apply.</p>",
+    "create_account_decision_text": "Create a MyQuest account?",
+    "create_account_address_text": "Address",
+    "insurance_title": "When would you like to provide your insurance information?",
+    "insurance_radio_1": "I’ll save time and provide it now.",
+    "insurance_radio_2": "I’ll bring it later to my appointment.",
+    "insurance_radio_3": "I don’t have insurance.",
+    "contact_preferences_sub_title": "Receive notifications about appointments"
+  },
+  "as_eorder_details": {
+    "title": "Order details"
+  },
+  "as_eorder_insurance_information": {
+    "title": "What is your insurance information?",
+    "title_description": "Filling this out now will save you time at your appointment, getting you out the door quicker.",
+    "link_provide": "Provide later",
+    "personal_address": "What is your address?",
+    "primary_insurance_holder": "Who is the primary insurance holder?",
+    "primary_insurance_holder_address": "What is the primary insurance holder's address?",
+    "primary_insurance_holder_address_f88": "What is the primary insurance holder's information?",
+    "primary_insurance_sameas": "My personal address is different",
+    "primary_insurance_holder_provider": "Please provide your primary insurance information",
+    "labcard_title": "Do you have QuestSelect<sup>TM</sup> (formerly known as Lab Card) as a part of your health insurance benefit plan?",
+    "labcard_error1": "The location you selected does not support QuestSelect<sup>TM</sup> (formerly known as Lab Card).",
+    "labcard_error2": "Show available locations",
+    "title_f88": "What is your primary insurance information?"
+  },
+  "as_important_visit_info_dialog": {
+    "title": "Important visit information",
+    "message_1": "Patients visiting a Patient Service Center must wear a mask or face covering and must not have experienced COVID-19 symptoms in the last 10 days.",
+    "message_2": "COVID-19 Antibody testing available by appointment; we do not test for active infection (swab) in our Patient Service Centers.",
+    "link": "Learn more about COVID-19 testing options"
+  },
+  "as_peace_of_mind_test_dialog": {
+    "title": "We've updated our service center hours in response to COVID-19",
+    "message_1": "If you need lab services not related to COVID-19 and you are 60 years of age or older, pregnant or have other conditions that put you at greater risk for COVID-19, make an appointment at your nearby Quest location during the first hour of each day for VIP care through our new Peace of Mind program. Appointments are strongly encouraged and will receive priority. Walk-ins may be accommodated during the next available appointment opening, but cannot be guaranteed service.",
+    "message_2": "Are you older than 60, pregnant, or have an underlying medical condition?"
+  },
+  "as_purchase_my_own_test_dialog": {
+    "title": "Have you already purchased a test from Quest",
+    "message_1": "In-person sample collection for tests ordered online at QuestDirect, with the exception of COVID-19 Active Infection test, can only be completed at a Quest Diagnostics Patient Service Center. For COVID-19 Active Infection tests, you are able to visit a Quest Diagnostics Patient Service Center if you have not experienced COVID-19 symptoms in the past 10 days. If you are experiencing symptoms, you will be able to book an appointment at a drive-thru or curbside location.<br><br>You cannot purchase tests at the Patient Service Centers or drive-thru locations. If you haven’t already, you will need to purchase your test from QuestDirect prior to scheduling an appointment.",
+    "message_1_new": "In person sample collection for tests ordered online, with the exception of COVID-19 Active Infection test, can only be completed at a Quest Diagnostics Patient Service Center. For COVID-19 Active Infection tests, you are able to visit a Quest Diagnostics Patient Service Center if you have not experienced COVID-19 symptoms in the past 10 days. If you are experiencing symptoms, you will be able to book an appointment at a drive-thru or curbside location.<br><br>You cannot purchase tests at the patient service centers or drive-thru locations. If you haven't already, you will need to purchase your test from our online store prior to scheduling an appointment.",
+    "message_2": "Did you receive an order confirmation email from your Quest online purchase?",
+    "message_3": "Patients visiting a Patient Service Center must wear a mask per current CDC healthcare facility guidelines.",
+    "button_text_1": "Yes",
+    "button_text_2": "No, help me get tested",
+    "button_text_3": "No, I need to purchase a test"
+  },
+  "as_active_infection_dialog": {
+    "message_1": "A current electronic lab order from your doctor is required before you can schedule an appointment.",
+    "message_2": "Has your doctor created a COVID-19 test order with Quest for you already?",
+    "message_3": "A current electronic lab order from your doctor is required before you can schedule an appointment.",
+    "message_4": "<b>Please note:</b> We can only accept patients in our Patient Service Centers who have not experienced COVID-19 symptoms in the last 10 days. Patients experiencing symptoms will be able to book an appointment at drive-thru or curbside locations."
+  },
+  "as_echeckin_personal_information": {
+    "title": "Let’s review the information for your upcoming visit.",
+    "title_1": "Personal information",
+    "title_2": "Address",
+    "gender_male": "Male",
+    "gender_female": "Female",
+    "insurance_title": "Will you be providing insurance information for this visit?",
+    "insurance_radio_1": "Yes",
+    "insurance_radio_2": "No"
+  },
+  "as_echeckin_insurance_information": {
+    "title": "Now let's make sure your insurance is correct.",
+    "primary_insurance_holder": "Who is the primary insurance holder?",
+    "primary_insurance_holder_information": "What is the primary insurance holder's information?",
+    "primary_insurance_holder_address": "What is the primary insurance holder's address?"
+  },
+  "as_echeckin_confirmation": {
+    "title": "Thank you!",
+    "message": "Your registration is complete.",
+    "content1": "Want to get done faster next time?",
+    "content_Message": "We will save your information, including <br>insurance so you can skip these steps for<br> future visits."
+  },
+  "as_eorder_price_estimate": {
+    "title": "Here is your estimated out-of-pocket cost from Quest Diagnostics.",
+    "titlef441": "Here is your estimated out-of-pocket cost from Quest Diagnostics. This is not a bill.",
+    "title1": "We do not have all the information we need to determine your estimated out-of-pocket costs at this time.",
+    "title1f89": "We are unable to determine your estimated out-of-pocket costs at this time.",
+    "priceNotAvailable": "While we do not have the ability to give you an estimate, one will be provided to you at the time of your appointment. You may still proceed or to learn more click the link below.",
+    "priceNotAvailablef89": "While we do not have the ability to give you an estimate, one will be provided to you at the time of your appointment.",
+    "link": "How does this work?",
+    "content1": "This is not a bill. This is an <b>estimated</b> patient responsibility amount. You will receive an explanation of benefits (EOB) from your insurance company designating their paid amount and/or your <b>exact</b> patient responsibility amount.",
+    "content2": "Funds are not held on your account at time of service. Quest Diagnostics will only charge your credit card if an additional amount is due after your insurance company has processed your claim. The charge will not exceed the preauthorized amount indicated above. If the patient responsibility exceeds the preauthorized amount for this transaction, an invoice for the additional amount will be mailed to you.",
+    "content3": "Note: The estimated charges do not include charges for additional testing deemed necessary by your physician or required due to test results. If additional testing is required, you will receive an invoice reflecting these charges.",
+    "content4": "If you provided a valid email address, you will receive an email confirming the credit card charge.",
+    "content5": "Easy Pay™ is the simple way to arrange to pay for your portion of lab testing. You’ll authorize an amount, but we’ll only charge your card if there’s a remaining balance after we bill your insurance company. Money is not held, and we don’t charge you anything if your insurance company pays for the lab testing in full. If you have questions about your health coverage, please contact your insurance company.",
+    "content6": "This is an <b>estimated</b> patient responsibility amount, which includes your estimated deductible, copay, and coinsurance amount, but may not include amounts for non-covered testing. You will receive an explanation of benefits from your insurance company designating their paid amount and/or your exact patient responsibility amount.",
+    "skippaymentMessage": "Please bring your estimated payment with you to your visit. We accept all 4 major credit cards (Visa, MasterCard, Discover, and American Express), debit cards, checks, and money orders.",
+    "creditCardMessage": "Thank you for making a payment.",
+    "paymentErrorMessage": "An error occurred and we were unable to capture your payment information. Please bring your estimated payment with you to your visit."
+  },
+  "as_eorder_price_estimate_dialog": {
+    "title": "How does this work?",
+    "link": "Okay",
+    "message": "If you’re using insurance, we determine your estimated out-of-pocket cost based upon your insurance plan coverage. Common patient responsibilities include copays, deductibles, coinsurance, and any testing services not covered by your insurance plan.",
+    "message1": "If we didn’t ask you for insurance, the cost of this testing will be covered by your doctor."
+  },
+  "as_covid_antibody_dialog": {
+    "title": "Is your doctor sending you for this testing?",
+    "message_1": "Your doctor must have ordered your COVID-19 antibody testing or you must have purchased a test through QuestDirect. COVID-19 is highly contagious. If you are currently experiencing COVID-19 symptoms, you must first contact your doctor for next steps.",
+    "message_2": "We can only accept patients in our Patient Service Centers who have been confirmed to be COVID-19 symptoms-free for at least 10 days.",
+    "message_3": "Has your doctor already created a COVID-19 Antibody test order with Quest for you or have you already purchased an Antibody test online from Quest?",
+    "message_4": "You cannot purchase tests at Patient Service Centers.",
+    "button_text_1": "Yes, I have an existing order",
+    "button_text_2": "No, I need to purchase a test"
+  },
+  "as_order_expiry": {
+    "title": "The lab test order has expired",
+    "content1": "Lab orders are only valid for 365 days from the order date.",
+    "content2": "If you still need testing contact your Medical Professional to order new testing.",
+    "content3": "Thank you for choosing Quest."
+  },
+  "as_link_expiry": {
+    "title": "Sorry, this link has expired.",
+    "content1": "Thank you for choosing Quest Diagnostics."
+  },
+  "as_token_not_found": {
+    "content1": "We're sorry. A problem occurred on our end."
+  },
+  "as_eorder_expiry_scenarios": {
+    "userConfirmsTestToCompleted_title": "Thanks for confirming you have already <br>completed this testing.",
+    "userConfirmsTestToCompleted_line1": "With MyQuest™ you can have your results delivered directly to you when they are ready.",
+    "userConfirmsTestToCompleted_line2": "Don't have a MyQuest account?",
+    "orderTestAlreadyCompleted_title": "This lab test order has already been completed.",
+    "orderTestAlreadyCompleted_line1": "With MyQuest™  you can have your results delivered to you when they are ready.",
+    "orderTestAlreadyCompleted_line2": "Don't have a MyQuest account?",
+    "orderHasExpired_title": "This lab test order has expired.",
+    "orderHasExpired_line1": "Lab orders are only valid for 365 days from the order date.",
+    "orderHasExpired_line2": "If you still need this testing contact your Medical Professional to order new testing.",
+    "orderHasExpired_line3": "Thank you for choosing Quest Diagnostics.",
+    "orderNotFound_title": "Lab test order could not be found.",
+    "orderNotFound_line1": "Sorry, we are unable to find the lab test order you are trying to access.",
+    "orderNotFound_line2": "Thank you for choosing Quest Diagnostics.",
+    "alreadyAccessedFromAnotherAccount_title": "The link has already been accessed from another <br>email account.",
+    "alreadyAccessedFromAnotherAccount_line1": "Please re-access this link from the original email account.",
+    "emailUnsubscribe_title": "Unsubscribe Successful.",
+    "emailUnsubscribe_line1": "You have unsubscribed from all preregistration emails from Quest Diagnostics."
+  },
+  "as_eorder_summary": {
+    "costEstimate_paragraph1": "*This is not a bill. This is an <b>estimated</b> patient responsibility amount. You will receive an explanation of benefits(EOB) from your insurance company designating their paid amount and/or your <b>exact</b> patient responsibility amount.",
+    "costEstimate_paragraph2": "Funds are not held on your account at time of service. Quest Diagnostics will only charge your credit card if an additional amount is due after your insurance company has processed your claim.The charge will not exceed the preauthorized amount indicated above. If the patient responsibility exceeds the preauthorized amount for this transaction, an invoice for the additional amount will be mailed to you.",
+    "costEstimate_paragraph3": "Note: The estimated charges do not include charges for additional testing deemed necessary by your physician or required due to test results. If additional testing is required, you will receive an invoice reflecting these charges.",
+    "costEstimate_paragraph4": "If you provided a valid email address, you will receive an email confirming the credit card charge.",
+    "ins_not_found": "Our system can't find your provider; we're updating it regularly. Bring your insurance card and we'll get coverage figured out for you.",
+    "ins_not_found_primary": "Our system can't find your primary provider; we're updating it regularly. Bring your insurance card and we'll get coverage figured out for you."
+  },
+  "as_active_infection_symptoms": {
+    "title": "Please provide information about any symptoms or exposure"
+  },
+  "as_open_eorders": {
+    "title": "Quest has received an order for a lab test that you haven’t scheduled yet.",
+    "card_text": "Schedule for something else",
+    "last_option": "Schedule for something else",
+    "label": "Please select an option"
+  },
+  "as_home_new": {
+    "home_safety_line1": "<b>COVID-19 Safety Measures: Face masks are required</b> to enter a Quest Patient Service Center (PSC), even if you got the vaccine.",
+    "home_safety_line2": "You may not enter a PSC if you have experienced COVID-19 symptoms (such as fever, cough, shortness of breath, or a loss of smell and taste) in the last 10 days.",
+    "home_title": "Quickly find an appointment that's convenient for you.",
+    "home_desc": "Make an appointment now and you'll have little to no wait time when you arrive. Appointments take priority over walk-ins.",
+    "welcome_already": "an existing appointment.",
+    "welcome_image": "/assets/ds-images/AS_Reskin_Calendar_Graphic_1.png",
+    "find_view": "View",
+    "find_change": "change",
+    "find_cancel": "cancel",
+    "covid_image": "/assets/ds-images/ds-icon__coronavirus.svg",
+    "covid_title": "Featured test",
+    "covid_header": "Need a COVID-19 test?",
+    "covid_para1": "If you’re looking for a COVID-19 test, see if you are eligible for",
+    "covid_para1_link": "$0 out-of-pocket testing.",
+    "covid_para2": "If you already have a doctor’s order,",
+    "covid_para2_link": "schedule your appointment here.",
+    "covid_para3": "At-home kits and in-person collection tests are available for purchase at",
+    "covid_para3_link": "QuestDirectTest.com.",
+    "covid_para3_new": "Available for purchase at our online",
+    "covid_para3_link_new": "store."
+  },
+  "as_secondary_insurance_userinfo": {
+    "user_title": "What is the secondary insurance holder's information?"
+  },
+  "as_sec_ins": {
+    "ins_not_found": "Our system can't find your secondary provider; we're updating it regularly. Bring your insurance card and we'll get coverage figured out for you.",
+    "ins_not_provided_review_screen": "No insurance provided",
+    "ins_not_provided_summary_screen": "You have not provided insurance for your appointment.",
+    "primary_ins_not_found": "Our system can't find your provider; we're updating it regularly. Bring your insurance card and we'll get coverage figured out for you.",
+    "primary_ins_not_found_f88": "Our system can't find your primary provider; we're updating it regularly. Bring your insurance card and we'll get coverage figured out for you."
+  },
+  "as_psc_details": {
+    "wait_time_title1": "Live wait time is",
+    "wait_time_title2": "Current wait time is"
+  },
+  "as_cancelAppointment_success": {
+    "modal_close_label": "Close",
+    "cancel_appointment_header": "Appointment canceled",
+    "modal_content": "You have successfully canceled your appointment. If you would like to create a new appointment, click Schedule appointment.",
+    "schedule_appointment_button_label": "Schedule appointment"
+  },
+  "as_covid19_dialog": {
+    "message": "Has your doctor already created a COVID-19 test order with Quest for you?",
+    "message_1": "Has your doctor or health care provider already created a COVID-19 test order with Quest for you?",
+    "button_text_1": "No, help me get tested",
+    "button_text_2": "Yes, I have an existing order"
+  },
+  "as_covid19_details_dialog": {
+    "message_1": "Visit QuestCOVID19.com to see if you’re eligible for testing at no cost to you – no doctor visit required.",
+    "button_text": "Get started",
+    "message_2": "Also, at-home kits and in-person collection tests are available for purchase at ",
+    "message_3": "We offer supervised and unsupervised collection options for symptomatic and asymptomatic patients."
+  },
+  "as_covid19_new_details_dialog": {
+    "message_2": "View our complete collection of tests available for direct purchase at "
+  },
+  "as_covid19_confirm_dialog": {
+    "message": " Patients experiencing mild COVID-19 symptoms will be able to book an appointment at our Patient Service Centers.",
+    "message_1": "Patients experiencing severe symptoms will be able to book an appointment at drive-thru or curbside locations.",
+    "button_text": "Continue"
+  },
+  "as_electronic_dialog": {
+    "message": "Do you have an electronic order or a paper order from your doctor?",
+    "button_text_1": "I have an electronic order",
+    "button_text_2": "I have a paper order"
+  },
+  "as_paper_symptom_dialog": {
+    "message": "We are unable to see patients with severe symptoms in our Patient Service Centers. For more testing location options, please contact your doctor for an electronic order.",
+    "button_text_1": "I have an electronic order",
+    "button_text_2": "I have a paper order"
+  },
+  "as_electronic_symptom_dialog": {
+    "message": "To find the right location for your test, please tell us how you are feeling.",
+    "message_1": "Do you have severe symptoms, such as a high-grade fever of 102&#176; F that has lasted for more than 48 hours or severe and constant shortness of breath?",
+    "button_text_1": "I have severe symptoms",
+    "button_text_2": "I do not have severe symptoms"
+  },
+  "as_toolbar": {
+    "nav_item_1": "Schedule appointment",
+    "nav_item_2": "Find location",
+    "nav_item_3": "FAQ",
+    "nav_item_4": "Contact us",
+    "nav_item_5": "Sign in"
+  },
+  "as_input_labels": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "dob": "Date of birth",
+    "genderPref": "Gender identity",
+    "sexualOri": "Sexual orientation",
+    "gender": "Sex",
+    "phone": "Phone number",
+    "email": "Email",
+    "isMobileTxt": "Is this a mobile phone?",
+    "address1": "Address",
+    "address2": "Apt/Suite",
+    "city": "City",
+    "state": "State",
+    "zip": "Zip code",
+    "insuranceProvider": "Insurance Provider",
+    "memberId": "Member ID",
+    "relationship": "Relationship to You",
+    "race": "Race",
+    "ethnicity": "Ethnicity",
+    "date": "Date"
+  },
+  "as_open_balance_section": {
+    "title": "Open balances",
+    "title2": "Minimum payment to be serviced",
+    "btn_pay_now_title": "Pay now",
+    "btn_pay_at_title": "Pay at appointment",
+    "warning_title": "We noticed you have a past due balance for previous testing",
+    "warning_minidue_desc": "You will need to pay the minimum payment prior to being tested. You can pay the minimum payment now or provide payment at your upcoming appointment.",
+    "warning_totaldue_desc": "You can pay your total balance now or provide payment at your upcoming appointment.",
+    "warning_pastdue_desc": "You can pay your past due or total balance now or provide payment at your upcoming appointment.",
+    "total_balance": "Total balance",
+    "past_due_balance": "Past due balance",
+    "minimum_payment": "Minimum payment",
+    "anchor_billing_summary": "View billing summary details",
+    "invoice_text": "to pay specific invoices.",
+    "tooltip_minimum_balance": "The minimum amount you must pay prior to being serviced.",
+    "tooltip_past_due": "The amount due for bills that are older than 45-90 days.",
+    "tooltip_total_balance": "The total amount due for all previous testing."
+  },
+  "as_pay_at_appointment": {
+    "title": "Thanks! We will see you soon",
+    "message": "Please be prepared to provide the minimum payment at your appointment."
+  },
+  "as_ct_schedule_appointment_dialog": {
+    "title": "Are you scheduling this appointment for yourself?",
+    "message": "In order to sign up for clinical trial opportunities, we need a bit more information.",
+    "button_1": "No, for someone else",
+    "button_2": "Yes"
+  },
+  "as_ct_need_more_info_dialog": {
+    "title": "Sorry, you do not qualify at this time.",
+    "message": "Right now, we’re only allowing people who can sign a HIPAA authorization form to opt in to clinical trial opportunities. If you’re interested in signing up to hear more about clinical trial opportunities, ",
+    "link": "click here."
+  },
+  "as_clinical_trails": {
+    "title": "Clinical trial opportunities",
+    "message_1": "Email me information about clinical research trial opportunities from Quest or its affiliates and subsidiaries.",
+    "message_2": "Opting in will prompt you to review and accept a HIPAA Customer Agreement.",
+    "review_label": "HIPAA authorization signed",
+    "review_link": "Review"
+  },
+  "as_ct_hipaa_signin_dialog": {
+    "title": "HIPAA Authorization",
+    "banner_title": "Please review and sign this authorization to opt in.",
+    "banner_message": "About this authorization: This is a HIPAA authorization to collect, use and disclose your protected health information for research.",
+    "sub_title": "HIPAA Research Database Authorization",
+    "button_1": "Cancel",
+    "button_2": "Sign & Opt-in",
+    "button_3": "Close"
+  },
+  "as_gender_fields_dialog": {
+    "link_title": "Previous",
+    "button_title": "Continue",
+    "title": "Optional information",
+    "message": "Based on the state you have chosen for your appointment, the information below is requested (but not required) for public health reporting. The options you select provide information that helps address health disparities, identify gaps in care, and allocate resources more effectively."
+  }
+}

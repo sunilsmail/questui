@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="27px" viewBox="0 0 28 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ds-icon__star</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M14.765,1.434 L17.64,9.946 L26.623,10.05 C27.396,10.059 27.716,11.044 27.096,11.505 L19.889,16.869 L22.566,25.445 C22.796,26.183 21.959,26.791 21.328,26.344 L14,21.147 L6.671,26.343 C6.041,26.79 5.203,26.181 5.433,25.444 L8.11,16.868 L0.903,11.504 C0.283,11.043 0.603,10.058 1.376,10.049 L10.359,9.945 L13.234,1.433 C13.482,0.701 14.518,0.701 14.765,1.434 Z" id="ds-icon__star" fill="#232325" fill-rule="nonzero"></path>
+    </g>
+</svg>

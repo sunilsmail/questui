@@ -1,0 +1,31 @@
+<div class="ds-col--12 ds-flex --center-center no-pad add-to-cal-container" (keydown)="closeCalenderDialog($event)">
+  <div *ngIf="showDialog" class="ds-col--6 ds-flex --center-center no-pad add-to-cal-dialog">
+    <ul>
+      <li><a target="_blank" id="googleButton" name="googleButton" aria-label="Google open in a new tab or window" rel="noopener noreferrer" [download]="icsfileName" [href]="googleUri">Google</a></li>
+      <li><a target="_blank"  id="yahooButton" name="yahooButton" aria-label="Yahoo open in a new tab or window" rel="noopener noreferrer" [download]="icsfileName" [href]="yahooUri">Yahoo</a></li>
+      <ng-container *ngIf="isIE; else otherBrowser">
+        <li><a (click)="icsDownload()">Apple</a></li>
+        <li><a (click)="icsDownload()">Outlook</a></li>
+      </ng-container>
+      <ng-template #otherBrowser>
+        <li><a target="_blank" id="appleButton" name="appleButton" aria-label="Apple" rel="noopener noreferrer" [download]="icsfileName" [href]="icalUri">Apple</a></li>
+        <li><a target="_blank" id="outlookButton" name="outlookButton" aria-label="Outlook" rel="noopener noreferrer" [download]="icsfileName" [href]="outlookUri">Outlook</a></li>
+      </ng-template>
+    </ul>
+  </div>
+  <div class="ds-col--12 ds-flex no-pad calendar-button-width">
+    <ng-container *ngIf="buttonType==='green'; else blackButton">
+      <button [attr.aria-label]="AddToCalAriaLabel" role="button" class="ds-button --primary" (click)="openDialog($event)">
+        <label i18n >Add to calendar</label>
+      </button>
+    </ng-container>
+    <ng-template #blackButton>
+      <button (click)="openDialog($event)" aria-labelledby="calendar">
+        <span class="ds-flex icons">
+        <span class="ds-icon--calendar-add ds-green__700 ds-font--24" tabindex="-1" aria-hidden="true" aria-label="Add to calendar" role="img"></span>
+        <span class="ds-font--14--bold" id="calendar" aria-hidden="true" i18n aria-label="Add to calendar">Add to calendar</span>
+        </span>
+      </button>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="16px" viewBox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Style" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Typography---Layout---Mobile" transform="translate(-18.000000, -32.000000)">
+            <g id="Group-10" transform="translate(18.000000, 28.000000)">
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                <g id="ic-menu" transform="translate(0.000000, 4.000000)" fill="#149B5F" fill-rule="nonzero">
+                    <path d="M6,1 L6,1 C6,1.55228475 6.44771525,2 7,2 L23,2 C23.5522847,2 24,1.55228475 24,1 L24,1 C24,0.44771525 23.5522847,-1.01453063e-16 23,0 L7,0 C6.44771525,1.01453063e-16 6,0.44771525 6,1 Z M0,8 L0,8 C6.76353751e-17,8.55228475 0.44771525,9 1,9 L23,9 C23.5522847,9 24,8.55228475 24,8 L24,8 C24,7.44771525 23.5522847,7 23,7 L1,7 C0.44771525,7 -6.76353751e-17,7.44771525 0,8 Z M6,15 L6,15 C6,15.5522847 6.44771525,16 7,16 L23,16 C23.5522847,16 24,15.5522847 24,15 L24,15 C24,14.4477153 23.5522847,14 23,14 L7,14 C6.44771525,14 6,14.4477153 6,15 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

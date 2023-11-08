@@ -1,0 +1,147 @@
+<main class="ds-body as-confirmation">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 no-pad" id="skip-to-main" tabindex="-1">
+      <div class="ds-content-block--52 ds-grid ds-flex --center-center ds-flex--column">
+        <div class="padding-bottom-4">
+          <span class="ds-icon--check ds-green__700 ds-font--32 ds-green__050--bg" aria-label=""></span>
+        </div>
+        <h2 class="ds-col--6 ds-green__700 ds-flex --center-center onFocus no-pad title"
+          [attr.aria-label]="[content.as_confirmation.title]" aria-level="1" tabindex="0" role="heading">
+          {{content.as_confirmation.title}}</h2>
+
+        <div class="ds-content-block--32  ds-col--6 ds-font--16 ds-flex --center-center onFocus  no-pad"
+          [attr.aria-label]="[message]" tabindex="0" role="complementary">
+          {{message}}
+        </div>
+        <div class="ds-content-block--32  ds-col--6 ds-flex --center-center onFocus no-pad">
+          <as-open-balance-section></as-open-balance-section>
+        </div>
+        <!-- <br> -->
+        <div class="ds-content-block--32  ds-col--6 ds-flex --center-center onFocus">
+          <div class="ds-col--12 ds-card ds-white--bg open-balance">
+            <div class="--row">
+              <h3 class="ds-green__700 title-text">Appointment details</h3>
+              <hr>
+            </div>
+            <div class="ds-content-block--32 ds-col--12 ds-green__050--bg confCode mint-bg">
+              <div class="ds-col--12 ds-font--18--bold pad-12 ds-flex --center-center onFocus no-pad"
+                [attr.aria-label]="[content.as_confirmation.confirmation_code]" role="text" tabindex="0">
+                {{content.as_confirmation.confirmation_code}}</div>
+              <h3 class="ds-col--12 ds-green__700 ds-flex --center-center onFocus no-pad" role="heading" aria-level="2"
+                *ngIf="confirmationCode" [attr.aria-label]="[confirmationCode]" tabindex="0">{{confirmationCode}}</h3>
+            </div>
+
+            <div class="ds-flex --row">
+              <div class="ds-col--12 --gray__200 no-pad">
+                <p role="heading" aria-level="1" class="ds-flex onFocus estimated-cost"
+                  [attr.aria-label]="[content.as_confirmation.title]" tabindex="0">
+                  Estimated cost
+                </p>
+                <div class="ds-flex --row" *ngIf="estimatedCost === null">
+                  <div tabindex="0" class="ds-font--14 onFocus">Unable to provide estimate at this time but an
+                    estimate will be provided at your visit.</div>
+                </div>
+                <div class="ds-flex --row pad-bottom" *ngIf="estimatedCost !== null"
+                  [ngClass]="{'padding-cc' : (isCCNotLoaded$ | async) && (easypayEnhancement$ | async)}">
+                  <div class="ds-col--12 ds-font--14 no-pad">
+                    <div class="ds-font--14--bold onFocus" [attr.aria-label]="[estimatedCost]" role="complementary"
+                      tabindex="0">
+                      {{estimatedCost | currency}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ds-flex --row" *ngIf="(easypayEnhancementF411$ | async) && (skippaymentSelection$ | async)"
+                  id="skippayment_message no-pad">
+                  <div class="ds-col--11 ds-font--14 container-width no-pad">
+                    <div class="ds-font--14 onFocus" tabindex="0"
+                      [attr.aria-label]="[content.as_confirmation.cc_not_available_message]" role="complementary">
+                      {{content.as_confirmation.cc_not_available_message}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ds-flex --row"
+                  *ngIf="(easypayEnhancement$ | async) && (isCCNotLoaded$ | async) && (estimatedCost !== null)"
+                  id="cc_not_available_message">
+                  <div class="ds-col--11 ds-font--14 container-width">
+                    <div tabindex="0" class="ds-font--14 onFocus"
+                      [attr.aria-label]="[content.as_confirmation.cc_not_available_message]" role="complementary">
+                      {{content.as_confirmation.cc_not_available_message}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ds-flex --row margin-bottom-32">
+              <div class="ds-col--12 --gray__200 no-pad">
+                <div class="" aria-label="Location, date, and time" tabindex="0" role="text">
+                  <p role="heading" aria-level="1" class="ds-flex onFocus location-details"
+                    [attr.aria-label]="[content.as_confirmation.title]" tabindex="0">
+                    Location, date, and time
+                  </p>
+                </div>
+                <div class="ds-flex --row" role="region">
+                  <div class="ds-col--11 ds-font--14 margin-bottom-12 no-pad">
+                    <div class="ds-flex gap">
+                      <span class="ds-icon--address ds-font--24 ds-green__700"></span>
+                      <section>
+                        <div class="ds-font--14--bold onFocus" role="text" [attr.aria-label]="[appointmentData.name]"
+                          tabindex="0">
+                          {{appointmentData.name}}
+                        </div>
+                        <div class="onFocus" [attr.aria-label]="[appointmentData.address1]" tabindex="0" role="text">
+                          {{appointmentData.address1}}
+                        </div>
+                        <div class="onFocus" *ngIf="appointmentData.address2"
+                          [attr.aria-label]="[appointmentData.address2]" role="text" tabindex="0">
+                          {{appointmentData.address2}}
+                        </div>
+                        <div class="onFocus"
+                          [attr.aria-label]="[appointmentData.city,appointmentData.state,appointmentData.zip]"
+                          tabindex="0" role="text">
+                          {{appointmentData.city}}, {{appointmentData.state}} {{appointmentData.zip}}
+                        </div>
+                      </section>
+                    </div>
+
+                  </div>
+                  <div class="ds-col--1 no-pad onFocus"><span tabindex="0" role="button" aria-label="Go to direction"
+                      class="ds-icon--route ds-font--24 onFocus ds-green__700" (click)="openDirection()"></span></div>
+                </div>
+                <div class="ds-flex --row">
+                  <div class="ds-col--12 ds-flex --start-center gap margin-bottom-12 no-pad">
+                    <span class="ds-icon--calendar ds-font--24 ds-green__700"></span>
+                    <div class="onFocus ds-font--14--bold" role="text"
+                      [attr.aria-label]="[formatedDate | date:'longDate']" tabindex="0">{{formatedDate |
+                      date:'longDate'}}
+                    </div>
+                  </div>
+                </div>
+                <div class="ds-flex --row">
+                  <div class="ds-col--12 ds-flex --start-center gap no-pad">
+                    <span class="ds-icon--clock ds-font--24 ds-green__700"></span>
+                    <div class="onFocus ds-font--14--bold"
+                      [attr.aria-label]="[appointmentData.appointmentTime | twelveHourTime]" role="text" tabindex="0">
+                      {{appointmentData.appointmentTime | twelveHourTime}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="actions ds-flex --row button-container">
+              <div class="ds-col-6">
+                <button class="ds-button --secondary" (click)="printConfirmation()">
+                  Print Details
+                </button>
+              </div>
+              <div class="ds-col-6" *ngIf="calendarData">
+                  <as-add-to-calendar [inputEvent]="calendarData" [buttonType]="'green'"></as-add-to-calendar>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<as-confirmation-print [inputEvent]="printData"></as-confirmation-print>

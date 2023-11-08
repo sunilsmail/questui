@@ -1,0 +1,109 @@
+@import '../../../../../styles.scss';
+
+.ck-footer1 {
+  position:absolute;
+  bottom: 0;
+  left: 0%;
+  width: 643px;
+  height: 48px;
+  background: #35792A;
+  border-radius: 4px 4px 0px 0px;
+  border-top: #35792A;
+  z-index: 9;
+  @include when-less-than(ds-1024) {
+    padding: 0 16px;
+    position: absolute;
+    width: 375px;
+    height: 48px;
+    left: calc(50% - 375px/2);
+    bottom: 0px;
+    background: #35792A;
+  }
+
+  &__ready {
+    @include when-wider-than(ds-640){
+      margin-top: 20px;
+    }
+
+    & .interested-more {
+      position: absolute;
+      width: 480px;
+      height: 14px;
+      left: 15px;
+      bottom: 8px;
+      // font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      color: #FFFFFF;
+      @include when-less-than(ds-1024) {
+        position: static;
+        width: 300px;
+        height: 32px;
+        left: calc(50% - 313px/2 - 19px);
+        bottom: 8px;
+        font-size: 12px;
+        line-height: 16px;
+        color: #FFFFFF;
+        }
+    }
+
+    & .btn_learn_more {
+      position: absolute;
+      width: 90px;
+      height: 14px;
+      left: 510px;
+      bottom: 30px;
+      padding-top:5px;
+      // font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      /* identical to box height */
+      text-decoration: underline;
+      color: #FFFFFF;
+      margin-top:2px;
+      @include when-less-than(ds-640) {
+        width:auto;
+        display: none;
+      }
+    }
+    & .btn_arraow_learn_more {
+      position: absolute;
+      left: 562px;
+      // font-family: Roboto, sans-serif;
+      font-style: normal;
+      color: #FFFFFF;
+      bottom: -2px;
+      @include when-less-than(ds-1024) {
+        width: auto;
+        left: 290px;
+        top: -4px;
+      }
+    }
+
+    & .card-button-icon {
+      font-size: 15px;
+      line-height: 1;
+      display: contents;
+      vertical-align: middle;
+    }
+
+
+    & .arrow_icon_keyboard{
+      line-height: 1;
+      display: contents;
+      vertical-align: middle;
+    }
+
+    }
+    & .closeButton {
+      border: none;
+      height: 18px;
+      width: 18px;
+      border-radius: 0px;
+    }
+
+}

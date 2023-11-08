@@ -1,0 +1,59 @@
+@import '../../../../../appointment/styles.scss';
+
+.as-psc-time-slot{
+  //to fix the issue: DE20872
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: inline !important;
+  }
+  .ds-grid--12{
+    position: inherit;
+    width: 100%;
+    [class*="ds-col"]{
+      width: 12.5%;
+      // padding: 0 16px 16px 0;
+
+      button{
+        margin-top: 0;
+      }
+      &:nth-of-type(17){
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  div{
+
+    button{
+      border: 0;
+      background: none;
+      // margin-top: 24px;
+      line-height: inherit;
+    }
+
+    [class*="ds-icon"]{
+      margin-right: 16px;
+      margin-left: 8px;
+    }
+  }
+
+  @include when-less-than(ds-640){
+
+    .ds-grid--12{
+      [class*="ds-col"]{
+        width: 25%;
+        padding: 0 8px 0 0;
+
+        button{
+
+          &.pad{
+            padding-bottom: 16px;
+          }
+        }
+        
+        &:nth-of-type(17){
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

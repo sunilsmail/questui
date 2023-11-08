@@ -1,0 +1,101 @@
+<div class="ds-grid--12 as-nav-sidebar">
+	<div class="ds-col--12">
+		<div class="ds-flex --row  ds-form__col--2">
+			<div></div>
+			<div class="ds-col--12 no-pad">
+				<div class="ds-col--12 ds-font--18 --700 ds-flex --row no-pad ds-green__700" id="title">
+					<div role="heading" aria-level="3" class="ds-col--12 ds-font--18 --700 no-pad onFoucs ds-green__700" role="complementary" i18 [attr.aria-label]="content.as_eorder_details.title"
+            tabindex="0">
+            {{content.as_eorder_details.title}}</div>
+				</div>
+				<hr class="green">
+				<div class="ds-col--12 ds-progress-stepper --vertical no-pad">
+					<div class="ds-step" [ngClass]="{'completed': personalInformation && step!==1,'current':step===1}">
+						<span class="ds-flex --start-center">
+							<span class="--dash"></span>
+							<span class="--dot">1</span>
+							<span class="--dash"></span>
+						</span>
+						<label>
+							<div class="ds-font--16 --400  ds-col--12 no-pad ds-flex">
+								<div class="ds-col--10 no-pad onFoucs" role="button" [ngClass]="{'option-disabed':!personalInformation, 'ds-font--16 --700': step===1}" i18n
+                  aria-label="Your information" [tabindex]="!personalInformation? -1: 0" [attr.aria-disabled]="!personalInformation"
+                  (click)="navigate('/eorder/as-eorder-personal-information')"> Your Information
+                </div>
+				<span  (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert" class="visually-hidden">{{getNavigationState(step, personalInformation,'Your Information')}}</span>
+							</div>
+						</label>
+					</div>
+					<div class="ds-step" *ngIf="isAlternateFlow"
+            [ngClass]="{'completed': reasonData && step!==2,'current':step===2}">
+						<span class="ds-flex --start-center">
+							<span class="--dash"></span>
+							<span class="--dot">2</span>
+							<span class="--dash"></span>
+						</span>
+						<label>
+							<div class="ds-font--16 --400  ds-col--12 no-pad ds-flex">
+								<div class="ds-col--10 no-pad onFoucs"role="button" [attr.aria-disabled]="!reasonData" [ngClass]="{'option-disabed':!reasonData}" i18n
+                  aria-label="Reason For Visit" [tabindex]="!reasonData? -1: 0" (click)="navigate('/eorder/as-eorder-reason-for-visit')">
+                  Reason For Visit
+                </div>
+				<span (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert" class="visually-hidden">{{getNavigationState(2, reasonData,'Reason for Visit')}}</span>
+							</div>
+						</label>
+					</div>
+					<div class="ds-step"
+            [ngClass]="{'completed': (!isAlternateFlow&&appointmentData&&step!==2 || isAlternateFlow&&appointmentData&&step!==3),'current':(isAlternateFlow&&step===3 || !isAlternateFlow&&step===2)}">
+						<span class="ds-flex --start-center">
+							<span class="--dash"></span>
+							<span class="--dot">{{isAlternateFlow ? 3: 2}}</span>
+							<span class="--dash"></span>
+						</span>
+						<label>
+							<div class="ds-font--16 --400  ds-col--12 no-pad ds-flex">
+								<div class="ds-col--12 no-pad onFoucs" role="button" [ngClass]="{'option-disabed':!appointmentData, 'ds-font--16 --700': step===2}" i18n
+                  aria-label="Location, date, and time" [tabindex]="!appointmentData? -1: 0" [attr.aria-disabled]="!appointmentData"
+                  (click)="navigate('/eorder/as-eorder-appt-scheduler')">Location,
+                  date, and time
+                </div>
+				<span (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert" class="visually-hidden">{{getNavigationState(isAlternateFlow ? 3: 2, appointmentData,'Location, Date, and Time')}}</span>
+							</div>
+						</label>
+					</div>
+					<div class="ds-step"
+            [ngClass]="{'completed': (!isAlternateFlow&&insuranceInformation&&step!==3 || isAlternateFlow&&insuranceInformation&&step!==4),'current':(!isAlternateFlow&&step===3 || isAlternateFlow&&step===4)}">
+						<span class="ds-flex --start-center">
+							<span class="--dash"></span>
+							<span class="--dot">{{isAlternateFlow ? 4: 3}}</span>
+							<span class="--dash"></span>
+						</span>
+						<label>
+							<div class="ds-font--16 --400  ds-col--12 no-pad ds-flex">
+								<div class="ds-col--10 no-pad onFoucs" role="button" [ngClass]="{'option-disabed':!insuranceInformation, 'ds-font--16 --700': step===3}" i18n
+                  tabindex="0" aria-label="Insurance information" [tabindex]="!insuranceInformation? -1: 0" [attr.aria-disabled]="!insuranceInformation"
+                  (click)="navigate('/eorder/as-eorder-insurance-information')">Insurance
+                </div>
+				<span (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert" class="visually-hidden">{{getNavigationState(isAlternateFlow ? 4: 3, insuranceInformation,'Insurance')}}</span>
+							</div>
+						</label>
+					</div>
+					<div class="ds-step"
+            [ngClass]="{'completed': (!isAlternateFlow&&price&&step!==4|| isAlternateFlow&&price&&step!==5),'current':(!isAlternateFlow&&step===4 || isAlternateFlow&&step===5)}">
+						<span class="ds-flex --start-center">
+							<span class="--dash"></span>
+							<span class="--dot">{{isAlternateFlow ? 5: 4}}</span>
+							<span class="--dash"></span>
+						</span>
+						<label>
+							<div class="ds-font--16 --400  ds-col--12 no-pad ds-flex">
+								<div class="ds-col--10 no-pad onFoucs" role="button" [ngClass]="{'option-disabed':!price, 'ds-font--16 --700': step===4}" i18n tabindex="0" [tabindex]="!price? -1: 0" [attr.aria-disabled]="!price"
+                  aria-label="Price Estimate" (click)="navigate('/eorder/as-eorder-price-estimate')">Cost Estimate
+                </div>
+				<span (keyup)="onKeyPress($event)" (blur)="onBlur($event)" role="alert" class="visually-hidden">{{getNavigationState(isAlternateFlow ? 5: 4, price,'Cost Estimate')}}</span>
+							</div>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

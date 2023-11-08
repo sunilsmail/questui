@@ -1,0 +1,51 @@
+<main class="ds-body as-lcn-scheduler">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12">
+      <div class="ds-flex --row  ds-form__col--2">
+        <div class="ds-col--9">
+          <div id="as_find_scheduler" [ngClass]="{'as_find_scheduler_height': (enableNewUI$ | async)}">
+            <button class="ds-icon--arrow-back ds-font--24 ds-green__700" aria-label="back" title="back"
+              (click)="goToPrevious()" tabindex="0"></button>
+            <div>
+              <h2 role="heading" aria-level="1" class="ds-font--20--bold" i18n>{{content.as_find_a_location.title}}</h2>
+            </div>
+            <as-datepicker-calendar [existingAppt]="existingAppt" (dateChanged)="onDateChanged($event)"></as-datepicker-calendar>
+          </div>
+          <as-loading-container [asLoadingData]="pscs$" asSpinnerSize="medium" asNoDataMessage="{{content?.as_find_a_location?.noslots}}"
+            i18n-asNoDataMessage asLoadErrorMessage="{{content?.as_find_a_location?.noslots}}" i18n-asLoadErrorMessage
+            [loadingMore]="loading$">
+            <ng-template let-pscs #pscs>
+              <ul aria-label="Time slots available for selected location">
+                <li *ngFor="let psc of [pscs] | slice:0:showLocations; let index = index">
+                  <ng-container *ngIf="(schedulerMaintenance$ | async); else withoutschedulerMaintenance">
+                    <as-psc-details-new [dataQuery]="dataQuery" [filterSlots] ="filterSlots" [psc]="psc" [showMapIcon]="true" [selectedDate]="selectedDate" [existingAppt]="existingAppt" [psc]="psc" [isFindLocationFlow]="true"
+                    (enableContinue)="enableContinueButton($event)" (newAppt)="newAppt($event,index)"
+                     [active]="{active:selectedIndex === index,index:index}" [showCloserMessage]="true">
+                  </as-psc-details-new>
+                  </ng-container>
+                  <ng-template #withoutschedulerMaintenance>
+                    <as-psc-details-new [dataQuery]="dataQuery" [filterSlots] ="filterSlots" [showMapIcon]="false" [selectedDate]="selectedDate" [existingAppt]="existingAppt" [psc]="psc" [isFindLocationFlow]="true"
+                      (enableContinue)="enableContinueButton($event)" (newAppt)="newAppt($event,index)" [active]="{active:selectedIndex === index,index:index}">
+                    </as-psc-details-new>
+                  </ng-template>
+
+                  <mat-divider></mat-divider>
+                </li>
+              </ul>
+
+            </ng-template>
+          </as-loading-container>
+          <p class="ds-font--16--bold" i18n>Did not find a time that works for you? <a role="link" aria-label="Did not find a time that works for you? See additional locations and times" tabindex="0"
+             (click)="navigateToLocations()"><u>See additional locations and times</u></a>
+          </p>
+
+        </div>
+        <div class="ds-col--3">
+          <as-navigation-sidebar [step]="2"></as-navigation-sidebar>
+          <as-footer [previous]="previousUrl" [reqParams]="reqParams" [enableContinue]="enableContinue"
+            (continue)='onContinue()'></as-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

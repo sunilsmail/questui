@@ -1,0 +1,143 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+  :focus {
+      border: 2px solid $ds-green__500;
+  }
+
+  &.as-echeckin-confirmation{
+    .ds-icon--check {
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 10px;
+      border: 5px solid $ds-green;
+    }
+    .data {
+        text-align: center;
+        margin-top: 15px! important;
+        list-style: break 10px;
+        word-spacing: normal;
+    .data_display1 {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0px !important;
+    }
+    .data_display2 {
+        line-height: 150%;
+        margin-top: 10px;
+        margin-bottom: 24px;
+        @include when-less-than(ds-768){
+          margin-top: 0px !important;
+        }
+        @media only screen and (min-width: 992px) {
+            br {
+                display: none;
+            }
+        }
+    }
+    }
+    .button_Continue {
+        button {
+          margin: 0 auto;
+        }
+    @media only screen and (max-width: 600px) {
+        position: fixed;
+        left: 20%;
+        width: 60%;
+    }
+    }
+    .ds-body--content{
+      width: 100%;
+      padding: 200px 326px 0px 326px;
+
+      .ds-col--12{
+
+        .ds-flex--column{
+
+            .ds-col--12{
+
+                img{
+                    height: auto;
+                    width: 50%;
+                }
+            }
+
+            .ds-col--6{
+
+                > div{
+                    &:nth-of-type(2){
+                        padding-right: 0;
+                    }
+                }
+            }
+
+            [class*="ds-col"]{
+
+                [class*="ds-icon--route"]{
+                    cursor: pointer;
+                }
+            }
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024){
+
+        .ds-body--content{
+          width: 100%;
+          padding: 400px 0 0 0 !important;
+
+          .ds-col--12{
+
+              .ds-flex--column{
+
+                  .ds-col--5{
+                      width: 50%;
+                  }
+
+                  .ds-col--6{
+                      flex-direction: column;
+                      padding: 0;
+
+                      div{
+                          padding-right: 0;
+                          width: 100%;
+
+                          .ds-button__secondary{
+                              width: 100%;
+                          }
+                      }
+                  }
+              }
+          }
+        }
+      }
+
+      @include when-less-than(ds-768){
+        padding-top: 64px;
+
+        .ds-body--content{
+          width: 100%;
+          padding: 200px 0 0 0 !important;
+
+          .ds-col--12{
+
+              .ds-content-block--52{
+
+                .ds-col--12{
+                    img{
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+
+                  .ds-col--5, .ds-col--6{
+                      width: 100%;
+                  }
+              }
+          }
+        }
+      }
+  }
+}
+

@@ -1,0 +1,29 @@
+<div class="clinical-trails-schedule-appointment">
+    <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+        <button class="ds-icon--close ds-font--24 ds-green__900" id="schedule-appointment-close-button" (click)="closeDialog()"
+          aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+      </div>
+
+      <mat-dialog-content class="ds-col--12 no-pad">
+        <div class="ds-modal__content ds-col--12 ds-flex --column --center-start no-pad">
+          <h2 id="mat-dialog-title" aria-level="1" aria-label="Are you scheduling this appointment for yourself">{{content.as_ct_schedule_appointment_dialog.title}}</h2>
+          <span class="ds-body--base" i18n>{{content.as_ct_schedule_appointment_dialog.message}}</span>
+        </div>
+      </mat-dialog-content>
+
+      <mat-dialog-actions class="ds-col--12">
+        <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+          <div class="ds-col--6 ds-flex --start-center">
+            <button class="ds-button --secondary" (click)="goToNext(dialogOptions.no)">
+              <label>{{content.as_ct_schedule_appointment_dialog.button_1}}</label>
+            </button>
+          </div>
+          <div class="ds-col--6 ds-flex --start-center">
+            <button class="ds-button --secondary" (click)="goToNext(dialogOptions.yes)">
+              <label>{{content.as_ct_schedule_appointment_dialog.button_2}}</label>
+            </button>
+          </div>
+        </div>
+      </mat-dialog-actions>
+
+</div>

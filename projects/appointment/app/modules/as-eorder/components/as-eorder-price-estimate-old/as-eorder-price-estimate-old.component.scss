@@ -1,0 +1,417 @@
+@import '../../../../../styles.scss';
+
+// .ds-body{
+
+.as-eorder-price {
+  padding-top: 144px;
+  &__content {
+    margin-top: 20px;
+    padding-right: 40px;
+    p {
+      // font-family: Roboto;
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  &__anchorTag {
+    text-decoration: underline;
+    cursor: pointer;
+    line-height: 1.43;
+  }
+  &__While-we-do-not-have {
+    cursor: pointer;
+    line-height: 24px;
+    font-size: 15px;
+    @include when-less-than(ds-1024) {
+      text-align: center;
+      margin: 10px;
+    }
+  }
+  h2 {
+    // font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  .estimated-price {
+    .price {
+      // font-family: Roboto;
+      font-size: 72px;
+      font-weight: 500;
+      line-height: 0.56;
+      letter-spacing: normal;
+      margin-top: 42px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .ds-body--content {
+    width: 100%;
+
+    .ds-col--12 {
+      .ds-flex.--row {
+        > .ds-col--8 {
+          > div {
+            &:first-of-type {
+              place-content: start;
+              justify-content: start;
+              position: sticky;
+              top: -90px;
+              background: $ds-gray__100;
+              margin-bottom: 90px;
+            }
+          }
+
+          .ds-grid--12 {
+            form {
+              [class*='icon--info'] {
+                display: flex;
+                align-items: center;
+                line-height: 1;
+              }
+            }
+          }
+        }
+
+        > .ds-col--4 {
+          margin-left: 16px;
+          position: sticky;
+          top: 144px;
+          height: 700px;
+        }
+      }
+    }
+  }
+  @include when-less-than(ds-1024) {
+    padding-top: 84px;
+    &__content {
+      padding: 0 20px;
+    }
+    .estimated-price {
+      padding: 35px 0;
+      margin: 0 -20px;
+      background-color: $ds-white;
+      > div {
+        text-align: center;
+      }
+      .price {
+        font-size: 60px;
+        line-height: 0.67;
+        margin-top: 8px;
+      }
+    }
+
+    .ds-body--content {
+      width: 100%;
+
+      .ds-col--12 {
+        .ds-flex.--row {
+          .ds-col--10 {
+            width: 100%;
+          }
+
+          .ds-col--4 {
+            display: block !important;
+            width: 0;
+            padding: 0;
+            margin: 0;
+
+            > div {
+              display: none;
+            }
+          }
+
+          .ds-col--9 {
+            width: 100%;
+          }
+        }
+
+        .ds-pagination--footer {
+          &.ds-col--10 {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  @include when-less-than(ds-768) {
+    h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 25px;
+    }
+    &__content {
+      padding: 0;
+      padding-bottom: 24px;
+    }
+    .ds-body--content {
+      width: 100%;
+
+      > .ds-col--12 {
+        padding: 0;
+        > .ds-flex.--row {
+          > .ds-col--8 {
+            width: 100%;
+            margin-bottom: 90px;
+            padding: 0;
+
+            [class*='ds-col'] {
+              width: 100%;
+              padding-right: 0;
+            }
+
+            form {
+              [class*='ds-col'] {
+                .ds-input {
+                  width: 100%;
+                  padding-right: 0;
+                }
+              }
+
+              [class*='ds-col--3'] {
+                width: 50%;
+                padding-right: 16px;
+              }
+            }
+          }
+        }
+
+        .ds-pagination--footer {
+          width: 100%;
+
+          &.ds-col--8 {
+            width: 100%;
+
+            .ds-col--12 {
+              padding: 0;
+
+              .ds-col--6 {
+                width: 100%;
+                padding: 0;
+
+                button {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      as-footer {
+        background: $ds-gray__100;
+        width: 100%;
+        position: fixed;
+        bottom: 60px;
+      }
+    }
+  }
+
+  @include when-less-than(ds-640) {
+    .ds-body--content {
+      as-footer {
+        bottom: 78px;
+      }
+    }
+  }
+}
+// }
+
+sup {
+  font-size: 8px;
+  font-weight: normal;
+}
+
+.errorMessage {
+  border-radius: 4px;
+  background-color: #f3e0e0;
+  padding: 16px;
+  font-size: 12px;
+  color: #424245;
+  margin-bottom: 20px;
+  span {
+    padding-left: 12px;
+  }
+}
+
+.labCardLink {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.as-eorder-price-estimate__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+
+.as-eorder-price-estimate__overlay_no_bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  // background: rgba(255, 255, 255, 0.5);
+  background: #f7f7f9;
+  z-index: 3;
+}
+
+.ds-billing .ds-option-card[class*="--active"][class*="--creditCard"] {
+  height: 450px !important;
+  max-height: 450px!important
+}
+
+
+.ds-billing .ds-option-card[class*="--bankAccount"] [class*="--content"],.ds-billing .ds-option-card[class*="--creditCard"] [class*="--content"] {
+  @include when-less-than(ds-768) {
+    padding: 0px;
+  }
+}
+
+
+/*iframe styles*/
+
+[class*="--creditCard"]{
+
+  > [class*="--row"]{
+    z-index: 3;
+  }
+
+  [class*="--content"]{
+    position: relative;
+    height: 100%;
+
+    #payment-card{
+      position: absolute;
+      top: -68px;
+      right: 0;
+      bottom: 0;
+      left: -8px;
+      z-index: 0;
+      @include when-less-than(ds-768)  {
+        left: -1px;
+      }
+    }
+  }
+
+  [class*="--option"]{
+    background: linear-gradient(90deg, transparent 97%, #fff 3%);
+    @include when-less-than(ds-768){
+      background: linear-gradient(90deg, transparent 96%, #fff 4%);
+    }
+    @media only screen and (max-width: 585px){
+      background: linear-gradient(90deg, transparent 94%, #fff 6%);
+    }
+    @include when-less-than(ds-480){
+      background: linear-gradient(90deg, transparent 94%, #fff 6%);
+    }
+    @media only screen and (max-width: 405px){
+      background: linear-gradient(90deg, transparent 93%, #fff 7%);
+    }
+    @media only screen and (max-width: 350px){
+      background: linear-gradient(90deg, transparent 92%, #fff 8%);
+    }
+  }
+
+  &[class*="--active"]{
+
+    [class*="--option"]{
+      background: linear-gradient(90deg, transparent 96%, transparent 3%);
+    }
+  }
+}
+
+
+@include when-less-than(ds-768)  {
+
+  .ds-billing .ds-option-card[class*="--active"][class*="--creditCard"]{
+    height: 800px !important;
+    max-height: 800px!important;
+
+    [class*="--option"]{
+      background: none;
+    }
+  }
+
+  [class*="--creditCard"]{
+
+    &[class*="--active"]{
+
+      #payment-card{
+        height: 810px;
+      }
+    }
+  }
+}
+
+@include when-less-than(ds-640){
+  #payment-card{
+    top: -100px !important;
+  }
+}
+
+@media only screen and (max-width: 821px) {
+  [class*="--creditCard"]{
+
+    &[--active]{
+
+      min-height: 900px!important;
+
+      #payment-card{
+        height: 810px;
+      }
+    }
+  }
+}
+
+
+
+.ds-input__error{
+  color: #e01a00;
+  display: block;
+  height: 20px;
+  margin-top: 4px;
+}
+
+
+.ds-input.--error .ds-input__label {
+  color: #e01a00;
+}
+.--error1{
+  border-color: red !important;
+}
+
+
+.hide_Easypay{
+  visibility: hidden;
+}
+.ds-billing {
+   padding-bottom: 10px !important;
+}
+
+
+
+.ds-input__radio [type=radio]:checked+label,.ds-input__radio [type=radio]:not(:checked)+label {
+  @include when-less-than(ds-768)  {
+    padding-left: 22px;
+    line-height: 22px;
+  }
+}
+
+.Legal-disclaimer{
+  &__content {
+    padding-top: 8px;
+    p {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}

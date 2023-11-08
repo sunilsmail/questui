@@ -1,0 +1,31 @@
+<div class="session--dialog">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button *ngIf="!data.logout" class="ds-icon--close ds-font--24 ds-green__900" aria-label="close" mat-dialog-close></button>
+    <button *ngIf="data.logout" (click)="redirectToHome()" class="ds-icon--close ds-font--24 ds-green__900" mat-dialog-close
+      aria-label="close" i18n-aria-label id="">
+    </button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" [attr.aria-label]="[data.header]"> <span class="ds-icon--alert ds-yellow__700 margin-right-8"></span>
+        {{data.header}}
+      </h2>
+      <span class="ds-body--base ds-gray__900">{{data.message}}</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+
+      <div class="ds-col--12 ds-flex --end-center">
+        <button *ngIf="!data.logout" class="ds-button --primary --medium" mat-dialog-close>
+          <label>I'm still here</label>
+        </button>
+        <button *ngIf="data.logout" (click)="redirectToHome()" class="ds-button --primary --medium" aria-label="Home">
+          <label>Home</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

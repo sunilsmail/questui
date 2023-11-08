@@ -1,0 +1,17 @@
+<div id="botContainer" class="bot-container d-none" tabindex="0" style="position: absolute;"></div>
+
+<!-- <div id="genChatbot" class="drag-chatbot" mqDragChatBot > -->
+<div id="genChatbot" >
+    <div id="chatBtn" (keyup.enter)="onEnterPressed()" role="complementary" aria-label="Quest chat" class="tooltip chat-btn"
+        onClick="startConversation()" *ngIf="chatbotconfig=='true'" >
+    <!-- <div id="chatBtn" (keyup.enter)="onEnterPressed()" role="button" aria-label="Quest chat" class="tooltip chat-btn"
+        onClick="startConversation()" *ngIf="chatbotconfig=='true'" mqDragChatBot> -->
+        <span class="tooltiptext tooltip-left" tabindex="-1" id="chat_tooltip_text">Hey there! I'm Quest Chat, let's talk</span>
+        <button class="chat-icon" tabindex="0" aria-label="Quest chat" role="button"></button>
+    </div>
+</div>
+<input type="hidden" id="hostPageName" value="AppointmentScheduler" />
+
+<script>
+    console.log("check for avail:::" + checkForBotAvailablity());
+</script>

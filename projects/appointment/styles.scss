@@ -1,0 +1,420 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './ds-styles/styles.component';
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+//@import "~@angular/material/theming";
+
+$as-mobile-dialog-height: 97px;
+
+html,
+  body {
+    color: $ds-gray__900;
+    margin: 0;
+    background: $ds-gray__050;
+
+    &.as-reason, &.as-location-finder-reason, &.session-popup, &.never-mind{
+
+      .cdk-overlay-pane{
+        height: auto!important;
+        // width: auto!important;
+
+        // .mat-dialog-container{
+        //   padding: 0px;
+        // }
+      }
+    }
+    &.modal--imp-visit-info {
+      .as-imp-visit-info-dialog-container.cdk-overlay-pane{
+        position: fixed !important;
+        bottom: 32px;
+        right: 32px;
+        .mat-dialog-container{
+          border-top: 3px solid #F56A00;
+        }
+      }
+    }
+    &.modal--price-estimate {
+      .mat-dialog-container{
+        border-top: 3px solid #2769dd;
+      }
+    }
+    .as-purchase-my-own-test, .as-peace-of-mind {
+      .mat-dialog-container{
+        max-height: 100vh;
+        max-width: 540px;
+        padding: 16px !important;
+        @include when-less-than(ds-640){
+          max-height: 85vh;
+        }
+      }
+    }
+    .grecaptcha-badge {
+      visibility: hidden !important;
+    }
+
+    mat-dialog-container.mat-dialog-container {
+      max-height: 100vh;
+      overflow: auto;
+    }
+    // ****mobile modals****
+    @include when-less-than(ds-768){
+
+      &.modal--find-appointment, &.modal-verify-phone, &.modal-cancel-appointment,
+       &.as-cancel-appointment-success-dialog, &.modal--verify-identity, &.modal-price-estimate{
+
+        .cdk-overlay-dark-backdrop{
+          background: 0;
+        }
+
+        .mat-dialog-container{
+          background: 0;
+          padding: 0;
+          position: absolute;
+          top: 0px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      &.modal--imp-visit-info {
+        .as-imp-visit-info-dialog-container.cdk-overlay-pane {
+          position: static !important;
+          margin: 0 20px;
+          overflow: auto;
+        }
+      }
+    }
+
+    .ds-body{
+      align-items: flex-start!important;
+      height: 100%;
+
+      .ds-body--content{
+        align-items: flex-start!important;
+      }
+    }
+
+    .addeventatc_icon{
+      display: block!important
+    }
+
+    .as-find-location{
+
+      header{
+
+        .ds-col--14, .ds-col--12{
+          max-width: 100%;
+        }
+      }
+    }
+
+    .ds-select{
+      &:after{
+        top: 5px;
+      }
+    }
+
+    @include when-less-than(ds-1024){
+
+      as-footer{
+        right: 0;
+        left: 0;
+
+        .ds-col--14{
+          padding-right: 0!important;
+
+          .ds-pagination--footer{
+
+            &.ds-col--10{
+              width: 100%;
+              padding: 0 16px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  input::-ms-clear{
+    display: none;
+  }
+  .mat-error{
+    font-size: 12px;
+    color: $ds-red__500;
+    display: block;
+    height: 20px;
+    margin-top: 4px;
+}
+// a:focus, button:focus, [class*=ds-icon--]:focus, [class^=ds-icon--]:focus {
+//   outline: #0070f5 solid 2px !important;
+//   outline-offset: 3px;
+// }
+.ds-icon__error--24 {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+
+.wc-console textarea,
+.wc-console input[type='text'] {
+  height: calc(100% - 2px) !important;
+  width: calc(100% - 48px) !important;
+}
+
+.cdk-global-scrollblock{
+  top: 0px !important;
+}
+
+// .ds-input__checkbox{
+//   width: auto !important;
+// }
+.ds-input__checkbox>span { width:auto;}
+
+.as-get-labs {
+  .mat-dialog-container {
+    padding:0;
+  }
+  .ds-modal{
+    padding:0;
+  }
+}
+.as-get-labs-learn {
+  @include when-wider-than(ds-640){
+    max-width: 600px !important;
+  }
+  @include when-less-than(ds-640){
+    max-width: 92vw !important;
+  }
+  .mat-dialog-container {
+    padding:0;
+    @include when-less-than(ds-640){
+      max-height: 85vh;
+    }
+  }
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $ds-green;
+}
+
+.ds-grid .ds-grid--12 .ds-col--13, .ds-grid .ds-grid--12 .ds-col--14, .ds-grid .ds-grid--12 .ds-col--thirds, .ds-grid--12 .ds-col, .ds-grid--12 .ds-col--1, .ds-grid--12 .ds-col--10, .ds-grid--12 .ds-col--11, .ds-grid--12 .ds-col--12, .ds-grid--12 .ds-col--2, .ds-grid--12 .ds-col--3, .ds-grid--12 .ds-col--4, .ds-grid--12 .ds-col--5, .ds-grid--12 .ds-col--6, .ds-grid--12 .ds-col--7, .ds-grid--12 .ds-col--8, .ds-grid--12 .ds-col--9, .ds-grid--12 .ds-grid .ds-col--13, .ds-grid--12 .ds-grid .ds-col--14, .ds-grid--12 .ds-grid .ds-col--thirds, .ds-grid--12 .ds-grid--time .ds-col--13, .ds-grid--12 .ds-grid--time .ds-col--14, .ds-grid--12 .ds-grid--time .ds-col--thirds, .ds-grid--time .ds-grid--12 .ds-col--13, .ds-grid--time .ds-grid--12 .ds-col--14, .ds-grid--time .ds-grid--12 .ds-col--thirds {
+  padding: 0 0 8px;
+}
+
+.no-pad, [class*=ds-col] .no-pad {
+  padding: 0!important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.ds-button,.ds-button.--primary, .ds-button.--primary.--disabled, .ds-button.--primary.--warning, .ds-button.--secondary, .ds-button.--secondary.--disabled, .ds-button.--secondary.--warning {
+    min-width: 120px;
+    max-width: 328px;
+}
+@include when-less-than(ds-1024){
+  .ds-form__col--2 [class*=ds-col] {
+    width: 100%;
+  }
+}
+.cdk-global-scrollblock{
+  body {
+    overflow:hidden;
+  }
+}
+@include when-less-than(ds-640){
+  .ds-modal .ds-pagination--footer [class*=ds-col] {
+    justify-content: center;
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.ds-progress-stepper[class*="--vertical"] {
+  margin-top: 19px;
+  .ds-step{
+    &>span [class*="--dash"]{
+      &:first-of-type {
+        max-height: 0;
+      }
+    }
+    label{
+      margin-top: 0;
+    }
+  }
+}
+
+.ds-card {
+  &.--gray__200 {
+    border-color:#D1D1D1;
+  }
+}
+.ds-input[class*="--error"] {
+  div {
+    color:#e00028;
+  }
+}
+.padding-bottom-24 {
+  padding-bottom: 24px !important;
+}
+
+hr.grey {
+  background: #9A9A9A;
+}
+
+.as-find-location {
+  .mat-dialog-container{
+    padding: 0px !important;
+    border: none !important;
+  }
+
+
+  .cdk-overlay-container {
+    background: rgba(250, 250, 250, 0.7);
+  }
+}
+
+.ds-progress-stepper .ds-step[class*=completed] label{
+	color: $ds-gray__900;
+}
+.ds-input{
+  @include when-less-than(ds-640){
+    margin-right: 0 !important;
+  }
+  &.margin-right-24 {
+    @include when-less-than(ds-768){
+      margin-right: 24px !important;
+    }
+    @include when-less-than(ds-640){
+      margin-right: 0 !important;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  mat-dialog-actions > .ds-col--12{
+    flex-direction: column;
+  }
+}
+.ds-modal__header>button:before {
+  color: $ds-green__900 !important;
+}
+.ds-modal__content>h2 {
+  font-size: 32px;
+
+  @include when-less-than(ds-768) {
+    font-size: 24px;
+  }
+}
+.ds-modal.cdk-overlay-pane {
+  width: 696px;
+
+  @include when-less-than(ds-768) {
+    width: 100%;
+  }
+}
+
+mat-dialog-container {
+  @include when-less-than(ds-768) {
+    width: 100% !important;
+  }
+}
+
+.mat-dialog-title {
+  margin: 24px 0 !important;
+}
+
+.inputAlert {
+  [class*=ds-icon--], [class^=ds-icon--] {
+    vertical-align: middle;
+  }
+}
+
+.mat-progress-bar-fill::after {
+  background-color: $ds-green !important;
+}
+
+ .mat-progress-bar-buffer {
+  background-color: #82ac7b !important;
+}
+
+
+.ds-icon--close:focus{
+  outline: 2px solid $ds-green__500 !important;
+  outline-offset: 0px ;
+}
+
+.cdk-visually-hidden{
+  border:0;
+  clip:rect(0 0 0 0);
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px;
+  outline:0;
+  -webkit-appearance:none;
+  -moz-appearance:none
+}
+
+div#skip-to-main:focus{
+  outline: 2px solid $ds-green__500 !important;
+  outline-offset: 3px;
+}
+
+.overlay {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.mat-select-value{
+  display: table-cell;
+  max-width: 0 !important;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.continue-margin-bottom{
+  margin-bottom: 172px;
+}
+
+@media screen and (max-width: 768px){
+  .ds-body {
+      padding-top: 0px !important;
+  }
+  .custom-nav{
+          button:focus-visible,a:focus-visible{
+          border: 2px solid #00854b;
+          outline:none;
+          box-shadow: none !important;
+       }
+      }
+      .ds-header{
+          position: unset !important;
+      }
+}
+
+.ds-input input, .ds-textarea.mat-form-field input{
+  border: 1px solid $ds-gray__500;
+}
+
+.ds-input input::placeholder{
+  color: $ds-gray__600;
+}

@@ -1,0 +1,7 @@
+<ng-container *ngIf="mandatoryAddressF1687 ; else oldVersion">
+  <as-insurance-new></as-insurance-new>
+</ng-container>
+
+<ng-template #oldVersion>
+  <as-insurance-information></as-insurance-information>
+</ng-template>

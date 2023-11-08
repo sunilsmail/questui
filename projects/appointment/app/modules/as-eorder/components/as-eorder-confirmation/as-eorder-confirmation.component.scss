@@ -1,0 +1,194 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+
+  &.as-confirmation{
+    padding-top: 144px;
+    .ds-button {
+      width: 95%;
+      max-width: none;
+    }
+    .ds-icon--check {
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 10px;
+      border: 5px solid $ds-green;
+    }
+    .mint-bg{
+      border-radius: 12px;
+    }
+    .ds-body--content{
+      width: 100%;
+      .ds-card.padding-bottom-14 {
+        padding-bottom:14px !important ;
+      }
+      .ds-col--12{
+
+        h1{
+          margin: 0;
+        }
+
+        .ds-flex--column{
+
+            .ds-col--12{
+
+                img{
+                    height: auto;
+                    width: 50%;
+                }
+            }
+
+            .ds-col--6{
+
+                > .ds-col--6{
+
+                    &:nth-of-type(2){
+                        position: relative;
+
+                        [class*="ds-col"]{
+                            position: absolute;
+                            padding-right: 0;
+                            height: 100%;
+                            max-width: 200px;
+
+                            .addeventatc{
+                                background: none;
+                                box-shadow: 0 0 0 0.5px rgba(50,50,93,.0), 0 2px 5px 0 rgba(50,50,93,.0), 0 1px 1.5px 0 rgba(0,0,0,.0), 0 1px 2px 0 rgba(0,0,0,.0), 0 0 0 0 transparent!important;
+                                border: none;
+                                width: 80%;
+                                border-radius: 0;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            [class*="ds-col"]{
+
+                [class*="ds-icon--route"]{
+                    cursor: pointer;
+                }
+            }
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024){
+
+        .ds-body--content{
+          width: 100%;
+
+          .ds-col--12{
+
+              .ds-flex--column{
+
+                  .ds-col--5{
+                      width: 50%;
+                  }
+
+                  .ds-col--6.action-button{
+                      flex-direction: column-reverse;
+                      padding: 0;
+
+                      div{
+                          padding-right: 0;
+                          width: 100%;
+
+                          .ds-button.--secondary{
+                              width: 100%;
+                          }
+                      }
+                  }
+              }
+          }
+        }
+      }
+
+      @include when-less-than(ds-768){
+        padding-top: 100px;
+
+        .ds-body--content{
+          width: 100%;
+
+          .ds-col--12{
+
+              .ds-flex--column{
+
+                .ds-col--12{
+                    img{
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+
+                  .ds-col--5, .ds-col--6{
+                      width: 100%;
+                  }
+              }
+          }
+        }
+      }
+      as-add-to-calendar{
+          max-width: none;
+          @include when-less-than(ds-1024){
+            margin-top: 30px;
+        }
+      }
+  }
+}
+as-confirmation-print {
+    /* hide the printing component from @media screen */
+    display: none;
+  }
+
+  @media print {
+    /* invert the display (show/hide) properties of the main */
+    /* aplication component and the printing component       */
+
+    as-confirmation-print {
+      display: block;
+    }
+
+    .as-confirmation {
+          display: none;
+        }
+  }
+
+  .onFocus:focus{
+    outline: 2px solid $ds-green__500 !important;
+    outline-offset: 3px;
+  }
+.dollor-icon{
+  width: 18px;
+  height: 18px;
+}
+.confCode{
+  padding-top:15px;
+}
+
+
+.padding-cc{
+  padding-bottom: 0px;
+}
+
+.container-width {
+  width: 100%;
+}
+
+.pad-bottom{
+  padding-bottom: 0px;
+}
+.ds-content-block--32{
+  margin: 0 0 32px;
+}
+.print-button-width {
+  min-width: 163px !important;
+  @include when-less-than(ds-1024) {
+    margin-top: 30px;
+  }
+}
+
+.pad-bottom-60{
+  padding-bottom: 60px !important;
+}

@@ -1,0 +1,23 @@
+<div class="ds-modal ds_modal_active peace-of-mind">
+
+  <div class="ds-modal__content ds-grid--12">
+    <div class="ds-col--12 ds-flex --end-center no-pad"><span class="ds-icon--close ds-font--12" (click)="closeDialog()"></span></div>
+    <div class="ds-col--1"><mat-icon class="ds-modal__warning-icon">warning</mat-icon></div>
+    <div class="ds-col--12">
+      <div class="ds-col--12 ds-font--20--bold Weve-updated-our-se" i18n>{{content.as_peace_of_mind_test_dialog.title}}</div>
+      <div class="ds-font-14 dialog-msg1"><p i18n>{{content.as_peace_of_mind_test_dialog.message_1}}</p></div>
+      <div class="ds-col--12 ds-font--20--bold Are-you-older-than-6" i18n>{{content.as_peace_of_mind_test_dialog.message_2}}</div>
+      <div class="ds-col--12">&nbsp;</div>
+      <div class="ds-flex ds-pagination--footer">
+          <div class="ds-col--6 ds-flex --start-center no-pad">
+            <button class="ds-button --secondary" (click)="showAllSlots()">Yes</button>
+          </div>
+          <div class="ds-col--6 ds-flex --end-center no-pad">
+            <button class="ds-button --secondary" (click)="filterSlots()">
+              <label>No</label>
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

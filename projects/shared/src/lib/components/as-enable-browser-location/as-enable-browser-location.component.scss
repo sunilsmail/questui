@@ -1,0 +1,36 @@
+@import '../../../../../appointment/styles.scss';
+
+.as-enable-browser-location {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+
+  /*Galaxy S7 and S8 */
+  @media only screen and (min-device-width: 360px) and (max-device-width: 640px) {
+    outline: none;
+  }
+}
+
+.as-enable-browser-location__text {
+  color: #35792a;
+  margin-left: 5px;
+  text-decoration: underline;
+  text-align: left;
+}
+
+.as-enable-browser-location__error {
+  margin-left: 26px;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #35792a;
+}
+
+.as-enable-browser-location__loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  bottom: 0;
+}

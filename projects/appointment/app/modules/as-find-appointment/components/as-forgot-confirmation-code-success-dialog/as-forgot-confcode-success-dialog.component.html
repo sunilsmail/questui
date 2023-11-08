@@ -1,0 +1,26 @@
+<div class="forgot-confcode-success">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" (click)="closeDialog()" aria-label="close" role="button" tabindex="0"
+      (keydown.Enter)="closeDialog()" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" [attr.aria-label]="[content.as_forgot_confirmationcode_success_dialog.title]" i18n>
+        {{content.as_forgot_confirmationcode_success_dialog.title}}</h2>
+        <p role="alert" aria-live="polite" class="visually-hidden" i18n *ngIf="resent"> Your appointment details are successfully resent</p>
+        <p class="ds-col--12 ds-body--base ds-gray__900"
+          innerHTML={{content.as_forgot_confirmationcode_success_dialog.sub_title}}></p>
+      </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+      <div class="ds-col--12 ds-flex --end-center">
+        <button class="ds-button --primary --medium" id="btnResend" role="button">
+          <label id="lblResend" i18n>{{content.as_forgot_confirmationcode_success_dialog.button_label}}</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

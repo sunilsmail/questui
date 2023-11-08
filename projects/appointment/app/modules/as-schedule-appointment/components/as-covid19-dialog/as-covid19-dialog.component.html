@@ -1,0 +1,45 @@
+<div class="covid-19-dialog">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="covid-dialog-closebutton" (click)="closeDialog()" aria-label="close"
+      role="button" name="closebutton" tabindex="0" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="COVID-19 Test"><span
+          class="ds-icon--alert ds-yellow__700  margin-right-8"></span>COVID-19 Test</h2>
+      <span class="ds-body--base padding-bottom-12" i18n
+        *ngIf="!feature_flag_f1269_rit_aid_locations">{{content.as_covid19_dialog.message}}</span>
+      <span class="ds-body--base padding-bottom-12" i18n
+        *ngIf="feature_flag_f1269_rit_aid_locations">{{content.as_covid19_dialog.message_1}}</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24"
+      *ngIf="!feature_flag_f1269_rit_aid_locations">
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="openCovidDetailsDialog()">
+          <label>{{content.as_covid19_dialog.button_text_1}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --end-center">
+        <button class="ds-button --secondary" (click)="openCovidConfirmDialog()">
+          <label>{{content.as_covid19_dialog.button_text_2}}</label>
+        </button>
+      </div>
+    </div>
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24" *ngIf="feature_flag_f1269_rit_aid_locations">
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="openCovidDetailsDialog()">
+          <label>{{content.as_covid19_dialog.button_text_1}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="openCovidConfirmDialog()">
+          <label>{{content.as_covid19_dialog.button_text_2}}</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

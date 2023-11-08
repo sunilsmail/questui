@@ -1,0 +1,55 @@
+<div class="verify-eorder-phone" (keydown)="closePhoneNumberDialog($event)">
+
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900"(click)="closeVerifyPhoneNumberDialog()" aria-label="Close"  tabindex="0" role="button" name="closebutton"></button>
+  </div>
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+        <h2 id="mat-dialog-title" aria-level="1" i18n [attr.aria-label]="[content.as_verify_phonenumber_dialog.title]">{{content.as_verify_phonenumber_dialog.title}}</h2>
+        <ng-container [ngSwitch]="data.flow">
+          <span class="ds-body--base ds-gray__900 margin-bottom-24" i18n *ngSwitchCase="'EditLocation'" innerHTML={{content.as_verify_phonenumber_dialog.message_change_view}}></span>
+          <span class="ds-body--base ds-gray__900 margin-bottom-24" i18n *ngSwitchCase="'CANCEL'" innerHTML={{content.as_verify_phonenumber_dialog.message_cancel}}></span>
+        </ng-container>
+
+        <form [formGroup]="verifyPhoneNumber">
+          <!-- <div class="ds-grid-12"> -->
+              <!-- <div class="ds-col--12" tabindex="0"> -->
+                <div class="ds-col--12 ds-input --required"
+                [ngClass]="{'--error': !verifyPhoneNumber.get('phoneNumber').valid && verifyPhoneNumber.get('phoneNumber').touched}">
+                    <div class="ds-input__label" i18n>Phone number</div>
+                    <input type="text"
+                      formControlName="phoneNumber"
+                      aria-label="Phone number"
+                      aria-describedby="textForHint"
+                      required
+                      (keyup)="onKeyup($event,phoneElement)"
+                      #phoneElement>
+                      <div class="ds-font--14 ds-gray__600 margin-top-3" id="textForHint">555-555-5555</div>
+                      <div class="ds-font--12">
+                        <div class="ds-input__error" role="alert">
+                          {{verifyPhoneNumber.get('phoneNumber').errors | validationError : 'Phone number'}}</div>
+                      </div>
+                  </div>
+              <!-- </div> -->
+          <!-- </div> -->
+        </form>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+      <div class="ds-col--6 ds-flex --start-center margin-bottom-16">
+        <button class="ds-button --primary --medium" [disabled]="verifyPhoneNumber.invalid" aria-label="Verify Identity"
+          (click)="verifyIdentityUser($event.target.value)" role="button"
+          [ngClass]="{'--primary':!verifyPhoneNumber.invalid,'--primary--disabled':verifyPhoneNumber.invalid}">
+          <label i18n>{{content.as_verify_phonenumber_dialog.button_label}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-link ds-green__700" aria-label="Never mind" (click)="onNeverMind()" tabindex="0" role="button"
+          i18n>Never mind</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+
+</div>

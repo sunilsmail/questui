@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "chart.chart" . }}
+  labels:
+    app: {{ template "chart.name" . }}
+    chart: {{ template "chart.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    tier: {{ .Values.tier }}
+    tech: {{ .Values.techStack }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ template "chart.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "chart.name" . }}
+        release: {{ .Release.Name }}
+        tier: {{ .Values.tier }}
+        tech: {{ .Values.techStack }}
+      annotations:
+        config.linkerd.io/skip-outbound-ports: 9999,5671,25,10255,14488,19080,3306,3000,3001,1521
+        linkerd.io/inject: "{{ .Values.linkerd.inject }}"
+        patch: {{ .Values.patchTag}}
+    spec:
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+      volumes:
+      - name: varlog
+        emptyDir: {}
+#      topologySpreadConstraints:
+#      - maxSkew: 2
+#        topologyKey: node
+#        whenUnsatisfiable: ScheduleAnyway
+#        labelSelector:
+#          matchLabels:
+#            release: {{ .Release.Name }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          securityContext:
+            runAsUser: 101
+            allowPrivilegeEscalation: false
+          env:
+          - name: AUTH_URL
+            value: http://auth-gateway-23-04-0:8080
+          - name: FORWARDED_PROTO
+            value: https
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+          volumeMounts:
+          - name: varlog
+            mountPath: /var/log/nginx
+          livenessProbe:
+            initialDelaySeconds: 0
+            failureThreshold: 20
+            periodSeconds: 15
+            timeoutSeconds: 10
+            httpGet:
+              path: /
+              port: {{ .Values.service.port }}
+          readinessProbe:
+            initialDelaySeconds: 0
+            periodSeconds: 15
+            failureThreshold: 1
+            timeoutSeconds: 5
+            httpGet:
+              path: /
+              port: {{ .Values.service.port }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}

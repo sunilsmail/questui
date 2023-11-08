@@ -1,0 +1,40 @@
+<div class="as-psc-time-slot" fxLayout="column" fxLayoutAlign="start start">
+  <div class="ds-grid--12" role="radiogroup" fxHide fxShow.gt-xs aria-label="available appointment times" i18n-aria-label>
+    <div class="ds-col--1" *ngFor="let slot of _timeSlots; let i = index">
+      <ng-container *ngIf="show || i<8">
+        <button  role="radio" (click)="selectTime(slot.time)" name="slot_{{i}}" [attr.aria-checked]="slot.time === timeSelected" [attr.aria-label]="(slot.time === timeSelected)? (slot.time| twelveHourTime) + ' slot selected' :(slot.time| twelveHourTime)+' not selected'" [attr.aria-label]="!slot.available? (slot.time| twelveHourTime) + ', not available':null" [disabled]="!slot.available">
+          <div class="ds-option__small ds-font--12" fxLayoutAlign="center center" [ngClass]="{'ds-option__small--selected': timeSelected === slot.time,'ds-option__small--disabled':!slot.available}">
+            <span>{{slot.time | twelveHourTime}}</span>
+          </div>
+        </button>
+      </ng-container>
+    </div>
+  </div>
+  <div class="ds-grid--12 test"  role="radiogroup" fxShow.lt-sm fxHide aria-label="available appointment times">
+    <div class="ds-col--1" *ngFor="let slot of _timeSlots; let i = index">
+      <ng-container *ngIf="show || i<4">
+        <button  role="radio" [ngClass]="{'pad' : pad}" name="slot_{{i}}"  [attr.aria-checked]="slot.time === timeSelected" [attr.aria-label]="(slot.time === timeSelected)? 'slot selected' :'not selected'" [disabled]="!slot.available" [attr.aria-label]="!slot.available? (slot.time| twelveHourTime) + ', not available':null" (click)="selectTime(slot.time)">
+          <div class="ds-option__small ds-font--12" fxLayoutAlign="center center" [ngClass]="{'ds-option__small--selected': timeSelected === slot.time,'ds-option__small--disabled':!slot.available}">
+            <span>{{slot.time | twelveHourTime}}</span>
+          </div>
+        </button>
+      </ng-container>
+    </div>
+  </div>
+
+  <div (click)="showmore(); pad = !pad" *ngIf="!show && availableSlots?.length>0" fxLayout="row" fxLayoutAlign="start end" class="margin-bottom-24">
+    <button class="ds-font--16--700 ds-green__700" name="showmore">Show more times
+      <span class="ds-icon--expand ds-font--24 ds-green__700"></span>
+    </button>
+
+    <span class="ds-font--12">({{availableSlots?.length}} available)</span>
+  </div>
+  <span class="ds-font--12" *ngIf="!show && availableSlots?.length===0">No morning timeslots available for this date</span>
+  <div (click)="showmore(); !pad = !pad" *ngIf="show && availableSlots?.length>0" fxLayout="row" fxLayoutAlign="start end" class="margin-bottom-24">
+    <button class="ds-font--16--700 ds-green__700" name="showless">Show less times
+      <span class="ds-icon--collapse ds-font--24 ds-green__700"></span>
+    </button>
+    <span class="ds-font--16">({{availableSlots.length}} available)</span>
+  </div>
+  <span class="ds-font--12" *ngIf="show && availableSlots?.length===0">No afternoon timeslots available for this date</span>
+</div>

@@ -1,0 +1,91 @@
+<div *ngIf="loading" class="as-insurance__overlay">
+    <as-spinner></as-spinner>
+</div>
+<div class="ds-grid--12 ct-hipaa-auth" *ngIf="hipaaSignForm">
+    <a class="skip-main skip-to-main" role="link" (keyup)="$event.keyCode == 13 ? navigateToMain() : null" id='logoRef'
+        (click)="navigateToMain()" mat-button color="secondary" aria-label="Skip to main content">
+        <span>Skip to main content</span>
+    </a>
+    <header class="ds-col--12 ds-header margin-bottom-12">
+        <div class="ds-col--8 ct-header-wrapper">
+            <div class="ds-col--3 ds-flex --start-center --logo">
+                <img tabindex="0" id="logoRef" alt="Quest brand logo" class="focus-indicator"
+                    src="assets/quest-logo.svg" />
+            </div>
+        </div>
+    </header>
+    <main class="ds-col--12 --column  ds-flex --center-center">
+        <div class="ds-col--8 ct-header-wrapper">
+            <h3 class="ds-green__700 focus-indicator" tabindex="0">HIPAA Authorization</h3>
+        </div>
+        <div class="ds-col--8  ct-message-wrapper">
+            <div class="ds-message --warning ds-flex --row padding-16 info-dialog focus-indicator" aria-label="Message"
+                role="dialog" tabindex="0">
+                <div class="ds-col--1">
+                    <span class="ds-icon--info" aria-label="info" role="img"></span>
+                </div>
+                <div class="ds-col--10 ds-flex --column">
+                    <div class="ds-col--12">
+                        <label tabindex="0" class="ds-font--18 --700 focus-indicator">Please review and sign
+                            this authorization to opt in.</label>
+                    </div>
+                    <div tabindex="0" class="ds-col--12 focus-indicator">
+                        <label class="ds-font--16 --400">About this authorization: This is a HIPAA authorization to
+                            collect, use and disclose your protected health information for research. </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ds-col--8  ct-body-wrapper">
+            <div class="ds-col--12 ds-font--16 --400 focus-indicator" id="skip-to-main" tabindex="0"
+                [innerHTML]="hipaaContent.HipaaAuthConsentPreTextBoxes | keepHtml">
+            </div>
+        </div>
+        <div class="ds-col--8 ct-form-wrapper">
+            <form [formGroup]="hipaaSignForm">
+                <div class="ds-col--10 ds-flex --row form-inputs focus-indicator">
+                    <mat-form-field class="ds-input">
+                        <mat-label>First name</mat-label>
+                        <input matInput formControlName="firstName" required>
+                        <div class="ds-input__error">
+                            {{hipaaSignForm.get('firstName').errors | validationError}}
+                        </div>
+                    </mat-form-field>
+                    <mat-form-field class="ds-input focus-indicator">
+                        <mat-label>Last name</mat-label>
+                        <input matInput formControlName="lastName" required>
+                        <div class="ds-input__error">
+                            {{hipaaSignForm.get('lastName').errors | validationError}}
+                        </div>
+                    </mat-form-field>
+                    <mat-form-field class="ds-input --disabled focus-indicator">
+                        <mat-label>Date</mat-label>
+                        <input matInput formControlName="hipaaAuthorizationDate" required readonly>
+                        <div class="ds-input__error">
+                            {{hipaaSignForm.get('hipaaAuthorizationDate').errors | validationError}}
+                        </div>
+                    </mat-form-field>
+                </div>
+
+            </form>
+        </div>
+        <div class="ds-col--8  ct-body-wrapper">
+            <div class="ds-col--12 ds-font--16 --400 focus-indicator" tabindex="0"
+                [innerHTML]="hipaaContent.HipaaAuthConsentPostTextBoxes | keepHtml">
+            </div>
+        </div>
+        <div class="ds-col--8 ct-button-wrapper padding-16">
+            <div class="ds-col--12 ds-flex --row --end-center ct-buttons">
+                <button class="ds-button --secondary margin-right-20 focus-indicator" (click)="onCancel()"
+                    aria-label="Cancel">
+                    <label>Cancel</label>
+                </button>
+                <button class="ds-button" [disabled]="!hipaaSignForm.valid"
+                    [ngClass]="{'--primary':hipaaSignForm.valid,'--primary--disabled':!hipaaSignForm.valid}"
+                    aria-label="Sign & Opt-in" (click)="onSubmit()" [ngClass]="">
+                    <label>Sign & Opt-in</label>
+                </button>
+            </div>
+        </div>
+    </main>
+</div>

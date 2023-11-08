@@ -1,0 +1,92 @@
+<!-- New Location with content mask example -->
+  <div class="as-psc-time-slot ds-flex --column --start-start" *ngIf="!noTimeslots && bothMorningAfternoonAvailableSlots > 0; else noTimeSlots">
+    <div class="ds-content-mask" [ngClass]="{'--show-all' : showAll}" role="region" [attr.aria-label]="availApptsAtLocationAria" i18n-aria-label>
+        <div class="--content ds-flex --row" >
+            <div class="ds-col--6 ds-flex --row --wrap --start-start --morning" [ngClass]="{'--5-minute': (slotInterval === 5),'--15-minute': (slotInterval === 15),'--10-minute': (slotInterval === 10),'--20-minute': (slotInterval === 20), '--show-all-morning' : showAllMobileMorning}">
+                <div class="ds-col--12 ds-font--14 --700">Morning (AM)</div>
+                <ng-container *ngIf="morningSlots?.length > 0; else tempNoMorningSlots">
+                    <ng-container *ngFor="let slot of morningSlots; let i = index">
+                      <ng-container *ngIf="slot.available === 'available'">
+                        <button  name="slot_{{i}}" class="ds-option --small" [attr.aria-label]="(slot.time === timeSelected)? (slot.time| twelveHourTime) + ' slot selected' :(slot.time| twelveHourTime)+' not selected'" [ngClass]="{'ds-option__small--selected': timeSelected === slot.time}"  (click)="selectTime(slot.time, $event)">
+                          {{slot.time | twelveHourTimeWithoutSuffix }}
+                        </button>
+                      </ng-container>
+                      <ng-container *ngIf="slot.available === 'unAvailable'">
+                          <button name="slot_{{i}}" tabindex="-1" class="ds-option --small --disabled" [attr.aria-label]="(slot.time === timeSelected)? (slot.time| twelveHourTime) + ' slot selected' :(slot.time| twelveHourTime)+' not selected unavailable'">
+                            {{slot.time | twelveHourTimeWithoutSuffix }}
+                        </button>
+                      </ng-container>
+                      <ng-container *ngIf="slot.available === 'noSlot'">
+                        <button name="slot_{{i}}" tabindex="-1" class="ds-option --small --unavailable" aria-label="location not open at this time" title="location not open at this time">
+                          <!-- <label></label> -->
+                      </button>
+                      </ng-container>
+                    </ng-container>
+                  </ng-container>
+                  <ng-template #tempNoMorningSlots>
+                    <div class="ds-col--12">
+                      <span class="ds-font--12">No morning timeslots available for this date</span>
+                    </div>
+                  </ng-template>
+            </div>
+            <div class="ds-col--12 no-padding" *ngIf="currentWindowWidth < 640 && morningSlots?.length > 0">
+              <ng-container *ngIf="showHideAllMobileMorningButton">
+                <button class="ds-font--16 --500 ds-green__700" name="showmore" (click)="showAllMobileMorning = !showAllMobileMorning;" *ngIf="!showAllMobileMorning"><a class="ds-link">Show more morning times</a> <span class="ds-icon--expand ds-font--24 ds-green__700"></span></button><br>
+                <span class="ds-font--16 --400 available-pad" *ngIf="!showAllMobileMorning">({{morningAvailableSlots}} available)</span>
+                <button class="ds-font--16 --500 ds-green__700" name="showmore" (click)="showAllMobileMorning = !showAllMobileMorning;" *ngIf="showAllMobileMorning"><a class="ds-link">Show less morning times</a> <span class="ds-icon--collapse ds-font--24 ds-green__700"></span></button><br>
+                <span class="ds-font--16 --400 available-pad" *ngIf="showAllMobileMorning">({{morningAvailableSlots}} available)</span>
+              </ng-container>
+            </div>
+            <div class="ds-col--6 ds-flex --row --wrap --start-start --afternoon" [ngClass]="{'--5-minute': (slotInterval === 5),'--15-minute': (slotInterval === 15),'--10-minute': (slotInterval === 10),'--20-minute': (slotInterval === 20), '--show-all-afternoon' : showAllMobileAfternoon}">
+                <div class="ds-col--12 ds-font--14 --700">Afternoon (PM)</div>
+                <ng-container *ngIf="afternoonSlots?.length > 0; else tempNoAfternoonSlots">
+                    <ng-container *ngFor="let slot of afternoonSlots; let i = index">
+                      <ng-container *ngIf="slot.available === 'available'">
+                        <button name="slot_{{i}}" class="ds-option --small" [attr.aria-label]="(slot.time === timeSelected)? (slot.time| twelveHourTime) + ' slot selected' :(slot.time| twelveHourTime)+' not selected'" [ngClass]="{'ds-option__small--selected': timeSelected === slot.time}" (click)="selectTime(slot.time, $event)" aria-label="">
+                            {{slot.time | twelveHourTimeWithoutSuffix }}
+                        </button>
+                      </ng-container>
+                      <ng-container *ngIf="slot.available === 'unAvailable'">
+                          <button tabindex="-1" name="slot_{{i}}" class="ds-option --small --disabled" [attr.aria-label]="(slot.time === timeSelected)? (slot.time| twelveHourTime) + ' slot selected' :(slot.time| twelveHourTime)+' not selected unavailable'">
+                            {{slot.time | twelveHourTimeWithoutSuffix }}
+                        </button>
+                      </ng-container>
+                      <ng-container *ngIf="slot.available === 'noSlot'">
+                        <button tabindex="-1" name="slot_{{i}}" class="ds-option --small --unavailable" aria-label="location not open at this time" title="location not open at this time">
+                          <!-- <label></label> -->
+                      </button>
+                      </ng-container>
+                    </ng-container>
+                </ng-container>
+                <ng-template #tempNoAfternoonSlots>
+                  <div class="ds-col--12">
+                    <span class="ds-font--12">No afternoon timeslots available for this date</span>
+                  </div>
+                </ng-template>
+            </div>
+            <div class="ds-col--12 no-padding" *ngIf="currentWindowWidth < 640 && afternoonSlots?.length > 0">
+              <ng-container *ngIf="showHideAllMobileAfternoonButton">
+                <button class="ds-font--16 --500 ds-green__700" name="showmore" (click)="showAllMobileAfternoon = !showAllMobileAfternoon;" *ngIf="!showAllMobileAfternoon"><a class="ds-link">Show more afternoon times</a> <span class="ds-icon--expand ds-font--24 ds-green__700"></span></button><br>
+                <span class="ds-font--16 --400 available-pad" *ngIf="!showAllMobileAfternoon">({{afternoonAvailableSlots}} available)</span>
+                <button class="ds-font--16 --500 ds-green__700" name="showless" (click)="showAllMobileAfternoon = !showAllMobileAfternoon;" *ngIf="showAllMobileAfternoon"><a class="ds-link">Show less afternoon times</a> <span class="ds-icon--collapse ds-font--24 ds-green__700"></span></button><br>
+                <span class="ds-font--16 --400 available-pad" *ngIf="showAllMobileAfternoon">({{afternoonAvailableSlots}} available)</span>
+              </ng-container>
+            </div>
+        </div>
+        <div class="--mask"></div>
+    </div>
+    <div class="ds-col--12 no-padding ds-flex" *ngIf="currentWindowWidth > 640">
+      <ng-container *ngIf="showHideShowAllButton">
+        <button class="ds-font--16 --500 ds-green__700 ds-flex" id="show-more-timeSlots-button{{pscName}}" name="showmore" (click)="isShowAll()" *ngIf="!showAll"><a class="ds-link">Show more times</a> <span class="ds-icon--expand ds-font--24 ds-green__700"></span> </button>
+          <span class="ds-font--16 --400 available-pad" *ngIf="!showAll">({{bothMorningAfternoonAvailableSlots}} available)</span>
+        <button class="ds-font--16 --500 ds-green__700 ds-flex" id="show-less-timeSlots-button{{pscName}}" name="showless" (click)="isShowAll()" *ngIf="showAll"><a class="ds-link">Show less times</a> <span class="ds-icon--collapse ds-font--24 ds-green__700"></span></button>
+        <span class="ds-font--16 --400 available-pad" *ngIf="showAll">({{bothMorningAfternoonAvailableSlots}} available)</span>
+      </ng-container>
+    </div>
+  </div>
+  <ng-template #noTimeSlots>
+    <div class="ds-col--12" class="noTimeslots" id="noTimeslots--{{pscName}}">
+      <span class="ds-font--14">{{content?.as_find_a_location?.noslots}}</span>
+    </div>
+  </ng-template>
+<!-- End New Location with content mask example -->

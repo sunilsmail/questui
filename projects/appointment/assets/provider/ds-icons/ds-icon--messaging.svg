@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="30px" viewBox="0 0 32 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ds-icon--messaging</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ds-icon--messaging" fill-rule="nonzero">
+            <path d="M3.2,2.13162821e-13 C1.44,2.13162821e-13 -1.81188398e-13,1.44 -1.81188398e-13,3.2 L-1.81188398e-13,20.4687504 C-1.81188398e-13,21.1807504 0.86162496,21.5383744 1.36562496,21.0343744 L4.8,17.6 L19.2,17.6 C20.96,17.6 22.4,16.16 22.4,14.4 L22.4,3.2 C22.4,1.44 20.96,2.13162821e-13 19.2,2.13162821e-13 L3.2,2.13162821e-13 Z" id="Shape" fill="#FFFFFF"></path>
+            <path d="M25.6,8 L25.6,14.4 C25.6,17.9344 22.7344,20.8 19.2,20.8 L9.6,20.8 L9.6,22.4 C9.6,24.16 11.04,25.6 12.8,25.6 L27.2,25.6 L30.6343744,29.0343744 C31.1383744,29.5383744 32,29.1807504 32,28.4687504 L32,11.2 C32,9.44 30.56,8 28.8,8 L25.6,8 Z" id="Path" fill="#C4D809"></path>
+            <circle id="Oval-Copy" fill="#35792A" cx="6.5" cy="9.5" r="1.5"></circle>
+            <circle id="Oval-Copy-2" fill="#35792A" cx="11.5" cy="9.5" r="1.5"></circle>
+            <circle id="Oval-Copy-3" fill="#35792A" cx="16.5" cy="9.5" r="1.5"></circle>
+        </g>
+    </g>
+</svg>

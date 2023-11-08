@@ -1,0 +1,73 @@
+<main class="ds-body as-reason">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12">
+      <div class="ds-flex --row ds-form__col--2">
+
+        <div class="ds-col--9" id="skip-to-main" tabindex="-1">
+          <div>
+            <div class="onFocus">
+              <h1 class="visually-hidden" aria-hidden="true">{{content.as_reason_for_visit.title}}</h1>
+            </div>
+            <div *ngIf="isReasons; else isTests" #isReasons>
+                <button class="ds-button --icon" id="back-button-reason-for-visit" aria-label="back"
+                  (click)="goToPrevious()" (keydown.enter)="goToPrevious()" tabindex="0" title="back">
+                  <span class="ds-icon--arrow-back ds-font--24 ds-green__700"></span>
+                </button>
+              <div class="onFocus">
+                <h1 class="ds-font__20--bold title" i18n [attr.aria-label]="[content.as_reason_for_visit.title]">{{content.as_reason_for_visit.title}}</h1>
+              </div>
+            </div>
+
+            <ng-template #isTests>
+              <div class="margin-bottom-24">
+                <span class="ds-icon--arrow-back ds-font--24 ds-green__700  onFocus" id="back-button-reason-for-visit" title="back" role="button" aria-label="back" (click)="goToPrevious()" (keydown.enter)="goToPrevious()"
+                  tabindex="0"></span>
+                <ng-container *ngIf="multiSelect;else notMultiselect">
+                  <h1 class="ds-font__20--bold title  onFocus" [attr.aria-label]="[content.as_reason_for_visit.title_3]" i18n>{{content.as_reason_for_visit.title_3}}</h1>
+                </ng-container>
+
+                <ng-template #notMultiselect>
+                  <h1 *ngIf="!urlHasPurchaseTest" class="ds-font__20--bold title  onFocus"  [attr.aria-label]="[content.as_reason_for_visit.title_2]" i18n>{{content.as_reason_for_visit.title_2}}</h1>
+                  <span *ngIf="!urlHasPurchaseTest" class="ds-body--large  onFocus" tabindex="0" [attr.aria-label]="[content.as_reason_for_visit.sub_title]" i18n>{{content.as_reason_for_visit.sub_title}}</span>
+                  <h1 *ngIf="urlHasPurchaseTest && !feature_flag_f1269_rit_aid_locations" class="ds-font__20--bold title" [attr.aria-label]="[content.as_reason_for_visit.title_4]" i18n>{{content.as_reason_for_visit.title_4}}</h1>
+                  <h1 *ngIf="urlHasPurchaseTest && feature_flag_f1269_rit_aid_locations" class="ds-font__20--bold title" [attr.aria-label]="[content.as_reason_for_visit.title_5]" i18n>{{content.as_reason_for_visit.title_5}}</h1>
+                </ng-template>
+              </div>
+            </ng-template>
+            <div *ngIf="loading" class="as-location-finder-details__overlay" fxLayout="row"
+              fxLayoutAlign="center center">
+              <as-spinner></as-spinner>
+            </div>
+            <as-loading-container [asLoadingData]="items$" asSpinnerSize="medium" asNoDataMessage="No data found."
+              i18n-asNoDataMessage asLoadErrorMessage="No data found." [loadingMore]="loading$">
+              <ng-template let-reasons>
+                <as-reason-test-list [listItems]="reasons" [selectedReason]="selectedMainReason"
+                  [multiSelect]="multiSelect" (itemSelected)="onItemSelected($event)" [selectedTests]="selectedTests">
+                </as-reason-test-list>
+              </ng-template>
+            </as-loading-container>
+            <!--<a class="as-reason-page__reason-for-visit" href="" tabindex="1" i18n>My reason for visit isn’t listed.</a>-->
+          </div>
+        </div>
+
+        <div class="ds-col--3">
+          <as-navigation-sidebar [step]="1" class="test-01"></as-navigation-sidebar>
+          <ng-container *ngIf="vm$ | async as vm">
+            <ng-container *ngIf="vm[0]; else withoutF221">
+              <as-footer class="test--2" [highLightContinue]="isEdit" [previous]="getPreviousRoute()"
+                (continue)='setTestsBeforeNavigation()' [enableContinue]="selectedTests?.length>0">
+              </as-footer>
+            </ng-container>
+            <ng-template #withoutF221>
+              <as-footer class="test--2" [highLightContinue]="isEdit"
+                [previous]="isReasons? '/as-home':'schedule-appointment/as-reason-for-visit'"
+                (continue)='setTestsBeforeNavigation()' [enableContinue]="selectedTests?.length>0">
+              </as-footer>
+            </ng-template>
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>

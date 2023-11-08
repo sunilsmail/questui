@@ -1,0 +1,103 @@
+@import '../../../../../styles.scss';
+
+.verify-eorder-identity {
+  h1{
+    font-size: 32px;
+    font-weight: 700!important;
+    line-height: 28px;
+    width: 100%;
+    padding: 0 15px 12px 0;
+    margin: 24px 0 40px 0;
+    color: #034c1f;
+    border-bottom: 2px solid #034c1f;
+    @include when-less-than(ds-768){
+      margin: 24px 0 24px 0;
+      padding-bottom: 8px;
+    }
+  }
+  .ds-grid--12{
+    margin-bottom: 8px;
+    @include when-less-than(ds-768){
+      margin-bottom: 0px;
+    }
+  }
+  form {
+    width: 100%;
+  }
+
+  max-width: 696px;
+  @include when-less-than(ds-768){
+    max-width: 348px;
+  }
+
+  >mat-dialog-actions>.ds-modal__actions>[class*=ds-col] {
+    width: 100% !important;
+    justify-content: center;
+
+    >button {
+      width: 100% !important;
+      min-width: 100% !important;
+      justify-content: center;
+
+      @include when-less-than(ds-480) {
+        height: 100%;
+      }
+    }
+  }
+
+  @include when-less-than(ds-1024) {
+    // max-width: auto;
+
+    .mat-dialog-content {
+      max-height: 75vh;
+    }
+
+    .ds-modal__content {
+      height: 430px;
+    }
+    .ds-col--8 {
+      width: 100% !important;
+    }
+    .ds-col--4 {
+      width: 100% !important;
+    }
+  }
+
+
+  .errorMessage {
+    border-radius: 4px;
+    // padding: 10px 16px 13px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: $ds-red__500;
+    span {
+      display: inline-block;
+      // width: calc(100% - 35px);
+    }
+  }
+
+  .verify-identity__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 3;
+  }
+  button.ds-link {
+    font-size: 16px;
+  }
+}
+
+.visually-hidden {
+  top: 0;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}

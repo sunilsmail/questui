@@ -1,0 +1,86 @@
+<div class="ds-grid--8">
+  <form [formGroup]="addressForm" autocomplete="off">
+    <!-- {{(optionsAsync$ | async)?.length}} -->
+    <div class="ds-col--12 ds-flex --row column">
+      <div class="ds-col--8">
+        <div class="ds-input --required margin-right-24"
+          [ngClass]="{'--error': !addressForm.get('address1').valid && addressForm.get('address1').touched && addressForm.get('address1')?.errors}">
+          <div class="ds-input__label" i18n>{{content.as_input_labels.address1}}</div>
+          <input type="text" #as_AddressSearchTxt formControlName="address1" placeholder="" [matAutocomplete]="street"
+            id="address1" aria-label="Address" required aria-required="true" />
+          <mat-progress-bar *ngIf="addressLoading" class="as-insurance-info-page__address-input__loading"
+            mode="indeterminate">
+          </mat-progress-bar>
+          <mat-autocomplete #street="matAutocomplete" class="ds-dropdown">
+            <mat-option *ngFor="let option of optionsAsync$ | async; let i=index" [value]="option.description"
+              (onSelectionChange)="onOptionSelect(option)" id="as_insurance_street_{{i+1}}" class="ds-dropdown__item">
+              {{ option.description }}
+            </mat-option>
+          </mat-autocomplete>
+          <div class="ds-input__error" role="alert">
+            {{addressForm.get('address1').errors | validationError : content.as_input_labels.address1}}</div>
+          <span tabindex="0" *ngIf="addressForm.get('address1').errors && addressForm.get('address1').touched"
+            role="alert" class="visually-hidden">{{addressForm.get('address1').errors | validationError : content.as_input_labels.address1}}</span>
+        </div>
+      </div>
+      <div class="ds-col--4">
+        <div class="ds-input margin-right-0">
+          <label aria-label="Input" class="ds-input__label" for="address2">{{content.as_input_labels.address2}}</label>
+          <input id="address2" formControlName="address2" type="text">
+          <!-- <div class="ds-input__error" role="alert">
+            {{addressForm?.get('address2')?.errors | validationError}}
+          </div> -->
+          <mat-error>
+            {{addressForm?.get('address2')?.errors | validationError}}
+          </mat-error>
+          <span tabindex="0" *ngIf="addressForm?.get('address2')?.errors && addressForm.get('address2').touched"
+            role="alert" class="visually-hidden">
+            {{addressForm?.get('address2')?.errors | validationError}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="ds-col--12 ds-flex --row column">
+      <div class="ds-col--6">
+        <div class="ds-input --required margin-right-24"
+          [ngClass]="{'--error': !addressForm.get('city').valid && addressForm.get('city').touched && addressForm.get('city')?.errors}">
+          <div class="ds-input__label" i18n>{{content.as_input_labels.city}}</div>
+          <input type="text" formControlName="city" id="as_insurance_city_txt" aria-label="City" required aria-required="true" />
+          <div class="ds-input__error" role="alert">{{addressForm.get('city').errors | validationError : content.as_input_labels.city}}</div>
+          <span tabindex="0" role="alert" *ngIf="addressForm.get('city').errors && addressForm.get('city').touched"
+            class="visually-hidden">{{addressForm.get('city').errors | validationError : content.as_input_labels.city}}</span>
+        </div>
+      </div>
+      <div class="ds-col--3">
+        <div class="ds-input --required margin-right-24"
+          [ngClass]="{'--error': !addressForm.get('state').valid && addressForm.get('state').touched && addressForm.get('state')?.errors}">
+          <div class="ds-input__label" i18n>{{content.as_input_labels.state}}</div>
+          <input type="text" id="state" formControlName="state" [matAutocomplete]="state" id="as_insurance_state_txt"
+            aria-label="State" (input)="updateVal($event)" required aria-required="true" />
+          <mat-autocomplete #state="matAutocomplete" class="ds-dropdown">
+            <mat-option (onSelectionChange)="onStateselection(state)" *ngFor="let state of stateResult; let i=index" [value]="state.value"
+              id="as_insurance_state_{{i+1}}" class="ds-dropdown__item">
+              {{state.label}}
+            </mat-option>
+          </mat-autocomplete>
+          <div class="ds-input__error" role="alert">{{addressForm.get('state').errors | validationError : content.as_input_labels.state}}</div>
+          <span tabindex="0" role="alert"
+            *ngIf="addressForm.get('state').errors && addressForm.get('state').touched"
+            class="visually-hidden">{{addressForm.get('state').errors | validationError : content.as_input_labels.state}}</span>
+        </div>
+      </div>
+      <div class="ds-col--3">
+        <div class="ds-input as-insurance-info-page__small-input --required  margin-right-0"
+          [ngClass]="{'--error': !addressForm.get('zipCode').valid && addressForm.get('zipCode').touched && addressForm.get('zipCode')?.errors}">
+          <div class="ds-input__label" i18n>{{content.as_input_labels.zip}}</div>
+          <input type="text" (keyup)="onKeyup()" formControlName="zipCode" id="as_insurance_zipCode_txt" aria-label="Zip Code" required aria-required="true"/>
+          <div class="ds-input__error" role="alert">{{addressForm.get('zipCode').errors | validationError : content.as_input_labels.zip}}
+          </div>
+          <span tabindex="0" role="alert"
+            *ngIf="addressForm.get('zipCode').errors && addressForm.get('zipCode').touched"
+            class="visually-hidden">{{addressForm.get('zipCode').errors | validationError : content.as_input_labels.zip}}</span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

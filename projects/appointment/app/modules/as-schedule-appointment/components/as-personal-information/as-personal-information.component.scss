@@ -1,0 +1,376 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+
+  &.as-personal{
+    padding-top: 119px;
+    .ds-body--content{
+      width: 100%;
+      @include when-wider-than(ds-1024){
+        padding-bottom: 100px;
+      }
+      .ds-select{
+        margin-right: 16px;
+        display:block;
+        @media screen and (max-width: 767px){
+          width: 100%;
+          padding-right: 0;
+        }
+        &:after {
+          content:'';
+        }
+      }
+      .ds-select__label{
+        font-size: 12px;
+        line-height: 16px;
+        color: #3A3A3C;
+        margin-bottom: 4px;
+      }
+      >.ds-col--12{
+
+        >.ds-flex.--row{
+          padding: 0 110px;
+          .ds-col--9{
+
+            > div{
+
+              &:first-of-type{
+
+                place-content: start;
+                justify-content: start;
+                position: sticky;
+                top: -90px;
+                background: $ds-gray__050;
+                margin-bottom: 150px;
+              }
+            }
+
+            .ds-grid--12{
+
+                [class*="ds-icon--info"]{
+                  display: flex;
+                  align-items: center;
+                  line-height: 1;
+                  margin-left: 12px;
+                }
+
+                .ds-col--12{
+
+                  .ds-input{
+
+                    .ds-input__checkbox{
+                      margin-right: 28px;
+                      width: auto;
+
+                      input{
+                        width: 0;
+                        padding: 0;
+                      }
+
+                      span{
+                        margin: 0;
+                      }
+                    }
+                  }
+
+
+                }
+
+
+            }
+          }
+
+          > .ds-col--3{
+              margin-top: 46px;
+              margin-left: 48px;
+              position: sticky;
+              top: 144px;
+              min-height: 600px;
+			  height: 100%;
+          }
+          fieldset {
+            border: none;
+            margin: 0;
+            padding: 0;
+          }
+          legend{
+            display: none;
+          }
+        }
+        &.margin0{
+          margin: 0;
+        }
+
+        .title {
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 111.7%;
+          letter-spacing: -0.0075em;
+          color: #034C1F;
+          margin-bottom: 32px;
+          margin-top: 34px;
+
+          @include when-less-than(ds-1024) {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 120%;
+          }
+        }
+
+        .subtitle {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 114.3%;
+            letter-spacing: normal;
+
+            @include when-less-than(ds-1024) {
+              font-size: 18px;
+              line-height: 111.1%;
+            }
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024){
+      padding-top: 84px;
+      .ds-body--content{
+        width: 100%;
+
+        >.ds-col--12{
+
+          >.ds-flex.--row{
+            padding: 0;
+            .ds-col--9{
+              width: 100%;
+
+              > .ds-grid--12{
+
+                &:first-of-type{
+                  margin-bottom: 124px;
+
+                  .ds-col--6, .ds-col--7, .ds-col--10{
+                    width: 100%;
+                  }
+
+                  .ds-col--2{
+                    width: 16%;
+                  }
+                }
+
+                .ds-col--9{
+                  width: 100%;
+                }
+              }
+            }
+
+            .hide-nav{
+              display: block !important;
+              width: 0;
+              padding: 0;
+              margin: 0;
+
+              > div{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .ds-grid--12 {
+        .ds-col--6 {
+          width: 50%;
+        }
+
+        .ds-col--3 {
+          width: 25%;
+        }
+
+        .ds-col--4 {
+          width: 33%;
+        }
+
+        .ds-col--5 {
+          width: 40%;
+        }
+      }
+      .margin-right-12 {
+        margin: 0px !important;
+      }
+    }
+
+    @include when-less-than(ds-768){
+
+      .ds-body--content{
+        width: 100%;
+
+        > .ds-col--12{
+          padding: 0;
+
+          > .ds-flex.--row{
+
+            > .ds-col--9{
+              width: 100%;
+              margin-bottom: 90px;
+              padding: 0;
+
+              [class*="ds-col"]{
+                width: 100%;
+                padding-right: 0;
+              }
+
+              form{
+
+                [class*="ds-col"]{
+
+                  .ds-input{
+                    width: 100%;
+                    padding-right: 0;
+                  }
+                }
+
+                [class*="ds-col--3"]{
+                  width: 100%;
+
+                }
+              }
+            }
+          }
+
+          .ds-pagination--footer{
+            width: 100%;
+
+            &.ds-col--9{
+              width: 100%;
+
+              .ds-col--12{
+                padding: 0;
+
+                .ds-col--6{
+                  width: 100%;
+                  padding: 0;
+
+                  button{
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        as-footer{
+          background: $ds-gray__050;
+          width: 100%;
+          position: fixed;
+          bottom: 60px;
+        }
+        .ds-grid--12{
+          .ds-col--6{
+            width: 100%;
+          }
+          .ds-col--5 , .ds-col--3 {
+            width: 100%;
+          }
+        }
+      }
+
+      .margin-left-24 {
+        margin: 0px !important;
+      }
+    }
+
+    @include when-less-than(ds-640){
+
+      .ds-body--content{
+
+        as-footer{
+          bottom: 78px;
+        }
+      }
+    }
+  }
+}
+
+input[type=checkbox][disabled]+span, fieldset[disabled]{
+  cursor: not-allowed !important;
+}
+fieldset[disabled] label{
+  cursor: not-allowed !important;
+  opacity:0.5;
+}
+.visually-hidden {
+  top: 0;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.as-summary-details__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+hr{
+  margin-top:10px;
+}
+#insurance-info-text {
+  display: block !important;
+}
+.ds-icon--expand {
+  position: absolute;
+  right: 15px;
+  top: 38px;
+}
+@include when-less-than(ds-768){
+	.row-column{
+		flex-direction: column;
+	}
+}
+@include when-less-than(ds-768){
+	.padding-32 {
+		padding: 24px !important;
+	}
+}
+
+.gender-identity-text {
+  margin-top: 24px;
+}
+
+.tooltip {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+
+.ds-input {
+	input {
+		border: 1px solid $ds-gray__500;
+	}
+	.mat-select {
+		border: 1px solid $ds-gray__500;
+	}
+}
+.ds-input__radio {
+	[type=radio] {
+		&:not(:checked)+label {
+			&:before {
+				border: 2px solid $ds-gray__500;
+			}
+		}
+	}
+}
+.ds-input__checkbox {
+	>span {
+		&:before {
+			border: 2px solid $ds-gray__500;
+		}
+	}
+}

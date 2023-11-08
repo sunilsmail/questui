@@ -1,0 +1,241 @@
+<main class="ds-body as-eorder-find-apt-summary">
+  <div *ngIf="loading" class="as-summary-details__overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content" id="skip-to-main" tabindex="-1">
+    <div class="ds-col--12 ">
+      <div class="ds-col--6 no-pad">
+        <h2 class="ds-font--24--bold no-pad" i18n>Hey
+          {{appointmentDetails?.firstName}}, we’ve found the details for your appointment on
+          {{appointmentDetails?.appointmentDate | date: 'EEEE,&nbsp; MMMM d'}}.
+        </h2>
+      </div>
+      <div class="margin-bottom-52 ds-grid--12 ds-form__col--2--map">
+        <div class="ds-col--6 ds-flex --start-start panel1">
+          <div class="ds-col--12 ds-flex--column panel-content">
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 ds-flex">
+                  <div class="ds-col--10 no-pad" aria-label="Confirmation code" i18n>Confirmation code
+                  </div>
+                </div>
+                <div class="ds-font--14 --400" [attr.aria-label]="[confirmationCode]">{{confirmationCode}}
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--12 ds-col--12 ds-flex">
+                  <span
+                    matTooltip="If your reason for visiting Quest has changed, please cancel your appointment and reschedule it."
+                    class="ds-font--16--bold" aria-label="Reason for visiting">Reason for visiting</span>
+                </div>
+                <div class="ds-flex --start-center">
+                  <span class="ds-icon--test-tube-label ds-green ds-font--24 panel-text" aria-label=""></span>
+                  <span
+                    matTooltip="If your reason for visiting Quest has changed, please cancel your appointment and reschedule it."
+                    class="ds-font--14 --400" [attr.aria-label]="[]" innerHTML={{facilityTestTypeValue}}></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 no-pad ds-flex">
+                  <div class="ds-col--10 no-pad" aria-label="Location, date, and time" i18n>Location, date, and time
+                  </div>
+                  <div class="ds-col--2">
+                    <a aria-label="Edit Location, date, and time"
+                      (click)="navigate('/eorder/as-eorder-appt-scheduler', 'editLocation')"
+                      class="ds-flex --end-center" tabindex="0">
+                      <span class="ds-flex ds-green__700" tabindex="-1">
+                        <span class="ds-link content">Edit</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="ds-col--10 ds-flex">
+                  <div class="panel-text"><span class="ds-icon--address ds-green__700 ds-font--24"></span></div>
+                  <div class="ds-font--14 panel-text">
+                    <div class="ds-font--14 --400" [attr.aria-label]="[pscDetails?.name]">
+                      {{pscDetails?.name}}
+                    </div>
+                    <div [attr.aria-label]="[pscDetails?.address1]">{{pscDetails?.address1}}</div>
+                    <div [attr.aria-label]="[pscDetails?.address2]">{{pscDetails?.address2}}</div>
+                    <div [attr.aria-label]="[pscDetails?.city,pscDetails?.state,pscDetails?.zip]">
+                      {{pscDetails?.city}} {{pscDetails?.state}} {{pscDetails?.zip}}
+                    </div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex icons">
+                  <div class="panel-text"><span class="ds-icon--calendar ds-green__700 ds-font--24"
+                      tabindex="-1"></span></div>
+                  <div class="ds-font--14 ds-flex --start-center panel-text ">
+                    <div [attr.aria-label]="[appointmentDetails?.appointmentDate]">
+                      {{appointmentDetails?.appointmentDate | date:'MMMM dd, y'}}
+                    </div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex no-pad">
+                  <div class="panel-text"><span class="ds-icon--clock ds-green__700 ds-font--24" tabindex="-1"></span>
+                  </div>
+                  <div class="ds-font--14 ds-flex --start-center panel-text ">
+                    <div [attr.aria-label]="[appointmentDetails?.appointmentTime | twelveHourTime]">
+                      {{appointmentDetails?.appointmentTime | twelveHourTime}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 no-pad ds-flex margin-bottom-6">
+                  <div class="ds-col--10 no-pad" aria-label="Who’s visiting" i18n>Who’s visiting
+                  </div>
+                  <div class="ds-col--2">
+                    <a (click)="navigate('/eorder/as-eorder-personal-information', 'editPersonalInfo')"
+                      aria-label="Edit Who’s visiting" class="ds-flex --end-center" tabindex="0">
+                      <span class="ds-flex ds-green__700" tabindex="-1">
+                        <span class="ds-link content">Edit</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 no-pad">
+                  <div class="ds-font--14 --400 onFocus ds-flex --start-center"
+                    [attr.aria-label]="[personalData.demographics?.firstName,personalData.demographics?.lastName]" i18n>
+                    <span class="ds-icon--user ds-green ds-font--24" aria-label=""></span>
+                    {{personalData.demographics?.firstName}} {{personalData.demographics?.lastName}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 no-pad ds-flex margin-bottom-6">
+                  <div class="ds-col--10 no-pad" aria-label="Insurance information" i18n>Insurance information
+                  </div>
+                  <div class="ds-col--2">
+                    <a (click)="navigate('/eorder/as-eorder-insurance-information', 'editInsuranceInfo')"
+                      class="ds-flex --end-center" tabindex="0" aria-label="Edit Insurance information">
+                      <span class="ds-flex ds-green__700" tabindex="-1">
+                        <span class="ds-link content">Edit</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex no-pad">
+                  <span class="ds-icon--identification-card ds-green__700 ds-font--24 padding-right-10"
+                    aria-label="identification card"></span>
+                  <div class="ds-col--9 ds-font--14">
+                    <div>
+                    <ng-container *ngIf="!insuranceData?.insurance?.insuranceName; else insMsg">
+                      <div *ngIf="!insuranceData?.insurance?.insuranceName" class="ds-font--14 --400 onFocus"
+                        aria-label="You have not provided insurance for your appointment" i18n>
+                        You have not provided insurance for your appointment.
+                      </div>
+                    </ng-container>
+                    <ng-template #insMsg>
+                      <ng-container
+                        *ngIf="insuranceData && insuranceData?.insurance && !insuranceData?.insurance?.insMnemonic; else validIns">
+                        <div class="ds-font--14 --400 onFocus" *ngIf="!insuranceData?.insurance?.insMnemonic"
+                          [attr.aria-label]="[content.as_eorder_summary.ins_not_found]" i18n>
+                            {{content.as_eorder_summary.ins_not_found_primary}}
+                        </div>
+                      </ng-container>
+                      <ng-template #validIns>
+                        <div class="ds-font--14 --400 onFocus" *ngIf="insuranceData?.insurance?.insuranceName"
+                          [attr.aria-label]="[insuranceData?.insurance?.insuranceName]" i18n>
+                          {{insuranceData?.insurance?.insuranceName}}
+                        </div>
+                        <div class="ds-font--14 onFocus" *ngIf="insuranceData?.insurance?.insMemberId"
+                          [attr.aria-label]="[insuranceData?.insurance?.insMemberId]" i18n>
+                          {{insuranceData?.insurance?.insMemberId}}
+                        </div>
+                      </ng-template>
+                    </ng-template>
+                  </div>
+                </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                <ng-container
+                  *ngIf="insuranceData && insuranceData?.insurance">
+                    <!-- <span class="ds-icon--identification-card ds-green__700 ds-font--24 padding-right-10" aria-label="identification card"></span> -->
+                      <as-sec-ins-display [screenName]="'summary'" [insuranceData]="secondaryInsData">
+                      </as-sec-ins-display>
+                </ng-container>
+              </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 no-pad ds-flex">
+                  Estimated Cost &nbsp;
+                  <span *ngIf="!estimatedPrice" matTooltip="If you’re using insurance, we determine your estimated out-of-pocket cost based upon your insurance plan coverage. Common patient responsibilities include copays, deductibles, coinsurance, and any testing services not covered by your insurance plan.
+                      If we didn’t ask you for insurance, the cost of this testing will be covered by your doctor."
+                    class="ds-font--12 --400" aria-label="help_outline">
+                    <span class="ds-icon--question ds-black ds-font--24" aria-label=""></span>
+                  </span>
+                  <div *ngIf="estimatedPrice">
+                    <span class="ds-icon--question ds-black ds-font--24"  aria-label=""></span>
+                  </div>
+                </div>
+                <div class="ds-font--12 ds-col--12 no-pad ds-flex" *ngIf="estimatedPrice">
+                  <span class="ds-font--16--bold">{{estimatedPrice | currency}}*</span>
+                </div>
+                <div class="ds-font--14--bold onFocus" *ngIf="!estimatedPrice"
+                  aria-label="You have not provided insurance for your appointment" i18n>
+                  Unable to provide estimate at this time but an estimate will be provided at your visit.*
+                </div>
+              </div>
+            </div>
+            <div class="ds-flex--column ds-font--12" *ngIf="!estimatedPrice">
+              <p [innerHTML]="content.as_eorder_summary.costEstimate_paragraph1"></p>
+              <p>{{content.as_eorder_summary.costEstimate_paragraph2}}</p>
+              <p>{{content.as_eorder_summary.costEstimate_paragraph3}}</p>
+              <p>{{content.as_eorder_summary.costEstimate_paragraph4}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="ds-col--6 no-pad panel2">
+          <div class="panel-content">
+            <div class="ds-col--12 ds-flex panel">
+              <div class="ds-col--4" *ngIf="calendarData.appointmentTime">
+                <as-add-to-calendar [inputEvent]="calendarData" [buttonType]="'black'"></as-add-to-calendar>
+              </div>
+              <div class="ds-col--4 print-details" (click)="printConfirmation()" tabindex="0">
+                <span class="ds-flex --start-center">
+                  <span class="ds-icon--print ds-green__700 ds-font--24" aria-label="star" tabindex="-1"></span>
+                  <span class="ds-font--14--bold option" id="print" aria-label="Print Details" role="button">Print
+                    details</span>
+                </span>
+              </div>
+            </div>
+            <div class="ds-col--12">
+              <div class="ds-col--12 no-pad ds-flex --row">
+                <div class="ds-flex no-pad"><span class="ds-icon--route ds-green__700 ds-font--24"
+                    aria-label="opens Directions in google maps" (click)="openDirection()"></span>
+                  <div class="ds-flex --start-center ds-font--16--bold panel-text" i18n>Directions</div>
+                </div>
+              </div>
+              <div class="ds-col--10 ds-font--14 --400" i18n>{{pscDetails?.landmark}}
+              </div>
+              <hr class="grey">
+              <div class="ds-flex--column">
+                <div class="ds-col--12 ds-font--16--bold" i18n>Fasting details</div>
+                <div class="ds-col--12 ds-font--14 --400" i18n>If your test requires it, don't forget to fast for
+                  8-12 hours before your appointment. If you're not sure, contact your doctor's office.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<as-confirmation-print [inputEvent]="printData"></as-confirmation-print>

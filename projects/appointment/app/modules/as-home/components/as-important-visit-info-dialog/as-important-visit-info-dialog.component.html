@@ -1,0 +1,29 @@
+<div class="as-imp-visit-info" fxLayout="column">
+  <button tabindex="0" class="as-imp-visit-info__close-button onFocus"  fxFlexAlign="end" mat-dialog-close aria-label="close" i18n-aria-label
+    color="primary">
+    <span class="ds-icon--close"></span>
+  </button>
+  <div class="as-imp-visit-info__main">
+    <mat-icon class="as-imp-visit-info__warning-icon">warning</mat-icon>
+
+    <div class="as-imp-visit-info__wrapper" fxLayout="column">
+      <div fxLayout="column">
+        <h3 class="as-imp-visit-info__wrapper__header ds-black" i18n>{{content.as_important_visit_info_dialog.title}}
+        </h3>
+        <div class="as-imp-visit-info__wrapper__message ds-gray__900">
+          <p i18n>
+            {{content.as_important_visit_info_dialog.message_1}}
+          </p>
+          <p i18n>
+            {{content.as_important_visit_info_dialog.message_2}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" class="as-imp-visit-info__link">
+      <a [href]="covidTestingOptions$ | async" target="_blank" tabindex="0" aria-label="Learn more about COVID-19 testing options : opens in new tab"  class="ds-gray__900 ds-link" i18n>
+        {{content.as_important_visit_info_dialog.link}}</a>
+    </div>
+  </div>
+
+</div>

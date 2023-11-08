@@ -1,0 +1,175 @@
+<main class="ds-body as-personal">
+  <div class="ds-grid--12 ds-body--content">
+    <!-- {{form.value|json}} -->
+    <div class="ds-col--12 pad-24">
+      <div class="ds-flex --row --center-center ds-form__col--2">
+        <div class="ds-col--12" id="skip-to-main" tabindex="-1">
+          <div>
+            <div>
+              <div>
+                <h2 class="ds-green__700 margin-bottom-32" [attr.aria-label]="[content.as_echeckin_personal_information.title]" i18n tabindex="0" role="heading" aria-level="1">
+                  {{content.as_echeckin_personal_information.title}}</h2>
+              </div>
+            </div>
+            <form [formGroup]="personalInfoForm">
+              <div class="ds-grid--12">
+                <div class="ds-grid--12 ds-col--12 ds-flex --row ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-0">
+                  <div class="ds-col--12 no-pad">
+                  <h3 class="ds-green__700 no-margin" [attr.aria-label]="[content.as_echeckin_personal_information.title_1]" tabindex="0" role="heading" aria-level="2" i18n>
+                    {{content.as_echeckin_personal_information.title_1}}</h3>
+                    <hr class="green">
+                  </div>
+                  <div class="ds-grid--12 no-pad">
+                    <div class="ds-col--6">
+                      <div class="ds-input">
+                        <div class="ds-input --required as-insurance-info-page__medium-input"
+                        [ngClass]="{'--error': !personalInfoForm.get('firstName').valid && personalInfoForm.get('firstName').touched}">
+                        <div class="ds-input__label" i18n>First name</div>
+                        <input type="text" formControlName="firstName" placeholder="" aria-label="First Name"
+                          id="eOrderPIfirstName" autocomplete="given-name" />
+                        <div class="ds-input__error">{{personalInfoForm.get('firstName').errors | validationError}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ds-col--6">
+                      <div class="ds-input">
+                        <div class="ds-input --required">
+                          <div class="ds-input__label" i18n>Sex</div>
+                            <div class="ds-flex --row">
+                              <div class="ds-input__radio">
+                                <input type="radio" id="sex--male" value="M" formControlName="gender">
+                                <label for="sex--male" i18n>{{content.as_echeckin_personal_information.gender_male}}</label>
+                              </div>
+                              <div class="ds-input__radio">
+                                <input type="radio" id="sex--female" value="F" formControlName="gender">
+                                <label for="sex--female" i18n>{{content.as_echeckin_personal_information.gender_female}}</label>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ds-grid--12 ds-col--12 ds-flex --row ds-card --gray__200 margin-bottom-32 padding-32 padding-bottom-0">
+                  <div class="ds-col--12 no-pad">
+                  <h3 id="eOrderPI_as_personal_information_CreateAccountAddressText"  class="ds-green__700 no-margin" [attr.aria-label]="[content.as_echeckin_personal_information.title_2]" tabindex="0" i18n>
+                    {{content.as_echeckin_personal_information.title_2}}</h3>
+                    <hr class="green">
+                  </div>
+
+                  <div class="ds-grid--12">
+
+                    <!-- {{(optionsAsync$ | async)?.length}} -->
+                    <!-- <div class="ds-col--12 ds-flex --row column"> -->
+                      <div class="ds-col--8">
+                        <div class="ds-input --required" matAutocompleteOrigin #origin="matAutocompleteOrigin"
+                        [ngClass]="{'--error': !personalInfoForm.get('address').valid && personalInfoForm.get('address').touched}">
+                        <div class="ds-input__label" i18n>Address</div>
+                        <input type="text" #as_Eorder_AddressSearchTxt formControlName="address" id="eOrderPI_address" tabindex="0"
+                          aria-label="Street Address" placeholder="" class="search" matInput [matAutocomplete]="street"
+                          autocomplete="street-address" />
+                        <mat-progress-bar *ngIf="addressLoading"  mode="indeterminate"></mat-progress-bar>
+                        <mat-autocomplete #street="matAutocomplete" class="ds-dropdown">
+                          <mat-option *ngFor="let option of options; let i=index" [value]="option.description"
+                            (onSelectionChange)="onOptionSelect(option)" id="eOrderPI_address_street_{{i+1}}" class="ds-dropdown__item">
+                            {{ option.description }}
+                          </mat-option>
+                        </mat-autocomplete>
+                        <div class="ds-input__error">{{personalInfoForm.get('address').errors | validationError}}</div>
+                        </div>
+                      </div>
+                      <div class="ds-col--4">
+                        <div class="ds-input" [ngClass]="{'--error': !personalInfoForm.get('address2').valid && personalInfoForm.get('address2').touched}">
+                          <div class="ds-input__label" i18n>Apt/Suite</div>
+                        <input type="text" formControlName="address2" id="eOrderPI_as_personal_address2_txt"
+                          aria-label="Apt/Suite" placeholder="" autocomplete="address-line1" />
+                        <div class="ds-input__error">{{personalInfoForm.get('address2').errors | validationError}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ds-grid--12 no-pad">
+                      <div class="ds-col--6">
+                        <div class="ds-input --required"
+                        [ngClass]="{'--error': !personalInfoForm.get('city').valid && personalInfoForm.get('city').touched}">
+                        <div class="ds-input__label" i18n>City</div>
+                        <input class="city__input" type="text" formControlName="city" id="eOrderPI_as_personal_city_txt"
+                          aria-label="city" placeholder="" autocomplete="address-level2" />
+                        <div class="ds-input__error">{{personalInfoForm.get('city').errors | validationError}}</div>
+                        </div>
+                      </div>
+                      <div class="ds-col--3">
+                        <div class="ds-input --required state"
+                        [ngClass]="{'--error': !personalInfoForm.get('state').valid && personalInfoForm.get('state').touched}">
+                        <div class="ds-input__label" i18n>State</div>
+                        <input class="state__input" type="text" formControlName="state"
+                          id="eCheckin_as_personal_state_txt" aria-label="State" placeholder="" matInput
+                          autocomplete="address-level1" [matAutocomplete]="state" />
+                        <mat-autocomplete #state="matAutocomplete" class="ds-dropdown">
+                          <mat-option *ngFor="let state of stateResult; let i=index" [value]="state.value"
+                            id="eCheckin_as_personal_state_{{i+1}}" class="ds-dropdown__item">
+                            {{state.label}}
+                          </mat-option>
+                        </mat-autocomplete>
+                        <div class="ds-input__error">{{personalInfoForm.get('state').errors | validationError}}</div>
+                        </div>
+                      </div>
+                      <div class="ds-col--3">
+                        <div class="margin-right-0 ds-input as-insurance-info-page__small-input --required zip"
+                        [ngClass]="{'--error': !personalInfoForm.get('zip').valid && personalInfoForm.get('zip').touched}">
+                        <div class="ds-input__label" i18n>Zip Code</div>
+                        <input class="zip__input" type="text" formControlName="zip" placeholder=""
+                          id="eOrder_as_personal_zip_txt" aria-label="zip" autocomplete="postal-code" />
+                        <div class="ds-input__error">{{personalInfoForm.get('zip').errors | validationError}}</div>
+                        </div>
+                      </div>
+                    <!-- </div>                           -->
+
+                </div>
+                </div>
+
+                <div class="ds-grid--12 ds-col--12 ds-card --gray__200 margin-bottom-32 padding-32">
+                  <div class="ds-grid--12 no-pad">
+                  <h3 class="ds-green__700 no-margin" [attr.aria-label]="[content.as_echeckin_personal_information.title_1]" tabindex="0" i18n>
+                    Insurance</h3>
+
+                </div>
+                <hr class="green">
+                  <div class="ds-grid--12 no-pad">
+                    <div class="ds-col--12 ds-font--14 ds-green__700"
+                    [attr.aria-label]="[content.as_insurance_information.title_description]" tabindex="0" role="complementary" i18n>
+                    <h3 class="ds-green__700 no-margin ds-input__label"> Will you be providing insurance information for this visit? *</h3></div>
+                  </div>
+                  <div class="ds-col--12">
+                    <div class="ds-input --required">
+                        <div class="ds-flex --row">
+                          <div class="ds-input__radio">
+                            <input type="radio" id="insuranceCheck--yes" value="true" formControlName="insuranceCheck">
+                            <label for="insuranceCheck--yes" i18n>{{content.as_echeckin_personal_information.insurance_radio_1}}</label>
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" id="insuranceCheck--no" value="false" formControlName="insuranceCheck">
+                            <label for="insuranceCheck--no" i18n>{{content.as_echeckin_personal_information.insurance_radio_2}}</label>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="loading" class="as-insurance__overlay" fxLayout="row" fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+        <div class="as-personal__actions margin-bottom-68 ds-flex --end-center">
+          <button class="ds-button" [disabled]="!personalInfoForm.valid"(click)="goToNext()"
+          [ngClass]="{'--primary':personalInfoForm.valid,'--primary--disabled':!personalInfoForm.valid}"
+          aria-label="Continue">
+            <label i18n>Continue</label>
+        </button>
+        </div>
+      </div>
+
+    </div>
+</main>

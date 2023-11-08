@@ -1,0 +1,32 @@
+<div class="ds-grid--12 as-open-eorder" aria-label="List of reasons for visit" role="complementary">
+  <div class="ds-col--12 no-pad" (click)="onItemSelected(item)" (keydown.enter)="onItemSelected(item)"
+  (keydown.ArrowLeft)="onkeyDownButton($event, i-1)" (keydown.ArrowRight)="onkeyDownButton($event, i+1)"
+  (keydown.ArrowUp)="onkeyDownButton($event, i-1)" (keydown.ArrowDown)="onkeyDownButton($event, i+1)"
+    *ngFor="let item of openEorders; let i = index">
+    <ng-container *ngIf="item.token !== '-1';else lastOption">
+      <div class="ds-card" id="card_{{i}}" tabindex="0" [ngClass]="{'selected-item': selectedItem === item}">
+        <div class="ds-flex --content">
+            <span class="ds-icon--calendar-blank ds-black ds-font--24 padding-right-8" aria-label=""></span>
+          <div class="ds-col--12 no-pad">
+            <p class="ds-font--18--bold no-margin padding-bottom-8" aria-level="2">Schedule this test</p>
+            <p class="ds-font--16 --500 no-margin" aria-level="2">{{item.testOrders}}</p>
+            <ng-container *ngIf="(item.doctorFirstName || item.doctorLastName); else noProvider">
+              <span class="ds-font--16" i18n>Ordered by Dr. {{item.doctorFirstName}} {{item.doctorLastName}}</span>
+            </ng-container>
+          </div>
+          <ng-template #noProvider>
+            <span class="ds-font--16" i18n>Ordered By Your Healthcare Provider</span>
+          </ng-template>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #lastOption>
+      <div class="ds-card custom-height" id="card-{{i}}" tabindex="0" [ngClass]="{'selected-item': selectedItem === item}">
+        <div class="ds-flex --content no-pad">
+          <span class="ds-icon--calendar-blank ds-black ds-font--24 padding-right-8" aria-label=""></span>
+          <p class="ds-font--18--bold no-margin">{{lastOptiontext}}</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

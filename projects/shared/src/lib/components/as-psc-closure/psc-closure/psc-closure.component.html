@@ -1,0 +1,10 @@
+<div *ngIf="data?.pscClosureComments?.length > 0" class="margin">
+  <div *ngFor="let close of data?.pscClosureComments; let i= index" class="bottom-pad">
+    <div class="ds-flex content">
+        <span class="ds-icon--alert ds-font--24 ds-alert__700 icon-label" role="alert" aria-label="alert"></span>
+      <div>
+        <label class="label_content" i18n-aria-label id="closedId-{{i}}">{{close}}</label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="covid-19-antibody-dialog" *ngIf="data.antiBodyTest">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="covid-details-close-button" (click)="closeDialog()"
+      aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="COVID-19 Antibody Test"><span
+          class="ds-icon--alert ds-yellow__700 margin-right-8"></span>COVID-19 Antibody Test</h2>
+      <span class="ds-body--base padding-bottom-12" i18n>{{content.as_covid_antibody_dialog.message_3}}</span>
+      <span class="ds-body--base" i18n>{{content.as_covid_antibody_dialog.message_4}}</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="goToNext('No')">
+          <label>{{content.as_covid_antibody_dialog.button_text_2}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="goToNext('Yes')">
+          <label>{{content.as_covid_antibody_dialog.button_text_1}}</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>
+
+<div class="covid-19-antibody-dialog" *ngIf="data.facilityServiceId===26">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="covid-details-close-button" (click)="closeDialog()"
+      aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="order confirmation email"><span
+          class="ds-icon--alert ds-yellow__700 margin-right-8"></span>Order confirmation email</h2>
+      <span class="ds-body--base padding-bottom-12" i18n>{{content.as_purchase_my_own_test_dialog.message_2}}</span>
+      <span class="ds-body--base" i18n>{{content.as_purchase_my_own_test_dialog.message_3}}</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="goToNext('CovidNo')">
+          <label>{{content.as_purchase_my_own_test_dialog.button_text_2}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="goToNext('CovidYes')">
+          <label>{{content.as_purchase_my_own_test_dialog.button_text_1}}</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>
+
+
+<div class="covid-19-antibody-dialog" *ngIf="data.facilityServiceId===25">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="covid-details-close-button" (click)="closeDialog()"
+      aria-label="close" role="button" name="closebutton" tabindex="0" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-level="1" aria-label="COVID-19 Antibody Test"><span
+          class="ds-icon--alert ds-yellow__700 margin-right-8"></span>COVID-19 Antibody Test</h2>
+      <span class="ds-body--base" i18n>{{content.as_purchase_my_own_test_dialog.message_2}}</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="goToNext('AntiBodyNo')">
+          <label>{{content.as_purchase_my_own_test_dialog.button_text_3}}</label>
+        </button>
+      </div>
+      <div class="ds-col--6 ds-flex --start-center">
+        <button class="ds-button --secondary" (click)="goToNext('AntiBodyYes')">
+          <label>{{content.as_purchase_my_own_test_dialog.button_text_1}}</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

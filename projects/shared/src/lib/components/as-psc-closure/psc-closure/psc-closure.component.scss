@@ -1,0 +1,29 @@
+@import '../../../../../../appointment/styles.scss';
+
+.cus-padding {
+  padding: 4px !important;
+}
+.text-padding {
+  padding-top: 3px !important;
+}
+.bottom-pad{
+  padding-bottom: 5px;
+}
+
+.icon-label{
+  margin-right: 8px;
+}
+
+.label_content{
+  color: $ds-gray__900;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.content{
+  align-items: center;
+}
+
+.margin{
+  margin-bottom: 14px;
+}

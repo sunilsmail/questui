@@ -1,0 +1,97 @@
+<main class="ds-body as-active-infection-symptoms">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 pad-24">
+      <div class="ds-flex --row ds-form__col--2">
+        <div *ngIf="loading" class="as-summary-details__overlay" fxLayout="row" fxLayoutAlign="center center">
+          <as-spinner></as-spinner>
+        </div>
+        <div class="ds-col--8">
+          <div>
+            <div>
+              <button class="ds-icon--arrow-back ds-font--24 ds-green__700" (click)="goToPrevious()" tabindex="0"
+                aria-label="back" title="back"></button>
+              <div>
+                <h2 class="ds-font__20--bold title" [attr.aria-label]="[content.as_active_infection_symptoms.title]" i18n id="personalInfo">
+                  {{content.as_active_infection_symptoms.title}}</h2>
+              </div>
+            </div>
+            <div>
+              <form [formGroup]="activeInfectionSymptomsForm" role="form" aria-labelledby="activeInfectionSymptoms">
+                <div class="ds-col--12" id="skip-to-main" formGroupName="preferences" role="radiogroup">
+                  <div class="ds-flex ds-col--12 symptom-div">
+                    <label class="ds-input__checkbox">
+                      <input id="acsymtom_1" type="checkbox" [checked]="activeInfectionSymptomsForm.value.preferences.symptom_1" formControlName="symptom_1" (change)="symptomsSelection('symptom_1')">
+                      <span></span>
+                      <label class="symptom-checkbox">I am experiencing COVID-19 symptoms
+                        <span class="help-icon" (click)="openModelDialogs('symptoms')">
+                          <img alt="Help Icon" src="/assets/ds-images/ds-icon--help.svg" />
+                        </span>
+                      </label>
+                    </label>
+                  </div>
+                  <div style="padding-bottom: 10px;" class="ds-flex ds-col--12 extraOptions" *ngIf="activeInfectionSymptomsForm.value.preferences.symptom_1">
+                    <span style="color: #424245"> <i>Seek medical attention immediately if severe symptoms develop</i>
+                      <span class="help-icon" (click)="openModelDialogs('serve-symptoms')">
+                        <img alt="Help Icon" src="/assets/ds-images/ds-icon--help.svg" />
+                      </span>
+                    </span>
+                  </div>
+                  <div class="ds-flex ds-col--12">
+                    <label class="ds-input__checkbox">
+                      <input id="acsymtom_2" type="checkbox" [checked]="activeInfectionSymptomsForm.value.preferences.symptom_2" formControlName="symptom_2" (change)="symptomsSelection('symptom_2')">
+                      <span></span>
+                      <label class="symptom-checkbox">I have had a recent known exposure to someone who has tested
+                        positive for COVID-19</label>
+                    </label>
+                  </div>
+                  <div class="ds-flex ds-col--12 extraOptions" *ngIf="activeInfectionSymptomsForm.value.preferences.symptom_2">
+                      <div class="ds-input" aria-required="true" role="radiogroup"
+                        aria-labelledby="['I have had a recent known exposure','I have a known exposure']">
+                        <div class="ds-flex--col-12">
+                          <div class="ds-input__radio">
+                            <input type="radio" id="symptom_2_1" value="sym1" formControlName="extraSymptom" (change)="symptomsSelection('extra')">
+                            <label for="symptom_2_1" i18n>I suspect I may have been exposed
+                              <label class="help-icon" (click)="openModelDialogs('exposed')"><img alt="Help Icon"
+                                src="/assets/ds-images/ds-icon--help.svg" /></label>
+                            </label>
+                          </div>
+                          <div class="ds-input__radio">
+                            <input type="radio" id="symptom_2_2" value="sym2" formControlName="extraSymptom" (change)="symptomsSelection('extra')">
+                            <label for="symptom_2_2" i18n>I have known exposure
+                              <label class="help-icon" (click)="openModelDialogs('known-exposed')"><img alt="Help Icon"
+                                src="/assets/ds-images/ds-icon--help.svg" /></label>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="ds-flex ds-col--12">
+                    <label class="ds-input__checkbox">
+                      <input id="acsymtom_3" type="checkbox" [checked]="activeInfectionSymptomsForm.value.preferences.symptom_3" formControlName="symptom_3" (change)="symptomsSelection('symptom_3')">
+                      <span></span>
+                      <label class="symptom-checkbox">I have received a positive antigen test result or been informed
+                        that
+                        I am part of a positive pod in a surveillance program within the past 10 days</label>
+                    </label>
+                  </div>
+                  <div class="ds-flex ds-col--12">
+                    <label class="ds-input__checkbox">
+                      <input id="acsymtom_4" type="checkbox" [checked]="activeInfectionSymptomsForm.value.preferences.symptom_4" formControlName="symptom_4" (change)="symptomsSelection('symptom_4')">
+                      <span></span>
+                      <label class="symptom-checkbox">None of the above</label>
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="ds-col--4">
+          <as-navigation-sidebar [step]="1" [hideInsuranceInfo]="hideInsuranceInfo"></as-navigation-sidebar>
+          <as-footer [previous]="previousUrl" [reqParams]="reqParams" [enableContinue]="activeInfectionSymptomsForm.valid && enableContinue"
+            (continue)="continueClicked()" id="as_personal_footer"></as-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

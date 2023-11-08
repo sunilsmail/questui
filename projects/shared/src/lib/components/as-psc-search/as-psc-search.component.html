@@ -1,0 +1,22 @@
+<div class="as-psc-search" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+  <div class="as-psc-search__search-field margin-bottom-10">
+    <div class="ds-input --icons --icon-left --icon-right margin-0" fxLayoutAlign="start start" fxLayout="column" role="search">
+      <div class="ds-col--12 ds-flex no-pad --start-center --row">
+          <span class="ds-icon--search ds-gray__900 ds-font--18 --left"  role="img" aria-label="search"></span>
+          <input name="psc-search" aria-controls="mat-autocomplete-0" #pscSearchTxt id="skip-to-main" tabindex="0" type="text" matInput i18n-placeholder
+            [formControl]="searchControl" [matAutocomplete]="auto" [matAutocompleteConnectedTo]="origin" class="search"
+            type="text" placeholder="Search zip code, city or address" aria-label="Search zip code, city or address" aria-labelledby="testingData"/>
+          <div *ngIf="showLocationDetectIcon" class="ds-icon--location ds-font--16 ds-gray__900 bounding-box focus-div --right" (keyup.enter)="getUserLocation()" role="button" tabindex="0" id="psc-search-current-location-btn"
+          (click)="getUserLocation()" matTooltip="use my location" aria-label="use my location" i18n-aria-label></div>
+        <div class="ds-input__error"></div>
+      </div>
+    </div>
+    <mat-autocomplete class="mobile-view-autocomplete-options" autoActiveFirstOption #auto="matAutocomplete" class="ds-dropdown">
+      <mat-option *ngFor="let option of options" [value]="option.description" tabindex="0"
+        (onSelectionChange)="onOptionSelect(option)" class="ds-dropdown__item">
+        {{ option.description }}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+  <mat-progress-bar *ngIf="loading" class="as-psc-search__loading" mode="indeterminate"></mat-progress-bar>
+</div>

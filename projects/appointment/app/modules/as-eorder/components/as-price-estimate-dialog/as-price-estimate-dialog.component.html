@@ -1,0 +1,24 @@
+
+<div class="price-estimate-dialog">
+<div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+  <button class="ds-icon--close ds-font--24 ds-black" fxFlexAlign="end" (click)="closeDialog()" aria-label="close Dialog"
+    tabindex="0"></button>
+</div>
+
+<mat-dialog-content class="ds-col--12 no-pad">
+  <div class="ds-modal__content ds-col--12 no-pad ds-flex --column --center-start">
+    <h2 id="mat-dialog-title" aria-level="1" class="ds-green__700" aria-label="Header 1" i18n>{{content.as_eorder_price_estimate_dialog.title}}</h2>
+        <span class="ds-font--16 price-estimate-dialog__content__sub-title">{{content.as_eorder_price_estimate_dialog.message}} <br>{{content.as_eorder_price_estimate_dialog.message1}}</span>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="ds-col--12">
+  <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+    <div class="ds-col--6 ds-flex --end-center">
+      <button class="ds-button --primary" aria-label="Okay" role="button" (click)="closeDialog()">
+        <label i18n>{{content.as_eorder_price_estimate_dialog.link}}</label>
+      </button>
+    </div>
+  </div>
+</mat-dialog-actions>
+</div>

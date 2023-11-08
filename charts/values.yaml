@@ -1,0 +1,50 @@
+# Default values for chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+buildNumber: latest
+patchTag: "today"
+tier: ui
+techStack: angular
+
+image:
+  repository: dgxmyquestacreusdev.azurecr.io
+  name: appointment-ui
+  tag: latest
+  pullPolicy: IfNotPresent
+  pullSecret: dgxmyquestacreusdev.azurecr.io
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources: 
+  limits:
+    cpu: 200m
+    memory: 1024Mi
+  requests:
+    cpu: 50m
+    memory: 128Mi
+
+hpa:
+  replicas :
+    min: 1
+    max: 6
+  cpu:
+    utilization: 75
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+contrast:
+  enable: false
+  id: appointment-ui
+  env: Development
+
+linkerd:
+  inject: enabled
+
+  

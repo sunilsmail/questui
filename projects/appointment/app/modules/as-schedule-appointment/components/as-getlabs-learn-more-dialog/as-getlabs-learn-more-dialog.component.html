@@ -1,0 +1,63 @@
+<main class="as-get-labs-learn-more">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__900" id="bfa-closeButton" (click)="closeDialog()" aria-label="close" role="button" tabindex="0"
+      (keydown.Enter)="closeDialog()" i18n></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12 no-pad">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 *ngIf='partnerName === "Getlabs"' id="mat-dialog-title" aria-level="1" tabindex="0" class="pad-right" [attr.aria-label]="[content.as_getlabs_learn_more_dialog.title]" i18n>
+        <!-- <span class="ds-icon--alert ds-yellow__700 margin-right-8"></span> -->
+        {{content.as_getlabs_learn_more_dialog.title}}</h2>
+        <h2 *ngIf='partnerName === "ExamOne"' id="mat-dialog-title" aria-level="1" tabindex="0" class="pad-right" [attr.aria-label]="[content.as_getlabs_learn_more_dialog.title]" i18n>
+          <!-- <span class="ds-icon--alert ds-yellow__700 margin-right-8"></span> -->
+          {{content.as_examone_learn_more_dialog.title}}</h2>
+        <div class="ds-col--12 --content-scroll">
+          <div fxLayout="row" fxLayoutAlign="start center" class="mar">
+            <div class="step-image">
+              <span class="ds-icon--calendar-add ds-green__700 ds-font--50" aria-label=""></span>
+            </div>
+            <div  i18n>
+              <p *ngIf='partnerName === "Getlabs"' class="ds-body--base margin-bottom-0"><strong>{{content.as_getlabs_learn_more_dialog.step1Title}}</strong></p>
+              <span *ngIf='partnerName === "Getlabs"' class="ds-body--small">{{content.as_getlabs_learn_more_dialog.step1Text}}</span>
+              <p *ngIf='partnerName === "ExamOne"' class="ds-body--base margin-bottom-0"><strong>{{content.as_examone_learn_more_dialog.step1Title}}</strong></p>
+              <span *ngIf='partnerName === "ExamOne"' class="ds-body--small">{{content.as_examone_learn_more_dialog.step1Text}}</span>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center" class="mar">
+            <div class="step-image">
+              <span class="ds-icon--house-line ds-green__700 ds-font--50" aria-label=""></span>
+            </div>
+            <div  i18n>
+              <p *ngIf='partnerName === "Getlabs"' class="ds-body--base margin-bottom-0"><strong>{{content.as_getlabs_learn_more_dialog.step2Title}}</strong></p>
+              <span *ngIf='partnerName === "Getlabs"' class="ds-body--small">{{content.as_getlabs_learn_more_dialog.step2Text}}</span>
+              <p *ngIf='partnerName === "ExamOne"' class="ds-body--base margin-bottom-0"><strong>{{content.as_examone_learn_more_dialog.step2Title}}</strong></p>
+              <span *ngIf='partnerName === "ExamOne"' class="ds-body--small">{{content.as_examone_learn_more_dialog.step2Text}}</span>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center" class="mar">
+            <div class="step-image">
+              <span class="ds-icon--clipboard-text ds-green__700 ds-font--50" aria-label=""></span>
+            </div>
+            <div i18n>
+              <p class="ds-body--base margin-bottom-0"><strong>{{content.as_getlabs_learn_more_dialog.step3Title}}</strong></p>
+              <span class="ds-body--small">{{content.as_getlabs_learn_more_dialog.step3Text}}</span>
+            </div>
+          </div>
+        </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap">
+      <div class="ds-col--12 ds-flex --center-center margin-bottom-16">
+        <button class="ds-button --primary --medium" (click)="goToOtherWebsite()">
+          <label>Check availability</label>
+        </button>
+      </div>
+      <div class="ds-col--12 ds-flex --center-center">
+        <button class="ds-link ds-green__700" (click)="closeDialog()">Cancel</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</main>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ds-icon__info</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ds-icon__info" fill="#9A9A9D" fill-rule="nonzero">
+            <path d="M13.5,0 C6.06014608,0 0,6.06014608 0,13.5 C0,20.939854 6.06014608,27 13.5,27 C20.939854,27 27,20.939854 27,13.5 C27,6.06014608 20.939854,0 13.5,0 Z M13.5,2.7 C19.480666,2.7 24.3,7.51933449 24.3,13.5 C24.3,19.480666 19.480666,24.3 13.5,24.3 C7.51933449,24.3 2.7,19.480666 2.7,13.5 C2.7,7.51933449 7.51933449,2.7 13.5,2.7 Z M12.15,6.75 L12.15,9.45 L14.85,9.45 L14.85,6.75 L12.15,6.75 Z M12.15,12.15 L12.15,20.25 L14.85,20.25 L14.85,12.15 L12.15,12.15 Z" id="info"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,7 @@
+<div class="ds-grid--12 ds-blue__500--bg ds-white" *ngFor="let mes of msg?.message; let i = index" attr.id="maint-msg-{{i}}">
+   <div class="ds-col--12 ds-flex --row ds-flex --row --start-start" role="complementary">
+      <div><span title="Info icon" role="img" class="ds-icon--info ds-font--24 ds-white"></span></div>
+      <div class="ds-col--11" id="bannerMesg"><span class="ds-font--14 --700 " innerHTML="{{mes}}"></span></div>
+      <div class="ds-col--1 ds-flex --row --end-start"><button class="ds-icon--close ds-white ds-font--24" aria-describedby="bannerMesg" aria-label="banner close" (click)="remove('maint-msg-'+i)"></button></div>
+   </div>
+</div>

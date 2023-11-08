@@ -1,0 +1,209 @@
+@import '../../../../../styles.scss';
+
+
+.ds-body{
+  //part of DE20869
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    height: auto !important;
+  }
+  .errorMessage{
+    border-radius: 4px;
+    background-color: #f3e0e0;
+    padding: 16px;
+    font-size: 12px;
+    color: #424245;
+    margin-bottom: 20px;
+    span{
+      padding-left: 12px;
+    }
+  }
+  &.as-lcn-scheduler{
+    padding-top: 119px;
+
+    .ds-body--content{
+      width: 100%;
+      
+      >.ds-col--12{
+
+        >.ds-flex.--row{
+          padding: 0 110px;
+          .ds-col--9{
+
+            > div{
+
+              &:first-of-type{
+                position: sticky;
+                height: 320px;
+                top: -90px;
+              }
+            }
+          }
+
+          .ds-col--3{
+            margin-left: 16px;
+            position: sticky;
+            top: 144px;
+            height: auto;
+          }
+        }
+      }
+      .ds-font--16--bold {
+        a{
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+      as-loading-container{
+        outline: none;
+        display: block;
+        padding-top: 32px;
+        margin: 0 0 150px 0;
+        &.margin-top-100{
+          margin-top: 100px;
+        }
+      }
+
+      // as-footer{
+      //   background: $ds-gray__100;
+      //   width: 100%;
+      //   position: fixed;
+      //   bottom: 53px;
+      //   max-width: 1120px;
+      // }
+    }
+
+    @include when-less-than(ds-1024){
+      padding-top: 84px;
+
+      .ds-body--content{
+        width: 100%;
+
+        >.ds-col--12{
+
+          >.ds-flex.--row{
+            padding: 0px;
+            .ds-col--9{
+              width: 100%;
+
+              > div{
+
+                &:first-of-type{
+                  position: inherit;
+                  top: 0;
+
+                  as-calendar{
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                  }
+                }
+              }
+
+              .ds-grid{
+
+                  as-reason-test-list{
+
+                    .ds-grid--12{
+
+                      .ds-col--7{
+
+                        .ds-option__primary{
+                          margin: 0 auto;
+                        }
+                      }
+                    }
+                  }
+
+              }
+            }
+
+            .ds-col--3{
+              display: block !important;
+              width: 0;
+              padding: 0;
+              margin: 0;
+
+              > div{
+                display: none;
+              }
+            }
+
+            .ds-col--9{
+              width: 100%;
+            }
+
+            .ds-divider--vertical, .ds-col--3{
+              display: none;
+            }
+          }
+
+          as-loading-container{
+            outline: none;
+            width: 100%;
+            margin: 0 0 120px 0;
+          }
+
+          /*.ds-pagination--footer{
+
+            &.ds-col--10{
+              width: 100%;
+            }
+          }*/
+        }
+      }
+    }
+    @include when-less-than(ds-768){
+
+
+      .ds-body--content{
+        width: 100%;
+
+        > .ds-col--12{
+          padding: 0;
+
+          > .ds-flex.--row{
+            padding: 0;
+            > .ds-col--9{
+              width: 100%;
+            }
+
+            .ds-col--9{
+              width: 100%;
+            }
+
+            .ds-divider--vertical, .ds-col--3{
+              display: none;
+            }
+          }
+        }
+
+        as-footer{
+          background: $ds-gray__100;
+          width: 100%;
+          position: fixed;
+          bottom: 60px;
+        }
+      }
+    }
+
+    @include when-less-than(ds-640){
+
+      .ds-body--content{
+
+        as-footer{
+          bottom: 78px;
+        }
+      }
+    }
+  }
+}
+
+
+#as_find_scheduler{
+  z-index: 1;
+}
+
+.as_find_scheduler_height{
+  height: 240px !important;
+}

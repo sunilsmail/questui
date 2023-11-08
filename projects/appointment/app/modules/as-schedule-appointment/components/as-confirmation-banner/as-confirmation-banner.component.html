@@ -1,0 +1,20 @@
+<ng-container>
+  <div class="ds-grid--12 ds-flex --column ds-green__700--bg ds-white" id="clinical-trails-banner">
+    <div class="ds-col--12 ds-flex --row">
+      <div class="ds-col--1 ds-flex --end-start padding-right-12"><span title="Info icon" role="img"
+          class="ds-col--1 ds-icon--first-ait-kit ds-font--24 ds-white"></span></div>
+      <div class="ds-col--10 ds-flex --row">
+        <div class="ds-col--9">
+          <span class="ds-font--14 --700 ">Are you interested in learning more about participating in research studies
+            through Quest?</span>
+        </div>
+        <div class="ds-col--3" (keydown.enter)="redirectToEloqua()">
+          <a class="ds-link ds-font--14 --500 ds-white learn-more-link" role="link" aria-label="Learn more opens in a new tab or window" tabindex="0"
+            (click)="redirectToEloqua()">Learn more</a>
+        </div>
+      </div>
+      <div class="ds-col--1 ds-flex --end-start"><button class="ds-icon--close ds-white ds-font--24" aria-label="banner close"
+          (click)="closeBanner()"></button></div>
+      </div>
+  </div>
+</ng-container>

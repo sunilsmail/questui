@@ -1,0 +1,134 @@
+@import '../../../../../appointment/styles.scss';
+
+.ds-grid--12{
+  display: block;
+
+  > div{
+    text-align: center;
+    padding: 0 !important;
+
+    button{
+      width: 100%;
+      margin-top: 32px;
+      margin-bottom: 24px;
+      display: inherit;
+    }
+
+    a{
+      cursor: pointer;
+      max-width: 328px;
+      text-decoration: underline;
+    }
+  }
+
+  @include when-less-than(ds-1024){
+    position: fixed;
+    right: 0;
+    bottom: 44px;
+    left: 0;
+    margin-top: 0;
+
+    > div{
+      width: 100%;
+
+      button{
+        margin: 0 auto 24px auto;
+        box-shadow: 1px 2px 8px 0 rgba($ds-black, 0.2);
+        min-width: 120px;
+        max-width: 93%;
+
+        &.ds-button.--primary--disabled{
+          display: none;
+        }
+      }
+
+      a{
+        display: none;
+      }
+    }
+  }
+}
+.ds-grid--12{
+  & > div{
+    button.ds-button.--primary.--disabled {
+      @include when-less-than(ds-1024){
+        display: none;
+      }
+    }
+  }
+}
+// .ds-grid--12{
+//   margin-right: 30px;
+
+//   .ds-pagination--footer{
+
+//     .ds-divider--horizontal{
+//       margin-top: 8px;
+//     }
+
+//     .ds-button.--primary{
+//       width: auto;
+//     }
+//   }
+
+//   @include when-less-than(ds-1024){
+//     margin-right: 0;
+
+//     .ds-pagination--footer{
+
+//       &.ds-col--8{
+//         width: 100%;
+//         padding: 0;
+
+//         .ds-col--12{
+
+//           .ds-col--6{
+//             margin: auto 24px;
+
+//             button{
+
+//               &[class*="ds-button --primary"]{
+//                 width: 100%;
+//               }
+//             }
+//           }
+//         }
+
+//       }
+//     }
+
+//     .ds-pagination--footer{
+
+//       &.ds-col--10{
+//         width: 100%;
+//       }
+//     }
+//   }
+//   .cancle{
+//     float: right;
+//   }
+
+
+//   @include when-less-than(ds-768){
+
+//     .ds-pagination--footer{
+
+//       &.ds-col--10{
+//         width: 100%;
+
+//         .ds-col--14{
+//           padding: 0;
+
+//           .ds-col--7{
+//             width: 100%;
+//             padding: 0;
+
+//             button{
+//               width: 100%;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

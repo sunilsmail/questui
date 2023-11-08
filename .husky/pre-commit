@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# npm run lint || (echo "lint failed"; false)
+# npm run test || (echo "test failed"; false)
+# npm run build || (echo "build failed"; false)

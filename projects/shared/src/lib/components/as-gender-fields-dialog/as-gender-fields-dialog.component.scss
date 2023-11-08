@@ -1,0 +1,130 @@
+@import '../../../../../appointment/styles.scss';
+
+  .clinical-trails-need-more-info  {
+
+    h2 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      @include when-less-than(ds-768){
+        align-items: flex-start;
+        margin-bottom: 24px;
+      }
+    }
+
+    max-width: 696px;
+
+    >mat-dialog-actions>.ds-modal__actions {
+      justify-content: space-between !important;
+    }
+
+    >mat-dialog-actions>.ds-modal__actions>[class*=ds-col] {
+      width: 100%;
+
+      >.--secondary {
+        min-width: 100%
+      }
+      >.--primary {
+        min-width: 100%
+      }
+    }
+
+    @include when-less-than(ds-768) {
+      max-width: 348px;
+
+      >mat-dialog-actions>.ds-modal__actions>[class*=ds-col] {
+        width: 100% !important;
+        justify-content: center;
+
+        >.--secondary {
+          width: 100% !important;
+          justify-content: center;
+          min-width: 100% !important;
+          padding: 16px;
+
+          @include when-less-than(ds-480) {
+            height: 100%;
+          }
+        }
+        >.--primary {
+          width: 100% !important;
+          justify-content: center;
+          min-width: 100% !important;
+          padding: 16px;
+
+          @include when-less-than(ds-480) {
+            height: 100%;
+          }
+        }
+      }
+      .margin-top-24 {
+        margin-top: 0px !important;
+      }
+    }
+
+    @include when-less-than(ds-480) {
+      max-width: 100%;
+    }
+  }
+
+  .ds-input__error{
+    color: #e01a00;
+    display: block;
+    height: 20px;
+    margin-top: 4px;
+  }
+  .--error{
+    border-color: red !important;
+  }
+
+  .ds-grid--12 {
+    @include when-less-than(ds-768) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      flex-direction: column;
+    }
+
+    .ds-col--6 {
+      @include when-less-than(ds-768) {
+        width: 100%;
+      }
+    }
+  }
+
+  .--primary {
+    min-width: 100% !important;
+  }
+  .ds-button{
+    min-width: 100% !important;
+  }
+
+  .ds-link {
+    font-size: 16px;
+  }
+
+  #skip-to-main2, #skip-to-main3 {
+    @include when-less-than(ds-768) {
+      margin: 0px !important;
+    }
+  }
+
+  .ds-grid--12 {
+    .ds-col--6 {
+      @include when-less-than(ds-768) {
+        margin-bottom: 24px !important;
+      }
+    }
+  }
+
+  #race {
+    @include when-less-than(ds-768) {
+      margin-top: 24px !important;
+    }
+  }
+
+  .tooltip {
+    cursor: pointer;
+    pointer-events: auto;
+    padding-left: 4px;
+  }

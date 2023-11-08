@@ -1,0 +1,73 @@
+<main class="ds-body as-scheduler" tabindex="0">
+  <div *ngIf="locLoading" class="as-location__overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12">
+      <div class="ds-flex --row  ds-form__col--2">
+        <div class="ds-col--9 no-pad" tabindex="-1">
+          <div id="as_eorder_scheduler" [ngClass]="{'as_eorder_scheduler_height': (enableNewUI$ | async)}">
+            <button class="ds-button --icon" id="back-button-appt-scheduler" 
+              (click)="goToPrevious()" tabindex="0" title="back">
+              <span class="ds-icon--arrow-back ds-font--24 ds-green__700" name="back button"></span>
+            </button>
+            <div>
+              <h2 class="ds-green__700 margin-top-0 margin-bottom-32 title onFocus" role="heading" aria-level="1"
+                tabindex="0" i18n>{{content.as_find_a_location.title}}</h2>
+            </div>
+            <!--needs to add condition for error-->
+            <div class="errorMessage" *ngIf="blnShowError && !showLnNotSupportedError">
+              <img [src]="imageSrc" class="ds-icon__error ds-font--24" />
+              <!-- <span class="ds-icon-error-24"></mat-icon> -->
+              <span i18n>Your location, date and time are no longer available. <a class="labCardLink"
+                  (click)="showLocations()">Please choose a new location, date and
+                  time</a></span>
+            </div>
+            <div class="errorMessage" *ngIf="showLnNotSupportedError">
+              <img [src]="imageSrc" class="ds-icon__error ds-font--24" />
+              <span i18n>Your selected location does not support <span innerHTML={{facilityTypeValue}}></span>. Please
+                select a new location.</span>
+            </div>
+            <ng-container *ngIf="googlemapsOptimizationF4191; else oldPscSearch">
+              <as-psc-search-without-googlemaps [inputValue]="selectedZipcode"
+                (locationChanged)="onLocationChange($event)"></as-psc-search-without-googlemaps>
+            </ng-container>
+            <ng-template #oldPscSearch>
+              <as-psc-search [inputValue]="selectedZipcode" (locationChanged)="onLocationChange($event)"></as-psc-search>
+            </ng-template>
+            <as-datepicker-calendar [existingAppt]="existingAppt" *ngIf="hasChangedLocation"
+              (dateChanged)="onDateChanged($event)"></as-datepicker-calendar>
+          </div>
+          <as-loading-container [asLoadingData]="pscs$" asSpinnerSize="medium"
+            asNoDataMessage="{{content?.as_find_a_location?.noslots}}"  i18n-asNoDataMessage
+            asLoadErrorMessage="{{content?.as_find_a_location?.noslots}}" i18n-asLoadErrorMessage [loadingMore]="loading$"
+            *ngIf="hasChangedLocation" tabindex="0">
+            <ng-template let-pscs #pscs>
+              <ul aria-label="quest labs locations near you" tabindex="0">
+                <li *ngFor="let psc of pscs; let index = index; trackBy: trackByFn"
+                  [attr.aria-label]="'location ' + (index+1)">
+                  <as-psc-details-new [selectedDate]="selectedDate" [facilityServiceId]="facilityServiceId"
+                    [existingAppt]="existingAppt" [psc]="psc" (enableContinue)="enableContinueButton($event)"
+                    (newAppt)="newAppt($event,index)" [active]="{active:selectedIndex === index,index:index}"
+                    [showCloserMessage]="true">
+                  </as-psc-details-new>
+                </li>
+              </ul>
+              <div (click)="showmore()" *ngIf="enableShowMore" fxLayout="column" fxLayoutAlign="center center"><button
+                  class="ds-button --secondary" role="button" i18n>Show more locations</button>
+              </div>
+            </ng-template>
+          </as-loading-container>
+          <as-enable-browser-location *ngIf="!searchEnabled" [useDefaultOnError]="false"
+            [ngClass]="{ 'aria-hide-and-keep-place': hasChangedLocation }" (locationChanged)="onLocationChange($event)">
+          </as-enable-browser-location>
+        </div>
+        <div class="ds-col--3">
+          <as-eorder-navigation-sidebar [step]="isAlternateFlow? 3: 2"></as-eorder-navigation-sidebar>
+          <as-eorder-footer [isVisiablePreviousURL]="true" [previous]="previousUrl" [reqParams]="reqParams"
+            [enableContinue]="enableContinue" (continue)='onContinue()'></as-eorder-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,193 @@
+// @import '../../../../../styles.scss';
+
+// .ds-modal{
+//   position: relative;
+
+//   .ds-modal__content{
+//     padding: 24px;
+
+//     .ds-col--12{
+
+//       &:nth-of-type(2){
+//         padding: 0;
+//       }
+//     }
+//   }
+// }
+// span.ds-icon--close--12.tabIndex:focus{
+//   outline: #0070f5 solid 2px !important;
+//   outline-offset: 3px;
+// }
+// @media screen and (max-width: 639px){
+//   .ds-modal.ds_modal_active .ds-modal__content .ds-pagination--footer {
+//     flex-direction: column;
+//     padding-top: 10px;
+//     >div{
+//       padding-top: 10px;
+//     }
+//   };
+// }
+// .step-image {
+//   margin-right: 26px;
+//   img{
+//     width: 90px;
+//     height: 90px;
+//     @include when-less-than(ds-640){
+//       width: 65px;
+//       height: 65px;
+//     }
+//   }
+// }
+
+// .as-get-labs-learn-more{
+//   padding:0;
+//   max-width: none;
+//   width:90%;
+//   .new-window-launch {
+//     height: 48px;
+//     font-weight: bold;
+//     img{
+//       margin-left: 10px;
+//     }
+//   }
+//   .ds-icon--close--12 {
+//     color:#b5b5b7;
+//     cursor: pointer;
+//   }
+//   .ds-font--20--bold{
+//     font-weight: bold;
+//     @include when-less-than(ds-640){
+//       font-size: 18px;
+//     }
+//   }
+//   .ds-modal__content{
+//     padding: 24px 0;
+//     .content {
+//       &>div{
+//         margin:15px;
+//         &.heading {
+//           @include when-less-than(ds-640){
+//             width: 88%;
+//           }
+//         }
+//       }
+//       .ds-font-15{
+//         font-size: 15px;
+//         line-height: 1.6;
+//         p{
+//           &:first-child{
+//             margin-bottom: 0;
+//           }
+//           &:last-child{
+//             margin-top: 0;
+//             @include when-less-than(ds-640){
+//               word-break: break-word;
+//               margin-bottom: 0;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+@import '../../../../../styles.scss';
+
+.as-get-labs-learn-more {
+  h2 {
+    display: flex;
+    align-items: center;
+    @include when-less-than(ds-768){
+      align-items: flex-start !important;
+    }
+  }
+  .mat-dialog-content {
+    max-height: 75vh;
+  }
+
+  max-width: 696px;
+  @include when-less-than(ds-768) {
+    max-width: 343px;
+    > mat-dialog-actions >.ds-modal__actions > [class*=ds-col] {
+      width: 100%;
+      justify-content: center;
+      > button {
+        width: 100% !important;
+        min-width: 100% !important;
+        justify-content: center;
+
+        @include when-less-than(ds-480) {
+          height: 100%;
+        }
+      }
+    }
+  }
+  @include when-less-than(ds-480){
+    max-width: 100%;
+  }
+ .step-image {
+    margin-right: 20px;
+    @include when-less-than(ds-640){
+      margin-right: 8px;
+    }
+    img{
+      width: 90px;
+      height: 90px;
+      @include when-less-than(ds-640){
+        width: 65px;
+        height: 65px;
+      }
+    }
+  }
+  button.ds-link {
+    font-size: 16px;
+  }
+  > mat-dialog-actions >.ds-modal__actions{
+    >.ds-col--12{
+      padding-bottom: 0px !important;
+    }
+  }
+  > mat-dialog-actions >.ds-modal__actions > [class*=ds-col] {
+    width: 100%;
+    justify-content: center;
+    > button {
+      width: 100% !important;
+      min-width: 100% !important;
+      justify-content: center;
+    }
+  }
+  .mar{
+    @include when-less-than(ds-640){
+      margin-bottom: 16px;
+    }
+  }
+  .--content-scroll{
+    div{
+      align-items: center;
+      p{
+        margin-top: 0px;
+      }
+      @include when-less-than(ds-640){
+        p{
+          margin-top: 2px;
+        }
+        align-items:flex-start !important;
+      }
+    }
+  }
+}
+
+.ds-font--50{
+  @include when-less-than(ds-640){
+    font-size: 24px;
+  }
+}
+
+
+.pad-right{
+  padding-right: 36px !important;
+}

@@ -1,0 +1,224 @@
+@import '../../../../../styles.scss';
+
+.ds-body{
+
+  &.as-reason{
+    padding-top: 114px;
+
+    .ds-body--content{
+      width: 100%;
+
+      .ds-col--12{
+
+        .ds-flex.--row{
+
+          padding: 0 110px;
+
+          .ds-col--9{
+
+            > div{
+
+              &:first-of-type{
+                place-content: start;
+                justify-content: flex-start;
+                position: sticky;
+                top: -90px;
+                background: $ds-gray__050;
+                margin-bottom: 150px;
+              }
+            }
+
+            .ds-grid--12{
+
+              form{
+
+                [class*="icon--info"]{
+                  line-height: 1;
+                  margin-left: 4px;
+                }
+              }
+            }
+          }
+
+          > .ds-col--3{
+            margin-top: 70px;
+            margin-left: 32px;
+            position: sticky;
+            top: 144px;
+            height: auto;
+            // padding-bottom: 40px;
+          }
+        }
+      }
+
+      as-loading-container{
+        outline: none;
+        width: 100%;
+      }
+
+
+      // as-footer{
+      //   background: $ds-gray__100;
+      //   width: 100%;
+      //   position: fixed;
+      //   bottom: 53px;
+      //   max-width: 1120px;
+      // }
+      .title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 111.7%;
+        letter-spacing: -0.0075em;
+        color: #034C1F;
+        margin-bottom: 32px;
+        margin-top: 34px;
+
+        @include when-less-than(ds-1024) {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 120%;
+        }
+      }
+    }
+
+    @include when-less-than(ds-1024){
+      padding-top: 84px;
+
+      .ds-body--content{
+        width: 100%;
+        .ds-col--12{
+
+
+          .ds-flex.--row{
+            padding:0px;
+            .ds-col--9{
+              width: 100%;
+
+              > .ds-grid--12{
+
+                &:first-of-type{
+                  margin-bottom: 120px;
+
+                  as-reason-test-list{
+
+                    .ds-grid--12{
+
+                      .ds-col--6{
+
+                        .ds-option__primary{
+                          margin: 0 auto;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .ds-col--3{
+              display: block !important;
+              width: 0;
+              padding: 0;
+              margin: 0;
+
+              > div{
+                display: none;
+              }
+            }
+
+            .ds-col--9{
+              width: 100%;
+            }
+          }
+
+          .ds-pagination--footer{
+
+            &.ds-col--10{
+              width: 100%;
+            }
+          }
+        }
+
+        as-footer{
+          bottom: 60px;
+        }
+      }
+    }
+
+    @include when-less-than(ds-768){
+
+      .ds-body--content{
+        width: 100%;
+
+        .ds-col--12{
+
+          .ds-flex.--row{
+
+            .ds-col--9{
+              width: 100%;
+              padding: 0;
+            }
+
+            .ds-divider--vertical, .ds-col--4{
+              display: none;
+            }
+          }
+        }
+
+        as-footer{
+          background: $ds-gray__100;
+          width: 100%;
+          position: fixed;
+          bottom: 60px;
+        }
+      }
+    }
+
+    @include when-less-than(ds-640){
+
+      .ds-body--content{
+
+        as-footer{
+          bottom: 78px;
+        }
+      }
+    }
+  }
+
+  &__highlight{
+    outline: 2px solid $ds-green__500;
+    outline-offset: 3px;
+  }
+}
+
+.as-location-finder-details__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+
+.onFocus:focus{
+  outline: 2px solid $ds-green__500;
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  top: 0;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.ds-button{
+  min-width: auto;
+  max-width: 20px;
+  border-radius: 0;
+}

@@ -1,0 +1,292 @@
+
+
+<main class="ds-body as-find-apt-summary" >
+  <div *ngIf="loading" class="as-summary-details__overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content"  *ngIf="pscDetails">
+    <div class="ds-col--12">
+
+      <div class="ds-col--6 no-pad" id="title">
+        <h2 class="ds-font--24--bold no-pad title" aria-level="1" role="heading" i18n>Hey
+          {{appointmentDetails?.firstName}}, we’ve found the details for your appointment on
+          {{appointmentDetails?.appointmentDate | date: 'EEEE,&nbsp; MMMM d'}}.</h2>
+      </div>
+
+      <div class="margin-bottom-52 ds-grid--12 ds-form__col--2--map" id="skip-to-main" tabindex="-1">
+        <div class="ds-col--6 ds-flex --start-start panel1">
+
+          <div class="ds-col--12 ds-flex--column panel-content">
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 ds-flex">
+                  <div class="ds-col--10 no-pad" role="heading" aria-level="2" aria-label="Confirmation code" i18n>Confirmation code
+                  </div>
+                </div>
+                <div class="ds-font--14 --400" [attr.aria-label]="[confirmationCode]">{{confirmationCode}}
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--12 ds-col--12 ds-flex">
+                  <span matTooltip="If your reason for visiting Quest has changed, please cancel your appointment and reschedule it."
+                    class="ds-font--16--bold" role="heading" aria-level="2" aria-label="Reason for visiting">Reason for visiting</span>
+                </div>
+                <div class="ds-flex --start-center">
+                  <span class="ds-icon--test-tube-label ds-green ds-font--24 panel-text" aria-label=""></span>
+                  <span matTooltip="If your reason for visiting Quest has changed, please cancel your appointment and reschedule it."  class="ds-font--14 --400" [attr.aria-label]="[]" innerHTML={{facilityTestTypeValue}}></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-bottom-24 ds-flex">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 ds-flex">
+                  <div class="ds-col--10 no-pad" role="heading" aria-level="2" aria-label="Location, date, and time" i18n>Location, date, and time
+                  </div>
+                  <div class="ds-col--2" *ngIf="dataService.isModifyCancel">
+                    <a (click)="navigate('/schedule-appointment/as-appt-scheduler', 'editLocation')" (keydown.enter)="navigate('/schedule-appointment/as-appt-scheduler', 'editLocation')" aria-label="Edit Location, date, and time" class="ds-flex --end-center" tabindex="0">
+                      <span class="ds-flex ds-green__700" >
+                        <span class="ds-link content">Edit</span>
+                      </span>
+                    </a>
+                  </div>
+
+                  <div class="ds-col--2" *ngIf="!dataService.isModifyCancel">
+                    <a (click)="onEdit('EditLocation')" (keydown.enter)="onEdit('EditLocation')" class="ds-flex --end-center" tabindex="0">
+                      <span class="ds-flex ds-green__700" >
+                        <span class="ds-link content">Edit</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="ds-col--10 ds-flex">
+                  <div class="panel-text"><span class="ds-icon--address ds-green__700 ds-font--24" aria-label="address" tabindex="-1" role="img"></span></div>
+                  <div class="ds-font--14 panel-text" role="text" aria-labelledby="name addressOne addressTwo zip">
+                    <div class="ds-font--14 --400" id="name" aria-hidden="true" [attr.aria-label]="[pscDetails?.name]">
+                      {{pscDetails?.name}}</div>
+                    <div id="addressOne" aria-hidden="true" role="text" [attr.aria-label]="[pscDetails?.address1]">{{pscDetails?.address1}}</div>
+                    <div id="addressTwo" aria-hidden="true" role="text" [attr.aria-label]="[pscDetails?.address2]">{{pscDetails?.address2}}</div>
+                    <div id="zip" aria-hidden="true" role="text" [attr.aria-label]="[pscDetails?.city,pscDetails?.state,pscDetails?.zip]">
+                      {{pscDetails?.city}} {{pscDetails?.state}} {{pscDetails?.zip}}</div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex icons">
+                  <div class="panel-text"><span class="ds-icon--calendar ds-green__700 ds-font--24" tabindex="-1" aria-label="calendar" role="img"></span></div>
+                  <div class="panel-text" >
+                    <div class="ds-font--14 --400" [attr.aria-label]="[appointmentDetails?.appointmentDate]">
+                      {{appointmentDetails?.appointmentDate | date:'MMMM dd, y'}}</div>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex icons">
+                  <div class="panel-text"><span class="ds-icon--clock ds-green__700 ds-font--24" tabindex="-1" aria-label="clock" role="img"></span></div>
+                  <div class="panel-text" >
+                    <div class="ds-font--14 --400" [attr.aria-label]="[appointmentDetails?.appointmentTime | twelveHourTime]">
+                      {{appointmentDetails?.appointmentTime | twelveHourTime}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- For cancel modify changes for Who’s visiting start -->
+            <div class="margin-bottom-24 ds-flex" *ngIf="dataService.isModifyCancel">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 no-pad ds-flex margin-bottom-6">
+                  <div class="ds-col--10 no-pad" role="heading" aria-level="2" aria-label="Who’s visiting" i18n>Who’s visiting
+                  </div>
+                  <div class="ds-col--2">
+                    <a (click)="navigate('/schedule-appointment/as-personal-information', 'editPersonalInfo')" (keydown.enter)="navigate('/schedule-appointment/as-personal-information', 'editPersonalInfo')" aria-label="Edit Who’s visiting" class="ds-flex --end-center" tabindex="0">
+                      <span class="ds-flex ds-green__700" >
+                        <span class="ds-link content">Edit</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <div class="ds-font--14 --400 onFocus ds-flex --start-center" [attr.aria-label]="[personalData?.firstName,personalData?.lastName]" i18n>
+                    {{personalData?.firstName}} {{personalData?.lastName}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- For cancel modify changes fo Who’s visiting end  -->
+
+            <!-- For Authenticated User -->
+             <div class="margin-bottom-24 ds-flex" *ngIf="(isAuthenticated$ | async) && !dataService.isModifyCancel && appointmentDetails?.skipVerifyIdentity ">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 no-pad ds-flex">
+                  <div class="ds-col--10 no-pad" role="heading" aria-level="2" aria-label="Who's visiting"  i18n>Who’s visiting</div>
+                  <div class="ds-col--2">
+                    <a class="ds-flex --end-center" (click)="onEdit('EditwhoisVisiting')" (keydown.enter)="onEdit('EditwhoisVisiting')"  tabindex="0">
+                      <span class="ds-flex ds-green__700">
+                        <span class="ds-link content">Edit</span>
+                      </span></a>
+                  </div>
+                </div>
+                <div class="ds-font--14 --400 ds-flex --start-center" [attr.aria-label]="[firstName,lastName]">
+                  <span class="ds-icon--user ds-green ds-font--24 panel-text" aria-label="{{appointmentDetails.demographicDetails.firstName + appointmentDetails.demographicDetails.lastName}}" role="img"></span>
+                  {{appointmentDetails.demographicDetails.firstName}} {{appointmentDetails.demographicDetails.lastName}}</div>
+                <!-- <div class="ds-font--14--bold" [attr.aria-label]="[email]" tabindex="0">{{email}}</div> -->
+              </div>
+            </div>
+
+             <!-- For cancel modify changes for Insurance information start -->
+            <div class="margin-bottom-24 ds-flex" *ngIf="dataService.isModifyCancel && !(skipInsurance$ |async)">
+              <div class="ds-col--12 no-pad">
+                <div class="ds-font--16--bold ds-col--12 no-pad ds-flex margin-bottom-6">
+                  <div class="ds-col--10 no-pad" aria-label="Insurance information" role="heading" aria-level="2" i18n>Insurance information
+                  </div>
+                  <div class="ds-col--2">
+                    <a (click)="navigate('/schedule-appointment/as-insurance-information', 'editInsuranceInfo')" (keydown.enter)="navigate('/schedule-appointment/as-insurance-information', 'editInsuranceInfo')" class="ds-flex --end-center" tabindex="0"
+                        aria-label="Edit Insurance information">
+                        <span class="ds-flex ds-green__700">
+                          <span class="ds-link content">Edit</span>
+                        </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="ds-col--12 ds-flex">
+                  <span class="ds-icon--identification-card ds-green__700 ds-font--24 padding-right-10" *ngIf="!insuranceData?.bringCarderror" aria-label="identification card" role="img"></span>
+                  <span class="ds-icon--alert ds-gold__500 ds-font--24 padding-right-10" *ngIf="insuranceData?.bringCarderror" aria-label="alert"></span>
+                  <div class="ds-col--11 ds-font--14">
+                    <div>
+                      <div class="ds-font--14--bold onFocus" *ngIf="insuranceData?.bringCarderror"
+                      [attr.aria-label]="[insuranceData?.data.provider.insuranceCompanyName]" i18n>
+                      {{content.as_sec_ins.primary_ins_not_found_f88}}
+                    </div>
+                    <div class="ds-font--14 onFocus" *ngIf="insuranceData?.data && !insuranceData?.bringCarderror"
+                      [attr.aria-label]="[insuranceData?.data.provider.insuranceCompanyName]" i18n>
+                      {{insuranceData?.data.provider.insuranceCompanyName}}
+                    </div>
+                    <div class="ds-font--14 onFocus" *ngIf="insuranceData?.data && !insuranceData?.bringCarderror"
+                      [attr.aria-label]="[insuranceData?.data.memberId]" i18n>
+                      {{insuranceData?.data.memberId}}
+                    </div>
+                    <div *ngIf="!insuranceData?.data" class="ds-font--14 --400 onFocus"
+                      aria-label="You have not provided insurance for your appointment" i18n>
+                      You have not provided insurance for your appointment
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ds-col--11 ds-font--14">
+                  <ng-container *ngIf="insuranceData && insuranceData?.data && secondaryInsData">
+                    <as-sec-ins-display [screenName]="'summary'" [insuranceData]="secondaryInsData"></as-sec-ins-display>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+            <!-- For cancel modify changes for Insurance information end -->
+
+           <!-- For Authenticated User -->
+           <div class="margin-bottom-24 ds-flex" *ngIf="(isAuthenticated$ | async) && !dataService.isModifyCancel && !(skipInsurance$ |async) &&  appointmentDetails?.skipVerifyIdentity">
+            <div class="ds-col--12 no-pad">
+              <div class="ds-font--16--bold ds-col--12 no-pad ds-flex">
+                <div class="ds-col--10 no-pad" aria-label="Insurance information" i18n>Insurance information</div>
+                <div class="ds-col--2">
+                  <a (click)="onEdit('EditInsuranceInfo')" (keydown.enter)="onEdit('EditInsuranceInfo')" class="ds-flex --end-center"  tabindex="0">
+                    <span class="ds-flex ds-green__700">
+                      <span class="ds-link content">Edit</span>
+                    </span></a>
+                  </div>
+              </div>
+              <div class="ds-col--12 ds-flex no-pad">
+                <span class="ds-icon--identification-card ds-green__700 ds-font--24 padding-right-10" *ngIf="!insuranceData?.bringCarderror" aria-label="identification card" role="img"></span>
+                <span class="ds-icon--alert ds-gold__500 ds-font--24 padding-right-10" *ngIf="insuranceData?.bringCarderror" aria-label="alert"></span>
+                <div class="ds-col--11 ds-font--14--bold">
+                  <div class="ds-font--14--bold onFocus" *ngIf="bringCarderror" i18n>
+                    {{content.as_sec_ins.primary_ins_not_found_f88}}
+                  </div>
+                  <div class="ds-font--14 onFocus" *ngIf="appointmentDetails.insuranceDetails && !bringCarderror"
+                    [attr.aria-label]="[appointmentDetails.insuranceDetails.insCompanyName]" i18n>
+                    {{appointmentDetails.insuranceDetails.insCompanyName}}
+                  </div>
+                  <div class="ds-font--14 onFocus" *ngIf="appointmentDetails.insuranceDetails && !bringCarderror"
+                    [attr.aria-label]="[appointmentDetails.insuranceDetails.insMemberId]" i18n>
+                    {{appointmentDetails.insuranceDetails.insMemberId}}
+                  </div>
+                  <div *ngIf="!appointmentDetails.insuranceDetails.insCompanyName" class="ds-font--14 --400 onFocus"
+                    aria-label="No insurance provided" i18n>
+                    You have not provided insurance for your appointment
+                  </div>
+                  </div>
+                  </div>
+                  <ng-container
+                    *ngIf="appointmentDetails && appointmentDetails?.insuranceDetails && secondaryInsData">
+                    <div class="ds-col--12 ds-flex">
+                      <!-- <span class="ds-icon--identification-card ds-green__700 ds-font--24 padding-right-10" *ngIf="secondaryInsData && secondaryInsData?.provider?.insuranceCompanyName" aria-label="identification card"></span>
+                      <span class="ds-icon--alert ds-gold__500 ds-font--24" *ngIf="!secondaryInsData" aria-label="alert"></span> -->
+                      <div class="ds-col--11 ds-font--14">
+                        <as-sec-ins-display [screenName]="'summary'" [insuranceData]="secondaryInsData"></as-sec-ins-display>
+                      </div>
+                    </div>
+                  </ng-container>
+                <!-- </div>
+              </div> -->
+              </div>
+          </div>
+
+            <hr class="grey">
+            <div class="ds-flex--column">
+              <div class="ds-col--12 ds-font--16--bold" role="heading" aria-level="2" i18n>Fasting details</div>
+              <div class="ds-col--12 ds-font--14 --400" i18n>If your test requires it, don't forget to fast for
+                8-12 hours before your appointment. If you're not sure, contact your doctor's office.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="ds-col--6 no-pad panel2">
+          <div class="panel-content">
+          <div class="ds-col--12 ds-flex panel">
+            <div class="ds-col--4" *ngIf="calendarData.appointmentTime">
+              <as-add-to-calendar [inputEvent]="calendarData" [buttonType]="'black'"></as-add-to-calendar>
+            </div>
+            <!-- Add Calendar Button code -->
+            <!-- <div class="ds-col--4">
+                  <div class="ds-col--12"><span class="ds-icon--calendar-add ds-black ds-font--16" aria-label="calendar"></span><span class="ds-font--14--bold">Add to calendar</span></div>
+
+                  <div class="ds-col--12">
+                    <div class="addeventatc">
+                      <span class="start">11/19/2019 08:00 AM</span>
+                      <span class="end">11/19/2019 10:00 AM</span>
+                      <span class="timezone">America/Los_Angeles</span>
+                      <span class="title">Summary of the event</span>
+                      <span class="description">Description of the event</span>
+                      <span class="location">Location of the event</span>
+                    </div>
+                  </div>
+                </div> -->
+            <!-- End -->
+
+            <div class="ds-col--3 onFocus" (click)="printConfirmation()" (keydown.enter)="printConfirmation()" tabindex="0"  aria-label="Print Details"
+            role="button">
+              <span class="ds-flex icons">
+                <span class="ds-icon--print ds-green__700 ds-font--24" tabindex="-1" aria-label="Print details" role="img"></span>
+                <span class="ds-font--14--bold option" id="print">Print details</span>
+              </span>
+              </div>
+            <div class="ds-col--5 onFocus" (click)="cancelAppointment('CANCEL')" (keydown.enter)="cancelAppointment('CANCEL')" tabindex="0"  aria-label="Cancel Appointment" role="button">
+              <span class="ds-flex icons">
+                <span class="ds-icon--calendar-cancel ds-red__500 ds-font--24" tabindex="-1" aria-label="Cancel Appointment" role="img"></span>
+                <span class="ds-font--14--bold ds-red_500 option" id="cancel">Cancel
+                  appointment</span>
+              </span>
+              </div>
+          </div>
+          <div class="ds-col--12">
+
+            <div class="ds-col--12 no-pad ds-flex --row onFocus" role="link" aria-labelledby="directionsInfo" (click)="openDirection()" (keydown.enter)="openDirection()" tabindex="0">
+              <div class="ds-flex no-pad"><span
+                class="ds-icon--route ds-green__700 ds-font--24" aria-hidden="true" id="directionsInfo" aria-label="Directions opens in google maps"></span></div>
+              <div class="ds-flex --start-center ds-font--16--bold directions" aria-hidden="true" i18n>Directions</div>
+            </div>
+            <div class="ds-font--14 --400" i18n>{{pscDetails?.landmark}}</div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<as-confirmation-print [inputEvent]="printData"></as-confirmation-print>

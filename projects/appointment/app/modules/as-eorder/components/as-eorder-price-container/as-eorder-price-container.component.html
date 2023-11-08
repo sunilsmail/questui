@@ -1,0 +1,7 @@
+<ng-container *ngIf="(easypayEnhancementF411$| async); else withOldVersion005">
+  <as-eorder-price-estimate></as-eorder-price-estimate>
+</ng-container>
+
+<ng-template #withOldVersion005>
+  <as-eorder-price-estimate-old></as-eorder-price-estimate-old>
+</ng-template>

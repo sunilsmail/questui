@@ -1,0 +1,69 @@
+@import '../../../../../appointment/styles.scss';
+
+:host{
+    width: 100%;
+}
+.add-to-cal-container{
+    width: 100%;
+    .ds-button {
+      width: 100%;
+      max-width: none;
+      @include when-less-than(ds-1024){
+        width: 100%;
+      }
+    }
+    a{
+        color: $ds-green;
+        text-decoration: none;
+    }
+    a:visited {
+        color: $ds-green;
+      }
+}
+.add-to-cal-dialog{
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.4) 0px 10px 26px;
+    z-index: 9999999999;
+    font-size: 14px;
+    transition: transform .15s ease;
+    font-weight: 600;
+    position: absolute;
+    background: white;
+    width: 100%;
+    li{
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+
+.ds-button.--secondary{
+    @include when-less-than(ds-1024){
+        width: 100%;
+    }
+}
+
+.calendar-icon{
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+
+.calendar-button-width{
+  width: 100%;
+}
+
+.ds-black{
+  @include when-less-than(ds-1024){
+    color: $ds-black !important;
+  }
+}
+#calendar{
+  padding-left: 5px;
+  @include when-less-than(ds-768){
+    color: #000 !important;
+  }
+}
+
+.icons {
+  align-items: center;
+}

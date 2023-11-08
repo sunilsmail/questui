@@ -1,0 +1,80 @@
+@import '../../../../../appointment/styles.scss';
+.ds-grid--8{
+  @include when-less-than(ds-640){
+    margin-top: 40px !important;
+  }
+}
+.column {
+    @include when-less-than(ds-640){
+      flex-direction: column;
+      .ds-col--4{
+        padding-bottom: 2px;
+      }
+    }
+    flex-direction: row;
+}
+
+.visually-hidden {
+  top: 0;
+  left: -2px;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+
+input[disabled] {
+  border: 1px solid #e1e1e3;
+  background: #f7f7f9;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+@include when-less-than(ds-1024){
+  .ds-col--8{
+    width: 66.66%;
+  }
+  .ds-col--4 {
+    width: 33.33%;
+  }
+}
+@include when-less-than(ds-768){
+  .ds-input {
+    margin-right: 0 !important;
+  }
+  .ds-col--8{
+    width: 100%;
+  }
+  .ds-col--4 {
+    width: 100%;
+  }
+}
+.ds-icon--expand {
+  position: absolute;
+  right: 15px;
+  top: 38px;
+}
+
+.ds-input {
+	input {
+		border: 1px solid $ds-gray__500;
+	}
+	.mat-select {
+		border: 1px solid $ds-gray__500;
+	}
+}
+.ds-input__radio {
+	[type=radio] {
+		&:not(:checked)+label {
+			&:before {
+				border: 2px solid $ds-gray__500;
+			}
+		}
+	}
+}
+.ds-input__checkbox {
+	>span {
+		&:before {
+			border: 2px solid $ds-gray__500;
+		}
+	}
+}

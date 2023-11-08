@@ -1,0 +1,33 @@
+@import '../../../../../styles.scss';
+
+.ds-body.as-eorder-expiry{
+  align-items: center!important;
+  padding-top: 200px;
+}
+.as-eorder-expiry{
+  .main_container {
+    padding: 50px;
+    text-align: center;
+    min-width: 450px;
+    .ds-icon--exclamation-mark {
+      border-radius: 50%;
+      padding: 10px;
+      border: 5px solid $ds-red;
+    }
+    @include when-less-than(ds-768){
+      padding: 50px 10px;
+    }
+    :focus {
+      outline: 2px solid $ds-green__500 !important;
+      outline-offset: 0px ;
+    }
+  }
+  p:focus {
+    outline: 2px solid $ds-green__500 !important;
+    outline-offset: 0px ;
+  }
+}
+
+.ds-grid--12 {
+  padding: 0 326px;
+}

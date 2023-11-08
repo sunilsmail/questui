@@ -1,0 +1,40 @@
+<main class="ds-body as-eorder-expiry">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 pad-24">
+      <div class="ds-flex --center-center">
+        <div class="" id="skip-to-main" tabindex="-1">
+          <div class="main_container" id="container">
+            <div class="padding-bottom-16">
+              <span *ngIf="dialogData.dialogTopColorClass === 'red'" class="ds-icon--exclamation-mark ds-red ds-font--32 ds-red__100--bg" aria-label=""></span>
+              <span *ngIf="dialogData.dialogTopColorClass === 'green'" class="ds-icon--check ds-green__700 ds-font--32 ds-green__050--bg" aria-label=""></span>
+            </div>
+
+            <h2 aria-level="1" *ngIf="dialogData.dialogTopColorClass === 'red'" class="ds-red__500 margin-0" tabindex="0" [attr.aria-label]="[dialogData.title]" [innerHTML]="dialogData?.title"
+              i18n>
+            </h2>
+            <h2 aria-level="1" *ngIf="dialogData.dialogTopColorClass === 'green'" class="ds-green__700 margin-0" tabindex="0" [attr.aria-label]="[dialogData.title]" [innerHTML]="dialogData?.title"
+              i18n>
+            </h2>
+            <div class="content" [ngClass]="{'widthContent': dialogData.dialogTopColorClass === 'red'}">
+              <p class="ds-font--16 line1" *ngIf="dialogData?.line1" role="text" [ngClass]="{'font-change': fontChange }" [attr.aria-label]="[dialogData?.line1]" [innerHTML]="dialogData?.line1" i18n
+                tabindex="0">
+              </p>
+              <p class="ds-font--16 line2" *ngIf="dialogData?.line2" role="text" [attr.aria-label]="[dialogData?.line2]" i18n tabindex="0">
+                {{dialogData?.line2}}
+              </p>
+              <p class="ds-font--16 line3" *ngIf="dialogData?.line3" role="text" [attr.aria-label]="[dialogData?.line3]" i18n tabindex="0">
+                {{dialogData?.line3}}
+              </p>
+              <div class="as-eorder-expiry__signupButton margin-top-24" *ngIf="dialogData?.hasQuestLoginButton">
+                <button class="ds-button --primary" id="skip-to-main1" tabindex="0" (click)="onCreateAccount()" class="ds-button --primary"
+                  aria-label="Sign Up Today">
+                  <label i18n>Sign Up Today</label>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

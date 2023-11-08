@@ -1,0 +1,168 @@
+@import "../../../../../styles.scss";
+
+.ds-body {
+  // to fix the issue DE20869
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: inline !important;
+  }
+
+  &.as-find-location {
+    padding-top: 64px;
+
+    .ds-body--content {
+      padding: 0 24px;
+      .ds-col--12 {
+        padding: 0;
+
+        .ds-flex.--row {
+          > div {
+            &:first-of-type {
+              position: sticky;
+              padding: 0 8px 0 0;
+              background: $ds-gray__050;
+
+              as-psc-search, as-psc-search-without-googlemaps {
+                display: block;
+                margin-bottom: 24px;
+                @include elevation(8px);
+              }
+
+              .ds-card-reason {
+                // border-left: 4px solid $ds-green;
+                border-radius: 4px;
+                padding: 20px 16px !important;
+                flex-direction: row !important;
+                margin-right: 0;
+                text-align: left;
+                @include elevation(8px);
+                cursor: pointer;
+                @include when-less-than(ds-768) {
+                  padding: 16px !important;
+                }
+              }
+            }
+          }
+
+          .ds-col--8 {
+            margin-left: 16px;
+            position: sticky;
+            top: 64px;
+            height: 92.5vh;
+            // height: calc(var(--vh, 1vh) * 100);
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                position: fixed;
+            }
+          }
+        }
+      }
+      as-loading-container {
+        outline: none;
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+      as-footer {
+        background: $ds-gray__050;
+        width: 100%;
+        position: fixed;
+        bottom: 53px;
+        max-width: 1120px;
+      }
+    }
+
+    @include when-less-than(ds-1024) {
+      .ds-body--content {
+        padding: 0 24px !important;
+      }
+      .ds-col--4 {
+        width: 50%;
+      }
+      .ds-col--8 {
+        width: 50%;
+      }
+    }
+    @include when-less-than(ds-768) {
+      .ds-body--content {
+        padding: 0 !important;
+
+        .ds-col--12 {
+          .ds-flex.--row {
+            flex-direction: column-reverse;
+            .ds-col--4 {
+              top: 0;
+              padding: 16px !important;
+              width: 100% !important;
+              overflow: auto;
+            }
+            .ds-col--8 {
+              display: none !important;
+            }
+          }
+        }
+      }
+      .ds-card {
+        padding: 24px !important;
+      }
+    }
+  }
+  .ds-col--4 {
+    @include when-less-than(ds-768) {
+      width: 100% !important;
+      padding: 16px;
+    }
+  }
+}
+.as-find-location__overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+.cursor-notallowed{
+  opacity: 0.7;
+  cursor :not-allowed !important;
+}
+.disabled-reason{
+  pointer-events: none !important;
+  opacity: 0.7;
+}
+
+// button{
+  // color: $ds-black !important;
+  // @include when-less-than(ds-640){
+  //   color: #000 !important;
+  // }
+  // @include when-less-than(ds-1024){
+  //   color: #000 !important;
+  // }
+// }
+.map-section {
+  display: block !important;
+  background: #F5F5F5 !important;
+}
+.onFocus:focus{
+  outline: 2px solid $ds-green__500;
+  outline-offset: 3px;
+}
+.psc-list-section {
+  @include when-less-than(ds-1024) {
+    padding: 24px !important;
+  }
+}
+mat-divider {
+  border: 2px solid #E6E6E6;
+}
+#descTesting {
+  white-space: pre;
+}

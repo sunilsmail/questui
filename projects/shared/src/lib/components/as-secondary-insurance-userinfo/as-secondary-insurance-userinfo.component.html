@@ -1,0 +1,89 @@
+<div class="as-open-eorders" aria-label="eorders">
+  <p class="ds-col--12 ds-font--16 --700 ds-green__700 no-margin padding-bottom-24"
+    [attr.aria-label]="[content.as_secondary_insurance_userinfo.user_title]"  role="heading" aria-level="3" i18n>
+    {{content.as_secondary_insurance_userinfo.user_title}}</p>
+  <form [formGroup]="form">
+    <div class="ds-grid--12 no-pad">
+      <div class="ds-col--6">
+        <div class="ds-input --required first-name margin-right-24"
+          [ngClass]="{'--error': !form.get('firstName').valid && form.get('firstName').touched}">
+          <div class="ds-input__label" i18n>First Name</div>
+          <input type="text" required aria-required="true" formControlName="firstName" aria-label="First Name"
+            id="firstName" />
+          <div class="ds-input__error" role="alert">{{form.get('firstName').errors | validationError :
+            content.as_input_labels.firstName}}</div>
+        </div>
+      </div>
+      <div class="ds-col--6">
+        <div class="ds-input --required last-name"
+          [ngClass]="{'--error': !form.get('lastName').valid && form.get('lastName').touched}">
+          <div class="ds-input__label" i18n>Last Name</div>
+          <input type="text" required aria-required="true" formControlName="lastName" id="lastName"
+            aria-label="Last Name" />
+          <div class="ds-input__error" role="alert">{{form.get('lastName').errors | validationError :
+            content.as_input_labels.lastName}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="ds-grid--12 no-pad">
+      <div class="ds-col--3">
+        <div class="ds-input --required no-margin date-of-birth"
+          [ngClass]="{'--error': !form.get('dateOfBirth').valid && (form.get('dateOfBirth').touched || form.get('dateOfBirth').dirty)}">
+          <div class="ds-input__label" i18n>{{content.as_input_labels.dob}}</div>
+          <input type="text" formControlName="dateOfBirth" (keyup)="onkeyup($event,dateElement)"
+            (focusout)="focusOut($event)" #dateElement id="dateOfBirth" (keypress)="onKeyPress($event)"
+            aria-label="Date Of Birth" id="dateOfBirth" aria-describedby="dateOfBirth dateFormat" autocomplete="bday" required />
+          <div class="ds-font--14 ds-gray__600 margin-top-3" id="dateFormat">MM/DD/YYYY</div>
+          <div class="ds-input__error" role="alert">{{form.get('dateOfBirth').errors | validationError :
+            content.as_input_labels.dob}}
+          </div>
+        </div>
+      </div>
+      <div class="ds-col--3 margin-right-24 margin-left-24">
+        <div class="ds-input --required no-margin" [ngClass]="{'--error': !form.get('gender').valid && (form.get('gender').touched || form.get('gender').dirty)}">
+          <div class="ds-input__label" i18n>{{content.as_input_labels.gender}}</div>
+          <div class="ds-flex --row" role="radiogroup" name="gender">
+            <div class="ds-input__radio" aria-required="true">
+              <input type="radio" id="sex--male" name="gender" role="radio" value="Male" formControlName="gender">
+              <label for="sex--male" i18n>Male</label>
+            </div>
+            <div class="ds-input__radio" aria-required="true">
+              <input type="radio" id="sex--female" name="gender" role="radio" value="Female" formControlName="gender">
+              <label for="sex--female" i18n>Female</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ds-col--5">
+        <div class="ds-input --required no-margin phone-number"
+          [ngClass]="{'--error': !form.get('phone').valid && form.get('phone').touched}">
+          <div class="ds-input__label" i18n>Phone Number</div>
+          <input type="tel" required aria-required="true" formControlName="phone" required
+            (keyup)="onkeypressphone($event,phoneElement)" #phoneElement id="phone" aria-describedby="textDesc" aria-label="Phone Number"
+            id="sins_phone" />
+          <div class="ds-font--14 ds-gray__600 margin-top-3" id="textDesc">555-555-5555</div>
+          <div class="ds-input__error" role="alert">{{form.get('phone').errors | validationError :
+            content.as_input_labels.phone}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="ds-grid--12 no-pad">
+      <div class=" ds-col--6">
+        <div class="ds-input --required margin-right-24"
+          [ngClass]="{'--error': !form.get('relationship').valid&&form.get('relationship').touched}">
+          <div class="ds-input__label" i18n>Relationship to You</div>
+          <input type="text" required aria-required="true" formControlName="relationship" [matAutocomplete]="relation"
+            id="as_insurance_relationship" aria-label="Relationship to You" />
+          <mat-autocomplete #relation="matAutocomplete" class="ds-dropdown">
+            <mat-option *ngFor="let relation of relationList; let i=index" [value]="relation.value"
+              id="as_insurance_relationship_{{i+1}}" class="ds-dropdown__item">
+              {{relation.label}}
+            </mat-option>
+          </mat-autocomplete>
+          <div class="ds-input__error" role="alert">{{form.get('relationship').errors | validationError :
+            content.as_input_labels.relationship}}</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

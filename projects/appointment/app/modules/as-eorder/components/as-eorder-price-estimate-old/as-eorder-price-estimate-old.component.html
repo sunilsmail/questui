@@ -1,0 +1,278 @@
+<main class="ds-body as-eorder-price">
+  <!-- with f89 changes start-->
+  <ng-container *ngIf="(easypayEnhancement$ | async); else WithoutEasypayEnhancement">
+    <div class="ds-grid--12 ds-body--content">
+      <div *ngIf="SpinnerLoading || (loading$ | async)" class="as-eorder-price-estimate__overlay_no_bg" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+      <div *ngIf="(sdkLoading$ | async)" class="as-eorder-price-estimate__overlay" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+      <div class="ds-col--12 margin-bottom-24">
+        <div class="ds-flex --row ds-form__col--2">
+          <div class="ds-col--12" id="skip-to-main" tabindex="-1">
+            <div>
+              <div>
+                <div>
+                  <ng-container *ngIf="(easypayEnhancementF411$ | async); else withoutF411">
+                  <h2 *ngIf="estimatedPrice !== null" class="ds-black"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.titlef441]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.titlef441}}</h2>
+                  </ng-container>
+                  <ng-template #withoutF411>
+                    <h2 *ngIf="estimatedPrice !== null" class="ds-black"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.title]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.title}}</h2>
+                  </ng-template>
+                  <h2 *ngIf="estimatedPrice === null" class="ds-black"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.title1f89]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.title1f89}}</h2>
+                </div>
+                <div class="estimated-price">
+                  <div>
+                    <div *ngIf="estimatedPrice !== null" class="ds-black price" tabindex="0">{{estimatedPrice |
+                      currency}}</div>
+                    <div *ngIf="estimatedPrice === null" class="as-eorder-price__While-we-do-not-have ds-gray__900"
+                      [attr.aria-label]="[content.as_eorder_price_estimate.priceNotAvailablef89]" i18n tabindex="0">
+                      {{content.as_eorder_price_estimate.priceNotAvailablef89}}
+                    </div>
+                    <br>
+                    <a class="ds-link as-eorder-price__anchorTag ds-gray__900" *ngIf="estimatedPrice !== null"
+                      tabindex="0" (click)="openDialog()">{{content.as_eorder_price_estimate.link}}</a>
+                  </div>
+                </div>
+                <div class="Legal-disclaimer__content ds-gray__900" id="disclaimer_text1" *ngIf="estimatedPrice !== null && (easypayEnhancementF411$ | async)">
+                  <p i18n>{{content.as_eorder_price_estimate.content5}}</p>
+                </div>
+                <ng-container *ngIf="estimatedPrice && (enableEasypay$| async)">
+                  <br>
+                </ng-container>
+
+                <div class="ds-col--12 ds-billing" *ngIf="estimatedPrice && (enableEasypay$| async)"
+                  [ngClass]="{'--single-method' : multiPaymentMethod == false, 'hide_Easypay': (sdkLoading$ | async)}">
+                  <div class="ds-col--12 ds-billing--selector ds-flex --column" [formGroup]="billingSelector">
+                    <!-- cc billing -->
+                    <div class="ds-option-card ds-flex --column --creditCard"
+                      [ngClass]="{'--active' : billingSelectorOption.value == 'creditCard', '--disable' : DisableAll}">
+                      <div class="ds-col--12 ds-flex --row">
+                        <div class="ds-col--6 ds-input__radio --option"
+                          [ngClass]="{'--disabled' : MultiPaymentSubmited || SkipPaymentSubmited}">
+                          <input id="billingSelectorCreditCard" type="radio" [formControl]="billingSelectorOption"
+                            formControlName="billingSelectorOption" name="billingSelectorOption" value="creditCard"
+                            (change)="changeOption($event.target.value)">
+                          <label for="billingSelectorCreditCard">
+                            <span>Credit/Debit, HSA, FSA</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="ds-flex --wrap --content">
+                        <div id="payment-card"
+                          [ngClass]="{'hide_Easypay' : billingSelectorOption.value == 'skipPayment'}"
+                          class="ds-col--12 ds-flex --row"></div>
+                      </div>
+                    </div>
+
+                    <!-- skip paymant new start -->
+                    <div class="ds-option-card ds-flex --column --skipPayment"
+                      [ngClass]="{'--active' : billingSelectorOption.value == 'skipPayment', '--disable' : DisableAll}"
+                      *ngIf="multiPaymentMethod">
+                      <div class="ds-col--12 ds-flex --row">
+                        <div class="ds-col--6 ds-input__radio --option"
+                          [ngClass]="{'--disabled' : MultiPaymentSubmited || SkipPaymentSubmited}">
+                          <input id="billingSelectorSkipPayment" type="radio" [formControl]="billingSelectorOption"
+                            formControlName="billingSelectorOption" name="billingSelectorOption" value="skipPayment"
+                            (change)="changeOption($event.target.value)">
+                            <ng-container *ngIf="(easypayEnhancementF411$ | async);else witoutF411span">
+                              <label for="billingSelectorSkipPayment" click="">
+                                <span>Skip for now</span>
+                              </label>
+                            </ng-container>
+                            <ng-template #witoutF411span>
+                              <label for="billingSelectorSkipPayment" click="">
+                                <span>Skip Payment</span>
+                              </label>
+                            </ng-template>
+                        </div>
+                      </div>
+
+                      <div class="ds-flex --row --wrap  --content" *ngIf="billingSelectorOption.value == 'skipPayment'">
+                        <div class="ds-input --dropdown"
+                          [ngClass]="{'--error': !skipReasons.valid && skipReasons.touched}">
+                          <ng-container *ngIf="(easypayEnhancementF411$ | async); else withoutF411SkipReason">
+                            <label class="ds-input__label" aria-label="Reason For Skipping Payment">Reason</label>
+                          </ng-container>
+                          <ng-template #withoutF411SkipReason>
+                            <label class="ds-input__label" aria-label="Reason For Skipping Payment">Reason For Skipping Payment</label>
+                          </ng-template>
+                          <select (change)="selectedOption()" id="Reason_For_Skip"
+                            [ngClass]="{'--error1': !skipReasons.valid && skipReasons.touched}" i18n-placeholder
+                            placeholder="Select Reason" aria-label="Sort By" [formControl]="skipReasons">
+                            <option *ngFor="let option of reasonList" [value]="option.id">{{option.name}}</option>
+                          </select>
+                          <div class="ds-input__error" role="alert" *ngIf="!skipReasons.valid && skipReasons.touched">
+                            {{skipReasons.errors | validationError}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- skip paymant new end -->
+
+                  </div>
+                </div>
+              </div>
+              <div class="as-eorder-price__content ds-gray__900" id="disclaimer_text" *ngIf="estimatedPrice !== null">
+                <ng-container *ngIf="(easypayEnhancementF411$ | async);else witoutF411content">
+                  <p i18n innerHTML="{{content.as_eorder_price_estimate.content6}}"></p>
+                </ng-container>
+                <ng-template #witoutF411content>
+                  <p i18n innerHTML="{{content.as_eorder_price_estimate.content1}}"></p>
+                </ng-template>
+                <p i18n>{{content.as_eorder_price_estimate.content2}}</p>
+                <p i18n>{{content.as_eorder_price_estimate.content3}}</p>
+                <p i18n>{{content.as_eorder_price_estimate.content4}}</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="ds-col--4">
+            <as-eorder-footer-old (continue)='onContinue()' [isVisiablePreviousURL]="false" [finalStep]="true"
+                          [previous]="previousUrl"  [enableContinue]="enableContinue"
+               [enableEasypay]="enableEasypayButton"></as-eorder-footer-old>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <!-- with f89 changes end-->
+
+  <!-- without f89 changes start-->
+  <ng-template #WithoutEasypayEnhancement>
+    <div class="ds-grid--12 ds-body--content"  >
+      <div *ngIf="SpinnerLoading || (loading$ | async)" class="as-eorder-price-estimate__overlay_no_bg" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+      <div *ngIf="(sdkLoading$ | async)" class="as-eorder-price-estimate__overlay" fxLayout="row"
+        fxLayoutAlign="center center">
+        <as-spinner></as-spinner>
+      </div>
+     <div class="ds-col--12 pad-24">
+       <div class="ds-flex --row ds-form__col--2">
+         <div class="ds-col--12" id="skip-to-main" tabindex="-1">
+           <div>
+             <div>
+               <div >
+                  <ng-container *ngIf="(easypayEnhancementF411$ | async); else withoutF411title">
+                    <h2 *ngIf="estimatedPrice !== null" class="ds-black"
+                    [attr.aria-label]="[content.as_eorder_price_estimate.titlef441]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.titlef441}}</h2>
+                  </ng-container>
+                  <ng-template #withoutF411title>
+                    <h2 *ngIf="estimatedPrice !== null" class="ds-black" [attr.aria-label]="[content.as_eorder_price_estimate.title]" i18n tabindex="0">
+                    {{content.as_eorder_price_estimate.title}}</h2>
+                  </ng-template>
+                   <h2 *ngIf="estimatedPrice === null" class="ds-black" [attr.aria-label]="[content.as_eorder_price_estimate.title1]" i18n tabindex="0">
+                     {{content.as_eorder_price_estimate.title1}}</h2>
+               </div>
+               <div class="estimated-price">
+                 <div>
+                   <div *ngIf="estimatedPrice !== null" class="ds-black price"  tabindex="0">{{estimatedPrice | currency}}</div>
+                   <div *ngIf="estimatedPrice === null" class="as-eorder-price__While-we-do-not-have ds-gray__900"
+                   [attr.aria-label]="[content.as_eorder_price_estimate.priceNotAvailable]" i18n  tabindex="0">
+                     {{content.as_eorder_price_estimate.priceNotAvailable}}
+                   </div>
+                   <br>
+                   <a class="ds-link as-eorder-price__anchorTag ds-gray__900" tabindex="0"
+                     (click)="openDialog()">{{content.as_eorder_price_estimate.link}}</a>
+                 </div>
+               </div>
+               <div class="Legal-disclaimer__content ds-gray__900" id="disclaimer_text2" *ngIf="estimatedPrice !== null &&(easypayEnhancementF411$ | async)">
+                <p i18n>{{content.as_eorder_price_estimate.content5}}</p>
+               </div>
+               <ng-container *ngIf="estimatedPrice && (enableEasypay$| async)">
+                <br>
+              </ng-container>
+               <div class="ds-col--12 ds-billing" *ngIf="estimatedPrice && (enableEasypay$| async)" [ngClass]="{'--single-method' : multiPaymentMethod == false, 'hide_Easypay': (sdkLoading$ | async)}" >
+                 <div class="ds-col--12 ds-billing--selector ds-flex --column" [formGroup]="billingSelector">
+
+                   <!-- cc billing -->
+                   <div class="ds-option-card ds-flex --column --creditCard"
+                     [ngClass]="{'--active' : billingSelectorOption.value == 'creditCard', '--disable' : DisableAll}">
+                     <div class="ds-col--12 ds-flex --row">
+                       <div class="ds-col--6 ds-input__radio --option"
+                         [ngClass]="{'--disabled' : MultiPaymentSubmited || SkipPaymentSubmited}">
+                         <input id="billingSelectorCreditCard" type="radio" [formControl]="billingSelectorOption"
+                           formControlName="billingSelectorOption" name="billingSelectorOption" value="creditCard" (change)="changeOption($event.target.value)">
+                         <label for="billingSelectorCreditCard">
+                           <span>Credit/Debit, HSA, FSA</span>
+                         </label>
+                       </div>
+                     </div>
+                     <div class="ds-flex --wrap --content" >
+                       <div id="payment-card" [ngClass]="{'hide_Easypay' : billingSelectorOption.value == 'skipPayment'}" class="ds-col--12 ds-flex --row"></div>
+                     </div>
+                   </div>
+
+                   <!-- skip paymant new start -->
+                   <div class="ds-option-card ds-flex --column --skipPayment" [ngClass]="{'--active' : billingSelectorOption.value == 'skipPayment', '--disable' : DisableAll}" *ngIf="multiPaymentMethod">
+                     <div class="ds-col--12 ds-flex --row">
+                         <div class="ds-col--6 ds-input__radio --option" [ngClass]="{'--disabled' : MultiPaymentSubmited || SkipPaymentSubmited}">
+                             <input id="billingSelectorSkipPayment" type="radio" [formControl]="billingSelectorOption" formControlName="billingSelectorOption" name="billingSelectorOption" value="skipPayment"  (change)="changeOption($event.target.value)">
+                             <ng-container *ngIf="(easypayEnhancementF411$ | async);else witoutF411span1">
+                              <label for="billingSelectorSkipPayment" click="">
+                                <span>Skip for now</span>
+                              </label>
+                            </ng-container>
+                            <ng-template #witoutF411span1>
+                              <label for="billingSelectorSkipPayment" click="">
+                                <span>Skip Payment</span>
+                              </label>
+                            </ng-template>
+                         </div>
+                     </div>
+
+                     <div class="ds-flex --row --wrap  --content" *ngIf="billingSelectorOption.value == 'skipPayment'">
+                       <div class="ds-input --dropdown" [ngClass]="{'--error': !skipReasons.valid && skipReasons.touched}">
+                        <ng-container *ngIf="(easypayEnhancementF411$ | async); else withoutF411SkipReason2">
+                          <label class="ds-input__label" aria-label="Reason For Skipping Payment">Reason</label>
+                        </ng-container>
+                        <ng-template #withoutF411SkipReason2>
+                          <label class="ds-input__label" aria-label="Reason For Skipping Payment">Reason For Skipping Payment</label>
+                        </ng-template>
+                          <select (change)="selectedOption()" id="Reason_For_Skip" [ngClass]="{'--error1': !skipReasons.valid && skipReasons.touched}" i18n-placeholder placeholder="Select Reason"
+                           aria-label="Sort By" [formControl]="skipReasons">
+                           <option *ngFor="let option of reasonList" [value]="option.id">{{option.name}}</option>
+                         </select>
+                           <div class="ds-input__error" role="alert" *ngIf="!skipReasons.valid && skipReasons.touched">{{skipReasons.errors | validationError}}</div>
+                       </div>
+                     </div>
+                 </div>
+                 <!-- skip paymant new end -->
+
+                 </div>
+               </div>
+             </div>
+             <div class="as-eorder-price__content ds-gray__900">
+              <ng-container *ngIf="estimatedPrice !== null && (easypayEnhancementF411$ | async);else witoutF411content1">
+                <p i18n innerHTML="{{content.as_eorder_price_estimate.content6}}"></p>
+              </ng-container>
+              <ng-template #witoutF411content1>
+                <p i18n innerHTML="{{content.as_eorder_price_estimate.content1}}"></p>
+              </ng-template>
+               <p i18n>{{content.as_eorder_price_estimate.content2}}</p>
+               <p i18n>{{content.as_eorder_price_estimate.content3}}</p>
+               <p i18n>{{content.as_eorder_price_estimate.content4}}</p>
+             </div>
+           </div>
+         </div>
+         <div class="ds-col--4">
+           <as-eorder-footer-old (continue)='onContinue()' [isVisiablePreviousURL]="false" [finalStep]="true"
+             [previous]="previousUrl" [enableContinue]="enableContinue" [enableEasypay]="enableEasypayButton"></as-eorder-footer-old>
+         </div>
+       </div>
+     </div>
+   </div>
+  </ng-template>
+<!-- without f89 changes end-->
+</main>

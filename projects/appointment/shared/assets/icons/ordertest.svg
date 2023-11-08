@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>ordertest</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Style-Guide-1/2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Global-E-Icons" transform="translate(-544.000000, -1280.000000)" fill="#000000">
+            <g id="ordertest" transform="translate(544.000000, 1280.000000)">
+                <polygon id="Fill-1" points="2.9997 5.0004 2.9997 8.0004 -0.0003 8.0004 -0.0003 9.9994 2.9997 9.9994 2.9997 12.9994 5.0007 12.9994 5.0007 9.9994 7.9997 9.9994 7.9997 8.0004 5.0007 8.0004 5.0007 5.0004"></polygon>
+                <path d="M14.3764706,11.3294118 L18.7176471,11.3294118 L18.7176471,1.48235294 L14.3764706,1.48235294 L14.3764706,11.3294118 Z M20.2,0 L13,0 L13,1.48235294 L13.5294118,1.48235294 L13.5294118,14.9294118 C13.5294118,16.6235294 14.9058824,18 16.6,18 C18.2941176,18 19.6705882,16.6235294 19.6705882,14.9294118 L19.6705882,1.48235294 L20.2,1.48235294 L20.2,0 Z" id="Fill-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

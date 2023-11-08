@@ -1,0 +1,24 @@
+<div class="ds-modal find-appointment">
+  <div mat-dialog-header class="ds-modal__header ds-col--12 ds-flex --end-center">
+    <button class="ds-icon--close ds-font--24 ds-green__700" aria-label="close" (click)="closeViewLocationDetails()"></button>
+  </div>
+
+  <mat-dialog-content class="ds-col--12">
+    <div class="ds-modal__content ds-col--12 ds-flex --column --center-start">
+      <h2 id="mat-dialog-title" aria-label="Location details" class="header">Location details</h2>
+      <div class="ds-col--12 --content-scroll">
+        <as-view-location-details [siteCode]="data?.siteCode" [distance]="data?.distance" [appointmentsOnly]="data?.appointmentsOnly" ></as-view-location-details>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="ds-col--12">
+    <div class="ds-modal__actions ds-col--12 ds-flex --wrap margin-top-24">
+      <div class="ds-col--6 ds-flex --end-center">
+        <button class="ds-button --primary --medium" aria-label="Close" (click)="closeViewLocationDetails()">
+          <label>Close</label>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</div>

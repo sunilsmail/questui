@@ -1,0 +1,989 @@
+$ds-yellow: #ffbe00;
+.ds-yellow{
+    color: $ds-yellow;
+
+    &--bg{
+        background: $ds-yellow;
+    }
+}
+
+.ds-button{
+    border-radius: 4px;
+    border: 0;
+    font-size: 16px; 
+    padding: 14px 24px;
+    min-width: 120px;
+    max-width: 328px;
+    cursor: pointer;
+    flex-direction: row;
+    @include flex-layout--center-center;
+
+    &[class*="--medium"]{
+        padding: 10px 24px;
+    }
+
+    &[class*="--small"]{
+        padding: 6px 24px;
+    }
+
+    label{
+        cursor: pointer;
+    }
+
+    [class*="ds-icon"]{
+        margin: 0 4px;
+    }
+    
+    &__primary{
+        @extend .ds-button;
+        width: auto;
+        background: $ds-green;
+        color: $ds-white;
+        box-shadow: 1px 2px 6px 0 rgba(34, 34, 34, 0.2);
+
+        &[class*="--disabled"]{
+            background: $ds-gray__200;
+            color: $ds-gray__400;
+            box-shadow: 0 0 0 0;
+            
+            &:hover, label:hover, span:hover{
+                cursor: default;
+            }
+        }
+
+        &[class*="--warning"]{
+            background: $ds-red;
+        }
+    }
+
+    &__secondary{
+        @extend .ds-button;
+        background: $ds-white;
+        border: 1px solid $ds-green;
+        color: $ds-green;
+        @include elevation(0);
+
+        &[class*="--disabled"]{
+            color: $ds-gray__400;
+            border: 1px solid $ds-gray__400;
+            box-shadow: 0 0 0 0;
+
+            &:hover, label:hover, span:hover{
+                cursor: default;
+            }
+        }
+
+        &[class*="--warning"]{
+            border: 1px solid $ds-red;
+            color: $ds-red;
+        }
+    }
+
+    &__tertiary{
+        @extend .ds-button;
+        height: auto;
+        padding: 8px 16px;
+        background: none;
+        border: 0;
+        color: $ds-green;
+        @include elevation(0);
+
+        &:hover{
+            background: $ds-gray__200;
+        }
+
+        &[class*="--disabled"]{
+            color: $ds-gray__400;
+            box-shadow: 0 0 0 0;
+
+            &:hover, label:hover, span:hover{
+                cursor: default;
+                background: none;
+            }            
+        }
+        
+        &[class*="--warning"]{
+            color: $ds-red;
+        }                
+
+    }
+    
+    &__inverse{
+        @extend .ds-button;
+        background: none;
+        border: 1px solid $ds-gray__100;
+        color: $ds-white;
+        @include elevation(0);
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &[class*="--disabled"]{
+            color: $ds-gray__500;
+            border: 1px solid $ds-gray__500;
+
+            box-shadow: 0 0 0 0;
+
+            &:hover, label:hover, span:hover{
+                cursor: default;
+            }            
+        }        
+
+    }     
+
+    &__primary, &__secondary, &__inverse{
+
+        @include when-less-than(ds-768){
+            width: 100%;
+        }
+    }
+}
+
+.ds-button{
+
+    &__primary{
+    
+        &--disabled{
+            @extend .ds-button.--primary;
+            background: $ds-gray__200;
+            color: $ds-gray__400;
+            box-shadow: 0 0 0 0;
+            
+            &:hover, label:hover, span:hover{
+                cursor: default;
+            }
+        }
+    
+        &--warning{
+            @extend .ds-button.--primary;
+            background: $ds-red;
+        }
+    }
+
+    &__secondary{
+
+        &--disabled{
+            @extend .ds-button__secondary;
+            color: $ds-gray__400;
+            border: 1px solid $ds-gray__400;
+            box-shadow: 0 0 0 0;
+
+            &:hover, label:hover, span:hover{
+                cursor: default;
+            }
+        }
+
+        &--warning{
+            @extend .ds-button__secondary;
+            border: 1px solid $ds-red;
+            color: $ds-red;
+        }
+    }
+    
+    &__tertiary{
+
+        &:hover{
+            background: $ds-gray__200;
+        }
+
+        &--disabled{
+            @extend .ds-button__tertiary;
+            color: $ds-gray__400;
+            box-shadow: 0 0 0 0;
+
+            &:hover, label:hover, span:hover{
+                cursor: default;
+                background: none;
+            }            
+        }
+        
+        &--warning{
+            @extend .ds-button__tertiary;
+            color: $ds-red;
+        }                
+
+    }
+
+    &__inverse{
+        @extend .ds-button;
+        background: none;
+        border: 1px solid $ds-gray__100;
+        color: $ds-white;
+        @include elevation(0);
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &--disabled{
+            @extend .ds-button__inverse;
+            color: $ds-gray__500;
+            border: 1px solid $ds-gray__500;
+
+            box-shadow: 0 0 0 0;
+
+            &:hover, label:hover, span:hover{
+                cursor: default;
+            }            
+        }        
+
+    }      
+
+    &__primary, &__primary--disabled, &__primary--warning, &__secondary, &__inverse{
+
+        @include when-less-than(ds-768){
+            width: 100%;
+        }
+    }    
+}
+.ds-content-block{
+    margin: 0;
+
+    &__header{
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: -1.1px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    &--16{
+        margin: 0 0 16px 0;
+    }
+
+    &--20{
+        margin: 0 0 20px 0;
+    }
+
+    &--24{
+        margin: 0 0 24px 0;
+    }
+
+    &--28{
+        margin: 0 0 28px 0;
+    }
+    
+    &--32{
+        margin: 0 0 32px 0;
+    }   
+    
+    &--36{
+        margin: 0 0 36px 0;
+    }
+
+    &--40{
+        margin: 0 0 40px 0;
+    }
+
+    &--44{
+        margin: 0 0 44px 0;
+    }
+    
+    &--48{
+        margin: 0 0 48px 0;
+    } 
+
+    &--52{
+        margin: 0 0 52px 0;
+    }        
+
+    [class^="col"]{
+        line-height: 1.93;
+    }
+
+}
+
+.ds-flex{
+  
+    display: flex;
+  
+    &__layout{
+  
+      &--start-start{
+        @include flex-layout--start-start;
+      }
+      
+      &--start-center{
+        @include flex-layout--start-center;
+      }
+  
+      &--center-center{
+        @include flex-layout--center-center;
+      } 
+  
+      &--end-start{
+        @include flex-layout--end-start;
+      } 
+  
+      &--end-center{
+        @include flex-layout--end-center;
+      }
+      &--end-end{
+        @include flex-layout--end-end;
+      }        
+    }
+  
+    &--column{
+      @extend .ds-flex;
+      flex-direction: column;
+    }
+  
+    &--row{
+      @extend .ds-flex;
+      flex-direction: row;
+    }
+  
+  }
+
+  .ds-form{
+
+    @include when-less-than(ds-768){
+
+        [class*="ds-col"]{
+            width: 100%;
+        }
+    }
+
+    @include when-less-than(ds-480){
+
+        [class*="ds-col"]{
+            flex-direction: column;
+        }
+    }     
+
+    &__col{
+
+        &--2{
+
+            > [class*="ds-col"]{
+
+                &:nth-of-type(2){
+
+                    > .ds-flex{
+
+                        > .ds-col--1{
+                            position: relative;
+
+                            span{
+            
+                                &:first-of-type{
+                                    background: $ds-gray__300;
+                                    display: flex;
+                                    height: 22px;
+                                    width: 22px;
+                                    border-radius: 50%;
+                                    border: 2px solid $ds-gray__300;
+                                    align-items: center;
+                                    place-content: center;
+                                    justify-content: center;
+                                    color: $ds-white;
+                                }
+    
+                                &:after{
+                                    position: absolute;
+                                    content:'';
+                                    background: $ds-gray__300;
+                                    display: flex;
+                                    height: auto;
+                                    width: 1px;
+                                    align-items: center;
+                                    place-content: center;
+                                    justify-content: center;
+                                    top: 24px;
+                                    bottom: 0;
+                                }
+                            }                            
+                        }
+
+                        &.ds-step--complete{
+
+                            > .ds-col--1{
+
+                                span{
+                                    border: 1px solid $ds-green__500;
+                                    background: $ds-gray__100;
+                                    color: $ds-green__500;
+                                    font-size: 10px;
+
+                                    &:after{
+                                        background: $ds-green__500;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.ds-step--active{
+
+                            > .ds-col--1{
+
+                                span{
+
+                                    &:first-of-type{
+                                        background: $ds-green__500;
+                                        border: 2px solid $ds-green__500;
+                                    }                                    
+                                }
+                            }
+                        } 
+                        
+                        > .ds-col--11{
+                            padding-bottom: 24px;
+                        }
+          
+                      }
+
+                    .ds-col--13{
+                        margin: 0 0 24px 16px;
+                    }
+
+
+                    > .ds-flex{
+                        margin-bottom: 1px;
+                        
+                        &:nth-last-of-type(1){
+
+                            span{
+
+                                &:after{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }                    
+                }
+            }         
+
+            @include when-less-than(ds-1024){
+
+                > [class*="ds-col"]{
+
+                    &:nth-of-type(2){
+                        display: none!important;
+                    }
+    
+                }
+
+                [class*="ds-col"]{
+                    width: 100%;
+                }                 
+
+            }
+
+            &--map{
+                
+                @include when-less-than(ds-768){
+
+                    > [class*="ds-col"]{
+
+                        &:first-of-type{
+                            width: 100%;
+                        }
+
+                        &:nth-of-type(2){
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ds-grid{
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+  
+    .ds-col{
+      padding: 0 0 8px 0;
+  
+      &--1{
+        @extend .ds-col;
+        width: 7.14%;
+      }
+  
+      &--2{
+        @extend .ds-col;
+        width: 14.28%;
+      }
+  
+      &--3{
+        @extend .ds-col;
+        width: 21.42%;
+      }
+  
+      &--thirds{
+        @extend .ds-col;
+        width: 33.33%;
+      }
+  
+      &--4{
+        @extend .ds-col;
+        width: 28.56%;
+      }
+  
+      &--5{
+        @extend .ds-col;
+        width: 35.7%;
+      }
+  
+      &--6{
+        @extend .ds-col;
+        width: 42.84%;
+      }
+  
+      &--7{
+        @extend .ds-col;
+        width: 49.98%;
+      }
+  
+      &--8{
+        @extend .ds-col;
+        width: 57.12%;
+      } 
+  
+      &--9{
+        @extend .ds-col;
+        width: 64.26%;
+      }
+      
+      &--10{
+        @extend .ds-col;
+        width: 71.4%;
+      }    
+  
+      &--11{
+        @extend .ds-col;
+        width: 78.54%;
+      }    
+  
+      &--12{
+        @extend .ds-col;
+        width: 85.68%;
+      }
+      
+      &--13{
+        @extend .ds-col;
+        width: 92.82%;  
+      }      
+  
+      &--14{
+        @extend .ds-col;
+        width: 99.96%;
+      }
+  
+      &.ds-divider{
+        background: $ds-gray__300;
+        padding: 0;
+  
+        &--horizontal{
+          @extend .ds-divider;
+          height: 1px;
+          margin: 100px 0 16px 0;
+        }
+  
+        &--vertical{
+          @extend .ds-divider;
+          width: 1px;
+          margin: 0 52px 36% 16px;
+        }
+      }
+    }
+  
+    &--time{
+      @extend .ds-grid;
+  
+      .ds-col--14{
+        padding: 0;
+  
+        .ds-col--2{
+          width: 82px;
+        }      
+      }
+  
+      @include when-less-than(ds-768){
+  
+        .ds-col--14{
+          flex-direction: column!important;
+        }
+      }     
+    }
+  }
+
+.ds-input{
+
+    &.--error{
+        
+        .ds-input__label{
+                color: $ds-red;
+        }
+
+        input{
+            border: 1px solid $ds-red;
+            padding-right: 40px;
+        }
+        
+        [class*="ds-icon--error"]{
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+        }
+
+        .ds-input__error{
+            @extend .ds-font--12;
+            color: $ds-red;
+            display: block;
+            height: 20px;
+            margin-top: 4px;
+        }        
+
+    }
+    &.--required{
+
+        .ds-input__label:after{
+            content:"•";
+            padding-left: 5px;
+            color: $ds-red;
+        }
+    }
+
+    &.ds-read-only{
+
+        input{
+            border: 1px solid $ds-gray__300;
+            background: $ds-gray__100;
+            pointer-events: none;
+        }
+    }
+
+    &.ds-disabled{
+
+        input{
+            background: $ds-gray__200;
+            border: 1px solid $ds-gray__200;
+            pointer-events: none;
+        }
+    }
+
+    &__search{
+        margin: 0;
+        position: relative;
+        
+        input{
+            outline: 0;
+            color: $ds-black;
+            font-size: 16px;        
+            padding: 16px;
+            border-radius: 4px;
+            border: 1px solid $ds-white;
+            background: $ds-white; 
+            width: 100%;       
+            padding: 16px 40px;
+    
+            &:focus{
+                border: 1px solid $ds-green;
+            }
+
+            &::placeholder{
+                color: ds-gray__400;
+            }            
+        }
+
+        [class^="ds-icon"]{
+            position: absolute;
+            top: 15px;
+            left: 12px;
+            
+            &:nth-of-type(2){
+                left: auto;
+                right: 12px;
+            }
+        }        
+    }    
+}
+
+.ds-option{
+
+    &__primary{
+        @extend .ds-option;
+        font-size: 14px;
+        padding: 0 16px;
+    
+        &--selected{
+            @extend .ds-option__primary;
+            background: $ds-green;
+            color: $ds-white;
+            box-shadow: 0 0 0 0;
+        }
+
+        &[class*="--selected"]{
+            background: $ds-green;
+            color: $ds-white;
+            box-shadow: 0 0 0 0;
+        }        
+    }
+
+    &__small{
+        @extend .ds-option;
+        height: 32px;
+        width: 64px;
+
+        label{
+            flex-direction: row;
+            @include flex-layout--center-center;
+        }
+
+        &--selected{
+            @extend .ds-option__small;
+            background: $ds-white;
+            color: $ds-green;
+            border: 1px solid $ds-green;
+            box-shadow: 0 0 0 0;
+        }
+
+        &--disabled{
+            @extend .ds-option__small;
+            background: $ds-gray__200;
+            color: $ds-gray__400;
+            box-shadow: 0 0 0 0;
+            cursor: default;
+        }
+    }
+
+    &__circle{
+
+        &--selected{
+            @extend .ds-option__circle;
+            background: $ds-green;
+            color: $ds-white;
+            border: 0;
+            box-shadow: 0 0 0 0;
+        } 
+
+        &[class*="--selected"]{
+            background: $ds-green;
+            color: $ds-white;
+            border: 0;
+            box-shadow: 0 0 0 0;
+        }              
+    }    
+}
+
+.pad-4{
+    padding: 4px;
+}
+
+.pad-8{
+    padding: 8px;
+}
+
+.pad-12{
+    padding: 12px;
+}
+
+.pad-16{
+    padding: 16px;
+}
+
+.pad-20{
+    padding: 20px;
+}
+
+.pad-24{
+    padding: 24px;
+}
+
+.pad-28{
+    padding: 28px;
+}
+
+.pad-32{
+    padding: 32px;
+}
+
+.pad-36{
+    padding: 36px;
+}
+
+.pad-40{
+    padding: 40px;
+}
+
+.pad-44{
+    padding: 44px;
+}
+
+.pad-48{
+    padding: 48px;
+}
+
+.pad-52{
+    padding: 52px;
+}
+
+.pad-56{
+    padding: 56px;
+}
+
+.pad-60{
+    padding: 60px;
+}
+
+.pad-64{
+    padding: 64px;
+}
+
+.pad-68{
+    padding: 68px;
+}
+
+
+.ds-pagination, .ds-pagination--view-count{
+    font-size: 14px;
+    color: $ds-gray__900;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-items: center;
+
+    span, button{
+        display: flex;
+        place-items: center;
+        padding: 4px;
+        margin: 0 2px;
+        font-size: 14px;
+        line-height: 12px;
+    }
+
+    button{
+        background: $ds-white;
+        height: 24px;
+        width: 24px;
+        border-radius: 2px;
+        place-content: center;
+        justify-content: center;
+
+        &.active{
+            border-bottom: 1px solid $ds-green__500;
+            color: $ds-green__500;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+
+// .ds-pagination{
+//     display: flex;
+//     max-width: 1020px;
+//     margin-top: 40px;
+//     margin-bottom: 56px;
+
+//     .ds-pagination__button{
+//         position: relative;
+//         font-size: 14px;
+//         color: $ds-black;
+//         cursor: pointer;
+
+//         &:nth-of-type(2){
+//             margin-left: auto;
+//         }
+
+//         &--previous{
+
+//             &:focus{
+//                 outline: none;
+//             }
+//         }
+
+//         &--next{
+
+//             &:focus{
+//                 outline: none;
+//             }
+//         }
+
+//         &--disabled{
+//             visibility: hidden;
+//         }
+//     }
+
+//     &--footer{
+//         width: 100%;
+
+//         .ds-col--12{
+//             padding: 0;
+//             place-items: center;
+//             justify-content: center;
+
+//             .ds-col{
+
+//                 &--6{
+                    
+//                     &:first-of-type{
+//                         flex-direction: row;
+//                         @include flex-layout--start-center;
+//                     }
+
+//                     &:last-of-type{
+//                         flex-direction: row;
+//                         @include flex-layout--end-center;
+//                         padding-right: 0;
+//                     }
+//                 }
+//             }
+//         }
+
+//         &--stacked{
+//             display: flex;
+//             flex-direction: column;
+//             place-content: center;
+//             justify-content: center;
+//             align-items: center;
+
+//             button{
+                
+//                 &.ds-button.--primary{
+//                     margin: 64px 0 36px 0;
+//                 }
+//             }
+//         }
+
+//         @include when-less-than(ds-768){
+
+//             [class*="ds-col"]{
+
+//                 &:nth-of-type(2){
+//                     flex-direction: column-reverse;
+
+//                     [class*="ds-col"]{
+//                         justify-content: center;
+
+//                         button{
+//                             place-content: center;
+//                             justify-content: center;
+
+//                             label{
+
+//                                 span{
+//                                     display: none;
+//                                 }
+//                             }
+//                         }
+//                     }
+
+//                     [class*="ds-col"]{
+                        
+//                         &:first-of-type{
+//                             padding: 0;
+//                         }
+//                     }
+
+//                 }
+//             }
+//         }
+//     }
+// }

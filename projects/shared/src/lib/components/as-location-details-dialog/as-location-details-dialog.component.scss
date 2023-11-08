@@ -1,0 +1,131 @@
+@import '../../../../../appointment/styles.scss';
+
+.find-appointment {
+  width: 100%;
+  // .ds-modal__content {
+  //   height: 420px;
+
+  //   @include when-less-than(ds-480) {
+  //     height: 500px;
+  //   }
+  // }
+    .ds-modal__content {
+      height: 390px;
+
+        @include when-less-than(ds-480) {
+          height: 500px;
+        }
+    }
+
+  @include when-less-than(ds-768) {
+    max-width: 348px;
+    > mat-dialog-actions >.ds-modal__actions > [class*=ds-col] {
+      width: 100%;
+      justify-content: center;
+
+      >.--secondary {
+        width: 100%;
+        justify-content: center;
+        min-width: 100%;
+
+        @include when-less-than(ds-480) {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include when-wider-than(ds-768) {
+    > mat-dialog-actions >.ds-modal__actions>[class*=ds-col] {
+      width: auto;
+      margin-left: 16px;
+      > .--secondary{
+        min-width: 192px;
+      }
+    }
+  }
+
+  @include when-less-than(ds-480) {
+    max-width: 100%;
+  }
+
+
+   &__anchorTag {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+    .ds-input {
+        input{
+            margin-bottom: 4px;
+        }
+    }
+
+    @include when-less-than(ds-768){
+        background: $ds-gray__100;
+        // position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width: 100% !important;
+        padding: 16px 24px;
+
+        [class*="ds-col"]{
+            width: 100%;
+
+            .ds-input{
+            padding-right: 0;
+            margin-right: 0;
+            }
+        }
+
+        > .ds-grid--12{
+            flex-direction: column-reverse;
+
+            > [class*="ds-col"]{
+                padding-right: 0;
+
+                &:first-of-type{
+                    margin: 16px 0;
+                    justify-content: center;
+                    place-content: center;
+                }
+                &:last-of-type{
+                    justify-content: center;
+                    place-content: center;
+                }
+            }
+        }
+    }
+}
+.ds-input__label:focus {
+    font-size: 12px;
+    color: #424245;
+    margin-bottom: 4px;
+    display: flex;
+    outline: $ds-green__500 solid 2px !important;
+    outline-offset: 3px;
+  }
+  @media screen and (max-width: 767px) {
+    .find-appointment[_ngcontent-c9] > .ds-grid--12[_ngcontent-c9] {
+      flex-direction: column;
+    }
+  }
+
+.ds-green__700:focus{
+  outline: 2px solid $ds-green__500 !important;
+  outline-offset: 0px ;
+}
+.confirmation-txt {
+    color: #737376 !important;
+}
+
+.header {
+  padding-bottom: 8px !important;
+  margin: 24px 0px 12px 0px;
+
+  @include when-less-than(ds-480) {
+    margin: 5px 0px 12px 0px;
+  }
+}

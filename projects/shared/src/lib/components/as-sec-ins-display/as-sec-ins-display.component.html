@@ -1,0 +1,44 @@
+<div *ngIf="insuranceData else noProvider">
+  <ng-container
+    *ngIf="insuranceData && insuranceData.provider && insuranceData.provider.insuranceMnemonic === null; else validInsProvider">
+    <span class="ds-flex i-card">
+    <span class="ds-icon--alert ds-gold__500 ds-font--24" role="img" aria-label="alert"></span>
+    <div class="ds-font--14 onFocus" [attr.aria-label]="[content.as_sec_ins.ins_not_found]" id="sec_ins_not_found" i18n>
+      <span class="ds-font--14--bold">{{content.as_sec_ins.ins_not_found}}</span>
+    </div>
+  </span>
+  </ng-container>
+  <ng-template #validInsProvider>
+    <span class="ds-flex i-card">
+      <span class="ds-icon--identification-card ds-green__700 ds-font--24 padding-right-10"
+        *ngIf="insuranceData && insuranceData?.provider?.insuranceCompanyName"></span>
+      <div>
+        <div class="ds-font--14 onFocus" *ngIf="insuranceData && insuranceData?.provider?.insuranceCompanyName"
+         [attr.aria-label]="[insuranceData?.provider?.insuranceCompanyName]" id="sec_ins_companyname" i18n>
+          {{insuranceData?.provider?.insuranceCompanyName}}
+        </div>
+        <div class="ds-font--14 onFocus" *ngIf="insuranceData && insuranceData?.memberId"
+         [attr.aria-label]="[insuranceData?.memberId]" id="sec_ins_memberId" i18n>
+          {{insuranceData?.memberId}}
+        </div>
+      </div>
+    </span>
+  </ng-template>
+</div>
+<ng-template #noProvider>
+  <div class="ds-font--14 onFocus" aria-label="No insurance provided" i18n>
+    No insurance provided
+  </div>
+</ng-template>
+<!-- <ng-container *ngIf="screenName === 'review'; else screenNameSummary">
+    <div *ngIf="!insuranceData" class="ds-font--14--bold onFocus" id="sec_ins_not_provided_review_screen"
+      [attr.aria-label]="[content.as_sec_ins.ins_not_provided_review_screen]" aria-label="No insurance provided" i18n>
+      {{content.as_sec_ins.ins_not_provided_review_screen}}
+    </div>
+  </ng-container>
+  <ng-template #screenNameSummary>
+    <div *ngIf="!insuranceData" class="ds-font--14--bold onFocus" id="sec_ins_not_provided_summary_screen"
+      [attr.aria-label]="[content.as_sec_ins.ins_not_provided_summary_screen]" aria-label="No insurance provided" i18n>
+      {{content.as_sec_ins.ins_not_provided_summary_screen}}
+    </div>
+  </ng-template> -->

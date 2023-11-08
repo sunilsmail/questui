@@ -1,0 +1,433 @@
+//
+// Icon Font: quest-icons
+//
+
+@font-face {
+  font-family: "quest-icons";
+  src: url("../shared/assets/fonts/quest-icons.eot");
+  src: url("../shared/assets/fonts/quest-icons.eot?#iefix") format("embedded-opentype"),
+       url("../shared/assets/fonts/quest-icons.woff") format("woff"),
+       url("../shared/assets/fonts/quest-icons.ttf") format("truetype"),
+       url("../shared/assets/fonts/quest-icons.svg#quest-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "quest-icons";
+    src: url("../shared/assets/fonts/quest-icons.svg#quest-icons") format("svg");
+  }
+}
+
+.mat-icon {
+  font-size: 24px;
+
+  &.qd-icon {
+    font-size: 22px !important;
+    line-height: 0 !important;
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-account:before,
+.icon-add:before,
+.icon-addpatients:before,
+.icon-admin:before,
+.icon-alert:before,
+.icon-alertcancel:before,
+.icon-announcement:before,
+.icon-answer:before,
+.icon-arrowdown:before,
+.icon-arrowdown2:before,
+.icon-arrowdownbig:before,
+.icon-arrowleft:before,
+.icon-arrowright:before,
+.icon-arrowtriangle:before,
+.icon-arrowup:before,
+.icon-arrowup2:before,
+.icon-arrowupbig:before,
+.icon-back:before,
+.icon-billing:before,
+.icon-billtype:before,
+.icon-cached:before,
+.icon-card:before,
+.icon-cart:before,
+.icon-cartfilled:before,
+.icon-check:before,
+.icon-checkboxblank:before,
+.icon-checkboxfill:before,
+.icon-checkboxselected:before,
+.icon-checkcircle:before,
+.icon-close:before,
+.icon-closecircle:before,
+.icon-collapse:before,
+.icon-copy:before,
+.icon-copypage:before,
+.icon-copypagefill:before,
+.icon-criticalwarning:before,
+.icon-data:before,
+.icon-delete:before,
+.icon-diagnoses:before,
+.icon-directions:before,
+.icon-directionswalk:before,
+.icon-download:before,
+.icon-dropdown:before,
+.icon-dropdownreverse:before,
+.icon-edit:before,
+.icon-email:before,
+.icon-emailcancel:before,
+.icon-error:before,
+.icon-event:before,
+.icon-expand:before,
+.icon-export:before,
+.icon-favorite:before,
+.icon-fax:before,
+.icon-filter:before,
+.icon-final:before,
+.icon-flag:before,
+.icon-flagblank:before,
+.icon-frozen:before,
+.icon-go:before,
+.icon-handle:before,
+.icon-handlevertical:before,
+.icon-help:before,
+.icon-history:before,
+.icon-home:before,
+.icon-image:before,
+.icon-infocircle:before,
+.icon-language:before,
+.icon-launch:before,
+.icon-localparking:before,
+.icon-location:before,
+.icon-lock:before,
+.icon-mark:before,
+.icon-menu:before,
+.icon-menuclose:before,
+.icon-menuopen:before,
+.icon-morehoriz:before,
+.icon-morevert:before,
+.icon-move:before,
+.icon-neworder:before,
+.icon-news:before,
+.icon-orders:before,
+.icon-ordertest:before,
+.icon-partial:before,
+.icon-patients:before,
+.icon-pdf:before,
+.icon-pdffile:before,
+.icon-phone:before,
+.icon-playcircle:before,
+.icon-print:before,
+.icon-printselect:before,
+.icon-radiochecked:before,
+.icon-radiounchecked:before,
+.icon-recentlyviewed:before,
+.icon-refrigerated:before,
+.icon-reissued:before,
+.icon-resourcecenter:before,
+.icon-results:before,
+.icon-roomtemperature:before,
+.icon-schedule:before,
+.icon-scheduleclosure:before,
+.icon-scheduled:before,
+.icon-search:before,
+.icon-setting:before,
+.icon-share:before,
+.icon-signout:before,
+.icon-sort:before,
+.icon-sortup:before,
+.icon-star:before,
+.icon-status:before,
+.icon-supplies:before,
+.icon-supply:before,
+.icon-switch:before,
+.icon-test:before,
+.icon-testsearch:before,
+.icon-time:before,
+.icon-trainingtools:before,
+.icon-truck:before,
+.icon-undo:before,
+.icon-unlock:before,
+.icon-user:before,
+.icon-video:before,
+.icon-videotutorials:before,
+.icon-viewresults:before,
+.icon-visibility:before,
+.icon-visibilityoff:before,
+.icon-warning:before,
+.icon-warningcircle:before,
+.icon-warninglight:before {
+  display: inline-block;
+  font-family: "quest-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-account:before { content: "\f100"; }
+.icon-add:before { content: "\f101"; }
+.icon-addpatients:before { content: "\f102"; }
+.icon-admin:before { content: "\f177"; }
+.icon-alert:before { content: "\f103"; }
+.icon-alertcancel:before { content: "\f187"; }
+.icon-announcement:before { content: "\f104"; }
+.icon-answer:before { content: "\f105"; }
+.icon-arrowdown:before { content: "\f106"; }
+.icon-arrowdown2:before { content: "\f107"; }
+.icon-arrowdownbig:before { content: "\f108"; }
+.icon-arrowleft:before { content: "\f109"; }
+.icon-arrowright:before { content: "\f10a"; }
+.icon-arrowtriangle:before { content: "\f10b"; }
+.icon-arrowup:before { content: "\f10c"; }
+.icon-arrowup2:before { content: "\f10d"; }
+.icon-arrowupbig:before { content: "\f10e"; }
+.icon-back:before { content: "\f10f"; }
+.icon-billing:before { content: "\f110"; }
+.icon-billtype:before { content: "\f111"; }
+.icon-cached:before { content: "\f112"; }
+.icon-card:before { content: "\f113"; }
+.icon-cart:before { content: "\f114"; }
+.icon-cartfilled:before { content: "\f160"; }
+.icon-check:before { content: "\f116"; }
+.icon-checkboxblank:before { content: "\f117"; }
+.icon-checkboxfill:before { content: "\f118"; }
+.icon-checkboxselected:before { content: "\f119"; }
+.icon-checkcircle:before { content: "\f11a"; }
+.icon-close:before { content: "\f11b"; }
+.icon-closecircle:before { content: "\f11c"; }
+.icon-collapse:before { content: "\f17f"; }
+.icon-copy:before { content: "\f16c"; }
+.icon-copypage:before { content: "\f16d"; }
+.icon-copypagefill:before { content: "\f18b"; }
+.icon-criticalwarning:before { content: "\f11d"; }
+.icon-data:before { content: "\f11e"; }
+.icon-delete:before { content: "\f11f"; }
+.icon-diagnoses:before { content: "\f120"; }
+.icon-directions:before { content: "\f161"; }
+.icon-directionswalk:before { content: "\f162"; }
+.icon-download:before { content: "\f123"; }
+.icon-dropdown:before { content: "\f124"; }
+.icon-dropdownreverse:before { content: "\f125"; }
+.icon-edit:before { content: "\f126"; }
+.icon-email:before { content: "\f127"; }
+.icon-emailcancel:before { content: "\f188"; }
+.icon-error:before { content: "\f128"; }
+.icon-event:before { content: "\f163"; }
+.icon-expand:before { content: "\f180"; }
+.icon-export:before { content: "\f185"; }
+.icon-favorite:before { content: "\f169"; }
+.icon-fax:before { content: "\f181"; }
+.icon-filter:before { content: "\f184"; }
+.icon-final:before { content: "\f12a"; }
+.icon-flag:before { content: "\f12b"; }
+.icon-flagblank:before { content: "\f12c"; }
+.icon-frozen:before { content: "\f12d"; }
+.icon-go:before { content: "\f12e"; }
+.icon-handle:before { content: "\f12f"; }
+.icon-handlevertical:before { content: "\f130"; }
+.icon-help:before { content: "\f131"; }
+.icon-history:before { content: "\f132"; }
+.icon-home:before { content: "\f133"; }
+.icon-image:before { content: "\f134"; }
+.icon-infocircle:before { content: "\f135"; }
+.icon-language:before { content: "\f164"; }
+.icon-launch:before { content: "\f137"; }
+.icon-localparking:before { content: "\f165"; }
+.icon-location:before { content: "\f166"; }
+.icon-lock:before { content: "\f13a"; }
+.icon-mark:before { content: "\f13b"; }
+.icon-menu:before { content: "\f13c"; }
+.icon-menuclose:before { content: "\f13d"; }
+.icon-menuopen:before { content: "\f13e"; }
+.icon-morehoriz:before { content: "\f13f"; }
+.icon-morevert:before { content: "\f140"; }
+.icon-move:before { content: "\f174"; }
+.icon-neworder:before { content: "\f141"; }
+.icon-news:before { content: "\f142"; }
+.icon-orders:before { content: "\f143"; }
+.icon-ordertest:before { content: "\f144"; }
+.icon-partial:before { content: "\f145"; }
+.icon-patients:before { content: "\f146"; }
+.icon-pdf:before { content: "\f172"; }
+.icon-pdffile:before { content: "\f175"; }
+.icon-phone:before { content: "\f167"; }
+.icon-playcircle:before { content: "\f17b"; }
+.icon-print:before { content: "\f148"; }
+.icon-printselect:before { content: "\f17d"; }
+.icon-radiochecked:before { content: "\f149"; }
+.icon-radiounchecked:before { content: "\f14a"; }
+.icon-recentlyviewed:before { content: "\f173"; }
+.icon-refrigerated:before { content: "\f14b"; }
+.icon-reissued:before { content: "\f14c"; }
+.icon-resourcecenter:before { content: "\f186"; }
+.icon-results:before { content: "\f14d"; }
+.icon-roomtemperature:before { content: "\f14e"; }
+.icon-schedule:before { content: "\f168"; }
+.icon-scheduleclosure:before { content: "\f16f"; }
+.icon-scheduled:before { content: "\f16e"; }
+.icon-search:before { content: "\f14f"; }
+.icon-setting:before { content: "\f150"; }
+.icon-share:before { content: "\f17c"; }
+.icon-signout:before { content: "\f151"; }
+.icon-sort:before { content: "\f17e"; }
+.icon-sortup:before { content: "\f183"; }
+.icon-star:before { content: "\f152"; }
+.icon-status:before { content: "\f153"; }
+.icon-supplies:before { content: "\f155"; }
+.icon-supply:before { content: "\f156"; }
+.icon-switch:before { content: "\f157"; }
+.icon-test:before { content: "\f158"; }
+.icon-testsearch:before { content: "\f189"; }
+.icon-time:before { content: "\f16a"; }
+.icon-trainingtools:before { content: "\f178"; }
+.icon-truck:before { content: "\f16b"; }
+.icon-undo:before { content: "\f159"; }
+.icon-unlock:before { content: "\f15a"; }
+.icon-user:before { content: "\f15b"; }
+.icon-video:before { content: "\f179"; }
+.icon-videotutorials:before { content: "\f17a"; }
+.icon-viewresults:before { content: "\f15c"; }
+.icon-visibility:before { content: "\f170"; }
+.icon-visibilityoff:before { content: "\f171"; }
+.icon-warning:before { content: "\f15d"; }
+.icon-warningcircle:before { content: "\f15e"; }
+.icon-warninglight:before { content: "\f15f"; }
+
+$font-quest-icons-account: "\f100";
+$font-quest-icons-add: "\f101";
+$font-quest-icons-addpatients: "\f102";
+$font-quest-icons-admin: "\f177";
+$font-quest-icons-alert: "\f103";
+$font-quest-icons-alertcancel: "\f187";
+$font-quest-icons-announcement: "\f104";
+$font-quest-icons-answer: "\f105";
+$font-quest-icons-arrowdown: "\f106";
+$font-quest-icons-arrowdown2: "\f107";
+$font-quest-icons-arrowdownbig: "\f108";
+$font-quest-icons-arrowleft: "\f109";
+$font-quest-icons-arrowright: "\f10a";
+$font-quest-icons-arrowtriangle: "\f10b";
+$font-quest-icons-arrowup: "\f10c";
+$font-quest-icons-arrowup2: "\f10d";
+$font-quest-icons-arrowupbig: "\f10e";
+$font-quest-icons-back: "\f10f";
+$font-quest-icons-billing: "\f110";
+$font-quest-icons-billtype: "\f111";
+$font-quest-icons-cached: "\f112";
+$font-quest-icons-card: "\f113";
+$font-quest-icons-cart: "\f114";
+$font-quest-icons-cartfilled: "\f160";
+$font-quest-icons-check: "\f116";
+$font-quest-icons-checkboxblank: "\f117";
+$font-quest-icons-checkboxfill: "\f118";
+$font-quest-icons-checkboxselected: "\f119";
+$font-quest-icons-checkcircle: "\f11a";
+$font-quest-icons-close: "\f11b";
+$font-quest-icons-closecircle: "\f11c";
+$font-quest-icons-collapse: "\f17f";
+$font-quest-icons-copy: "\f16c";
+$font-quest-icons-copypage: "\f16d";
+$font-quest-icons-copypagefill: "\f18b";
+$font-quest-icons-criticalwarning: "\f11d";
+$font-quest-icons-data: "\f11e";
+$font-quest-icons-delete: "\f11f";
+$font-quest-icons-diagnoses: "\f120";
+$font-quest-icons-directions: "\f161";
+$font-quest-icons-directionswalk: "\f162";
+$font-quest-icons-download: "\f123";
+$font-quest-icons-dropdown: "\f124";
+$font-quest-icons-dropdownreverse: "\f125";
+$font-quest-icons-edit: "\f126";
+$font-quest-icons-email: "\f127";
+$font-quest-icons-emailcancel: "\f188";
+$font-quest-icons-error: "\f128";
+$font-quest-icons-event: "\f163";
+$font-quest-icons-expand: "\f180";
+$font-quest-icons-export: "\f185";
+$font-quest-icons-favorite: "\f169";
+$font-quest-icons-fax: "\f181";
+$font-quest-icons-filter: "\f184";
+$font-quest-icons-final: "\f12a";
+$font-quest-icons-flag: "\f12b";
+$font-quest-icons-flagblank: "\f12c";
+$font-quest-icons-frozen: "\f12d";
+$font-quest-icons-go: "\f12e";
+$font-quest-icons-handle: "\f12f";
+$font-quest-icons-handlevertical: "\f130";
+$font-quest-icons-help: "\f131";
+$font-quest-icons-history: "\f132";
+$font-quest-icons-home: "\f133";
+$font-quest-icons-image: "\f134";
+$font-quest-icons-infocircle: "\f135";
+$font-quest-icons-language: "\f164";
+$font-quest-icons-launch: "\f137";
+$font-quest-icons-localparking: "\f165";
+$font-quest-icons-location: "\f166";
+$font-quest-icons-lock: "\f13a";
+$font-quest-icons-mark: "\f13b";
+$font-quest-icons-menu: "\f13c";
+$font-quest-icons-menuclose: "\f13d";
+$font-quest-icons-menuopen: "\f13e";
+$font-quest-icons-morehoriz: "\f13f";
+$font-quest-icons-morevert: "\f140";
+$font-quest-icons-move: "\f174";
+$font-quest-icons-neworder: "\f141";
+$font-quest-icons-news: "\f142";
+$font-quest-icons-orders: "\f143";
+$font-quest-icons-ordertest: "\f144";
+$font-quest-icons-partial: "\f145";
+$font-quest-icons-patients: "\f146";
+$font-quest-icons-pdf: "\f172";
+$font-quest-icons-pdffile: "\f175";
+$font-quest-icons-phone: "\f167";
+$font-quest-icons-playcircle: "\f17b";
+$font-quest-icons-print: "\f148";
+$font-quest-icons-printselect: "\f17d";
+$font-quest-icons-radiochecked: "\f149";
+$font-quest-icons-radiounchecked: "\f14a";
+$font-quest-icons-recentlyviewed: "\f173";
+$font-quest-icons-refrigerated: "\f14b";
+$font-quest-icons-reissued: "\f14c";
+$font-quest-icons-resourcecenter: "\f186";
+$font-quest-icons-results: "\f14d";
+$font-quest-icons-roomtemperature: "\f14e";
+$font-quest-icons-schedule: "\f168";
+$font-quest-icons-scheduleclosure: "\f16f";
+$font-quest-icons-scheduled: "\f16e";
+$font-quest-icons-search: "\f14f";
+$font-quest-icons-setting: "\f150";
+$font-quest-icons-share: "\f17c";
+$font-quest-icons-signout: "\f151";
+$font-quest-icons-sort: "\f17e";
+$font-quest-icons-sortup: "\f183";
+$font-quest-icons-star: "\f152";
+$font-quest-icons-status: "\f153";
+$font-quest-icons-supplies: "\f155";
+$font-quest-icons-supply: "\f156";
+$font-quest-icons-switch: "\f157";
+$font-quest-icons-test: "\f158";
+$font-quest-icons-testsearch: "\f189";
+$font-quest-icons-time: "\f16a";
+$font-quest-icons-trainingtools: "\f178";
+$font-quest-icons-truck: "\f16b";
+$font-quest-icons-undo: "\f159";
+$font-quest-icons-unlock: "\f15a";
+$font-quest-icons-user: "\f15b";
+$font-quest-icons-video: "\f179";
+$font-quest-icons-videotutorials: "\f17a";
+$font-quest-icons-viewresults: "\f15c";
+$font-quest-icons-visibility: "\f170";
+$font-quest-icons-visibilityoff: "\f171";
+$font-quest-icons-warning: "\f15d";
+$font-quest-icons-warningcircle: "\f15e";
+$font-quest-icons-warninglight: "\f15f";

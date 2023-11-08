@@ -1,0 +1,281 @@
+@import "../../../../../styles.scss";
+
+.ds-body {
+    &.as-active-infection-symptoms {
+        padding-top: 144px;
+
+        .ds-body--content {
+            width: 100%;
+
+            .ds-col--12 {
+                .ds-flex.--row {
+                    .ds-col--8 {
+                        > div {
+                            &:first-of-type {
+                                place-content: start;
+                                justify-content: start;
+                                position: sticky;
+                                top: -90px;
+                                background: $ds-gray__100;
+                                margin-bottom: 150px;
+                            }
+                        }
+
+                        .ds-grid--12 {
+                            [class*="ds-icon--info"] {
+                                display: flex;
+                                align-items: center;
+                                line-height: 1;
+                                margin-left: 12px;
+                            }
+
+                            .ds-col--12 {
+                                .ds-input {
+                                    .ds-input__checkbox {
+                                        margin-right: 28px;
+                                        width: auto;
+
+                                        input {
+                                            width: 0;
+                                            padding: 0;
+                                        }
+
+                                        span {
+                                            margin: 0;
+                                        }
+                                    }
+                                }
+
+                                h3 {
+                                    font-size: 14px !important;
+                                }
+                            }
+                        }
+                    }
+
+                    > .ds-col--4 {
+                        margin-left: 16px;
+                        position: sticky;
+                        top: 144px;
+                        height: 600px;
+                    }
+                    fieldset {
+                        border: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    legend {
+                        display: none;
+                    }
+                }
+                &.margin0 {
+                    margin: 0;
+                }
+            }
+        }
+
+        @include when-less-than(ds-1024) {
+            padding-top: 84px;
+
+            .ds-body--content {
+                width: 100%;
+
+                .ds-col--12 {
+                    .ds-flex.--row {
+                        .ds-col--8 {
+                            width: 100%;
+
+                            > .ds-grid--12 {
+                                &:first-of-type {
+                                    margin-bottom: 124px;
+
+                                    .ds-col--6,
+                                    .ds-col--7,
+                                    .ds-col--10 {
+                                        width: 100%;
+                                    }
+
+                                    .ds-col--2 {
+                                        width: 16%;
+                                    }
+                                }
+
+                                .ds-col--9 {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .ds-col--4 {
+                            display: block !important;
+                            width: 0;
+                            padding: 0;
+                            margin: 0;
+
+                            > div {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include when-less-than(ds-768) {
+            .ds-body--content {
+                width: 100%;
+
+                > .ds-col--12 {
+                    padding: 0;
+
+                    > .ds-flex.--row {
+                        > .ds-col--8 {
+                            width: 100%;
+                            margin-bottom: 90px;
+                            padding: 0;
+
+                            [class*="ds-col"] {
+                                width: 100%;
+                                padding-right: 0;
+                                padding-bottom: 0;
+                            }
+
+                            form {
+                                [class*="ds-col"] {
+                                    .ds-input {
+                                        width: 100%;
+                                        padding-right: 0;
+                                        padding-bottom: 0;
+                                    }
+                                }
+
+                                [class*="ds-col--3"] {
+                                    width: 50%;
+                                    padding-right: 16px;
+                                }
+                            }
+                        }
+                    }
+
+                    .ds-pagination--footer {
+                        width: 100%;
+
+                        &.ds-col--8 {
+                            width: 100%;
+
+                            .ds-col--12 {
+                                padding: 0;
+
+                                .ds-col--6 {
+                                    width: 100%;
+                                    padding: 0;
+
+                                    button {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                as-footer {
+                    background: $ds-gray__100;
+                    width: 100%;
+                    position: fixed;
+                    bottom: 60px;
+                }
+            }
+        }
+
+        @include when-less-than(ds-640) {
+            .ds-body--content {
+                as-footer {
+                    bottom: 78px;
+                }
+            }
+        }
+        // @include when-less-than(ds-480){
+        //     .ds-input__radio{
+        //         display: flex;
+        //         align-items: center;
+        //     }
+        // }
+    }
+}
+input[type="checkbox"][disabled] + span,
+fieldset[disabled] {
+    cursor: not-allowed !important;
+}
+fieldset[disabled] label {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+}
+.visually-hidden {
+    top: 0;
+    left: -2px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.as-summary-details__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 3;
+}
+.symptom-checkbox {
+    line-height: 24px;
+    // @include when-less-than(ds-480){
+    //     padding-left: 15px !important;
+    //     padding-right: 10px !important;
+    // }
+}
+.help-icon {
+    margin: 5px 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.title {
+    font-size: 20px;
+}
+.ds-input__checkbox {
+    height: auto;
+    @include when-less-than(ds-480) {
+        z-index: 0;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        color: #424245;
+        font-size: 14px;
+        margin: 3px 0px;
+        width: max-content;
+    }
+}
+input[type="checkbox"] {
+    height: 0em !important;
+    width: 0em !important;
+    padding: 0em !important;
+    margin: 0em !important;
+}
+.extraOptions {
+    padding-left: 31px;
+    // @include when-less-than(ds-480){
+    //     padding-left: 45px;
+    // }
+}
+.symptom-div {
+    @media screen and (max-width: 380px) {
+        width: 250px !important;
+    }
+}
+.radio-label-1{
+    display: initial !important;
+}

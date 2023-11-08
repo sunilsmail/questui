@@ -1,0 +1,26 @@
+<div class="ds-card ds-white--bg padding-16 inputAlert">
+  <div class="member-id-message__error-message">
+    <p class="no-margin"><span class="ds-icon--alert ds-gold__500 ds-font--14" aria-label="alert" role="img"></span></p>
+    <ng-container *ngIf="type === errorType.memberIdError; else groupId">
+      <p class="ds-font--14 member-id-message__invalid-member-id-msg">
+        The member ID entered is not an acceptable format for the insurance provider you selected.
+        Please double check that you have entered all letters and numbers exactly as they appear on your insurance card.
+      </p>
+    </ng-container>
+    <ng-template #groupId>
+      <p class="ds-font--14 member-id-message__invalid-member-id-msg">
+        The group ID entered is not an acceptable format for the insurance provider you selected.
+        Please double check that you have entered all letters and numbers exactly as they appear on your insurance card.
+      </p>
+    </ng-template>
+    <ul class="member-id-message__valid-patterns">
+      <li class="ds-font--14--bold">Possible correct formats for your provider:</li>
+      <li *ngFor="let pattern of validPatterns; index as i;"
+        class="ds-font--14 member-id-message__valid-pattern">
+        <span class="member-id-message__valid-pattern-name">{{pattern.patternKey}}</span>
+        <span class="member-id-message__valid-pattern-value"> ({{pattern.patternValue}})</span>
+      </li>
+    </ul>
+    <button class="ds-link margin-bottom-16" (click)="reset()">Continue</button>
+  </div>
+</div>

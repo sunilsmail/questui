@@ -1,0 +1,48 @@
+@import "../../../../../appointment/styles.scss";
+
+.content {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+}
+
+.ds-col--2 {
+  @include when-less-than(ds-768) {
+    width: auto;
+  }
+}
+
+hr {
+  border: 1px solid #cecece;
+  margin-top: 0px;
+}
+.disabled {
+  cursor: not-allowed;
+}
+
+.hippa-review-section {
+
+  .ds-font--18 {
+    color: #24531d !important;
+  }
+
+  .ds-col--1 {
+    &:last-of-type {
+      margin-right: 22.6px;
+      @include when-less-than(ds-768) {
+        margin-top: 12px;
+        margin-right: 0px;
+      }
+    }
+  }
+
+  .ds-col--11 {
+    width: 100%;
+    @include when-less-than(ds-768) {
+      flex-direction: column;
+    }
+  }
+}

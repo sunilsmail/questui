@@ -1,0 +1,135 @@
+<header class="ds-grid--12 ds-header">
+  <div class="ds-col--12">
+    <div class="ds-icon--quest-logo ds-font--28 ds-black" aria-label="Quest Diagnostics">
+      <span class="ds-icon--quest-logo--text ds-font--16"></span>
+    </div>
+  </div>
+</header>
+<div class="ds-grid--12 ds-body--content">
+  <div class="ds-col--12 pad-24">
+    <div class="ds-flex --row ds-form__col--2">
+      <div class="ds-col--8">
+        <label class="patient-name-label">Patient</label>
+        <div class="patient-name-value" [attr.aria-label]="[printDetailsData?.firstName]">
+          {{printDetailsData?.firstName}}</div>
+        <div class="ds-grid--12">
+          <div class="ds-col--6 patient-location">
+            <label class="patient-location__label">Location</label>
+            <div class="patient-location__name" [attr.aria-label]="[printDetailsData?.name]" tabindex="0">
+              {{printDetailsData?.name}}</div>
+            <div class="patient-location__address1" [attr.aria-label]="[printDetailsData?.address1]" tabindex="0">
+              {{printDetailsData?.address1}}</div>
+            <div class="patient-location__city_state_zip"
+              [attr.aria-label]="[printDetailsData?.city,printDetailsData?.state,printDetailsData?.zip]" tabindex="0">
+              {{printDetailsData?.city}} {{printDetailsData?.state}} {{printDetailsData?.zip}}</div>
+          </div>
+          <div class="ds-col--6 patient-reason">
+            <label class="patient-reason__label">Reason for visiting</label>
+            <div class="patient-reason__reason" [attr.aria-label]="[]" tabindex="0" innerHTML={{printDetailsData?.facilityTestTypeValue}}></div>
+          </div>
+        </div>
+        <div class="ds-grid--12">
+          <div class="ds-col--6 patient-datetime">
+            <label class="patient-datetime__label">Date and Time</label>
+            <div class="patient-datetime__date" [attr.aria-label]="[printDetailsData?.appointmentDate]" tabindex="0">
+              {{printDetailsData?.appointmentDate | date:'MMMM dd, y'}}</div>
+            <div class="patient-datetime__time" [attr.aria-label]="[printDetailsData?.appointmentTime | twelveHourTime]"
+              tabindex="0"> {{printDetailsData?.appointmentTime | twelveHourTime}}</div>
+          </div>
+        </div>
+        <div *ngIf="eorder">
+        <label class="patient-name-label" >Estimated Cost</label>
+        <div *ngIf="printDetailsData?.estimatedCost != null" class="patient-name-value">{{printDetailsData?.estimatedCost | currency}}</div>
+        <div *ngIf="printDetailsData?.estimatedCost === null" class="patient-location__name" tabindex="0">Unable to provide estimate at this time but an estimate will be provided at your visit.
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-col--4">
+        <div class="qrcode" [attr.aria-label]="[printDetailsData?.qrcode]" tabindex="0">
+          <img class="qrcode__image" id='qrCode' src="{{printDetailsData?.qrcode}}" alt="" title="QR Code"
+            aria-label="QR Code" tabindex="0" i18n />
+        </div>
+        <div class="qrcode__confirmation" [attr.aria-label]="[printDetailsData?.confirmationCode]" tabindex="0">
+          {{printDetailsData?.confirmationCode}}
+        </div>
+        <div class="qrcode__text">
+          {{content?.as_confirmation_print?.qrcode_text}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-col--12 pad-24 line">
+    ...........................................................................
+  </div>
+  <div class="ds-col--12 pad-24 line">
+    <div class="what-else-heading">
+      What else do I need to know?
+    </div>
+  </div>
+
+  <div class="ds-col--12 pad-24">
+    <div class="ds-flex --row ds-form__col--2">
+      <div class="ds-col--6 location-details">
+        <div class="location-details__heading">
+          Location Details
+          <hr>
+        </div>
+        <!-- <div class="location-details__image">
+          [[Image goes here]]
+        </div> -->
+        <div class="patient-location">
+          <div class="patient-location__name" [attr.aria-label]="[printDetailsData?.name]" tabindex="0">
+            {{printDetailsData?.name}}</div>
+          <div class="patient-location__address1" [attr.aria-label]="[printDetailsData?.address1]" tabindex="0">
+            {{printDetailsData?.address1}}</div>
+          <div class="patient-location__city_state_zip"
+            [attr.aria-label]="[printDetailsData?.city,printDetailsData?.state,printDetailsData?.zip]" tabindex="0">
+            {{printDetailsData?.city}}, {{printDetailsData?.state}}
+            {{printDetailsData?.zip}}</div>
+        </div>
+        <br>
+        <div class="location-details__direction">
+          <label class="location-details__direction-label">Still can't find it?</label>
+          <div class="location-details__direction-text" [attr.aria-label]="[printDetailsData?.landmark]" tabindex="0">
+            {{printDetailsData?.landmark}}</div>
+        </div>
+        <br>
+        <div class="location-details__help">
+          <label class="location-details__help-label">Need Additional help?</label>
+          <div class="location-details__help-text" [attr.aria-label]="[printDetailsData?.sitePhone]" tabindex="0">Call
+            this location at {{printDetailsData?.sitePhone}}</div>
+        </div>
+      </div>
+
+      <div class="ds-col--6 fasting-details">
+        <div class="fasting-details__heading">
+          Fasting details
+          <hr>
+        </div>
+        <div class="fasting-details__text">
+          <div class="fasting-details__text1">{{content?.as_confirmation_print?.fasting_details_text1}}</div>
+          <br>
+          <div class="fasting-details__text2">{{content?.as_confirmation_print?.fasting_details_text2}}</div>
+        </div>
+        <br>
+        <div class="additional-details">
+          <div class="additional-details__heading">
+            Additional Details
+            <hr>
+          </div>
+          <div class="additional-details__text">
+            <div class="additional-details__text1">{{content?.as_confirmation_print?.additional_details_text1}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="confirmation-print-footer">
+  © Quest, Quest Diagnostics, the associated logo, Nichols Institute, and all associated Quest Diagnostics marks are
+  the registered trademarks of Quest Diagnostics. All third-party marks—®' and ™'—are the property of their
+  respective owners. © 2000-2019 Quest Diagnostics Incorporated. All rights reserved.
+</div>

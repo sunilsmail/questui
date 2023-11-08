@@ -1,0 +1,50 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./projects/appointment",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "resolveJsonModule": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@appointment/environments/*": [
+        "../appointment/environments/*"
+      ],
+      "@appointment/specs/*": [
+        "../appointment/specs/*"
+      ],
+      "@appointment/core/*": [
+        "../appointment/app/core/*"
+      ],
+      "shared/environments/*": [
+        "../shared/environments/*"
+      ],
+      "shared/specs/*": [
+        "../shared/specs/*"
+      ],
+      "shared/lib/*": [
+        "../shared/lib/*"
+      ],
+      "shared/*": [
+        "../shared/src/lib/*"
+      ],
+      "shared": [
+        "../shared/src/public_api"
+      ]
+    },
+    "skipLibCheck": true, // need to revert back when bw is ready
+  }
+}

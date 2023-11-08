@@ -1,0 +1,41 @@
+<main class="ds-body as-open-eorders">
+  <div *ngIf="loadingIcon" class="as-open-eorders__overlay" fxLayout="row" fxLayoutAlign="center center">
+    <as-spinner></as-spinner>
+  </div>
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 pad-24">
+      <div class="ds-flex --row  ds-form__col--2">
+
+        <div class="ds-col--9">
+          <div>
+            <div class="onFocus">
+              <h1 class="visually-hidden" role="heading" >{{content.as_open_eorders.title}}</h1>
+            </div>
+            <div>
+              <button class="ds-icon--arrow-back ds-font--24 ds-green__700" id="back-button-open-orders" aria-label="back" title="back" (click)="goToPrevious()" tabindex="0"></button>
+              <div tabindex="0" class="onFocus">
+                <h1 class="ds-font--32--bold ds-green__700 title" i18n [attr.aria-label]="[content.as_open_eorders.title]">{{content.as_open_eorders.title}}</h1>
+              </div>
+              <p class="ds-font--14 --500 ds-green__700 label-text">{{content.as_open_eorders.label}}</p>
+            </div>
+            <as-loading-container [asLoadingData]="items$" asSpinnerSize="medium" asNoDataMessage="No data found."
+              i18n-asNoDataMessage asLoadErrorMessage="No data found." [loadingMore]="loading$">
+              <ng-template let-openEorders #openEorders>
+                <as-open-eorder-list [openEorders]="openEorders" [selectedItem]="selectedItem" (selectedEorder)="selectedEorder($event)" >
+                </as-open-eorder-list>
+              </ng-template>
+            </as-loading-container>
+          </div>
+        </div>
+
+        <div class="ds-col--3">
+          <as-footer
+            [previous]="'/as-home'"
+            (continue)='continueEorderFlow()' [enableContinue]="selectedItem"></as-footer>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</main>

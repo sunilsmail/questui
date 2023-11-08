@@ -1,0 +1,65 @@
+@import '../../../../../styles.scss';
+// @import '../../../../../ds-styles/ds-fonts';
+
+.as-imp-visit-info {
+    max-width: 440px;
+
+    &__main{
+        padding: 0 16px 16px;
+    }
+    &__close-button {
+        cursor: pointer;
+    }
+    &__warning-icon{
+        color: #F56A00;
+        border: 2px solid;
+        border-radius: 50px;
+        display: inline;
+        padding: 5px;
+        font-size: 22px;
+    }
+    &__wrapper{
+        &__header{
+            //font-family: Roboto;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.25;
+            letter-spacing: normal;
+        }
+        &__message {
+            font-size: 15px;
+            line-height: 1.6;
+            letter-spacing: normal;
+            p {
+                margin-top: 0;
+                margin-bottom: 16px;
+            }
+        }
+    }
+    &__link {
+        margin-top: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1.6;
+        letter-spacing: normal;
+    }
+
+    @include when-less-than(ds-768){
+        &__main{
+            padding: 0 0 16px;
+        }
+        &__wrapper{
+            &__header{
+                font-size: 18px;
+                line-height: 1.33;
+            }
+        }
+        &__link {
+            margin-top: 15px;
+        }
+    }
+}
+.onFocus:focus{
+    outline: 2px solid $ds-green__500;
+    outline-offset: 0px;
+  }

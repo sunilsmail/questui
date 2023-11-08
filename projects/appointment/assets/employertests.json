@@ -1,0 +1,82 @@
+[
+    {
+        "facilityServiceId": 7,
+        "facilityTestTypeValue": "Urine Drug Test Electronic",
+        "testDesc": "Detects the presence of drugs using a urine sample. Typically used for pre-employment,random or post-accident testing. Order placed electronically by employer.",
+        "facServiceId": "ELECTRONIC CFF",
+        "timeTradeTestingId": "drug",
+        "precedence": 1,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    },
+    {
+        "facilityServiceId": 8,
+        "facilityTestTypeValue": "Urine Drug Test Paper",
+        "testDesc": "Detects the presence of drugs using a urine sample. Typically used for pre-employment,random or post-accident testing. Donor provided paper order form.",
+        "facServiceId": "SAP (NON-DOT) COLLECTIONS",
+        "timeTradeTestingId": "drug",
+        "precedence": 2,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    },
+    {
+        "facilityServiceId": 9,
+        "facilityTestTypeValue": "Urine Drug Test DOT- Paper",
+        "testDesc": "Urine testing for employees covered under Federal Department of Transportation testing guidelines.Typically used for pre-employment, random or post-accident testing. Donor provided paper order form.",
+        "facServiceId": "NIDA (DOT) COLLECTIONS",
+        "timeTradeTestingId": "drug",
+        "precedence": 3,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    },
+    {
+        "facilityServiceId": 10,
+        "facilityTestTypeValue": "Urine Drug Test Observed",
+        "testDesc": "Directly observed urine test that detects the presence of drugs using a urine sample and requires a collector to be present while the donor provides a specimen.",
+        "facServiceId": "NETWORK BREATH",
+        "timeTradeTestingId": "observeddrug",
+        "precedence": 4,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    },
+    {
+        "facilityServiceId": 11,
+        "facilityTestTypeValue": "Urine Drug Test Express Results Online",
+        "testDesc": "Detects the presence of drugs using a urine sample.",
+        "facServiceId": "URINE POCT",
+        "timeTradeTestingId": "expressdrug",
+        "precedence": 5,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    },
+    {
+        "facilityServiceId": 12,
+        "facilityTestTypeValue": "Oral Fluid Drug Test",
+        "testDesc": "Detects the presence of drugs using an oral fluid sample.",
+        "facServiceId": "ORAL FLUID COLLECTIONS",
+        "timeTradeTestingId": "oraldrug",
+        "precedence": 6,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    },
+    {
+        "facilityServiceId": 13,
+        "facilityTestTypeValue": "Hair Drug Test",
+        "testDesc": "Detects the presence of drugs using a hair sample.",
+        "facServiceId": "HAIR COLLECTIONS",
+        "timeTradeTestingId": "hairdrug",
+        "precedence": 7,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    },
+    {
+        "facilityServiceId": 14,
+        "facilityTestTypeValue": "Breath Alcohol Test",
+        "testDesc": "Detects the presence of alcohol using a breathalyzer.",
+        "facServiceId": "OUT NETWORK BREATH",
+        "timeTradeTestingId": "alcoholdrug",
+        "precedence": 8,
+        "serviceRequestor": null,
+        "h20TestingId": "2"
+    }
+]

@@ -1,0 +1,102 @@
+<main class="ds-body as-confirmation">
+  <div class="ds-grid--12 ds-body--content">
+    <div class="ds-col--12 no-pad" id="skip-to-main" tabindex="-1">
+      <div class="ds-content-block--52 ds-flex --center-center --column">
+
+        <div class="margin-bottom-16">
+          <span class="ds-icon--check ds-green__700 ds-font--32 ds-green__050--bg" aria-label=""></span>
+        </div>
+        <h2 role="heading" aria-level="1" class="ds-col--6 ds-green__700 ds-flex --center-center margin-12 onFocus"
+          [attr.aria-label]="[content.as_confirmation.title]" i18n>{{content.as_confirmation.title}}</h2>
+
+        <div class="ds-content-block--32 ds-col--6 ds-font--16 ds-flex --center-center"
+          [attr.aria-label]="[message]" i18n>
+          {{message}}</div>
+
+        <div class="ds-content-block--32 ds-col--6 padding-24 ds-green__050--bg mint-bg">
+          <h3 class="ds-col--12 ds-font--18--bold pad-12 ds-flex --center-center conf-code-margin onFocus" i18n
+            [attr.aria-label]="[content.as_confirmation.confirmation_code]" role="heading" aria-level="2">
+            {{content.as_confirmation.confirmation_code}}</h3>
+          <div role="text" class="ds-font--24--bold ds-col--12 ds-green__700 ds-flex --center-center conf-code margin-8 onFocus" *ngIf="confirmationCode"
+            [attr.aria-label]="[confirmationCode]">{{confirmationCode}}</div>
+            <div class="ds-col--12 ds-font--20--bold ds-flex --center-center " *ngIf="(isCancelModifyEnabled$ | async)" tabindex="0" (keydown)="navigateToSummaryKey($event)" aria-label="Modify/Cancel Appointment">
+              <a class="modify-or-cancel-link ds-green__700" i18n (click)="navigateToSummary()">{{content.as_confirmation.modify_cancel_link}}</a>
+            </div>
+        </div>
+        <div class="ds-col--6 ds-card --gray__200 padding-32">
+        <div class="ds-font--24--bold" role="region" [attr.aria-label]="[content.as_confirmation.location_card_title]" i18n>
+          <h3 class="ds-green__700 heading" role="heading" aria-level="3">{{content.as_confirmation.location_card_title}}</h3>
+          <hr class="green no-margin">
+        </div>
+        <div class="ds-flex --row no-pad location">
+          <div class="ds-col--1 pad-r-15"><span class="ds-icon--address ds-font--24 ds-green__700"></span></div>
+          <div class="ds-col--11 ds-font--14" role="text" aria-labelledby="name addressOne addressTwo zip">
+            <div class="ds-font--14--bold" id="name" aria-hidden="true" role="text" [attr.aria-label]="[appointmentData.name]">
+              {{appointmentData.name}}</div>
+            <div id="addressOne" aria-hidden="true" role="text" [attr.aria-label]="[appointmentData.address1]">{{appointmentData.address1}}</div>
+            <div id="addressTwo" aria-hidden="true" *ngIf="appointmentData.address2" role="text" [attr.aria-label]="[appointmentData.address2]">
+              {{appointmentData.address2}}</div>
+            <div id="zip" aria-hidden="true"  role="text" [attr.aria-label]="[appointmentData.city,appointmentData.state,appointmentData.zip]">
+              {{appointmentData.city}}, {{appointmentData.state}} {{appointmentData.zip}}</div>
+          </div>
+          <div class="ds-col--1 no-pad"><span tabindex="0"  role="link" matTooltip="Directions" aria-label="opens Directions in google maps" class="ds-icon--route ds-font--24 onFocus ds-green__700" (click)="openDirection()" (keydown.enter)="openDirection()" ></span></div>
+        </div>
+        <div class="ds-flex --row margin-top-12 no-pad">
+          <div class="ds-col--1 pad-r-15"><span class="ds-icon--calendar ds-font--24 ds-green__700"></span></div>
+          <div class="ds-col--11 ds-flex --start-center">
+            <div class="ds-font--14--bold" role="text" [attr.aria-label]="[formatedDate | date:'longDate']">{{formatedDate | date:'longDate'}}
+            </div>
+          </div>
+        </div>
+        <div class="ds-flex --row margin-top-12 no-pad">
+          <div class="ds-col--1 pad-r-15"><span class="ds-icon--clock ds-font--24 ds-green__700"></span></div>
+          <div class="ds-col--11 ds-flex --start-center">
+            <div class="ds-font--14--bold" role="text" [attr.aria-label]="[appointmentData.appointmentTime | twelveHourTime]">
+              {{appointmentData.appointmentTime | twelveHourTime}}</div>
+          </div>
+        </div>
+        </div>
+        <div class="ds-col--6 ds-flex --center-center no-pad action-button">
+          <div class="ds-col--6 margin-right-24 ds-flex --start-center no-pad">
+            <button class="ds-button --secondary print-button-width" (click)="printConfirmation()">
+              <label i18n [attr.aria-label]="[content.as_confirmation.location_card_button]">{{content.as_confirmation.location_card_button}}</label>
+            </button>
+          </div>
+          <div class="ds-col--6 ds-flex --center-center no-pad">
+            <as-add-to-calendar [inputEvent]="calendarData" [buttonType]="'green'"></as-add-to-calendar>
+          </div>
+        </div>
+        <div class="ds-col--6 ds-card padding-32 health-card">
+          <div class="ds-font--24--bold" role="region" [attr.aria-label]="[content.as_confirmation.health_card_title]" i18n>
+            <h3 class="ds-green__700 heading-health" role="heading" aria-level="3">{{content.as_confirmation.health_card_title}}</h3>
+            <hr class="green no-margin">
+          </div>
+          <div class="ds-flex --row no-pad image">
+            <div class="ds-col--12 no-pad">
+              <img alt="health insights" style="width: 100%; border-radius: 16px;" src="/assets/ds-images/AS_BROWSE_TESTS_1.png" />
+            </div>
+          </div>
+          <div class="ds-flex --row margin-top-24 no-pad">
+            <p class="ds-font--16 --400 no-margin" [innerHtml]="content.as_confirmation.health_card_content1">
+              <!-- <b class="ds-green__700">{{content.as_confirmation.health_card_content2}}</b> -->
+            </p>
+          </div>
+          <div class="ds-flex --row margin-top-24 no-pad">
+            <button class="ds-button --primary" i18n [attr.aria-label]="[content.as_confirmation.health_card_button]"
+              (click)="viewTests()">
+              {{content.as_confirmation.health_card_button}}
+            </button>
+          </div>
+          <div class="ds-flex --row margin-top-16 no-pad">
+            <p class="ds-font--12 --400 no-margin">{{content.as_confirmation.health_card_disclaimer}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="clinicaltrialhippaFlag">
+    <as-confirmation-banner></as-confirmation-banner>
+   </div>
+</main>
+<as-confirmation-print [inputEvent]="printData"></as-confirmation-print>

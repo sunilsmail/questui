@@ -1,0 +1,46 @@
+@import '../../../../../styles.scss';
+
+h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 8px;
+  @include when-less-than(ds-768){
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+}
+.bfa-redirect-popup {
+  max-width: 696px;
+  @include when-less-than(ds-768){
+    max-width: 348px;
+    > mat-dialog-actions > .ds-modal__actions > [class*=ds-col]{
+      width: 100%;
+      justify-content: center;
+      > button{
+        width: 100%;
+        justify-content: center;
+        min-width: 100%;
+        margin-bottom: 16px;
+        @include when-less-than(ds-480){
+          height: 100%;
+        }
+      }
+    }
+  }
+  @include when-less-than(ds-768){
+    max-width: 100%;
+ }
+ button.ds-link {
+  font-size: 16px;
+}
+> mat-dialog-actions >.ds-modal__actions > [class*=ds-col] {
+  width: 100%;
+  justify-content: center;
+  > button {
+    width: 100% !important;
+    min-width: 100% !important;
+    justify-content: center;
+  }
+}
+}

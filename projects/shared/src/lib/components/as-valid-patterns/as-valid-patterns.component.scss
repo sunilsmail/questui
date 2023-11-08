@@ -1,0 +1,47 @@
+@import '../../../../../appointment/styles.scss';
+
+.member-id-message{
+  // &__error-message{
+  //   @include when-less-than(ds-1024){
+  //     margin-bottom: 120px !important;
+  //   }
+  //   @include when-less-than(ds-640){
+  //     margin-bottom: 150px !important;
+  //   }
+  // }
+  &__invalid-member-id-msg{
+    line-height: 21px;
+  }
+  &__valid-pattern{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    margin-bottom: 0 !important;
+    word-break: break-all;
+    &:first-of-type {
+      padding-top: 16px;
+    }
+  }
+  &__valid-pattern-name{
+    text-align: right;
+    width: 50%;
+  }
+  &__valid-pattern-value{
+    padding-left: 8px;
+    width: 50%;
+  }
+}
+
+.inputAlert{
+  position: absolute;
+  top: 100% !important;
+  display: block;
+  z-index: 2;
+  // width: 100% !important;;
+}
+
+.margin-bottom-16{
+  @include when-less-than(ds-768){
+    padding-bottom: 120px !important;
+  }
+}

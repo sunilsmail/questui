@@ -1,0 +1,36 @@
+@import '../../../../../styles.scss';
+
+.covid-19-details-dialog {
+  h2 {
+    display: flex;
+    align-items: center;
+    @include when-less-than(ds-768){
+      align-items: flex-start !important;
+    }
+  }
+  max-width: 696px;
+  @include when-less-than(ds-768){
+    max-width: 348px;
+    > mat-dialog-actions > .ds-modal__actions > [class*=ds-col]{
+      width: 100%;
+      justify-content: center;
+      > .--secondary{
+        width: 100%;
+        justify-content: center;
+        min-width: 100%;
+        @include when-less-than(ds-480){
+          height: 100%;
+        }
+      }
+    }
+  }
+  @include when-wider-than(ds-1024){
+    > mat-dialog-actions > .ds-modal__actions > [class*=ds-col]{
+      width: auto;
+      // margin-right: 16px;
+    }
+  }
+  @include when-less-than(ds-480){
+    max-width: 100%;
+ }
+}

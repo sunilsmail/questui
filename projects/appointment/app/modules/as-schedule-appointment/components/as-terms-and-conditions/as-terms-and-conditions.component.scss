@@ -1,0 +1,11 @@
+@import '../../../../../styles.scss';
+.ds-body{
+
+    &.as-personal{
+      padding: 144px 0;
+      @include when-less-than(ds-1024){
+        padding: 84px 0;
+      }
+    }
+
+}
